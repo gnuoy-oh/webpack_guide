@@ -2,7 +2,8 @@ const path = require('path');
 // npm i html-webpack-plugin, 플러그인이므로 따로 불러와야 한다.
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // npm i -D clean-webpack-plugin
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+
 module.exports = {
   mode: 'development',
 

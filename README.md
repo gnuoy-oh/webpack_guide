@@ -77,115 +77,20 @@ export {sum, substract, pi};
 
 - 초기에 불필요한 것들을 모두 로딩하지 않고, 필요할 때에 필요한 것만 로딩한다.
 
-### Core Concept
+## Install
 
-#### Entry
+1. npm init
 
-- 빌드(변환)할 대상 파일을 지정하는 속성으로, entry로 지정한 파일의 내용에는 전체 애플리케이션 로직과 필요 라이브러리를 로딩하는 로직이 들어간다.
+2. npm i webpack webpac-cli --save-dev
 
-  - string: 문자열이 들어오는 경우 시작시 로드되는 모듈로 해석 
+3. package.json에서 "devDependencies" 생성된 것을 확인할 수 있다.
 
-  - Array: 시작시 모든 모듈이 실행되고 마지막 하나가 내보내진다.
+4. package.json에서 "script" 수정
 
-  - Object: 다중 항목 번들이 작성된다.
+  ~~~
+    "scripts": {
+      "build": "webpack"
+    },
+  ~~~
 
-  - Key: 청크되는 파일의 이름이고, 값을 String / Array이 가능하다.
-
-~~~
-// webpack.config.js
-
-// 문자열 작성
-module.exports = {
-  entry: './src/myfolder/file.js'
-}
-
-// Object
-module.exports = {
-  entry: {
-    './src/myfolder/file.js'
-  }
-}
-
-// Array
-module.exports = {
-  entry: {
-    main: ['./src/myfolder/file.js', './src/myfolder/file2.js']
-  }
-}
-~~~
-
-#### Output
-
-- 빌드한 결과물의 위치와 파일 이름 등 세부 옵션을 설정하는 속성
-
-- 웹펙이 어디에 번들을 만들어 낼 것인지, 어떤 이름으로 파일들을 어떻게 만들 것인지에 대한 것을 정의한다.
-
-- config 파일에 output이 되어있지 않않다면 기본값음 ./dist/main.js이다.
-
-- 생성된 번들 파일들이 ./dist 디렉토리 밑으로 들어가게 된다.
-
-- 기본 entry / output 사용 예
-
-~~~
-module.exports = {
-  <!-- 웹팩 v4부터는 mode 필수 입력 -> production, development, none 옵션 -->
-  mode: 'development',
-
-  entry: './src/js/index.js',
-
-  output: {
-
-    <!--  
-      filename으로 생성된 번들링을 어느 경로에 생성할 지를 설정한다.
-      __dirname 은 node에서 제공하는 node 파일의 경로를 담고 있는 변수이다.
-      __이 붙어있는 변수들은 항상 무엇인가를 담고 있는 특별한 변수이다.
-      path에는 절대 경로 설정 (절대값, static으로 사용한다)
-      path.resolve() 코드는 인자로 넘어온 경로들을 조합해서 유효한 파일 경로를 만들어주는 Node.js API이다.
-    -->
-    path: __dirname,
-
-    <!-- 
-    bundling 된 결과 파일의 이름 
-      -->
-    filename: 'dist/build.js
-  }
-}
-~~~
-
-- [path 라이브러리 참고](https://nodejs.org/api/path.html)
-
-#### Loaders
-
-- 빌드할 때 HTML, CSS, Image 파일 등을 JS로 변환하기 위해 필요한 설정을 정의하는 속성으로 웹펙이 이해하고 처리가 가능한 모듈로 변환시키는 작업
-
-#### Plugins
-
-- 빌드하고 나온 결과물에 대해 추가 기능을 제공하는 속성. 
-
-- 예) 결과물의 사이즈를 줄이거나 혹은 기타 CSS, HTML 파일로 분리하는 기능 등이 있다.
-
-#### Resolve
-
-- 빌드할 때 파일이 어떻게 해석되는지 정의하는 속성
-
-- 특정 Library를 로딩할 때 버전은 어떤 걸로 하고, 파일 경로는 어디로 하는지 등을 지정한다.
-
-#### mode
-
-- webpack에 내장된 최적화를 사용하도록 지시하는 것으로, none / development / production(기본값)이 존재한다.
-
-### Browser Compatibility
-
-## SCSS와 Svg등 자동화 시킬 수 
-
-## webpack을 사용한 스타일 컴파일, svg sprite 자동 생성하는 방법에 대ㅎ
-
-### 참고
-
-- [공식 문서](https://webpack.js.org/)
-
-- [blog](https://jijong.github.io/2016-12-02/webpack/)
-
-- [blog2](https://webclub.tistory.com/635)
-
-- [webpack VS Gulp](https://kdydesign.github.io/2017/07/27/webpack/)
+5. Terminal에서 "npm run build" 명령어로 동작 실행!
