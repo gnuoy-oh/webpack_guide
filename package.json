@@ -1,0 +1,31 @@
+{
+  "name": "webpack_guide",
+  "version": "1.0.0",
+  "description": "## 들어가기 전에",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnuoy-oh/webpack_guide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gnuoy-oh/webpack_guide/issues"
+  },
+  "homepage": "https://github.com/gnuoy-oh/webpack_guide#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.2.2",
+    "file-loader": "^6.0.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^4.3.0"
+  }
+}
