@@ -79,7 +79,7 @@ module.exports = {
 
 - [path 라이브러리 참고](https://nodejs.org/api/path.html)
 
-### Loaders
+### Loader
 
 - 빌드할 때 HTML, CSS, Image 파일 등을 JS로 변환하기 위해 필요한 설정을 정의하는 속성으로 웹펙이 이해하고 처리가 가능한 모듈로 변환시키는 작업
 
@@ -126,6 +126,8 @@ module.exports = {
 ### Plugins
 
 - 빌드하고 나온 결과물에 대해 추가 기능을 제공하는 속성
+
+- 로더가 파일 단위로 처리하는 반면, Plugin은 번들된 결과물을 처리한다.
 
 ~~~
 const path = require('path');
