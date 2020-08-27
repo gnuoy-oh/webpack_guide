@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   el.innerHTML = `
     <h1>1 + 2 = ${sum(1, 2)} </h1>
+    <p>hoho hihi </p>
     <img src="${webpackImage}" alt="webpack" />
   `
 })

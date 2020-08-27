@@ -147,13 +147,25 @@ const {ClearWebpackPlugin} = require('clean-webpack-plugin');
 
 ### mode (module build option)
 
-- webpack에 내장된 최적화를 사용하도록 지시하는 것으로, none / development / production(기본값)이 존재한다.
+- webpack에 내장된 최적화를 사용하도록 지시하는 것으로, none / development / production(기본값)이 존재한다. 
 
-- production: 최적화되어 빌드 되어지는 특징
+- webpack4에서 새롭게 추가된 부분
 
-- development: 빠르게 빌드하는 특징
+- production
 
-- none: 아무 기능 없이 웹팩으로 빌드 (default)
+  - 배포용 
+
+  - 최적화되어 빌드 되어지는 특징 (default)
+
+- development
+
+  - 개발용 
+
+  - 빠르게 빌드하는 특징 (대신 최적화를 하지 않음)
+
+- none
+
+  - 아무 기능 없이 웹팩으로 빌드 
 
 ### 참고
 
