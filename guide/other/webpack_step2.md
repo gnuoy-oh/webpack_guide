@@ -34,7 +34,7 @@ module: {
 
 #### css-loader
 
-- CSS 파일을 찾아 문자열로 정리해준다.
+- CSS 파일 형식을 자바스크립트에서 사용할 수 있도록 변환 / build / bundling / compile을 해준다.
 
 #### style-loader
 
@@ -42,7 +42,7 @@ module: {
 
 #### sass-loader
 
-- 
+- scss 파일 형식을 css로 변환한다.
 
 #### file-loader VS url-loader
 
