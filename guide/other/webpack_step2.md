@@ -107,7 +107,7 @@ module.exports = {
 
 #### mini-css-extract-plugin (MiniCssExtraPlugin)
 
-- JS에 포함된 CSS를 별도의 파일로 추출해줘서, bundle.js에 컴파일된 CSS를 포함시키지 않고 별도의 CSS 파일로 분리해서 하나의 파일로 번들리 해준다.
+- JS에 포함된 CSS를 별도의 파일로 추출해줘서, bundle.js에 컴파일된 CSS를 포함시키지 않고 별도의 CSS 파일로 분리해서 하나의 파일로 번들링 해준다.
 
 - Webpack 4 이전 버전에는 extrac-text-webpack-plugin을 사용했었다!
 
