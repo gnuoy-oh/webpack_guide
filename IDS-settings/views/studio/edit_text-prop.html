@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>보고서-새보고서: 텍스트</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+	<script src="js/html5.js"></script>
+	<script src="js/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="../../assets/lib/spectrum.css">
+  <link rel="stylesheet" type="text/css" href="../../dist-sherman/css/sherman/style.min.css">
+</head>
+
+<body>
+  <!-- 보고서 -->
+  <div class="mu-container">
+    <section>
+      <div class="mu-content content-re data-add report">
+        <div class="mu-panel">
+          <div class="mu-panel-head">
+            <div class="mu-hgroup fl report-title">
+              <h3 class="mu-title report-title-text">보고서</h3>
+              <!-- 수정 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon-img edit-title"></i>
+              </button>
+              <!-- 수정 확인 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon check"></i>
+              </button>
+            </div>
+            <div class="mu-hgroup fr">
+              <button type="button" class="mu-btn mu-btn-default">목록으로</button>
+              <button type="button" class="mu-btn mu-btn-default">보기</button>
+              <button type="buttozn" class="mu-btn mu-btn-primary">저장</button>
+              <button type="button" class="mu-btn mu-btn-secondary">새로저장</button>
+              <button type="button" class="mu-btn mu-btn-default" disabled="disabled">접근 권한</button>
+              <button type="button" class="mu-btn mu-btn-danger">전체삭제</button>
+            </div>
+          </div>
+          <div class="mu-panel-body">
+            <!-- 상단 메뉴바 -->
+            <div class="report-menubar">
+              <div class="mu-selectbox width150">
+                <button class="mu-value">전체</button>
+                <ul class="mu-list">
+                  <li>전체</li>
+                  <li class="active">데이터 시각화</li>
+                  <li>양식</li>
+                  <li>버튼</li>
+                  <li>기타</li>
+                </ul>
+              </div>
+              <ul class="report-menu">
+                <li><i class="mu-icon-img area"></i></li>
+                <li><i class="mu-icon-img map"></i></li>
+                <li class="active"><i class="mu-icon-img text"></i></li>
+                <li><i class="mu-icon-img rectangle"></i></li>
+                <li><i class="mu-icon-img ellipse"></i></li>
+                <li><i class="mu-icon-img date"></i></li>
+                <li><i class="mu-icon-img renew"></i></li>
+                <li><i class="mu-icon-img list"></i></li>
+                <li><i class="mu-icon-img tab"></i></li>
+                <li><i class="mu-icon-img url"></i></li>
+                <li><i class="mu-icon-img image"></i></li>
+                <li><i class="mu-icon-img html"></i></li>
+                <li><i class="mu-icon-img input"></i></li>
+                <li><i class="mu-icon-img combo-box"></i></li>
+                <li><i class="mu-icon-img check-and-radio"></i></li>
+                <li><i class="mu-icon-img datetime"></i></li>
+                <li><i class="mu-icon-img hidden-input"></i></li>
+                <li><i class="mu-icon-img button"></i></li>
+              </ul>
+              <div class="fr">
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">전체변수명보기</span>
+                </button>
+              </div>
+            </div>
+            <!-- //상단 메뉴바 -->
+            <div class="report-cont">
+              <div class="report-canvas">
+                <!-- canvas 영역 -->
+                <div class="canvas" style="width:1920px;height:1080px;">
+                  <div class="box tool text active" style="top:50px;left:50px;width:200px;height:150px;">
+                    <!-- 
+                      각 서체별 text-area요소에 적용될 인라인 스타일
+                      Arial: style="font-family: arial, sans-serif";
+                      Courier: style="font-family: "Courier New", Courier, monospace";
+                      Georgia: style="font-family: Georgia, serif";
+                      Noto Sans: style="font-family: notokr";
+                      Times New Roman: style="font-family: "Times New Roman", Times, serif";
+                      Verdana: style="font-family: Verdana, Geneva, sans-serif";
+                      돋움 {style="font-family: dotum, '돋움', sans-serif;}
+                      굴림 {style="font-family: gulim, '굴림', sans-serif;}
+                      맑은고딕  {style="font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;}
+                      바탕  {style="font-family: batang, '바탕', serif;}
+                      산돌고딕 네오 {style="font-family: 'Apple SD Gothic Neo', '애플 SD 산돌고딕 Neo', -apple-system, 'Malgun Gothic', sans-serif;}
+                      나눔고딕 {style="font-family: 'Nanum Gothic','나눔고딕', sans-serif}
+                    -->
+                    <div class="text-area" style="width:100%;height:100%;font-family: notokr;">
+                      텍스트 콤포넌트 기능 강화 추가
+                    </div>
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+
+                </div>
+                <!-- //canvas 영역 -->
+              </div>
+              <div class="report-panel">
+                <ul class="mu-tab">
+                  <li><a href="">데이터</a></li>
+                  <li class="active"><a href="">속성</a></li>
+                  <li><a href="">객체</a></li>
+                </ul>
+                <!-- 서식 지우기 버튼 -->
+                <div class="report-panel-tab-btn">
+                  <button class="mu-btn mu-btn-link">
+                    <div class="mu-btn-link-box">서식 지우기</div>
+                  </button>
+                </div>
+                <!-- // 서식 지우기 버튼 -->
+                <!-- 텍스트 설정 - 속성 -->
+                <div class="mu-tab-body">
+                  <div class="mu-tabCont">
+                    <div class="mu-panel text-style mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">글꼴</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="90">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>서체</th>
+                              <td>
+                                <!-- font-familly-selectbox -->
+                                <div class="mu-selectbox">
+                                  <button class="mu-value ellipsis-end">Noto Sans</button>
+                                  <ul class="mu-list">
+                                    <li>Arial</li>
+                                    <li>Courier</li>
+                                    <li>Georgia</li>
+                                    <li class="active">Noto Sans</li>
+                                    <li>Times New Roman</li>
+                                    <li>Verdana</li>
+                                    <li>돋움</li>
+                                    <li>굴림</li>
+                                    <li>맑은 고딕</li>
+                                    <li>바탕</li>
+                                    <li>산돌고딕 네오</li>
+                                    <li>나눔고딕</li>
+                                  </ul>
+                                </div>
+                                <!-- //font-familly-selectbox -->
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>색상</th>
+                              <td>
+                                <div class="mu-item-group">
+                                  <!-- color-picker -->
+                                  <div class="sp-replacer sp-light">
+                                    <div class="sp-preview">
+                                      <div class="sp-preview-inner" style="background-color: rgb(255, 255, 255);"></div>
+                                    </div>
+                                    <div class="sp-dd">▼</div>
+                                  </div>
+                                  <!-- //color-picker -->
+                                  <input class="mu-input" value="#ffffff">
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>크기</th>
+                              <td>
+                                <!-- font-size -->
+                                <div class="mu-selectbox">
+                                  <button class="mu-value">24</button>
+                                  <ul class="mu-list">
+                                    <li>12</li>
+                                    <li class="active">24</li>
+                                    <li>36</li>
+                                  </ul>
+                                </div>
+                                <!-- //font-size -->
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>스타일</th>
+                              <td>
+                                <div class="mu-item-group full-width full-width-4">
+                                  <!-- bold -->
+                                  <button type="button" class="mu-btn mu-btn-default full-width-item"><i
+                                      class="mu-icon bold"></i></button>
+                                  <!-- //bold -->
+                                  <!-- underline -->
+                                  <button type="button" class="mu-btn mu-btn-default full-width-item active"><i
+                                      class="mu-icon underline"></i></button>
+                                  <!-- //underline -->
+                                  <!-- italic -->
+                                  <button type="button" class="mu-btn mu-btn-default full-width-item"><i
+                                      class="mu-icon italic"></i></button>
+                                  <!-- //italic -->
+                                  <!-- strickthrough -->
+                                  <button type="button" class="mu-btn mu-btn-default full-width-item"><i
+                                      class="mu-icon strickthrough"></i></button>
+                                  <!-- //strickthrough -->
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel text-align mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">정렬</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="90">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>가로 정렬</th>
+                              <td>
+                                <div class="mu-item-group">
+                                  <div class="mu-btn-group full-width full-width-4">
+                                    <button class="mu-btn full-width-item"><i class="mu-icon align-left"></i></button>
+                                    <button class="mu-btn full-width-item active"><i
+                                        class="mu-icon align-center"></i></button>
+                                    <button class="mu-btn full-width-item"><i class="mu-icon align-right"></i></button>
+                                    <button class="mu-btn full-width-item"><i
+                                        class="mu-icon align-justify"></i></button>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>세로 정렬</th>
+                              <td>
+                                <div class="mu-item-group">
+                                  <div class="mu-btn-group full-width full-width-3">
+                                    <button class="mu-btn full-width-item"><i
+                                        class="mu-icon-img align-top"></i></button>
+                                    <button class="mu-btn full-width-item active"><i
+                                        class="mu-icon-img align-middle"></i></button>
+                                    <button class="mu-btn full-width-item"><i
+                                        class="mu-icon-img align-bottom"></i></button>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>텍스트 정렬</th>
+                              <td>
+                                <div class="mu-item-group">
+                                  <div class="mu-btn-group full-width full-width-2">
+                                    <button class="mu-btn full-width-item"><i
+                                        class="mu-icon-img text-left-to-right"></i></button>
+                                    <button class="mu-btn full-width-item active"><i
+                                        class="mu-icon-img text-top-to-down"></i></button>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel text-style mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">마우스 오버(링크 설정 시)</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="90">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>색상</th>
+                              <td>
+                                <div class="mu-item-group">
+                                  <!-- color-picker -->
+                                  <div class="sp-replacer sp-light">
+                                    <div class="sp-preview">
+                                      <div class="sp-preview-inner" style="background-color: rgb(255, 255, 255);"></div>
+                                    </div>
+                                    <div class="sp-dd">▼</div>
+                                  </div>
+                                  <!-- //color-picker -->
+                                  <input class="mu-input" value="#ffffff">
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>크기</th>
+                              <td>
+                                <!-- font-size -->
+                                <div class="mu-selectbox">
+                                  <button class="mu-value">24</button>
+                                  <ul class="mu-list">
+                                    <li>12</li>
+                                    <li class="active">24</li>
+                                    <li>36</li>
+                                  </ul>
+                                </div>
+                                <!-- //font-size -->
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>스타일</th>
+                              <td>
+                                <div class="mu-item-group full-width full-width-4">
+                                  <!-- bold -->
+                                  <button type="button" class="mu-btn mu-btn-default full-width-item"><i
+                                      class="mu-icon bold"></i></button>
+                                  <!-- //bold -->
+                                  <!-- underline -->
+                                  <button type="button" class="mu-btn mu-btn-default full-width-item active"><i
+                                      class="mu-icon underline"></i></button>
+                                  <!-- //underline -->
+                                  <!-- italic -->
+                                  <button type="button" class="mu-btn mu-btn-default full-width-item"><i
+                                      class="mu-icon italic"></i></button>
+                                  <!-- //italic -->
+                                  <!-- strickthrough -->
+                                  <button type="button" class="mu-btn mu-btn-default full-width-item"><i
+                                      class="mu-icon strickthrough"></i></button>
+                                  <!-- //strickthrough -->
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">언어설정</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-item-group">
+                          <button type="button" class="mu-btn mu-btn-default ng-scope mu-btn-primary">ko</button>
+                          <button type="button" class="mu-btn mu-btn-default ng-scope">en</button>
+                          <button type="button" class="mu-btn mu-btn-default ng-scope">zh</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <link href="js/jquery-ui.css" rel="stylesheet">
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="../../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

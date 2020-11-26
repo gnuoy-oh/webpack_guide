@@ -1,0 +1,32 @@
+/* 2018-02-26 ADD error-page */
+.error-page {
+  height: 100%;
+  background: #eee;
+}
+.error-page .mu-boxWrap {
+  border-spacing: 0;
+}
+.error-page .mu-boxWrap .mu-boxCell {
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+}
+.error-page .error-img {
+  width: 320px;
+  height: 170px;
+  background: url("#{$img-path}/error/img-error.png") no-repeat 0 0;
+  margin: 0 auto 40px;
+}
+.error-page .error-num {
+  font-size: 60px;
+  font-weight: 700;
+  color: $text-01;
+}
+.error-page .error-msg {
+  font-size: 24px;
+  font-weight: 500;
+  color: #75767a;
+}
+.error-page .error-detail {
+  display: none;
+}

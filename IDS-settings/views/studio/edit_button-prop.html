@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>보고서-새보고서 Button(Prop)</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+	<script src="js/html5.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+  <link rel="stylesheet" type="text/css" href="../../dist-sherman/css/sherman/style.min.css">
+</head>
+
+<body>
+  <!-- 보고서 -->
+  <div class="mu-container">
+    <section>
+      <div class="mu-content content-re data-add report">
+        <div class="mu-panel">
+          <div class="mu-panel-head">
+            <div class="mu-hgroup fl report-title">
+              <h3 class="mu-title report-title-text">보고서</h3>
+              <!-- 수정 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon-img edit-title"></i>
+              </button>
+              <!-- 수정 확인 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon check"></i>
+              </button>
+            </div>
+            <div class="mu-hgroup fr">
+              <button type="button" class="mu-btn mu-btn-default">목록으로</button>
+              <button type="button" class="mu-btn mu-btn-default">보기</button>
+              <button type="button" class="mu-btn mu-btn-primary">저장</button>
+              <button type="button" class="mu-btn mu-btn-secondary">새로저장</button>
+              <button type="button" class="mu-btn mu-btn-default" disabled="disabled">접근 권한</button>
+              <button type="button" class="mu-btn mu-btn-danger">전체삭제</button>
+            </div>
+          </div>
+          <div class="mu-panel-body">
+            <!-- 상단 메뉴바 -->
+            <div class="report-menubar">
+              <div class="mu-selectbox width150">
+                <button class="mu-value">전체</button>
+                <ul class="mu-list">
+                  <li>전체</li>
+                  <li class="active">데이터 시각화</li>
+                  <li>양식</li>
+                  <li>버튼</li>
+                  <li>기타</li>
+                </ul>
+              </div>
+              <ul class="report-menu">
+                <li><i class="mu-icon-img area"></i></li>
+                <li><i class="mu-icon-img map"></i></li>
+                <li><i class="mu-icon-img text"></i></li>
+                <li><i class="mu-icon-img rectangle"></i></li>
+                <li><i class="mu-icon-img ellipse"></i></li>
+                <li><i class="mu-icon-img date"></i></li>
+                <li><i class="mu-icon-img renew"></i></li>
+                <li><i class="mu-icon-img list"></i></li>
+                <li><i class="mu-icon-img tab"></i></li>
+                <li><i class="mu-icon-img url"></i></li>
+                <li><i class="mu-icon-img image"></i></li>
+                <li><i class="mu-icon-img html"></i></li>
+                <li><i class="mu-icon-img input"></i></li>
+                <li><i class="mu-icon-img combo-box"></i></li>
+                <li><i class="mu-icon-img check-and-radio"></i></li>
+                <li><i class="mu-icon-img datetime"></i></li>
+                <li><i class="mu-icon-img hidden-input"></i></li>
+                <li class="active"><i class="mu-icon-img button"></i></li>
+              </ul>
+              <div class="fr">
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">전체변수명보기</span>
+                </button>
+              </div>
+            </div>
+            <!-- //상단 메뉴바 -->
+            <div class="report-cont">
+              <div class="report-canvas">
+                <!-- canvas 영역 -->
+                <div class="canvas" style="width:1920px;height:1080px;">
+                  <div class="box tool button" style="top:50px;left:50px;width:200px;height:50px;">
+                    <button class="mu-btn mu-btn-primary" type="button">
+                      mu-btn-primary
+                    </button>
+                  </div>
+
+                  <!-- 박스 클릭 시 사이즈 조절 박스 활성화 -->
+                  <div class="box tool button active" style="top:50px;left:300px;width:200px;height:50px;">
+                    <button class="mu-btn mu-btn-primary" type="button">
+                      mu-btn-primary
+                    </button>
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                  <!-- // 박스 클릭 시 사이즈 조절 박스 활성화 -->
+
+                  <!-- 대상으로 설정 가능한 상태 -->
+                  <span style="position:absolute;top:120px;left:50px;">대상으로 설정 가능한 상태 <span
+                      class="highlight">.deselect</span></span>
+                  <div class="box tool button deselect" style="top:140px;left:50px;width:200px;height:30px;">
+                    <button class="mu-btn mu-btn-primary" type="button">
+                      button 01
+                    </button>
+                    <div class="mu-checkbox">
+                      <input type="checkbox" id="button01_ckb">
+                      <label for="button01_ckb"></label>
+                    </div>
+                  </div>
+                  <!-- //대상으로 설정 가능한 상태 -->
+
+                  <!-- 대상으로 설정된 상태 -->
+                  <span style="position:absolute;top:120px;left:300px;">대상으로 설정된 상태 <span
+                      class="highlight">.select</span></span>
+                  <div class="box tool button select" style="top:140px;left:300px;width:200px;height:30px;">
+                    <button class="mu-btn mu-btn-primary" type="button">
+                      button 02
+                    </button>
+                    <div class="mu-checkbox">
+                      <input type="checkbox" id="button02_ckb" checked>
+                      <label for="button02_ckb"></label>
+                    </div>
+                  </div>
+                  <!-- //대상으로 설정된 상태 -->
+
+                  <!-- 객체 최소 사이즈 (30x30) -->
+                  <span style="position:absolute;top:30px;left:550px;">객체 최소 사이즈 (30x30)</span>
+                  <div class="box tool button" style="top:50px;left:550px;width:30px;height:30px;">
+                    <button class="mu-btn mu-btn-primary" type="button">
+                      button 02
+                    </button>
+                  </div>
+                  <!-- //객체 최소 사이즈 (30x30) -->
+
+                  <!-- button 내부 text-algin option-->
+
+                  <span style="position:absolute;top:125px;left:650px;">Button 내부 텍스트 align-option</span>
+
+                  <div class="box tool button" style="width: 300px; height: 50px; transform: translate(650px, 150px);">
+                    <button type="button" class="mu-btn mu-btn-primary">
+                      <p class="btn-p" style="top: 0; left: 0; width: 100%; text-align: left;">
+                        mu-btn-text-align-top-left</p>
+                    </button>
+                  </div>
+
+                  <div class="box tool button" style="width: 300px; height: 50px; transform: translate(650px, 220px);">
+                    <button type="button" class="mu-btn mu-btn-primary">
+                      <p class="btn-p"
+                        style="top: 50%; left: 50%; transform: translate(-50%,-50%); width: 100%; text-align: center;">
+                        mu-btn-text-align-center</p>
+                    </button>
+                  </div>
+
+                  <div class="box tool button" style="width: 300px; height: 50px; transform: translate(650px, 290px);">
+                    <button type="button" class="mu-btn mu-btn-primary">
+                      <p class="btn-p"
+                        style="top: 100%; left: 100%; transform: translate(-100%,-100%); width: 100%; text-align: right;">
+                        mu-btn-text-align-bottom-right</p>
+                    </button>
+                  </div>
+
+                  <div class="box tool button" style="width: 80px; height: 220px; transform: translate(650px, 360px);">
+                    <button type="button" class="mu-btn mu-btn-primary">
+                      <p class="btn-p"
+                        style="top: 0; left: 0; writing-mode:vertical-lr; height: 100%; text-align: left;">
+                        mu-btn-text-align-vertical-lr</p>
+                    </button>
+                  </div>
+
+                  <div class="box tool button" style="width: 80px; height: 220px; transform: translate(755px, 360px);">
+                    <button type="button" class="mu-btn mu-btn-primary">
+                      <p class="btn-p"
+                        style="top: 50%; left: 50%; transform: translate(-50%,-50%); writing-mode:vertical-lr; height: 100%; text-align: center;">
+                        mu-btn-text-align-vertical-lr</p>
+                    </button>
+                  </div>
+
+                  <div class="box tool button" style="width: 80px; height: 220px; transform: translate(860px, 360px);">
+                    <button type="button" class="mu-btn mu-btn-primary">
+                      <p class="btn-p"
+                        style="top: 100%; left: 100%; transform: translate(-100%,-100%); writing-mode:vertical-lr; height: 100%; text-align: right;">
+                        mu-btn-text-align-vertical-lr</p>
+                    </button>
+                  </div>
+
+                  <!-- button 내부 text-overflow-->
+                  <div class="box tool button" style="width: 140px; height: 70px; transform: translate(650px, 600px);">
+                    <button type="button" class="mu-btn mu-btn-primary">
+                      <p class="btn-p" style="top: 0; left: 0; width: 100%; text-align: left;">
+                        mu-btn-text-overflow-ellipsis</p>
+                    </button>
+                  </div>
+
+                  <div class="box tool button" style="width: 140px; height: 70px; transform: translate(800px, 600px);">
+                    <button type="button" class="mu-btn mu-btn-primary">
+                      <p class="btn-p"
+                        style="top: 50%; left: 50%; transform: translate(-50%,-50%); height: 100%; writing-mode:vertical-lr; text-align: center;">
+                        mu-btn-text-overflow</p>
+                    </button>
+                  </div>
+                  <!-- //button 내부 text-overflow-->
+                  <!-- //button 내부 text-algin option-->
+
+                </div>
+                <!-- //canvas 영역 -->
+              </div>
+              <!-- 우측 패널 -->
+              <div class="report-panel">
+                <ul class="mu-tab">
+                  <li class="active"><a>속성</a></li>
+                  <li><a>객체</a></li>
+                </ul>
+                <!-- 속성 -->
+                <div class="mu-tab-body">
+                  <div class="mu-tabCont">
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">이벤트 값 전달 설정</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="90">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>오브젝트 ID</th>
+                              <td>
+                                Object ID
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">버튼 문구 입력</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <input type="text" class="mu-input" placeholder="버튼 문구를 입력하세요">
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">링크 설정</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <ul class="icon-btn-group two-item">
+                          <li class="icon-btn-item active">
+                            <button type="button" class="mu-btn">
+                              <i class="mu-icon link"></i>
+                              <span class="btn-item-text">하이퍼링크</span>
+                            </button>
+                          </li>
+                          <li class="icon-btn-item ">
+                            <button type="button" class="mu-btn">
+                              <i class="iriscon new-window"></i>
+                              <span class="btn-item-text">윈도우 팝업</span>
+                            </button>
+                          </li>
+                        </ul>
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="90">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>
+                                주소
+                              </th>
+                              <td>
+                                <input type="text" class="mu-input" placeholder="하이퍼링크를 입력하세요.">
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>
+                                타겟
+                              </th>
+                              <td>
+                                <div class="mu-selectbox">
+                                  <button class="mu-value" title="blank">blank</button>
+                                  <ul class="mu-list">
+                                    <li title="self">self</li>
+                                    <li title="blank" class="active">blank</li>
+                                  </ul>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>
+                                주소
+                              </th>
+                              <td>
+                                <input type="text" class="mu-input" placeholder="팝업 URL을 입력하세요.">
+                              </td>
+                            </tr>
+                            <tr class="ng-hide">
+                              <th>
+                                가로크기
+                              </th>
+                              <td>
+                                <div class="mui-input-number">
+                                  <input type="number" class="mui-input-number-input" step="1" value="">
+                                </div>
+                                px
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>
+                                세로크기
+                              </th>
+                              <td>
+                                <div class="mui-input-number">
+                                  <input type="number" class="mui-input-number-input" step="1" value="">
+                                </div>
+                                px
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">트리거 설정 확인</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-grid mu-grid-border mu-grid-strip">
+                          <colgroup>
+                            <col width="100">
+                            <col>
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th>이벤트</th>
+                              <th>적용 오브젝트 ID</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="tl">더블 클릭</td>
+                              <td class="tl">Chart 01</td>
+                            </tr>
+                            <tr>
+                              <td class="tl">클릭</td>
+                              <td class="tl">button02</td>
+                            </tr>
+                            <tr>
+                              <td class="tl">이벤트 설정 정보</td>
+                              <td class="tl">button03</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- 데이터 없음 -->
+                        <table class="mu-grid mu-grid-border mu-grid-strip">
+                          <colgroup>
+                            <col width="100">
+                            <col>
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th>이벤트</th>
+                              <th>적용 오브젝트 ID</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td colspan="2">
+                                <div class="mui-message info">
+                                  <i class="mu-icon info"></i><span class="mui-message-text">데이터가 없습니다</span>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // 데이터 없음 -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //속성 -->
+                <div class="bx-btn-play">
+                  <button type="button" class="mu-btn btn-play"><i class="mu-icon-img play2"></i>실행</button>
+                  <!--<button type="button" class="mu-btn btn-play"><i class="mu-icon-img stop3"></i>중지</button>-->
+                </div>
+              </div>
+              <!-- //우측 패널 -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <link href="js/jquery-ui.css" rel="stylesheet">
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="../../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

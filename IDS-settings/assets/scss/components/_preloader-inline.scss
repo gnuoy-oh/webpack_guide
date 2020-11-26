@@ -1,0 +1,17 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("preloader-inline") {
+  .mui-preloader-inline {
+    display: inline-block;
+  }
+  .mui-preloader-inline-text {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

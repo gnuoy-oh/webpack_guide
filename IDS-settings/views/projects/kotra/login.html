@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../../../dist-brick/css/brick/style.min.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="loginWrap">
+        <img
+          src="../../../dist-brick/images/login/logo_company.png"
+          alt="모비젠"
+          class="logo"
+        />
+        <div class="formWrap">
+          <!-- NOTE: 템플릿에서 주석 처리하는게 아닌 CSS의 display 속성으로 제어 -->
+          <div class="formReflect"></div>
+          <div class="formBox">
+            <form id="loginForm">
+              <img
+                src="../../../dist-brick/images/login/logo_solution.png"
+                alt=""
+                class="solution-logo"
+              />
+              <h3>
+                <span class="strong-text"
+                  >A New Experience in Big Data Analytics</span
+                >
+                <span>IRIS Big Data Platform</span>
+              </h3>
+              <div class="mui-noti mui-noti-warning">
+                <i class="mu-icon exclamation mui-noti-icon"></i>
+                <p class="mui-noti-text">
+                  <span class="mui-noti-title mui-noti-title-block">
+                    원할한 서비스 이용을 위해서 <br />크롬브라우저로 접속하시기
+                    바랍니다.
+                  </span>
+                  할당받은 대표 계정으로 로그인해주세요. <br />※ 계정발급 문의:
+                  빅데이터팀
+                </p>
+              </div>
+              <div class="mu-vgroup">
+                <div class="mu-input-icon-wrap">
+                  <div class="mu-input-icon">
+                    <input
+                      type="text"
+                      id="userID"
+                      name="userID"
+                      maxlength="20"
+                      class="mu-input"
+                      placeholder="아이디"
+                    /><i class="mu-icon user"></i>
+                  </div>
+                </div>
+                <div class="mu-input-icon-wrap">
+                  <div class="mu-input-icon">
+                    <input
+                      type="text"
+                      id="userID"
+                      class="mu-input"
+                      placeholder="비밀번호"
+                    /><i class="mu-icon lock"></i>
+                  </div>
+                </div>
+                <div class="loginOption">
+                  <div id="id-checkbox" class="mu-checkbox">
+                    <input type="checkbox" id="idSave" />
+                    <label for="idSave">ID 저장하기</label>
+                  </div>
+                  <div class="mui-select-second-wrap locale-selector">
+                    <i class="mu-icon globe"></i>
+                    <div class="mui-select-second">
+                      <select name="" id="" class="mui-select-second-input">
+                        <option value="ko" class="mui-select-second-option"
+                          >대한민국</option
+                        >
+                        <option value="en" class="mui-select-second-option"
+                          >English</option
+                        >
+                      </select>
+                      <i class="mu-icon dropdown"></i>
+                    </div>
+                  </div>
+                </div>
+                <button class="mu-btn mu-btn-primary btn-lg">로그인</button>
+                <button class="mu-btn mu-btn-link">
+                  <span class="mu-btn-link-box">회원가입</span>
+                </button>
+              </div>
+            </form>
+          </div>
+          <!-- NOTE: 템플릿에서 주석 처리하는게 아닌 CSS의 display 속성으로 제어 -->
+          <div class="solution-symbol"></div>
+        </div>
+        <footer>
+          <p class="copyright">
+            Coppyright <i class="fa fa-copyright"></i>2019 Mobigen. All rights
+            reserved.
+          </p>
+        </footer>
+      </div>
+    </div>
+    <script src="../../../dist-brick/js/brick.bundle.js"></script>
+  </body>
+</html>

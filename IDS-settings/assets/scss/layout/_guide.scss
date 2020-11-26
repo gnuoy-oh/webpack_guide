@@ -1,0 +1,90 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column; // justify-content: space-between;
+  flex: 0 1 12.5rem;
+  background-color: $ui-01;
+  height: 100%;
+  width: 12.5rem;
+  position: fixed;
+  border-right: 2px solid $border;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 100%;
+  position: relative;
+  margin-left: 12.5rem;
+}
+
+.main-content {
+  padding-bottom: 7rem;
+  min-height: 100vh;
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: $gray-10;
+  padding: 1.5rem 5%;
+}
+
+// side nvigation bar
+.main-nave-item__heading {
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+}
+
+.main-nave-item {
+  margin-top: 0.5rem;
+}
+
+.side-nav__top-container {
+  padding-top: $layout-md;
+  display: flex;
+  justify-content: center;
+}
+
+.side-nav__logo {
+  margin: 1rem 0;
+  text-transform: capitalize;
+}
+
+.side-nav__main-nav {
+  width: 100%;
+  text-transform: capitalize;
+}
+
+.sub-nav__item {
+  text-transform: capitalize;
+  padding: 0.45rem 0.5rem 0.45rem 1rem;
+  font-size: 0.875rem;
+}
+
+// main -contets area
+.main-content {
+  width: 100%;
+}
+
+// content - article area
+.page-header {
+  margin-bottom: 1rem;
+}
+.page {
+  margin: 6rem;
+}

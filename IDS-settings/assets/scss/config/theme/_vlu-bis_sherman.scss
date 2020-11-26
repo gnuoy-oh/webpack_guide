@@ -1,0 +1,21 @@
+// NOTE: 보고서 타이틀 제거 임시 처리
+.report.report-preview > .mu-panel > .mu-panel-head {
+  display: none;
+}
+
+.report.report-preview > .mu-panel > .mu-panel-body {
+  height: 100%;
+}
+
+// NOTE: 보고서 area객체 테두리 제거
+.report .tool.area {
+  border: 0;
+}
+
+.report .tool .grid-chart {
+  padding: 0;
+}
+
+.grid-chart-filter-wrap {
+  padding-top: 12px;
+}

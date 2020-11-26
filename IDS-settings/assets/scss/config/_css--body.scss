@@ -1,0 +1,23 @@
+@import 'colors';
+@import 'vars';
+// @import 'mixins';
+@import 'typography';
+@import '../utils/css--reset';
+@import '../utils/import-once';
+
+@mixin css-body {
+  body {
+    @include reset;
+    @include font-family;
+    @include font-size('12');
+    color: $text-01;
+    background-color: $ui-01;
+    line-height: 1;
+  }
+}
+
+@include exports('css--body') {
+  @if global-variable-exists('css--body') == false or $css--body == true {
+    @include css-body;
+  }
+}

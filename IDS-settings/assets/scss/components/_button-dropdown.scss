@@ -1,0 +1,103 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("button-dropdown") {
+  .mu-btn-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .mu-btn-dropdown .mu-btn {
+    position: relative;
+    color: inherit;
+  }
+
+  .mu-btn-dropdown .mu-btn:after {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    content: "";
+    -webkit-transform: translate3d(0, -50%, 0);
+    -ms-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+    border-radius: 2px;
+  }
+
+  .mu-btn-dropdown .mu-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 4px 0;
+    z-index: 11;
+    font-size: 12px;
+    border: 1px solid $ui-04;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .mu-btn-dropdown.on .mu-btn {
+    color: $text-02;
+  }
+
+  .mu-btn-dropdown.on .mu-list {
+    display: block;
+  }
+
+  .mu-btn-dropdown .mu-list li {
+    color: $text-01;
+    height: 24px;
+    padding-right: 4px;
+    padding-left: 12px;
+  }
+
+  .mu-btn-dropdown .mu-list li:hover {
+    background-color: $hover-ui-accent;
+    color: $nav-10;
+  }
+
+  .mu-btn-dropdown .mu-list li.active {
+    background-color: transparent;
+    color: $nav-10;
+  }
+
+  .mu-btn-dropdown .mu-list li a {
+    display: block;
+    line-height: 24px;
+  }
+
+  .mu-btn-dropdown .mu-list li a:hover {
+    color: $brand-02;
+  }
+
+  .mu-btn-dropdown .mu-list li.active a {
+    color: $brand-02;
+    font-weight: 700;
+  }
+
+  .mu-btn-dropdown .mu-list li.active a:hover {
+    background-color: $hover-ui-accent;
+  }
+
+  .mu-btn-dropdown .mu-list li.disabled {
+    cursor: not-allowed;
+    color: #bbb;
+  }
+
+  // TODO: 위내용과 중복되는것 아닌가?
+  .mu-btn-dropdown .mu-list li.disabled a {
+    cursor: not-allowed;
+    color: #bbb;
+  }
+
+  .mu-btn-dropdown.mu-dropup .mu-list {
+    top: inherit;
+    bottom: 100%;
+  }
+}

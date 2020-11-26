@@ -1,0 +1,92 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("input-number") {
+  .mui-input-number {
+    font-variant: tabular-nums;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    list-style: none;
+    position: relative;
+    padding: 4px 8px;
+    width: 100%;
+    height: 26px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: $text-01;
+    background-color: $ui-01;
+    background-image: none;
+    transition: all 0.25s;
+    padding: 0;
+    display: inline-block;
+    border: 1px solid $ui-04;
+    border-radius: 4px;
+    width: 80px;
+  }
+
+  .mui-input-number-input {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    outline: 0;
+    line-height: 100%;
+    padding: 4px 8px;
+    border: 0;
+    border-radius: 3px;
+    background-color: transparent;
+  }
+
+  .mui-input-number-input[disabled] {
+    cursor: not-allowed;
+    border-color: $ui-04;
+    background-color: $disabled-01;
+    color: $disabled-02;
+  }
+
+  .mui-input-number-input:hover,
+  .mui-input-number-input:active,
+  .mui-input-number-input:focus {
+    border-color: $interactive-01;
+  }
+
+  .mui-input-number-input[readonly],
+  .mui-input-number-input[readonly]:hover,
+  .mui-input-number-input[readonly]:focus {
+    cursor: default;
+    border-color: $ui-04;
+    background-color: $disabled-01;
+    color: $text-01;
+  }
+
+  .mui-input-number-input::placeholder {
+    @include placeholder-colors;
+  }
+
+  .mui-input-number-input::-webkit-input-placeholder {
+    @include placeholder-colors;
+  }
+
+  .mui-input-number-input:-ms-input-placeholder {
+    @include placeholder-colors;
+  }
+
+  .mui-input-number-xs {
+    height: 22px;
+    line-height: 22px;
+  }
+
+  .mui-input-number-sm {
+    height: 26px;
+    line-height: 26px;
+  }
+
+  .mui-input-number-lg {
+    height: 36px;
+    line-height: 36px;
+  }
+}

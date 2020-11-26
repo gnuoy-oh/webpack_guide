@@ -1,0 +1,153 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("search-group") {
+  .mu-search-group {
+    display: block;
+    width: 100%;
+    background-color: #eee;
+    height: 37px;
+    border-bottom: 1px solid $ui-04;
+  }
+  .mu-search-group:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: "";
+  }
+
+  .mu-search-group .mu-search-item {
+    float: left;
+    padding: 6px 10px 5px 16px;
+  }
+  .mu-search-group label,
+  .mu-search-group .mu-item-group label {
+    color: $text-02;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  .mu-search-group .mu-item-group .mu-hgroup > * + * {
+    margin-left: 10px;
+  }
+  .mu-search-group .mu-title-bar {
+    margin-right: 5px;
+    padding-right: 5px;
+    border-right: 1px solid #f0f0f0;
+  }
+  .mu-search-group .mu-search-btn {
+    float: right;
+    height: 100%;
+    padding: 6px 10px 5px;
+    vertical-align: middle;
+  }
+  .mu-search-group .mu-search-btn .mu-btn-primary {
+    min-width: 60px;
+  }
+  .mu-search-group .mu-search-btn .mu-btn + .mu-btn {
+    margin-left: 4px;
+  }
+
+  .mu-search-item > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .mu-search-item > * + * {
+    margin-left: 20px;
+  }
+  .mu-search-item > label,
+  .mu-search-item > label + * {
+    margin-left: 12px;
+  }
+
+  .mu-more-item {
+    display: table;
+    width: 100%;
+  }
+  .mu-more-item .mu-search-item,
+  .mu-more-item .mu-search-btn {
+    display: table-cell;
+    float: none;
+  }
+  .mu-more-item .mu-search-item {
+    width: 100%;
+    text-align: left;
+    font-size: 0;
+  }
+  .mu-more-item .mu-search-btn {
+    height: 100%;
+  }
+  .mu-search-item > table {
+    display: table;
+    width: 100%;
+  }
+  .mu-search-item > table > tbody > tr > td {
+    text-align: left;
+  }
+  .mu-search-item > table > tbody > tr > td,
+  .mu-search-item > table > tbody > tr > th {
+    padding: 5px 5px 5px 0;
+    vertical-align: middle;
+    border: 0;
+  }
+  .mu-search-item > table > tbody > tr > td + th {
+    padding-left: 32px;
+  }
+  .mu-search-item > table > tbody > tr > td > .mu-selectbox,
+  .mu-search-item > table > tbody > tr > td > .mu-selectbox .mu-value {
+    width: 100%;
+  }
+
+  .mu-panel-head.mu-search-group .mu-search-btn {
+    padding: 7px 0;
+    border: none;
+  }
+
+  /* search-item을 한 줄에 100%로 표현하는 클래스
+  TODO: 테이블 형태로 사용하게 되면 필요없음 */
+  .mu-search-item.full-width-item {
+    display: inline-block;
+  }
+  .mu-search-item.full-width-item .mu-item-group {
+    width: 100%;
+  }
+  .mu-search-item.full-width-item .mu-item-group label {
+    width: 10%;
+  }
+  .mu-search-item.full-width-item .mu-item-group .mu-input {
+    width: 90%;
+  }
+
+  /* expanded type */
+  .search-table-filter .mu-search-group-expanded-target {
+    display: none;
+  }
+
+  .search-table-filter.is-expanded .mu-search-group-expanded-target {
+    display: table;
+  }
+
+  .search-table-filter.is-expanded .mu-search-group-expanded-target {
+    position: absolute;
+    top: 36px;
+    z-index: 9;
+    padding: 8px 0;
+    height: auto;
+  }
+
+  .search-table-filter.is-expanded .mu-search-group-expanded-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 4px 12px;
+    width: calc(100% - 24px);
+    height: 1px;
+    background-image: linear-gradient(to right, transparent 50%, $ui-04 50%);
+    background-size: 6px 100%;
+  }
+}

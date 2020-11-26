@@ -1,0 +1,605 @@
+// connectedApp 관제화면
+.mui-tag {
+  height: 22px;
+  line-height: 22px;
+  padding: 0 $spacing-xs;
+  margin: $spacing-3xs $spacing-2xs;
+}
+
+.#{$prefix}-tag-secondary {
+  color: $text-01;
+}
+
+.#{$prefix}-tag {
+  .mu-checkbox {
+    top: -1px;
+  }
+}
+
+/* 등급별 ag-grid cell 색상 */
+$ag-prefix: "rag";
+
+$level9: rgb(216, 0, 0);
+$level8: rgb(240, 20, 4);
+$level7: rgb(250, 60, 30);
+$level6: rgb(252, 90, 26);
+$level5: rgb(255, 124, 17);
+$level4: rgb(253, 168, 65);
+$level3: rgb(255, 196, 1);
+$level2: rgb(253, 228, 10);
+$level1: rgb(250, 240, 106);
+$level0: rgb(66, 190, 101);
+
+.#{$ag-prefix}-level1 {
+  background-color: $level1;
+}
+
+.#{$ag-prefix}-level2 {
+  background-color: $level2;
+}
+
+.#{$ag-prefix}-level3 {
+  background-color: $level3;
+}
+
+.#{$ag-prefix}-level4 {
+  background-color: $level4;
+}
+
+.#{$ag-prefix}-level5 {
+  background-color: $level5;
+}
+
+.#{$ag-prefix}-level6 {
+  background-color: $level6;
+}
+
+.#{$ag-prefix}-level7 {
+  background-color: $level7;
+}
+
+.#{$ag-prefix}-level8 {
+  background-color: $level8;
+}
+
+.#{$ag-prefix}-level9 {
+  background-color: $level9;
+}
+
+.#{$ag-prefix}-level0 {
+  background-color: $level0;
+}
+
+.mu-grid tbody > tr > td {
+  &.#{$ag-prefix}-level1 {
+    background-color: $level1;
+  }
+
+  &.#{$ag-prefix}-level2 {
+    background-color: $level2;
+  }
+
+  &.#{$ag-prefix}-level3 {
+    background-color: $level3;
+  }
+
+  &.#{$ag-prefix}-level4 {
+    background-color: $level4;
+  }
+
+  &.#{$ag-prefix}-level5 {
+    background-color: $level5;
+  }
+
+  &.#{$ag-prefix}-level6 {
+    background-color: $level6;
+  }
+
+  &.#{$ag-prefix}-level7 {
+    background-color: $level7;
+  }
+
+  &.#{$ag-prefix}-level8 {
+    background-color: $level8;
+  }
+
+  &.#{$ag-prefix}-level9 {
+    background-color: $level9;
+  }
+
+  &.#{$ag-prefix}-level0 {
+    background-color: $level0;
+  }
+}
+
+.search-table-content.has-filter-wrap,
+.search-table-content.has-filter-wrap .search-table-body,
+.search-table-content.has-filter-wrap .mu-col {
+  height: 100%;
+}
+
+.search-table-content.has-filter-wrap .search-table-head + .search-table-body {
+  height: calc(100% - 37px);
+}
+
+.search-table-content.has-filter-wrap .search-table-body .ag-theme-default {
+  height: 100%;
+}
+
+.search-table-content.has-filter-wrap .search-table-toolbar .mu-btn {
+  padding: 0 1rem;
+}
+
+// tree component style override
+.jqx-widget-content {
+  border: 0;
+}
+
+// 팝업 신규 스타일
+.mu-dialog-body {
+  padding: 0;
+}
+
+.mui-form-item:first-child .mui-form-item-label {
+  padding-top: 20px;
+}
+
+.mui-form-item-label {
+  background-color: $ui-01;
+  border-right: 0;
+}
+
+.mui-form-item-label label {
+  font-size: 13px;
+}
+
+.mu-dialog .mui-form-item-label {
+  padding-right: 4px;
+}
+
+.mui-form-item-cont {
+  padding-left: 4px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+// studio에서 작업한 form과 스타일을 맞추기 위한 override
+.mu-input,
+.mu-selectbox,
+.mu-selectbox .mu-value,
+.mu-btn {
+  height: 30px;
+}
+
+.add-del-group .mu-btn {
+  width: 30px;
+}
+
+.mui-form-item.has-dynamic-form {
+  padding: 10px;
+}
+
+.mui-form-item.has-dynamic-form .dynamic-form {
+  width: 100%;
+  background-color: $ui-02;
+  border: 1px solid $ui-04;
+}
+
+.mui-form-item-cont .mu-hgroup {
+  width: 100%;
+}
+
+.mui-form:first-child .mui-form-head {
+  padding-top: 0;
+}
+
+.mui-form-head {
+  padding: 24px 0 12px;
+}
+
+.mui-form + .mui-form {
+  border-top: 1px solid $ui-04;
+}
+
+.#{$prefix}-tab {
+  padding: 12px 0 12px 8px;
+  background-color: $ui-03;
+  border-right: 1px solid $ui-04;
+}
+
+.#{$prefix}-tab-item {
+  padding: 16px 10px;
+  border-left: 1px solid $ui-04;
+  color: $text-02;
+  font-weight: 700;
+  line-height: 1.25;
+  word-break: keep-all;
+  cursor: pointer;
+  user-select: none;
+}
+
+.#{$prefix}-tab-item:hover {
+  background: $ui-02;
+  color: $text-02;
+}
+
+.#{$prefix}-tab-item + .#{$prefix}-tab-item {
+  border-top: 1px solid $ui-04;
+}
+
+.#{$prefix}-tab-item:first-child {
+  border-top: 1px solid $ui-04;
+}
+
+.#{$prefix}-tab-item:last-child {
+  border-bottom: 1px solid $ui-04;
+}
+
+.#{$prefix}-tab-item.is-active {
+  margin-right: -1px;
+  background-color: $ui-01;
+  color: $text-01;
+}
+
+.#{$prefix}-tab-cont {
+  width: 100%;
+  padding: 10px;
+}
+
+.#{$prefix}-tab-cont .mui-form-body {
+  min-height: 200px;
+}
+
+.mu-selectbox.full-width .mu-value {
+  width: 100%;
+}
+
+// search-group override
+.mu-search-item > table > tbody > tr > th {
+  font-weight: 700;
+  font-size: 13px;
+  color: $text-02;
+}
+
+.mu-search-item > table > tbody > tr > td + th {
+  padding-left: 24px;
+}
+
+.mu-search-group {
+  background-color: $ui-01;
+  border-bottom: 0;
+}
+
+.mu-dialog .search-table-content .mu-search-group + .ag-theme-default {
+  margin-top: 10px;
+}
+
+.mu-hgroup.d-flex {
+  display: flex;
+}
+
+.whatch-list-wrap {
+  width: 100%;
+  padding: 10px;
+  background-color: $ui-02;
+}
+
+.whatch-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  background: $ui-01;
+  border: 1px solid $ui-03;
+}
+
+.whatch-list-item {
+  padding: 0 20px;
+  font-weight: 700;
+}
+
+.whatch-list-item + .whatch-list-item {
+  border-left: 1px solid $ui-04;
+}
+
+.range-item-title {
+  white-space: nowrap;
+}
+
+.range-item-wrap {
+  display: inline-flex;
+  flex-wrap: wrap;
+  .range-item {
+    margin-right: $spacing-2xs;
+  }
+}
+
+.range-item-title + .range-item-wrap {
+  margin-left: $spacing-md;
+}
+
+.range-item {
+  display: inline-flex;
+  align-items: center;
+  margin: 0.125rem;
+  background-color: $ui-01;
+}
+
+.range-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 1.6rem;
+  border-radius: 3px 0 0 3px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.range-item-text {
+  width: 6rem;
+  padding: $spacing-2xs $spacing-xs;
+  border: 1px solid $ui-04;
+  border-width: 1px 1px 1px 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.range-item-text-term {
+  @include ellipsis-end(100%);
+  width: 100%;
+  font-weight: 700;
+}
+
+.range-item-text-value {
+  @include ellipsis-end(100%);
+  width: 100%;
+  color: $text-02;
+  font-size: 11px;
+}
+
+.#{$ag-prefix}-level0 .range-item-icon {
+  background-color: $level0;
+  border: 1px solid darken($level0, 20%);
+  color: $white-0;
+}
+
+.#{$ag-prefix}-level1 .range-item-icon {
+  background-color: darken($level1, 10%);
+  border: 1px solid darken($level1, 30%);
+  color: darken($level1, 43%);
+}
+
+.#{$ag-prefix}-level2 .range-item-icon {
+  background-color: $level2;
+  border: 1px solid darken($level2, 20%);
+  color: darken($level2, 30%);
+}
+
+.#{$ag-prefix}-level3 .range-item-icon {
+  background-color: $level3;
+  border: 1px solid darken($level3, 12%);
+  color: darken($level3, 35%);
+}
+
+.#{$ag-prefix}-level4 .range-item-icon {
+  background-color: $level4;
+  border: 1px solid darken($level4, 20%);
+  color: darken($level4, 45%);
+}
+
+.#{$ag-prefix}-level5 .range-item-icon {
+  background-color: $level5;
+  border: 1px solid darken($level4, 25%);
+  color: darken($level4, 45%);
+}
+
+.#{$ag-prefix}-level6 .range-item-icon {
+  background-color: $level6;
+  border: 1px solid darken($level6, 25%);
+  color: darken($level6, 40%);
+}
+
+.#{$ag-prefix}-level7 .range-item-icon {
+  background-color: $level7;
+  border: 1px solid darken($level7, 20%);
+  color: $white-0;
+}
+
+.#{$ag-prefix}-level8 .range-item-icon {
+  background-color: $level8;
+  border: 1px solid darken($level8, 20%);
+  color: $white-0;
+}
+
+.#{$ag-prefix}-level9 .range-item-icon {
+  background-color: $level9;
+  border: 1px solid darken($level9, 15%);
+  color: $white-0;
+}
+
+.#{$ag-prefix}-level9.above .range-item-text {
+  background-color: lighten($level9, 50%);
+  border-color: darken($level9, 15%);
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+// NOTE: 보고서 타이틀 제거 임시 처리
+.report.report-preview > .mu-panel > .mu-panel-head {
+  display: none;
+}
+
+.report.report-preview > .mu-panel > .mu-panel-body {
+  height: 100%;
+}
+
+.alarm-icon {
+  display: inline-block;
+  margin-right: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+@mixin alarm-icon-status($base-color) {
+  background: $base-color;
+  background: radial-gradient(
+    circle,
+    lighten($base-color, 40%) 0%,
+    $base-color 26%,
+    darken($base-color, 10%) 100%
+  );
+  background-size: 200% 200%;
+  background-position: 66% 66%;
+  border: 1px solid darken($base-color, 15%);
+}
+
+@mixin alarm-icon-status-specific($base-color, $border-color) {
+  background: $base-color;
+  background: radial-gradient(
+    circle,
+    lighten($base-color, 40%) 0%,
+    $base-color 26%,
+    darken($base-color, 10%) 100%
+  );
+  background-size: 200% 200%;
+  background-position: 66% 66%;
+  border: 1px solid $border-color;
+}
+
+.alarm-icon_level9 {
+  @include alarm-icon-status($level9);
+}
+
+.alarm-icon_level8 {
+  @include alarm-icon-status($level8);
+}
+
+.alarm-icon_level7 {
+  @include alarm-icon-status($level7);
+}
+
+.alarm-icon_level6 {
+  @include alarm-icon-status($level6);
+}
+
+.alarm-icon_level5 {
+  @include alarm-icon-status($level5);
+}
+
+.alarm-icon_level4 {
+  @include alarm-icon-status-specific($level4, #c16b00);
+}
+
+.alarm-icon_level3 {
+  @include alarm-icon-status($level3);
+}
+
+.alarm-icon_level2 {
+  @include alarm-icon-status-specific($level2, #cbb600);
+}
+
+.alarm-icon_level1 {
+  @include alarm-icon-status-specific($level1, #dbcd0b);
+}
+
+.alarm-icon_level0 {
+  @include alarm-icon-status($level0);
+}
+
+.level9 {
+  background-color: $level9;
+  color: #fff;
+}
+
+.level8 {
+  background-color: $level8;
+  color: #fff;
+}
+
+.level7 {
+  background-color: $level7;
+  color: #fff;
+}
+
+.level6 {
+  background-color: $level6;
+}
+
+.level5 {
+  background-color: $level5;
+}
+
+.level4 {
+  background-color: $level4;
+}
+
+.level3 {
+  background-color: $level3;
+}
+
+.level2 {
+  background-color: $level2;
+}
+
+.level1 {
+  background-color: $level1;
+}
+
+.level0 {
+  background-color: $level0;
+}
+
+.mu-grid tbody > tr > td {
+  &.level9 {
+    background-color: $level9;
+  }
+
+  &.level8 {
+    background-color: $level8;
+  }
+
+  &.level7 {
+    background-color: $level7;
+  }
+
+  &.level6 {
+    background-color: $level6;
+  }
+
+  &.level5 {
+    background-color: $level5;
+  }
+
+  &.level4 {
+    background-color: $level4;
+  }
+
+  &.level3 {
+    background-color: $level3;
+  }
+
+  &.level2 {
+    background-color: $level2;
+  }
+
+  &.level1 {
+    background-color: $level1;
+  }
+
+  &.level0 {
+    background-color: $level0;
+  }
+}

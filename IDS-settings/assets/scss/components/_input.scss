@@ -1,0 +1,176 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("input") {
+  .mu-input {
+    display: block;
+    width: 100%;
+    height: 26px;
+    line-height: 100%;
+    padding: 4px 8px;
+    border: 1px solid $ui-04;
+    border-radius: 3px;
+    background: $ui-01;
+  }
+
+  // chrom에서 자동저장된 input의 배경컬러를 제어
+  // TODO: $ui-01 변수를 사용했으나 form요소(input, selectbox)에 사용되는 배경색상 변수 독립 고려
+  .mu-input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px $ui-01 inset;
+  }
+
+  .mu-input:hover,
+  .content-re textarea:hover {
+    border-color: $interactive-01;
+    outline: 0;
+  }
+
+  .mu-input:active,
+  .mu-input:focus {
+    border-color: $interactive-01;
+    outline: 0;
+  }
+
+  .mu-input[disabled],
+  .mu-input[disabled]:hover,
+  .mu-input[disabled]:focus {
+    cursor: not-allowed;
+    border-color: $ui-04;
+    background-color: $disabled-01;
+    color: $disabled-02;
+  }
+
+  .mu-input[readonly],
+  .mu-input[readonly]:hover,
+  .mu-input[readonly]:focus {
+    cursor: default;
+    border-color: $ui-04;
+    background-color: $disabled-01;
+    color: $text-01;
+  }
+
+  .mu-input[disabled] + i,
+  .mu-input[readonly] + i,
+  .mu-input[disabled] + .mu-icon.search,
+  .mu-input[readonly] + .mu-icon.search,
+  .mu-input[disabled] + .mu-btn.mu-btn-icon,
+  .mu-input[readonly] + .mu-btn.mu-btn-icon {
+    color: $disabled-02;
+    opacity: 0.5;
+  }
+
+  .mu-input::placeholder {
+    @include placeholder-colors;
+  }
+
+  .mu-input::-webkit-input-placeholder {
+    @include placeholder-colors;
+  }
+
+  .mu-input:-ms-input-placeholder {
+    @include placeholder-colors;
+  }
+
+  .mu-input-xs {
+    height: 22px;
+    line-height: 22px;
+  }
+
+  .mu-input-sm {
+    height: 26px;
+    line-height: 26px;
+  }
+
+  .mu-input-lg {
+    height: 36px;
+    line-height: 36px;
+  }
+
+  .mu-input-icon {
+    position: relative;
+  }
+
+  .mu-input-icon i {
+    color: $icon-03;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    margin-top: -7px;
+  }
+
+  .mu-input-icon .mu-input {
+    padding-left: 30px;
+  }
+
+  .mu-input-icon.comm-min-w {
+    min-width: 260px;
+  }
+
+  .mu-input-search {
+    position: relative;
+  }
+
+  .mu-input-search .mu-input {
+    padding-left: 30px;
+    padding-right: 22px;
+  }
+
+  .mu-input-search .mu-icon.search {
+    color: $icon-03;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+  }
+
+  .mu-input-search .mu-btn-icon {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+  }
+
+  .mu-input-search .mu-btn-icon .iriscon.cancel-thin {
+    font-size: 10px;
+  }
+
+  .mu-input.comm-min-w {
+    width: 260px;
+  }
+
+  .mu-input-calendar {
+    display: inline-block;
+  }
+
+  .mu-input-calendar:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: "";
+  }
+
+  .mu-input-calendar .mu-input {
+    float: left;
+    width: 100px;
+  }
+
+  .mu-input-calendar .mu-btn {
+    float: left;
+    margin-left: 3px;
+  }
+
+  // input type이 search인 경우 safari에서 스타일 적용되지 않는 문제 방지
+  input[type="search"] {
+    -webkit-appearance: textfield;
+  }
+
+  input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+}

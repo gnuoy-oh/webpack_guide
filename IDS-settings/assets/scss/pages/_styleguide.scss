@@ -1,0 +1,429 @@
+@import "../utils/helper-mixins";
+@import "../config/typography";
+@import "../utils/import-once";
+
+//--------------------
+// Page layout
+//--------------------
+.wrap {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column; // justify-content: space-between;
+  flex: 0 1 12.5rem;
+  background-color: $ui-01;
+  height: 100%;
+  width: 12.5rem;
+  position: fixed;
+  border-right: 2px solid $ui-04;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 100%;
+  position: relative;
+  margin-left: 12.5rem;
+}
+
+.main-content {
+  padding-bottom: 7rem;
+  min-height: 100vh;
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: $gray-10;
+  padding: 1.5rem 5%;
+}
+
+// side nvigation bar
+.main-nave-item_heading {
+  padding: 0.75rem 1rem;
+  font-weight: 300;
+}
+
+.main-nave-item {
+  margin-top: 0.5rem;
+}
+
+.side-nav_top-container {
+  padding-top: $layout-md;
+  display: flex;
+  justify-content: center;
+}
+
+.side-nav_logo {
+  margin: 1rem 0;
+  text-transform: capitalize;
+}
+
+.side-nav_main-nav {
+  width: 100%;
+  text-transform: capitalize;
+}
+
+.sub-nav_item {
+  text-transform: capitalize;
+  padding: 0.45rem 0.5rem 0.45rem 1rem;
+  font-size: 0.875rem;
+}
+
+// main -contets area
+.main-content {
+  width: 100%;
+}
+
+// content - article area
+.page-header {
+  align-items: flex-start;
+  background-color: $ui-06;
+  border-top: 1px solid darken($ui-06, 15%);
+  border-bottom: 1px solid $interactive-01;
+  display: flex;
+  flex-direction: column;
+  height: 10rem;
+  justify-content: flex-start;
+  padding-bottom: 0;
+  padding-left: 12.5%;
+  padding-right: 12.5%;
+  width: 100%;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    display: block;
+    background-color: $ui-04;
+    position: absolute;
+    top: -48px;
+    left: 0;
+  }
+}
+
+.page-content {
+  margin-bottom: $layout-lg;
+  padding: 4rem 12.5%;
+  width: 100%;
+
+  .page_desc {
+    padding: 0 0 $layout-2xs;
+  }
+
+  .mu-snippet {
+    margin: $spacing-sm 0 $spacing-md;
+  }
+}
+
+.code-example {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.code-example_raw-html {
+  background-color: $ui-01;
+  border: 1px solid $ui-04;
+  height: auto;
+  max-height: 12rem;
+  min-height: 7rem;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: space-between;
+  max-height: 12rem;
+  min-height: 7rem;
+  overflow-y: hidden;
+  padding: 1rem 0 1rem 1rem;
+}
+
+//--------------------
+// Page styles
+//--------------------
+// .page-header {
+//   border-bottom: 1px solid $ui-04;
+// }
+
+.page-header_lable {
+  font-size: 0.875rem;
+  color: #5a6872;
+  font-weight: 400;
+  margin: 2.6rem 0 1rem;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+.page-header_title {
+  @include typescale("alpha");
+  @include letter-spacing;
+  color: $text-01;
+  font-weight: 300;
+  margin: -1.15rem 0 0 -3px;
+  line-height: 1.25;
+  padding: 0;
+}
+
+.page_desc {
+  @include font-smoothing;
+  @include letter-spacing;
+  max-width: 38rem;
+  color: $text-01;
+  word-wrap: break-word;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 600;
+  padding-bottom: 1rem;
+
+  span {
+    color: $interactive-01;
+  }
+}
+
+.md {
+  @include font-size("14");
+  @include line-height("body");
+
+  ul {
+    list-style: disc;
+    padding-left: $spacing-xl;
+  }
+}
+
+.page {
+  &-content h2,
+  &-h2 {
+    position: relative;
+    color: $text-01;
+    font-weight: 300;
+    margin-top: $layout-md;
+    padding: 1rem 0 1.5rem;
+
+    &:before {
+      content: "";
+      width: rem(80px);
+      height: rem(5px);
+      display: block;
+      background-color: $interactive-01;
+      position: absolute;
+      top: -0.5rem;
+      left: 0;
+    }
+  }
+
+  &-content h4,
+  &-h4 {
+    position: relative;
+    color: $text-01;
+    font-size: rem(16px);
+    font-weight: 500;
+    padding: $spacing-lg 0 $spacing-sm;
+  }
+}
+
+.component-variation {
+  margin: 3rem 0 6rem;
+
+  &_name {
+    position: relative;
+    color: $text-01;
+    font-weight: 300;
+    margin-top: 6rem;
+    padding: 1rem 0 1.5rem;
+
+    &:before {
+      content: "";
+      width: rem(80px);
+      height: rem(5px);
+      display: block;
+      background-color: $interactive-01;
+      position: absolute;
+      top: -0.5rem;
+      left: 0;
+    }
+  }
+
+  &_desc {
+    max-width: 45rem;
+    margin: 1rem 0;
+  }
+
+  & + .page_md h3 {
+    padding-top: 0 !important;
+  }
+}
+
+//--------------------
+// Component example Style
+//--------------------
+
+.component-example {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  // color: $white;
+
+  &_live {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: rem(200px);
+    position: relative;
+    padding: 2rem 2rem 2.5rem;
+    margin: 1.5rem 0 0;
+    background-color: $ui-01;
+    color: $text-01;
+    border: 1px solid $cool-gray-30;
+
+    &--rendered {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+  }
+
+  &_view-full-render {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: $text-02;
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    z-index: 9999;
+  }
+}
+
+// -------------------
+// color
+// -------------------
+.wrapped-list {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-left: 0;
+  max-width: 50rem;
+}
+
+.color-card {
+  margin-bottom: 3rem;
+
+  p {
+    padding: 0;
+  }
+
+  .brand-01 {
+    background-color: $interactive-01;
+  }
+
+  .brand-02 {
+    background-color: $brand-02;
+  }
+
+  .brand-03 {
+    background-color: $brand-03;
+  }
+
+  .ui-01 {
+    background-color: $ui-01;
+    border: 1px solid $ui-04;
+  }
+
+  .ui-02 {
+    background-color: $hover-ui-accent;
+  }
+
+  .ui-03 {
+    background-color: $icon-03;
+  }
+
+  .ui-04 {
+    background-color: $text-03;
+  }
+
+  .ui-05 {
+    background-color: $ui-05;
+  }
+
+  .ui-06 {
+    background-color: $ui-06;
+  }
+
+  .field-01 {
+    background-color: $ui-02;
+  }
+
+  .field-02 {
+    background-color: $ui-03;
+  }
+
+  .text-01 {
+    background-color: $text-01;
+  }
+
+  .text-02 {
+    background-color: $text-02;
+  }
+
+  .text-03 {
+    background-color: $disabled-02;
+  }
+
+  .border-01 {
+    background-color: $ui-04;
+  }
+}
+
+.color_example {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: rem(160px);
+  height: 7.5em;
+  transition: transform 250ms;
+  margin-bottom: 1rem;
+}
+
+.component-example_live .mu-btn + .mu-btn {
+  margin-left: 12px;
+}
+
+.component-example_live .handler-box .mu-btn + .mu-btn {
+  margin-left: 0;
+}
+
+// temp style override
+
+.drawer-wrap {
+  position: relative;
+  height: 400px;
+}
+
+// -------------------
+// alert
+// -------------------
+
+.box-area-item {
+  display: inline-block;
+  position: absolute;
+}
+
+.mu-alert {
+  @include clearfix();
+}
+
+// -------------------
+// code example
+// -------------------

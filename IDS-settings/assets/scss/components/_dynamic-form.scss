@@ -1,0 +1,67 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("dynamic-form") {
+  .dynamic-form {
+    position: relative;
+    padding: 10px;
+    max-height: 320px;
+    overflow-y: auto;
+  }
+
+  .dynamic-form-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+  }
+
+  .dynamic-form-item + .dynamic-form-item {
+    border-top: 1px solid #e8e8e8;
+  }
+
+  .dynamic-form-item .handler-box .mu-btn {
+    padding: 0 0.25rem;
+    height: 22px;
+  }
+
+  .dynamic-form-item .handler-box .mu-icon {
+    color: $interactive-01;
+    font-size: 18px;
+    vertical-align: middle;
+  }
+
+  .dynamic-form .mu-item-box {
+    width: 100%;
+  }
+
+  .dynamic-form .handler-box + .mu-item-box {
+    margin-left: 8px;
+  }
+
+  .dynamic-form .handler-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dynamic-form .handler-box .handler-down {
+    margin-top: 4px;
+  }
+
+  .dynamic-form .btn-delete-box {
+    margin-left: 8px;
+  }
+
+  .dynamic-form-footer {
+    padding: 10px;
+    border-top: 1px solid $ui-04;
+  }
+
+  .dynamic-form-footer .mu-btn {
+    width: 100%;
+  }
+}

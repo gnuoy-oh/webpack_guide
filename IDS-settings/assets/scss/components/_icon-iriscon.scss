@@ -1,0 +1,351 @@
+@import "../utils/import-once";
+@import "../config/vars";
+
+// Convenience function used to set content property
+@function iriscon-content($var) {
+  @return unquote('"#{ $var }"');
+}
+
+@include exports("icon-iriscon") {
+  @font-face {
+    font-family: "iriscon";
+    src: url("#{$font-path}/iriscon.eot?36jdr8");
+    src: url("#{$font-path}/iriscon.eot?36jdr8#iefix")
+        format("embedded-opentype"),
+      url("#{$font-path}/iriscon.woff?36jdr8") format("woff"),
+      url("#{$font-path}/iriscon.ttf?36jdr8") format("truetype"),
+      url("#{$font-path}/iriscon.svg?36jdr8#iriscon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  $double-angle-top: \e93c;
+  $double-angle-right: \e93d;
+  $double-angle-bottom: \e93e;
+  $double-angle-left: \e93f;
+  $sync: \e93a;
+  $refresh: \e93b;
+  $trash: \e936;
+  $picture: \e937;
+  $trash-filled: \e938;
+  $edit: \e939;
+  $glob: \e932;
+  $user: \e933;
+  $lock: \e934;
+  $sign-out: \e935;
+  $setting: \e931;
+  $warning: \e915;
+  $warning-filled: \e922;
+  $err: \e923;
+  $err-filled: \e924;
+  $info: \e925;
+  $info-filled: \e926;
+  $help: \e90d;
+  $help-filled: \e927;
+  $check: \e928;
+  $check-filled: \e929;
+  $tune: \e92a;
+  $menu-collapse: \e92b;
+  $menu: \e92c;
+  $dashboard: \e92d;
+  $mega-menu: \e914;
+  $app-switcher: \e90e;
+  $angle-top: \e90f;
+  $angle-right: \e910;
+  $angle-bottom: \e911;
+  $angle-left: \e912;
+  $draggable: \e913;
+  $caret-top: \e916;
+  $caret-right: \e917;
+  $caret-bottom: \e918;
+  $caret-left: \e919;
+  $angle-right-thin: \e91b;
+  $angle-bottom-thin: \e91c;
+  $angle-left-thin: \e91d;
+  $double-angle-top-thin: \e91e;
+  $double-angle-right-thin: \e91f;
+  $double-angle-bottom-thin: \e920;
+  $double-angle-left-thin: \e921;
+  $delete: \e90a;
+  $cancel-thin: \e90b;
+  $add: \e90c;
+  $list-setting: \e900;
+  $data-storage: \e92e;
+  $data-base: \e901;
+  $data-model: \e902;
+  $new-window: \e903;
+  $alarm: \e92f;
+  $alarm-filled: \e930;
+  $alarm-setting: \e904;
+  $alarm-disabled: \e905;
+  $datetime-setting: \e906;
+  $datetime: \e907;
+  $calendar: \e908;
+  $angle-top-thin: \e91a;
+  $clock: \e909;
+
+  .iriscon {
+    font: normal normal normal 16px/1.25 "iriscon";
+    speak: none;
+    text-transform: none;
+    vertical-align: -0.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &.sync::before {
+      content: iriscon-content($sync);
+    }
+
+    &.refresh::before {
+      content: iriscon-content($refresh);
+    }
+
+    &.trash::before {
+      content: iriscon-content($trash);
+    }
+
+    &.trash-filled::before {
+      content: iriscon-content($trash-filled);
+    }
+
+    &.picture::before {
+      content: iriscon-content($picture);
+    }
+
+    &.edit::before {
+      content: iriscon-content($edit);
+    }
+
+    &.glob::before {
+      content: iriscon-content($glob);
+    }
+
+    &.user::before {
+      content: iriscon-content($user);
+    }
+
+    &.lock::before {
+      content: iriscon-content($lock);
+    }
+
+    &.sign-out::before {
+      content: iriscon-content($sign-out);
+    }
+
+    &.setting::before {
+      content: iriscon-content($warning);
+    }
+
+    &.warning::before {
+      content: iriscon-content($warning);
+    }
+
+    &.warning-filled::before {
+      content: iriscon-content($warning-filled);
+    }
+
+    &.err::before {
+      content: iriscon-content($err);
+    }
+
+    &.err-filled::before {
+      content: iriscon-content($err-filled);
+    }
+
+    &.info::before {
+      content: iriscon-content($info);
+    }
+
+    &.info-filled::before {
+      content: iriscon-content($info-filled);
+    }
+
+    &.help::before {
+      content: iriscon-content($help);
+    }
+
+    &.help-filled::before {
+      content: iriscon-content($help-filled);
+    }
+
+    &.check::before {
+      content: iriscon-content($check);
+    }
+
+    &.check-filled::before {
+      content: iriscon-content($check-filled);
+    }
+
+    &.tune::before {
+      content: iriscon-content($tune);
+    }
+
+    &.menu-collapse::before {
+      content: iriscon-content($menu-collapse);
+    }
+
+    &.menu::before {
+      content: iriscon-content($menu);
+    }
+
+    &.dashboard::before {
+      content: iriscon-content($dashboard);
+    }
+
+    &.mega-menu::before {
+      content: iriscon-content($mega-menu);
+    }
+
+    &.app-switcher::before {
+      content: iriscon-content($app-switcher);
+    }
+
+    &.angle-top::before {
+      content: iriscon-content($angle-top);
+    }
+
+    &.angle-right::before {
+      content: iriscon-content($angle-right);
+    }
+
+    &.angle-bottom::before {
+      content: iriscon-content($angle-bottom);
+    }
+
+    &.angle-left::before {
+      content: iriscon-content($angle-left);
+    }
+
+    &.double-angle-top::before {
+      content: iriscon-content($double-angle-top);
+    }
+
+    &.double-angle-right::before {
+      content: iriscon-content($double-angle-right);
+    }
+
+    &.double-angle-bottom::before {
+      content: iriscon-content($double-angle-bottom);
+    }
+
+    &.double-angle-left::before {
+      content: iriscon-content($double-angle-left);
+    }
+
+    &.draggable::before {
+      content: iriscon-content($draggable);
+    }
+
+    &.caret-top::before {
+      content: iriscon-content($caret-top);
+    }
+
+    &.caret-right::before {
+      content: iriscon-content($caret-right);
+    }
+
+    &.caret-bottom::before {
+      content: iriscon-content($caret-bottom);
+    }
+
+    &.caret-left::before {
+      content: iriscon-content($caret-left);
+    }
+
+    &.angle-top-thin::before {
+      content: iriscon-content($angle-top-thin);
+    }
+
+    &.angle-right-thin::before {
+      content: iriscon-content($angle-right-thin);
+    }
+
+    &.angle-bottom-thin::before {
+      content: iriscon-content($angle-bottom-thin);
+    }
+
+    &.angle-left-thin::before {
+      content: iriscon-content($angle-left-thin);
+    }
+
+    &.double-angle-top-thin::before {
+      content: iriscon-content($double-angle-top-thin);
+    }
+
+    &.double-angle-right-thin::before {
+      content: iriscon-content($double-angle-right-thin);
+    }
+
+    &.double-angle-bottom-thin::before {
+      content: iriscon-content($double-angle-bottom-thin);
+    }
+
+    &.double-angle-left::before {
+      content: iriscon-content($double-angle-left);
+    }
+
+    &.delete::before {
+      content: iriscon-content($delete);
+    }
+
+    &.cancel-thin::before {
+      content: iriscon-content($cancel-thin);
+    }
+
+    &.add::before {
+      content: iriscon-content($add);
+    }
+
+    &.list-setting::before {
+      content: iriscon-content($list-setting);
+    }
+
+    &.data-storage::before {
+      content: iriscon-content($data-storage);
+    }
+
+    &.data-base::before {
+      content: iriscon-content($data-base);
+    }
+
+    &.data-model::before {
+      content: iriscon-content($data-model);
+    }
+
+    &.new-window::before {
+      content: iriscon-content($new-window);
+    }
+
+    &.alarm::before {
+      content: iriscon-content($alarm);
+    }
+
+    &.alarm-filled::before {
+      content: iriscon-content($alarm-filled);
+    }
+
+    &.alarm-setting::before {
+      content: iriscon-content($alarm-setting);
+    }
+
+    &.alarm-disabled::before {
+      content: iriscon-content($alarm-disabled);
+    }
+
+    &.datetime-setting::before {
+      content: iriscon-content($datetime-setting);
+    }
+
+    &.datetime::before {
+      content: iriscon-content($datetime);
+    }
+
+    &.calendar::before {
+      content: iriscon-content($calendar);
+    }
+
+    &.clock::before {
+      content: iriscon-content($clock);
+    }
+  }
+}

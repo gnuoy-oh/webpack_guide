@@ -1,0 +1,131 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("alarm") {
+  .mu-btn-alarm {
+    position: relative;
+    vertical-align: middle;
+  }
+
+  #menu-bar .mu-btn-alarm.on:hover .pulse-animation::before,
+  #menu-bar .mu-btn-alarm.on:hover .mu-icon-svg.alarm {
+    -webkit-animation: none;
+    animation: none;
+  }
+
+  #menu-bar .mu-btn-alarm.on .pulse-animation {
+    display: inline-block;
+  }
+
+  #menu-bar .mu-btn-alarm.on .mu-icon-svg.alarm {
+    fill: #fa5252;
+    -webkit-animation: alarm-scale 0.8s infinite ease-in-out;
+    animation: alarm-scale 0.8s infinite ease-in-out;
+  }
+
+  #menu-bar .mu-btn-alarm.on:hover .mu-icon-svg.alarm {
+    fill: #ff8787;
+  }
+
+  .pulse-animation {
+    display: none;
+    width: 4px;
+    height: 4px;
+    background: #ff8787;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 2px);
+    left: calc(50% - 3px);
+  }
+
+  .pulse-animation::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffc5c5;
+    border-radius: 50%;
+    content: "";
+    display: inline-block;
+    -webkit-animation: alarm-pulse 1.6s infinite ease-in-out;
+    animation: alarm-pulse 1.6s infinite ease-in-out;
+  }
+
+  @keyframes alarm-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+
+    30% {
+      transform: scale(6.6);
+      background-color: 0 0 0 40px rgba(#ffc5c5, 0);
+      opacity: 0.6;
+    }
+
+    100% {
+      transform: scale(8.6);
+      background-color: 0 0 0 0 rgba(#ffc5c5, 0);
+      opacity: 0;
+    }
+  }
+
+  @-webkit-keyframes alarm-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+
+    30% {
+      transform: scale(6.6);
+      background-color: 0 0 0 40px rgba(#ffc5c5, 0);
+      opacity: 0.6;
+    }
+
+    100% {
+      transform: scale(8.6);
+      background-color: 0 0 0 0 rgba(#ffc5c5, 0);
+      opacity: 0;
+    }
+  }
+
+  @keyframes alarm-scale {
+    0% {
+      fill: #fa5252;
+      transform: scale(1);
+    }
+
+    30% {
+      fill: #ffc5c5;
+      transform: scale(1.08);
+    }
+
+    100% {
+      fill: #fa5252;
+      transform: scale(1);
+    }
+  }
+
+  @-webkit-keyframes alarm-scale {
+    0% {
+      fill: #fa5252;
+      transform: scale(1);
+    }
+
+    30% {
+      fill: #ff8787;
+      transform: scale(1.08);
+    }
+
+    100% {
+      fill: #fa5252;
+      transform: scale(1);
+    }
+  }
+}

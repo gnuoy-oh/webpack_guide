@@ -1,0 +1,2389 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>tooltop-guide</title>
+  <link rel="stylesheet" type="text/css" href="../assets/lib/guide.css"><!-- //가이드용임 -->
+  <!-- <link rel="stylesheet" type="text/css" href="../assets/css/sherman/style.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="../dist-sherman/css/sherman/style.min.css">
+
+</head>
+
+<body>
+  <!-- guideWrap2 -->
+  <div class="guideWrap2">
+    <h1 style="background:none;text-indent:0;">Tooltip Guide</h1>
+    <div class="guideBox">
+      <h2>기본 mu-tooltip : 시각화 이동 툴팁</h2>
+      <p class="txtGuide">mu-tooltip bottom : 대상 아래쪽 위치</p>
+      <div class="boxArea">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">검색 > 검색 결과 > 시각화 이동</strong>
+
+        <!-- tooltip : 검색메뉴 -->
+        <div class="popup pop-menu bottom" style="top:40px;left:40px;">
+          <ul>
+            <li><a>피벗으로 이동</a></li>
+            <li><a>고급 시각화로 이동</a></li>
+            <li><a>이상탐지로 이동</a></li>
+          </ul>
+        </div>
+        <!-- //tooltip : 검색메뉴 -->
+
+        <!-- tooltip : 코드 복사 -->
+        <div class="popup pop-menu code-copy" style="top:40px;left:640px;">
+          <ul>
+            <li>
+              <a mu-tooltip-area="tt1" tooltip-placement="left">R로 복사하기</a>
+            </li>
+            <li>
+              <a mu-tooltip-area="tt1" tooltip-placement="left">Python으로 복사하기</a>
+            </li>
+          </ul>
+        </div>
+        <!-- //tooltip : 코드 복사 -->
+        <!-- tooltip layer -->
+        <div class="mu-tooltip code-preview" mu-tooltip="tt1" style="top: 40px;left:241px;">
+            <div class="arrow"></div>
+            <div class="mu-tooltip-inner">
+              <span>
+                <code>result <- dbGetQuery(conn, “/*+ LOCATION ( PARTITION >= ‘<span class="highlight">시작 시간</span>' AND PARTITION <= ‘<span class="highlight">끝 시간</span>' ) */SELECT <span class="highlight">검색어</span> FROM <span class="highlight">대상 데이터</span></code>
+              </span>
+            </div>
+        </div>
+        <!-- //tooltip layer -->
+
+      </div>
+
+      <h2>기본 mu-tooltip : 알람</h2>
+      <p class="txtGuide">mu-tooltip alarm : 알람 리스트 출력</p>
+      <div class="boxArea" style="height: 400px;">
+
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">알람 리스트 > no data</strong>
+        <!-- tooltip : 알람 리스트 - no-data -->
+        <div class="mu-tooltip bottom alarm" style="top:40px;left:40px;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <div class="alarm-msg-box">
+              <div class="alarm-msg info">
+                <div class="alarm-msg-icon"><i class="mu-icon info"></i></div>
+                <div class="alarm-msg-cont">최근 24시간 동안 수신한 알람 내역이 없습니다.</div>
+              </div>
+            </div>
+          </div>
+          <div class="mu-tooltip-foot">
+
+            <button class="mu-btn mu-btn-default" type="button">
+              <i class="mu-icon-img-alarm play-config"></i>알람 방식 설정
+            </button>
+            <button class="mu-btn mu-btn-default" type="button">
+              <i class="mu-icon-img-alarm item-config"></i>알람 항목 설정
+            </button>
+            <button class="mu-btn-link fr" type="button">
+              <span class="btn-link-box">
+                더보기<i class="mu-icon angle-right"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+        <!-- //tooltip : 알람 리스트 - no-data -->
+
+        <strong style="position:absolute;top:10px;left:410px;color:#241f5e;">알람 리스트</strong>
+        <!-- tooltip : 알람 리스트  -->
+        <div class="mu-tooltip bottom alarm" style="top:40px;left:440px;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <ul class="mu-list-meta">
+              <li class="mu-list-meta-item">
+                <div class="mu-list-meta-item-badge">
+                  <span class="mu-badge mu-badge-status mu-badge-not-a-wrapper">
+                    <span class="mu-badge-status-dot mu-badge-status-error"></span><span class="mu-badge-status-text"></span></span>
+                </div>
+                <div class="mu-list-meta-item-cont ellipsis-end">
+                  <span class="mu-list-meta-text">cpu.usage_used: 97.9979980051 > 80.0 cpu.usage_used: 97.9979980051 >
+                    80.0</span>
+                  <p class="mu-list-caption">2018-09-23 15:00:34</p>
+                </div>
+              </li>
+              <li class="mu-list-meta-item">
+                <div class="mu-list-meta-item-badge">
+                  <span class="mu-badge mu-badge-status mu-badge-not-a-wrapper">
+                    <span class="mu-badge-status-dot mu-badge-status-warning"></span><span class="mu-badge-status-text"></span></span>
+                </div>
+                <div class="mu-list-meta-item-cont ellipsis-end">
+                  <span class="mu-list-meta-text">cpu.usage_used: 97.9979980051 > 80.0</span>
+                  <p class="mu-list-caption">2018-09-23 15:00:34</p>
+                </div>
+              </li>
+              <li class="mu-list-meta-item">
+                <div class="mu-list-meta-item-badge">
+                  <span class="mu-badge mu-badge-status mu-badge-not-a-wrapper">
+                    <span class="mu-badge-status-dot mu-badge-status-minor"></span><span class="mu-badge-status-text"></span></span>
+                </div>
+                <div class="mu-list-meta-item-cont ellipsis-end">
+                  <span class="mu-list-meta-text">cpu.usage_used: 97.9979980051 > 80.0</span>
+                  <p class="mu-list-caption">2018-09-23 15:00:34</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="mu-tooltip-foot">
+            <button class="mu-btn mu-btn-default" type="button">
+              <i class="mu-icon-img-alarm play-config"></i>알람 방식 설정
+            </button>
+            <button class="mu-btn mu-btn-default" type="button">
+              <i class="mu-icon-img-alarm item-config"></i>알람 항목 설정
+            </button>
+            <button class="mu-btn-link fr" type="button">
+              <span class="btn-link-box">
+                더보기<i class="mu-icon angle-right"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+        <!-- //tooltip : 알람 리스트 -->
+
+      </div>
+      <h2>기본 mu-tooltip : 알람</h2>
+      <p class="txtGuide">mu-tooltip alarm : 알람 메시지 출력</p>
+      <div class="boxArea" style="height: 400px;">
+
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">알람 메시지 > info + confirm</strong>
+        <!-- tooltip : 알람 메시지 > info + confirm -->
+        <div class="mu-tooltip bottom alarm" style="top:30px;left:10px;">
+          <div class="arrow"></div>
+          
+          <div class="mu-tooltip-inner">
+            <div class="alarm-msg-box">
+              <div class="alarm-msg info">
+                <div class="alarm-msg-icon"><i class="mu-icon info"></i></div>
+                <div class="alarm-msg-cont">현재 알람이 설정되어있지 않습니다.<br>알람 수신을
+                  받으시겠습니까?</div>
+              </div>
+            </div>
+          </div>
+          <div class="mu-tooltip-foot">
+            <button class="mu-btn mu-btn-default" type="button">
+              취소
+            </button>
+            <button class="mu-btn mu-btn-primary fr" type="button">
+              확인
+            </button>
+          </div>
+        </div>
+        <!-- //tooltip : 알람 메시지 > info + confirm -->
+
+        <strong style="position:absolute;top:10px;left:310px;color:#241f5e;">알람 메시지 > error + confirm</strong>
+        <!-- tooltip : 알람 메시지 > error + confirm -->
+        <div class="mu-tooltip bottom alarm" style="top:30px;left:310px;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <div class="alarm-msg-box">
+              <div class="alarm-msg error">
+                <div class="alarm-msg-icon"><i class="mu-icon err-circle"></i></div>
+                <div class="alarm-msg-cont"><span>사용자 등록에 실패했습니다.</span><br><span>다시 시도하시겠습니까?</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="mu-tooltip-foot">
+            <button class="mu-btn mu-btn-default" type="button">
+              취소
+            </button>
+            <button class="mu-btn mu-btn-primary fr" type="button">
+              확인
+            </button>
+          </div>
+        </div>
+        <!-- //tooltip : 알람 메시지 > error + confirm -->
+
+        <strong style="position:absolute;top:220px;left:10px;color:#241f5e;">알람 메시지 - success</strong>
+        <!-- tooltip : 알람 메시지 > success -->
+        <div class="mu-tooltip bottom alarm" style="top:250px;left:10px;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <div class="alarm-msg-box">
+              <div class="alarm-msg success">
+                <div class="alarm-msg-icon"><i class="mu-icon check-circle"></i></div>
+                <div class="alarm-msg-cont">사용자 등록에 성공했습니다.<br>이제부터 설정에 따라 알람을 받게 됩니다.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //tooltip : 알람 메시지 > success -->
+
+        <strong style="position:absolute;top:220px;left:310px;color:#241f5e;">알람 메시지 > error</strong>
+        <!-- tooltip : 알람 메시지 > error-->
+        <div class="mu-tooltip bottom alarm" style="top:250px;left:310px;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <div class="alarm-msg-box">
+              <div class="alarm-msg error">
+                <div class="alarm-msg-icon"><i class="mu-icon err-circle"></i></div>
+                <div class="alarm-msg-cont">알람 설정을 불러오는데 실패했습니다.<br>몇 분 후에 다시 시도합니다.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //tooltip : 알람 메시지 > error-->
+
+        <strong style="position:absolute;top:220px;left:600px;color:#241f5e;">알람 메시지 > process</strong>
+        <!-- tooltip : 알람 메시지 > process -->
+        <div class="mu-tooltip bottom alarm" style="top:250px;left:600px;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <div class="alarm-msg-box">
+              <div class="alarm-msg process">
+                <div class="alarm-msg-cont">알람 설정을 불러오는 중...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //tooltip : 알람 메시지 > process -->
+
+
+      </div>
+
+
+
+      <h2>기본 mu-tooltip : 특정 필드에 대한 통계 정보 layer</h2>
+      <p class="txtGuide">mu-tooltip right : 대상 오른쪽 위치</p>
+      <div class="boxArea">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">검색 > 검색 결과 > 이벤트 > 필드 통계 정보</strong>
+
+        <!-- tooltip : 필드 통계 정보 -->
+        <div class="mu-tooltip right" style="top:40px;left:40px;width:460px;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-head">
+            <span class="title">agent</span>
+            <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+          </div>
+          <div class="mu-tooltip-inner">
+            <span class="title"> 48 값, 100.00 % 이벤트</span>
+            <table class="mu-grid">
+              <colgroup>
+                <col>
+                <col width="80px;">
+                <col width="80px;">
+                <col width="120px;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>상위 10개 값</th>
+                  <th>개수</th>
+                  <th>%</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>450050294404465</td>
+                  <td>22</td>
+                  <td>20.20%</td>
+                  <td>
+                    <div class="mu-progress">
+                      <div class="mu-pbar" style="width:20%"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Agent1</td>
+                  <td>22</td>
+                  <td>20%</td>
+                  <td>
+                    <div class="mu-progress">
+                      <div class="mu-pbar" style="width:20%"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Agent1</td>
+                  <td>22</td>
+                  <td>20%</td>
+                  <td>
+                    <div class="mu-progress">
+                      <div class="mu-pbar" style="width:20%"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Agent1</td>
+                  <td>22</td>
+                  <td>20%</td>
+                  <td>
+                    <div class="mu-progress">
+                      <div class="mu-pbar" style="width:20%"></div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- //tooltip : 필드 통계 정보 -->
+
+      </div>
+      <h2>기본 mu-tooltip : 시간 재검색 layer</h2>
+      <p class="txtGuide">mu-tooltip bottom : 대상 아래쪽 위치</p>
+      <div class="boxArea">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">검색 > 검색 결과 > 이벤트 > 특정 이벤트 기준 재검색 - 시간 재검색
+          layer</strong>
+
+        <!--  tooltip : 시간재검색 -->
+        <div class="mu-tooltip bottom timeResearch" style="top:40px;left:40px;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-head">
+            <span class="title">시간</span>
+            <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+          </div>
+          <div class="mu-tooltip-inner">
+            <span class="title">이전 또는 이후 이벤트</span>
+            <div class="mu-hgroup">
+              <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-prev"></i><span>이 시간 전</span></button>
+              <button type="button" class="mu-btn mu-btn-icon"><span>이 시간에</span></button>
+              <button type="button" class="mu-btn mu-btn-icon"><span>이 시간 이후</span><i class="mu-icon-img arrow-next"></i></button>
+            </div>
+            <span class="title">근접 이벤트</span>
+            <div class="mu-item-group">
+              <div class="mu-selectbox">
+                <button class="mu-value">+</button>
+                <ul class="mu-list">
+                  <li value="1">+</li>
+                  <li value="2">-</li>
+                  <li value="3">+/-</li>
+                </ul>
+              </div>
+              <input type="text" class="mu-input">
+              <div class="mu-selectbox">
+                <button class="mu-value">초</button>
+                <ul class="mu-list">
+                  <li value="1">초</li>
+                  <li value="2" class="active">주</li>
+                  <li value="3">일</li>
+                  <li value="4">시간</li>
+                  <li value="5">분</li>
+                  <li value="6">초</li>
+                  <li value="7">millisecond(s)</li>
+                </ul>
+              </div>
+              <button class="mu-btn btnApply fr" type="button">재검색</button>
+            </div>
+          </div>
+          <div class="mu-tooltip-foot">
+            <div class="mu-checkbox">
+              <input id="ckbtbl1" type="checkbox">
+              <label for="ckbtbl1">새창으로 열기</label>
+            </div>
+          </div>
+        </div>
+        <!--  //tooltip : 시간재검색 -->
+
+      </div>
+      <div class="boxArea">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">검색 > 검색 결과 > 이벤트 > 특정 이벤트 기준 재검색 - 재검색 설정
+          layer</strong>
+
+        <!--  tooltip : 시간재검색 -->
+        <div class="mu-tooltip bottom timeResearch" style="top:40px;left:40px;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-head">
+            <span class="title">linked_time (검색에 추가)</span>
+            <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+          </div>
+          <div class="mu-tooltip-inner">
+            <span class="title">이전 또는 이후 이벤트</span>
+            <div class="mu-hgroup">
+              <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-prev"></i><span>이 시간 전</span></button>
+              <button type="button" class="mu-btn mu-btn-icon"><span>이 시간에</span></button>
+              <button type="button" class="mu-btn mu-btn-icon"><span>이 시간 이후</span><i class="mu-icon-img arrow-next"></i></button>
+            </div>
+            <span class="title">근접 이벤트</span>
+            <div class="mu-item-group">
+              <div class="mu-selectbox">
+                <button class="mu-value">+</button>
+                <ul class="mu-list">
+                  <li value="1">+</li>
+                  <li value="2">-</li>
+                  <li value="3">+/-</li>
+                </ul>
+              </div>
+              <input type="text" class="mu-input">
+              <div class="mu-selectbox">
+                <button class="mu-value">초</button>
+                <ul class="mu-list">
+                  <li value="1">초</li>
+                  <li value="2" class="active">주</li>
+                  <li value="3">일</li>
+                  <li value="4">시간</li>
+                  <li value="5">분</li>
+                  <li value="6">초</li>
+                  <li value="7">millisecond(s)</li>
+                </ul>
+              </div>
+              <button class="mu-btn btnApply fr" type="button">재검색</button>
+            </div>
+          </div>
+        </div>
+        <!--  //tooltip : 시간재검색 -->
+
+      </div>
+      <h2>기본 mu-tooltip : 필드 재검색 layer</h2>
+      <p class="txtGuide">mu-tooltip bottom : 대상 아래쪽 위치</p>
+      <div class="boxArea">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">검색 > 검색 결과 > 이벤트 > 특정 이벤트 기준 재검색</strong>
+
+        <!-- tooltip : 검색메뉴 -->
+        <div class="mu-tooltip bottom" style="top:40px;left:40px;">
+          <div class="arrow"></div>
+          <ul class="mu-popup-menu">
+            <li><a href="">검색에 추가</a><a href=""><i class="mu-icon-img link"></i></a></li>
+            <li><a href="">검색에서 제외</a><a href=""><i class="mu-icon-img link"></i></a></li>
+            <li><a href="">새로운 검색</a><a href=""><i class="mu-icon-img link"></i></a></li>
+          </ul>
+        </div>
+        <!-- //tooltip : 검색메뉴 -->
+
+      </div>
+      <div class="boxArea">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">검색 > 검색 결과 > 이벤트 > 특정 이벤트 기준 재검색</strong>
+
+        <!-- tooltip : 검색메뉴 -->
+        <div class="mu-tooltip bottom" style="top:40px;left:40px;">
+          <div class="arrow"></div>
+          <ul class="mu-popup-menu">
+            <li><a href="">검색에 추가</a><a href=""><i class="mu-icon-img"></i></a></li>
+            <li><a href="">검색에서 제외</a><a href=""><i class="mu-icon-img"></i></a></li>
+            <li><a href="">새로운 검색</a><a href=""><i class="mu-icon-img"></i></a></li>
+          </ul>
+        </div>
+        <!-- //tooltip : 검색메뉴 -->
+
+      </div>
+
+      <h2>피벗 mu-tooltip</h2>
+      <p class="txtGuide">mu-tooltip bottom : 대상 아래쪽 위치</p>
+      <div class="boxArea" style="height:600px;">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">피벗 > 피벗 테이블 > 필터 추가</strong>
+
+        <!--  tooltip : 필드선택 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:40px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner fieldList">
+            <table class="mu-formbox mu-slide-menu">
+              <tbody>
+                <tr>
+                  <th>필드</th>
+                  <td>
+                    <ul>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 필드선택 -->
+
+        <!--  tooltip : 필터추가 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:400px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>date_mday</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>필터유형</th>
+                  <td>
+                    <div class="mu-btn-group">
+                      <button class="mu-btn active">일치</button>
+                      <button class="mu-btn">제한</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th><span>*</span>일치</th>
+                  <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">전체시간</button>
+                      <ul class="mu-list">
+                        <li value="1">전체시간</li>
+                        <li value="2" class="active">사이</li>
+                        <li value="3">이전</li>
+                        <li value="4">이후</li>
+                      </ul>
+                    </div>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">전체시간</button>
+                      <ul class="mu-list">
+                        <li value="1">전체시간</li>
+                        <li value="2" class="active">사이</li>
+                        <li value="3">이전</li>
+                        <li value="4">이후</li>
+                      </ul>
+                    </div>
+                    <div class="mt10"><i class="mu-icon-img alert"></i><span>일치는 필수 입력입니다.</span></div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnApply fr" type="button">추가</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 필터추가 -->
+
+        <!--  tooltip : 필터수정 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:760px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>date_mday</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>필터유형</th>
+                  <td>
+                    <div class="mu-btn-group">
+                      <button class="mu-btn active">일치</button>
+                      <button class="mu-btn">제한</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th><span>*</span>일치</th>
+                  <td>
+                    <div class="mu-item-group">
+                      <div class="mu-selectbox">
+                        <button class="mu-value">전체시간</button>
+                        <ul class="mu-list">
+                          <li value="1">전체시간</li>
+                          <li value="2" class="active">사이</li>
+                          <li value="3">이전</li>
+                          <li value="4">이후</li>
+                        </ul>
+                      </div>
+                      <input type="text" class="mu-input">
+                    </div>
+                    <div class="mt10"><i class="mu-icon-img alert"></i><span>일치는 필수 입력입니다.</span></div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnDelete" type="button">제거</button><button class="mu-btn btnApply fr" type="button">업데이트</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 필터수정 -->
+
+        <!--  tooltip : 필터추가 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:1120px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>date_mday</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>필터유형</th>
+                  <td>
+                    <div class="mu-btn-group">
+                      <button class="mu-btn active">일치</button>
+                      <button class="mu-btn">제한</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th><span>*</span>일치</th>
+                  <td>
+                    <div class="mu-vgroup">
+                      <!-- 2016-06-15 MOD : 세로 배열시 -->
+                      <div class="mu-selectbox on">
+                        <button class="mu-value">은(는) 다음입니다.</button>
+                        <ul class="mu-list">
+                          <li value="1">은(는) 다음입니다.</li>
+                          <li value="2" class="active">은(는) 다음이 아닙니다.</li>
+                          <li value="3">은(는) 다음을 포함합니다.</li>
+                          <li value="4">은(는) 다음을 포함하지 않습니다.</li>
+                        </ul>
+                      </div>
+                      <input type="text" class="mu-input">
+                    </div>
+                    <div class="mt10"><i class="mu-icon-img alert"></i><span>일치는 필수 입력입니다.</span></div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnApply fr" type="button">추가</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 필터추가 -->
+
+        <!--  tooltip : 필터추가 2016-10-21 ADD -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:300px;left:400px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>date_mday</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>필터유형</th>
+                  <td>
+                    <div class="mu-btn-group">
+                      <button class="mu-btn">일치</button>
+                      <button class="mu-btn active">사이</button>
+                      <button class="mu-btn">제한</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>사이</th>
+                  <td>
+                    <div class="mu-item-group">
+                      <input class="mu-input" type="text">
+                      <div class="mu-selectbox">
+                        <button class="mu-value">+</button>
+                        <ul class="mu-list">
+                          <li value="1">+</li>
+                          <li value="2">-</li>
+                          <li value="3">+/-</li>
+                        </ul>
+                      </div>
+                      <label>~</label>
+                      <div class="mu-selectbox">
+                        <button class="mu-value">+</button>
+                        <ul class="mu-list">
+                          <li value="1">+</li>
+                          <li value="2">-</li>
+                          <li value="3">+/-</li>
+                        </ul>
+                      </div>
+                      <input class="mu-input" type="text">
+                    </div>
+                    <div class="mt10"><i class="mu-icon-img alert"></i><span>사이는 필수 입력입니다.</span></div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnApply fr" type="button">추가</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 필터추가 -->
+
+      </div>
+      <div class="boxArea">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">피벗 > 피벗 테이블 > 행/열 선택 추가 (시간 필드를 선택했을 때)</strong>
+
+        <!--  tooltip : 필드선택 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:40px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner fieldList">
+            <table class="mu-formbox mu-slide-menu">
+              <tbody>
+                <tr>
+                  <th>시간</th>
+                  <td>
+                    <ul>
+                      <li><a href=""><i class="mu-icon-img time"></i><span>_time</span></a></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th>필드</th>
+                  <td>
+                    <ul>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 필드선택 -->
+
+        <!--  tooltip : 행/열추가 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:400px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>_time</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th><span>*</span>단위</th>
+                  <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">선택</button>
+                      <ul class="mu-list">
+                        <li value="1">년(2011)</li>
+                        <li value="2" class="active">개월(2011/01)</li>
+                        <li value="3">일(2011/01/31)</li>
+                        <li value="4">시간(2011/01/31 23)</li>
+                        <li value="5">시간(2011/01/31 23:00)</li>
+                        <li value="6">시간(2011/01/31 23:00:00)</li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td class="sect"><span class="">모든 행</span></td>
+                </tr>
+                <tr>
+                  <th>정렬</th>
+                  <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">기본값</button>
+                      <ul class="mu-list">
+                        <li value="1">기본값</li>
+                        <li value="2" class="active">오름차순</li>
+                        <li value="3">내림차순</li>
+                      </ul>
+                    </div>
+                    <div class="mt10"><i class="mu-icon-img alert"></i><span>단위는 필수 입력입니다.</span></div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnApply fr" type="button">추가</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 행/열추가 -->
+
+        <!--  tooltip : 행/열수정 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:760px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>_time</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th><span>*</span>단위</th>
+                  <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">선택</button>
+                      <ul class="mu-list">
+                        <li value="1">년(2011)</li>
+                        <li value="2" class="active">개월(2011/01)</li>
+                        <li value="3">일(2011/01/31)</li>
+                        <li value="4">시간(2011/01/31 23)</li>
+                        <li value="5">시간(2011/01/31 23:00)</li>
+                        <li value="6">시간(2011/01/31 23:00:00)</li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td class="sect"><span class="">모든 행</span></td>
+                </tr>
+                <tr>
+                  <th>정렬</th>
+                  <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">기본값</button>
+                      <ul class="mu-list">
+                        <li value="1">기본값</li>
+                        <li value="2" class="active">오름차순</li>
+                        <li value="3">내림차순</li>
+                      </ul>
+                    </div>
+                    <div class="mt10"><i class="mu-icon-img alert"></i><span>단위는 필수 입력입니다.</span></div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnDelete" type="button">제거</button><button class="mu-btn btnApply fr" type="button">업데이트</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 행/열수정 -->
+
+      </div>
+      <div class="boxArea" style="height:350px;">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">피벗 > 피벗 테이블 > 행/열 선택 추가 (문자열 필드를 선택했을 때)</strong>
+
+        <!--  tooltip : 필드선택 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:40px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner fieldList">
+            <table class="mu-formbox mu-slide-menu">
+              <tbody>
+                <tr>
+                  <th>시간</th>
+                  <td>
+                    <ul>
+                      <li><a href=""><i class="mu-icon-img time"></i><span>_time</span></a></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th>필드</th>
+                  <td>
+                    <ul>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 필드선택 -->
+
+        <!--  tooltip : 행/열추가 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:400px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>productName</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>레이블</th>
+                  <td>
+                    <input type="text" class="mu-input">
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td class="sect"><span class="">모든 행</span></td>
+                </tr>
+                <tr>
+                  <th>정렬</th>
+                  <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">기본값</button>
+                      <ul class="mu-list">
+                        <li value="1">기본값</li>
+                        <li value="2" class="active">오름차순</li>
+                        <li value="3">내림차순</li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>최대 행 수</th>
+                  <td>
+                    <input type="text" class="mu-input">
+                    <div class="mt10"><i class="mu-icon-img alert"></i><span>행 수는 0과 1,000 사이의 숫자여야 합니다.</span></div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnApply fr" type="button">추가</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 행/열추가 -->
+
+        <!--  tooltip : 행/열수정 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:760px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>productName</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>레이블</th>
+                  <td>
+                    <input type="text" class="mu-input">
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td class="sect"><span class="">모든 행</span></td>
+                </tr>
+                <tr>
+                  <th>정렬</th>
+                  <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">기본값</button>
+                      <ul class="mu-list">
+                        <li value="1">기본값</li>
+                        <li value="2" class="active">오름차순</li>
+                        <li value="3">내림차순</li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>최대 행 수</th>
+                  <td>
+                    <input type="text" class="mu-input">
+                    <div class="mt10"><i class="mu-icon-img alert"></i><span>행 수는 0과 1,000 사이의 숫자여야 합니다.</span></div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnDelete" type="button">제거</button><button class="mu-btn btnApply fr" type="button">업데이트</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 행/열수정 -->
+
+      </div>
+      <div class="boxArea" style="height:520px;">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">피벗 > 피벗 테이블 > 행/열 선택 추가 (숫자 필드를 선택했을 때)</strong>
+
+        <!--  tooltip : 필드선택 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:40px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner fieldList">
+            <table class="mu-formbox mu-slide-menu">
+              <tbody>
+                <tr>
+                  <th>시간</th>
+                  <td>
+                    <ul>
+                      <li><a href=""><i class="mu-icon-img time"></i><span>_time</span></a></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th>필드</th>
+                  <td>
+                    <ul>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 필드선택 -->
+
+        <!--  tooltip : 행/열추가 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:400px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>price</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>레이블</th>
+                  <td><input type="text" class="mu-input"></td>
+                </tr>
+                <tr>
+                  <th>범위 만들기</th>
+                  <td>
+                    <div class="mu-btn-group">
+                      <button class="mu-btn active">ON</button>
+                      <button class="mu-btn">OFF</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>최대 범위 수</th>
+                  <td><input type="text" class="mu-input"></td>
+                </tr>
+                <tr>
+                  <th>범위 크기</th>
+                  <td><input type="text" class="mu-input"></td>
+                </tr>
+                <tr>
+                  <th>범위 시작</th>
+                  <td><input type="text" class="mu-input"></td>
+                </tr>
+                <tr>
+                  <th>범위 끝</th>
+                  <td><input type="text" class="mu-input"></td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td class="sect"><span class="">모든 행</span></td>
+                </tr>
+                <tr>
+                  <th>정렬</th>
+                  <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">기본값</button>
+                      <ul class="mu-list">
+                        <li value="1">기본값</li>
+                        <li value="2" class="active">오름차순</li>
+                        <li value="3">내림차순</li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>최대 행 수</th>
+                  <td>
+                    <input type="text" class="mu-input">
+                    <div class="mt10"><i class="mu-icon-img alert"></i><span>행 수는 0과 1,000사이의 숫자여야 합니다.</span></div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnApply fr" type="button">추가</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 행/열추가 -->
+
+        <!--  tooltip : 행/열수정 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:760px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>price</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>레이블</th>
+                  <td><input type="text" class="mu-input"></td>
+                </tr>
+                <tr>
+                  <th>범위 만들기</th>
+                  <td>
+                    <div class="mu-btn-group">
+                      <button class="mu-btn active">ON</button>
+                      <button class="mu-btn">OFF</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>최대 범위 수</th>
+                  <td><input type="text" class="mu-input"></td>
+                </tr>
+                <tr>
+                  <th>범위 크기</th>
+                  <td><input type="text" class="mu-input"></td>
+                </tr>
+                <tr>
+                  <th>범위 시작</th>
+                  <td><input type="text" class="mu-input"></td>
+                </tr>
+                <tr>
+                  <th>범위 끝</th>
+                  <td><input type="text" class="mu-input"></td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td class="sect"><span class="">모든 행</span></td>
+                </tr>
+                <tr>
+                  <th>정렬</th>
+                  <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">기본값</button>
+                      <ul class="mu-list">
+                        <li value="1">기본값</li>
+                        <li value="2" class="active">오름차순</li>
+                        <li value="3">내림차순</li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>최대 행 수</th>
+                  <td>
+                    <input type="text" class="mu-input">
+                    <div class="mt10"><i class="mu-icon-img alert"></i><span>행 수는 0과 1,000사이의 숫자여야 합니다.</span></div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnDelete" type="button">제거</button><button class="mu-btn btnApply fr" type="button">업데이트</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 행/열수정 -->
+
+      </div>
+      <div class="boxArea" style="height:820px;">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">피벗 > 피벗 테이블 > 값 선택 추가</strong>
+
+        <!--  tooltip : 필드선택 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:40px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner fieldList">
+            <table class="mu-formbox mu-slide-menu">
+              <tbody>
+                <tr>
+                  <th>이벤트</th>
+                  <td>
+                    <ul>
+                      <li><a href=""><span>DATASET_01의 개수</span></a></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th>시간</th>
+                  <td>
+                    <ul>
+                      <li><a href=""><i class="mu-icon-img time"></i><span>_time</span></a></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th>필드</th>
+                  <td>
+                    <ul>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                      <li><a href=""><i class="mu-icon-img at"></i><span>date_mday</span></a></li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 필드선택 -->
+
+        <!--  tooltip : 이벤트개수 추가 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:400px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>DATASET_01의 개수</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>레이블</th>
+                  <td><input type="text" class="mu-input"></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnApply fr" type="button">추가</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 이벤트개수 추가 -->
+
+        <!--  tooltip : 이벤트개수 수정 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:40px;left:760px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>DATASET_01의 개수</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>레이블</th>
+                  <td><input type="text" class="mu-input"></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnDelete" type="button">제거</button><button class="mu-btn btnApply fr" type="button">업데이트</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 이벤트개수 수정 -->
+
+        <!--  tooltip : 시간값 추가 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:300px;left:400px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>_time</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>값</th>
+                  <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">기간</button>
+                      <ul class="mu-list">
+                        <li value="1">기간</li>
+                        <li value="2" class="active">시작</li>
+                        <li value="3">종료</li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnApply fr" type="button">추가</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 시간값 추가 -->
+
+        <!--  tooltip : 시간값 수정 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:300px;left:760px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>_time</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>값</th>
+                  <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">기간</button>
+                      <ul class="mu-list">
+                        <li value="1">기간</li>
+                        <li value="2" class="active">시작</li>
+                        <li value="3">종료</li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnDelete" type="button">제거</button><button class="mu-btn btnApply fr" type="button">업데이트</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 시간값 수정 -->
+
+        <!--  tooltip : 문자열값 추가 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:560px;left:400px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>productName</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>레이블</th>
+                  <td><input type="text" class="mu-input"></td>
+                </tr>
+                <tr>
+                  <th>값</th>
+                  <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">첫번째 값</button>
+                      <ul class="mu-list">
+                        <li value="1">첫번째 값</li>
+                        <li value="2" class="active">마지막 값</li>
+                        <li value="3">개수</li>
+                        <li value="4">개별 수</li>
+                        <li value="5">개별 값 나열</li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnApply fr" type="button">추가</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 문자열값 추가 -->
+
+        <!--  tooltip : 문자열값 수정 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:560px;left:760px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>productName</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>레이블</th>
+                  <td><input type="text" class="mu-input"></td>
+                </tr>
+                <tr>
+                  <th>값</th>
+                  <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">첫번째 값</button>
+                      <ul class="mu-list">
+                        <li value="1">첫번째 값</li>
+                        <li value="2" class="active">마지막 값</li>
+                        <li value="3">개수</li>
+                        <li value="4">개별 수</li>
+                        <li value="5">개별 값 나열</li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnDelete" type="button">제거</button><button class="mu-btn btnApply fr" type="button">업데이트</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 문자열값 수정 -->
+
+      </div>
+
+      <h2>Pagination mu-tooltip</h2>
+      <p class="txtGuide">mu-tooltip top : 대상 위 위치</p>
+      <div class="boxArea">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">Pagination Info</strong>
+
+        <!-- tooltip : pagination info -->
+        <div class="mu-tooltip top" style="top:60px;left:40px;width:250px;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner tc">Currently Displaying the most recent 1000 Events in the Selected Range,
+            Select a narrower Reange or zoom in th see more events.</div>
+        </div>
+        <!-- //tooltip : pagination info -->
+
+      </div>
+      <div class="boxArea" style="height:500px;">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">피벗>Tooltip Help</strong>
+
+        <!--  tooltip : 문자열값 추가 -->
+        <div class="mu-tooltip bottom pivotTooltip" style="top:60px;left:40px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <thead>
+                <tr>
+                  <th><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img arrow-prev"></i></button></th>
+                  <td>productName</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>레이블</th>
+                  <td>
+                    <input type="text" class="mu-input">
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td class="sect"><span class="">모든 행</span></td>
+                </tr>
+                <tr>
+                  <th>정렬</th>
+                  <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">기본값</button>
+                      <ul class="mu-list">
+                        <li value="1">기본값</li>
+                        <li value="2" class="active">오름차순</li>
+                        <li value="3">내림차순</li>
+                      </ul>
+                    </div>
+                    <div class="helpMsg">
+                      <span>(Searches의 수기준)</span>
+                      <i class="mu-icon-img help">
+                        <!-- tooltip -->
+                        <div class="mu-tooltip top" style="bottom:30px;right:-90px;width:200px;">
+                          <div class="arrow"></div>
+                          <div class="mu-tooltip-inner tc">Currently Displaying the most recent 1000 Events in the
+                            Selected Range</div>
+                        </div>
+                        <!-- //tooltip -->
+                      </i>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>최대 행 수</th>
+                  <td>
+                    <input type="text" class="mu-input">
+                    <div class="mt10"><i class="mu-icon-img alert"></i><span>행 수는 0과 1,000 사이의 숫자여야 합니다.</span></div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <td><button class="mu-btn btnDelete" type="button">제거</button><button class="mu-btn btnApply fr" type="button">업데이트</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 문자열값 추가 -->
+
+      </div>
+
+      <h2>기본 mu-tooltip : 이상탐지 layer</h2>
+      <p class="txtGuide">mu-tooltip bottom : 대상 아래쪽 위치</p>
+      <div class="boxArea">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">이상탐지 > 옵션메뉴</strong>
+
+        <!-- tooltip : 옵션메뉴 -->
+        <div class="mu-tooltip bottom" style="top:40px;left:40px;">
+          <div class="arrow"></div>
+          <ul class="mu-popup-menu">
+            <li><a href=""><i class="mu-icon-img option"></i>설정 변경</a></li>
+            <li><a href=""><i class="mu-icon-img copy"></i>복사</a></li>
+            <li><a href=""><i class="mu-icon-img rerun"></i>재실행</a></li>
+            <li><a href=""><i class="mu-icon-img trash"></i>삭제</a></li>
+          </ul>
+        </div>
+        <!-- //tooltip : 옵션메뉴 -->
+
+      </div>
+      <div class="boxArea">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">이상탐지 > 차트메뉴</strong>
+
+        <!-- tooltip : 차트메뉴 -->
+        <div class="mu-tooltip" style="top:40px;left:40px;">
+          <div class="arrow"></div>
+          <ul class="mu-popup-menu">
+            <li><a href=""><i class="mu-icon-img divide"></i>분리</a></li>
+            <li><a href=""><i class="mu-icon-img search"></i>검색</a><a href=""><i class="mu-icon-img link"></i></a></li>
+            <li><a href=""><i class="mu-icon-img pivot"></i>피벗</a><a href=""><i class="mu-icon-img link"></i></a></li>
+          </ul>
+        </div>
+        <!-- //tooltip : 차트메뉴 -->
+
+      </div>
+
+      <div class="boxArea" style="height:900px">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">이상탐지 > 비교기간</strong>
+
+        <!-- tooltip : 비교기간 -->
+        <div class="mu-tooltip right" style="top:40px;left:40px;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-head">
+            <span class="title">비교 기간</span>
+            <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+          </div>
+          <div class="filter-wrap">
+            <div class="mu-accordion">
+              <div class="mu-accordion-item accordion-item1">
+                <div class="mu-accordion-head active"><a href=""><span>미리 설정</span></a></div>
+                <div class="mu-accordion-body">
+                  <a href="" class="all-time">전체시간</a>
+                  <ul class="time">
+                    <li><a href="">최근 15분</a></li>
+                    <li><a href="">최근 60분</a></li>
+                    <li><a href="">최근 4시간</a></li>
+                    <li><a href="">최근 24시간</a></li>
+                    <li><a href="">최근 7일</a></li>
+                  </ul>
+                  <ul class="day">
+                    <li><a href="">오늘</a></li>
+                    <li><a href="">어제</a></li>
+                    <li><a href="">이번주</a></li>
+                    <li><a href="">이전주</a></li>
+                    <li><a href="">이번달</a></li>
+                    <li><a href="">이전달</a></li>
+                    <li><a href="">이번분기</a></li>
+                    <li><a href="">이전분기</a></li>
+                    <li><a href="">이번년도</a></li>
+                    <li><a href="">이전년도</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mu-accordion-item accordion-item2">
+                <div class="mu-accordion-head active"><a href=""><span>날짜 및 시간 범위</span></a></div>
+                <div class="mu-accordion-body">
+                  <div class="bx-date active">
+                    <em class="tit">시작</em>
+                    <textarea class="num">2017/03/22<br>16:23:31</textarea>
+                  </div>
+                  <span class="bx-arrow"></span>
+                  <div class="bx-date">
+                    <em class="tit">종료</em>
+                    <div class="mu-checkbox">
+                      <input id="ckbtbl1" type="checkbox">
+                      <label for="ckbtbl1">현재시간</label>
+                    </div>
+                    <textarea class="num">2017/03/22<br>16:23:31</textarea>
+                  </div>
+                  <div class="bx-datepicker active">
+                    <div id="datepicker"></div>
+                    <div class="item-group">
+                      <i class="mu-icon-img clock"></i>
+                      <div class="mu-selectbox mu-select-sm">
+                        <button class="mu-value">16</button>
+                        <ul class="mu-list">
+                          <li value="1">list option1</li>
+                        </ul>
+                      </div>
+                      <span class="dot">:</span>
+                      <div class="mu-selectbox mu-select-sm">
+                        <button class="mu-value">23</button>
+                        <ul class="mu-list">
+                          <li value="1">list option1</li>
+                        </ul>
+                      </div>
+                      <span class="dot">:</span>
+                      <div class="mu-selectbox mu-select-sm">
+                        <button class="mu-value">31</button>
+                        <ul class="mu-list">
+                          <li value="1">list option1</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="bx-msg-err"><i class="mu-icon err"></i>끝 날짜가 시작 날짜보다 이전 날짜입니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mu-tooltip-foot">
+            <button type="button" class="mu-btn btnApply">적용</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="boxArea">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">이상탐지 > 시도수</strong>
+
+        <!--  tooltip : 시도수 -->
+        <div class="mu-tooltip right tooltip-detect" style="top:40px;left:40px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-head">
+            <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non btn-prev"><i class="mu-icon-img arrow-left"></i></button>
+            <span class="title">시도수</span>
+            <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+          </div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <colgroup>
+                <col width="100">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>최소값</th>
+                  <td>
+                    <input type="text" class="mu-input">
+                  </td>
+                </tr>
+                <tr>
+                  <th>최대값</th>
+                  <td>
+                    <input type="text" class="mu-input">
+                  </td>
+                </tr>
+                <tr>
+                  <th>제외값</th>
+                  <td>
+                    <input type="text" class="mu-input">
+                  </td>
+                </tr>
+                <tr>
+                  <th>함수</th>
+                  <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">합계</button>
+                      <ul class="mu-list">
+                        <li value="">합계</li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mu-tooltip-foot">
+            <button type="button" class="mu-btn btnApply">적용</button>
+          </div>
+        </div>
+        <!--  //tooltip : 시도수 -->
+      </div>
+
+      <h2>데이터추가</h2>
+      <p class="txtGuide">데이터추가 > 가공</p>
+      <div class="boxArea" style="height:820px">
+
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">이름 변경</strong>
+        <!--  tooltip : 이름 변경 -->
+        <div class="mu-tooltip left mu-formbox-inner" style="width:320px;top:40px;left:40px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-head">
+            <span class="title">이름 변경</span>
+          </div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <colgroup>
+                <col width="100">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>기존 이름</th>
+                  <td>PTIME</td>
+                </tr>
+                <tr>
+                  <th>새로운 이름</th>
+                  <td>_time</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 이름 변경 -->
+
+        <strong style="position:absolute;top:10px;left:410px;color:#241f5e;">값 변환</strong>
+        <!--  tooltip : 값 변환 -->
+        <div class="mu-tooltip left mu-formbox-inner" style="width:320px;top:40px;left:440px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-head">
+            <span class="title">값 변환</span>
+          </div>
+          <div class="mu-tooltip-inner">
+            <table class="mu-formbox">
+              <colgroup>
+                <col width="100">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>유형</th>
+                  <td>PTIME</td>
+                </tr>
+                <tr class="tit">
+                  <th colspan="2">잘라내기</th>
+                </tr>
+                <tr>
+                  <th>앞</th>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <th>뒤</th>
+                  <td></td>
+                </tr>
+                <tr class="tit">
+                  <th colspan="2">치환</th>
+                </tr>
+                <tr>
+                  <th>찾을 내용</th>
+                  <td>ko-kr</td>
+                </tr>
+                <tr>
+                  <th>바꿀 내용</th>
+                  <td>en-US</td>
+                </tr>
+                <tr class="tit">
+                  <th colspan="2">추가</th>
+                </tr>
+                <tr>
+                  <th>앞</th>
+                  <td>YYYYMMDDHHmmss</td>
+                </tr>
+                <tr>
+                  <th>뒤</th>
+                  <td>YYYY-MM-DD HH:mm:ss</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!--  //tooltip : 값 변환 -->
+
+        <strong style="position:absolute;top:10px;left:810px;color:#241f5e;">유형 변경</strong>
+        <!--  tooltip : 유형 변경 -->
+        <div class="mu-tooltip left" style="width:420px;top:40px;left:840px;display:;">
+          <div class="arrow"></div>
+          <div class="mu-tooltip-head">
+            <span class="title">유형 변경</span>
+          </div>
+          <div class="mu-tooltip-inner">
+            <div class="mu-grid-scroll">
+              <table class="mu-grid mu-grid-border">
+                <colgroup>
+                  <col width="125px">
+                  <col width="125px">
+                  <col>
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>컬럼명</th>
+                    <th>기존 유형</th>
+                    <th>새 유형</th>
+                  </tr>
+                </thead>
+              </table>
+              <div class="mu-scroll-v" style="height:200px;">
+                <table class="mu-grid mu-grid-border mu-grid-hover mu-grid-strip mu-grid-item">
+                  <colgroup>
+                    <col width="125px">
+                    <col width="125px">
+                    <col>
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td>_time</td>
+                      <td>TEXT</td>
+                      <td>TIMSTAMP</td>
+                    </tr>
+                    <tr>
+                      <td>_time</td>
+                      <td>TEXT</td>
+                      <td>TIMSTAMP</td>
+                    </tr>
+                    <tr>
+                      <td>_time</td>
+                      <td>TEXT</td>
+                      <td>TIMSTAMP</td>
+                    </tr>
+                    <tr>
+                      <td>_time</td>
+                      <td>TEXT</td>
+                      <td>TIMSTAMP</td>
+                    </tr>
+                    <tr>
+                      <td>_time</td>
+                      <td>TEXT</td>
+                      <td>TIMSTAMP</td>
+                    </tr>
+                    <tr>
+                      <td>_time</td>
+                      <td>TEXT</td>
+                      <td>TIMSTAMP</td>
+                    </tr>
+                    <tr>
+                      <td>_time</td>
+                      <td>TEXT</td>
+                      <td>TIMSTAMP</td>
+                    </tr>
+                    <tr>
+                      <td>_time</td>
+                      <td>TEXT</td>
+                      <td>TIMSTAMP</td>
+                    </tr>
+                    <tr>
+                      <td>_time</td>
+                      <td>TEXT</td>
+                      <td>TIMSTAMP</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  //tooltip : 유형 변경 -->
+
+      </div>
+
+      <h2>데이터브라우저</h2>
+      <p class="txtGuide">데이터브라우저 > 검색 > 이력/시각화</p>
+      <div class="boxArea" style="height:820px">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">검색 > 이력</strong>
+
+        <!-- tooltip : 이력 -->
+        <div class="popup pop-search-history content-re bottom-right" style="top:40px;left:40px;">
+          <ul class="mu-tab">
+            <li class="active"><a href="">이력</a></li>
+            <li><a href="">시각화</a></li>
+          </ul>
+          <div class="mu-tab-body">
+            <div class="mu-panel">
+              <div class="mu-panel-head">
+                <div class="mu-hgroup">
+                  <div class="mu-input-icon">
+                    <input type="text" class="mu-input" placeholder="seacrh">
+                    <i class="mu-icon-img search2"></i>
+                  </div>
+                </div>
+                <div class="mu-pagination fr">
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-first"></i></button>
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-prev"></i></button>
+                  <ul>
+                    <li class="active"><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                  </ul>
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-next"></i></button>
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-last"></i></button>
+                </div>
+              </div>
+              <div class="mu-panel-body">
+                <table class="mu-grid mu-grid-strip mu-grid-sort mu-grid-hover">
+                  <colgroup>
+                    <col width="50">
+                    <col width="200">
+                    <col width="200">
+                    <col>
+                    <col width="160">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th class="none">#</th>
+                      <th class="none">시간 설정</th>
+                      <th>모델 명</th>
+                      <th>검색 질의</th>
+                      <th>실행된 시간</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>최근 1분</td>
+                      <td>TEST</td>
+                      <td class="tl">*</td>
+                      <td>2018/06/08 11:11:11</td>
+                    </tr>
+                    <tr>
+                      <td colspan="5">검색 이력 목록이 없습니다.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //tooltip : 이력 -->
+
+        <strong style="position:absolute;top:410px;left:10px;color:#241f5e;">검색 > 시각화</strong>
+
+        <!-- tooltip : 시각화 -->
+        <div class="popup pop-search-history content-re bottom-right" style="top:440px;left:40px;">
+          <ul class="mu-tab">
+            <li><a href="">이력</a></li>
+            <li class="active"><a href="">시각화</a></li>
+          </ul>
+          <div class="mu-tab-body">
+            <div class="mu-panel">
+              <div class="mu-panel-head">
+                <div class="mu-hgroup">
+                  <div class="mu-input-icon">
+                    <input type="text" class="mu-input" placeholder="seacrh">
+                    <i class="mu-icon-img search2"></i>
+                  </div>
+                </div>
+                <div class="mu-pagination fr">
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-first"></i></button>
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-prev"></i></button>
+                  <ul>
+                    <li class="active"><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                  </ul>
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-next"></i></button>
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-last"></i></button>
+                </div>
+              </div>
+              <div class="mu-panel-body">
+                <table class="mu-grid mu-grid-strip mu-grid-sort mu-grid-hover">
+                  <colgroup>
+                    <col width="50">
+                    <col width="">
+                    <col width="200">
+                    <col width="200">
+                    <col width="200">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th class="none">#</th>
+                      <th>이름</th>
+                      <th>소유자</th>
+                      <th class="none">시간 설정</th>
+                      <th>모델명</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td class="tl">시각화</td>
+                      <td>김진태</td>
+                      <td>최근 1분</td>
+                      <td>TEST</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td class="tl"><i class="mu-icon-img share"></i>시각화</td>
+                      <td>김진태</td>
+                      <td>최근 1분</td>
+                      <td>TEST</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //tooltip : 이력 -->
+      </div>
+      <p class="txtGuide">데이터브라우저 > 피벗,고급시각화 > 이력/시각화</p>
+      <div class="boxArea" style="height:1020px">
+        <strong style="position:absolute;top:10px;left:10px;color:#241f5e;">피벗,고급시각화 > 이력</strong>
+
+        <!-- tooltip : 이력 -->
+        <div class="popup pop-search-history content-re bottom-right" style="top:40px;left:40px;">
+          <ul class="mu-tab">
+            <li class="active"><a href="">이력</a></li>
+            <li><a href="">시각화</a></li>
+          </ul>
+          <div class="mu-tab-body">
+            <div class="mu-panel">
+              <div class="mu-panel-head">
+                <div class="mu-hgroup">
+                  <div class="mu-input-icon">
+                    <input type="text" class="mu-input" placeholder="seacrh">
+                    <i class="mu-icon-img search2"></i>
+                  </div>
+                </div>
+                <div class="mu-pagination fr">
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-first"></i></button>
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-prev"></i></button>
+                  <ul>
+                    <li class="active"><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                  </ul>
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-next"></i></button>
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-last"></i></button>
+                </div>
+              </div>
+              <div class="mu-panel-body">
+                <!-- Data table -->
+                <div class="mu-grid-scroll">
+                  <table class="mu-grid mu-grid-sort mu-grid-border">
+                    <colgroup>
+                      <col width="70">
+                      <col width="200">
+                      <col width="200">
+                      <col width="">
+                      <col width="200">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th class="none">#</th>
+                        <th class="none">시간설정</th>
+                        <th>모델명</th>
+                        <th>검색 질의</th>
+                        <th>실행된 시간</th>
+                      </tr>
+                    </thead>
+                  </table>
+                  <div class="mu-scroll-v" style="max-height:;">
+                    <table class="mu-grid mu-grid-border mu-grid-expand mu-grid-strip mu-grid-item mu-formbox-inner bdt-none">
+                      <colgroup>
+                        <col width="70">
+                        <col width="200">
+                        <col width="200">
+                        <col width="">
+                        <col width="200">
+                      </colgroup>
+                      <tbody>
+                        <tr class="odd">
+                          <td class="tl"><i class="mu-icon right"></i>1</td>
+                          <td>최근 1분</td>
+                          <td>TEST</td>
+                          <td class="tl">*</td>
+                          <td>2018/06/08 11:11:11</td>
+                        </tr>
+                        <tr class="odd">
+                          <td class="tl"><i class="mu-icon right"></i>2</td>
+                          <td>최근 1분</td>
+                          <td>TEST</td>
+                          <td class="tl">*</td>
+                          <td>2018/06/08 11:11:11</td>
+                        </tr>
+                        <tr class="odd open">
+                          <td class="tl"><i class="mu-icon down"></i>3</td>
+                          <td>최근 1분</td>
+                          <td>TEST</td>
+                          <td class="tl">*</td>
+                          <td>2018/06/08 11:11:11</td>
+                        </tr>
+                        <tr class="even open">
+                          <td colspan="5">
+                            <table class="mu-formbox">
+                              <colgroup>
+                                <col width="120px">
+                              </colgroup>
+                              <tbody>
+                                <tr>
+                                  <th>필터</th>
+                                  <td>HOST 다음으로 시작함</td>
+                                </tr>
+                                <tr>
+                                  <th>행</th>
+                                  <td>LEVEL</td>
+                                </tr>
+                                <tr>
+                                  <th>열</th>
+                                  <td>TAG</td>
+                                </tr>
+                                <tr>
+                                  <th>값</th>
+                                  <td>Event Object의 개수</td>
+                                </tr>
+                                <tr>
+                                  <th>표시형태</th>
+                                  <td>세로 막대형 차트</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr class="odd">
+                          <td class="tl"><i class="mu-icon right"></i>4</td>
+                          <td>최근 1분</td>
+                          <td>TEST</td>
+                          <td class="tl">*</td>
+                          <td>2018/06/08 11:11:11</td>
+                        </tr>
+                        <tr class="odd">
+                          <td class="tl"><i class="mu-icon right"></i>5</td>
+                          <td>최근 1분</td>
+                          <td>TEST</td>
+                          <td class="tl">*</td>
+                          <td>2018/06/08 11:11:11</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- //Data table -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //tooltip : 이력 -->
+
+        <strong style="position:absolute;top:510px;left:10px;color:#241f5e;">피벗,고급시각화 >시각화</strong>
+
+        <!-- tooltip : 시각화 -->
+        <div class="popup pop-search-history content-re bottom-right" style="top:540px;left:40px;">
+          <ul class="mu-tab">
+            <li><a href="">이력</a></li>
+            <li class="active"><a href="">시각화</a></li>
+          </ul>
+          <div class="mu-tab-body">
+            <div class="mu-panel">
+              <div class="mu-panel-head">
+                <div class="mu-hgroup">
+                  <div class="mu-input-icon">
+                    <input type="text" class="mu-input" placeholder="seacrh">
+                    <i class="mu-icon-img search2"></i>
+                  </div>
+                </div>
+                <div class="mu-pagination fr">
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-first"></i></button>
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-prev"></i></button>
+                  <ul>
+                    <li class="active"><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                  </ul>
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-next"></i></button>
+                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-last"></i></button>
+                </div>
+              </div>
+              <div class="mu-panel-body">
+                <!-- Data table -->
+                <div class="mu-grid-scroll">
+                  <table class="mu-grid mu-grid-sort mu-grid-border">
+                    <colgroup>
+                      <col width="70">
+                      <col width="">
+                      <col width="200">
+                      <col width="200">
+                      <col width="200">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th class="none">#</th>
+                        <th>이름</th>
+                        <th>소유자</th>
+                        <th class="none">시간 설정</th>
+                        <th>모델명</th>
+                      </tr>
+                    </thead>
+                  </table>
+                  <div class="mu-scroll-v" style="max-height:;">
+                    <table class="mu-grid mu-grid-border mu-grid-expand mu-grid-strip mu-grid-item mu-formbox-inner bdt-none">
+                      <colgroup>
+                        <col width="70">
+                        <col width="">
+                        <col width="200">
+                        <col width="200">
+                        <col width="200">
+                      </colgroup>
+                      <tbody>
+                        <tr class="odd">
+                          <td class="tl"><i class="mu-icon right"></i>1</td>
+                          <td class="tl">시각화</td>
+                          <td>김진태</td>
+                          <td>최근 1분</td>
+                          <td>TEST</td>
+                        </tr>
+                        <tr class="odd">
+                          <td class="tl"><i class="mu-icon right"></i>2</td>
+                          <td class="tl">시각화</td>
+                          <td>김진태</td>
+                          <td>최근 1분</td>
+                          <td>TEST</td>
+                        </tr>
+                        <tr class="odd open">
+                          <td class="tl"><i class="mu-icon down"></i>3</td>
+                          <td class="tl">시각화</td>
+                          <td>김진태</td>
+                          <td>최근 1분</td>
+                          <td>TEST</td>
+                        </tr>
+                        <tr class="even open">
+                          <td colspan="5">
+                            <table class="mu-formbox">
+                              <colgroup>
+                                <col width="120px">
+                              </colgroup>
+                              <tbody>
+                                <tr>
+                                  <th>필터</th>
+                                  <td>HOST 다음으로 시작함</td>
+                                </tr>
+                                <tr>
+                                  <th>행</th>
+                                  <td>LEVEL</td>
+                                </tr>
+                                <tr>
+                                  <th>열</th>
+                                  <td>TAG</td>
+                                </tr>
+                                <tr>
+                                  <th>값</th>
+                                  <td>Event Object의 개수</td>
+                                </tr>
+                                <tr>
+                                  <th>표시형태</th>
+                                  <td>세로 막대형 차트</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr class="odd">
+                          <td class="tl"><i class="mu-icon right"></i>4</td>
+                          <td class="tl"><i class="mu-icon-img share"></i>시각화</td>
+                          <td>김진태</td>
+                          <td>최근 1분</td>
+                          <td>TEST</td>
+                        </tr>
+                        <tr class="odd">
+                          <td class="tl"><i class="mu-icon right"></i>5</td>
+                          <td class="tl"><i class="mu-icon-img share"></i>시각화</td>
+                          <td>김진태</td>
+                          <td>최근 1분</td>
+                          <td>TEST</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- //Data table -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //tooltip : 시각화 -->
+      </div>
+    </div>
+  </div>
+
+  <link href="../iris_loganalyzer/js/jquery-ui.css" rel="stylesheet">
+  <script src="../iris_loganalyzer/js/external/jquery/jquery.js"></script>
+  <script src="../iris_loganalyzer/js/jquery-ui.min.js"></script>
+  <script>
+    $(function () {
+      $("#datepicker").datepicker();
+    });
+  </script>
+  <script src="../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

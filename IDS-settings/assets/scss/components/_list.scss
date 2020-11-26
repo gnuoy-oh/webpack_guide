@@ -1,0 +1,396 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("list") {
+  /*list*/
+  .mu-list {
+    position: relative;
+    font-size: 0;
+    background-color: $ui-01;
+    // overflow: auto;
+    user-select: none;
+
+    &-wrap {
+      border: 1px solid $ui-04;
+    }
+
+    li {
+      position: relative;
+      width: 100%;
+      padding: 6px 8px;
+      font-size: 12px;
+      cursor: pointer;
+      text-align: left;
+      line-height: 1.25;
+
+      &:hover {
+        background-color: $hover-ui-accent;
+        color: $interactive-01;
+      }
+
+      &-owner {
+        padding-left: 4px;
+        font-size: 9px;
+        color: $text-03;
+      }
+    }
+
+    &-box {
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    &-item + &-item {
+      border-top: 1px solid #e8e8e8;
+    }
+
+    &-item:last-child {
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    &-item.is-selected {
+      color: $interactive-01;
+      background-color: $hover-ui-accent;
+    }
+
+    &-item {
+      .mu-icon.angle-right {
+        position: absolute;
+        right: 8px;
+      }
+    }
+
+    &-item.is-disabled {
+      cursor: not-allowed;
+
+      span {
+        opacity: 0.5;
+      }
+
+      &:hover {
+        background-color: $ui-01;
+        color: $text-01;
+      }
+    }
+
+    &-item {
+      .mu-icon.angle-right {
+        position: absolute;
+        right: 8px;
+      }
+    }
+
+    &-text {
+      line-height: 1.25;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    // &-text-box {
+    //   max-width: 90%;
+    //   display: inline-block;
+    // }
+
+    &-caption {
+      padding-left: 6px;
+      font-size: 0.6875rem;
+      color: $text-03;
+    }
+
+    &-count {
+      position: absolute;
+      right: 8px;
+      width: 28px;
+      text-align: right;
+      color: $text-02;
+      font-weight: 600;
+    }
+
+    &-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 6px 8px;
+      background: $ui-02;
+      vertical-align: middle;
+      white-space: nowrap;
+      font-size: 12px;
+      font-weight: 600;
+
+      &-box {
+        border-bottom: 1px solid $ui-04;
+      }
+
+      &-text {
+        cursor: default;
+      }
+
+      &-text.is-disabled {
+        color: $disabled-02;
+      }
+    }
+
+    .mu-list-header-box + .mu-list-box {
+      height: calc(100% - 30px);
+    }
+
+    .is-select {
+      & span {
+        font-weight: 700;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 3px;
+        left: 4px;
+        background: url(../../images/common/icon_search.png) no-repeat -120px -80px;
+      }
+
+      &:hover::before {
+        background: url(../../images/common/icon_search.png) no-repeat -120px -120px;
+      }
+    }
+
+    // 알람 이력의 count 조합 list
+    &.has-count {
+      .ellipsis-end {
+        width: calc(100% - 32px);
+      }
+    }
+  }
+
+  .mu-multi-list {
+    font-size: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    border: 1px solid $ui-04;
+
+    .mu-list-cont {
+      width: 50%;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .mu-list-cont + .mu-list-cont {
+      border-left: 1px solid $ui-04;
+    }
+
+    .mu-list-box {
+      height: 140px;
+    }
+
+    .mu-list-item {
+      width: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  .mu-list-meta {
+    position: relative;
+    background-color: $ui-01;
+
+    &-item {
+      position: relative;
+      padding: 6px 8px;
+      line-height: 1.25;
+    }
+
+    &-item:last-child {
+      padding-bottom: 2px;
+    }
+
+    &-item + &-item {
+      border-top: 1px solid #e8e8e8;
+    }
+
+    &-text {
+      line-height: 1.25;
+      font-weight: 500;
+      color: $text-01;
+    }
+
+    .mu-list-caption {
+      padding-left: 0;
+      font-size: 0.6875rem;
+      color: $text-03;
+      margin-top: 2px;
+    }
+
+    &-item-cont {
+      display: inline-block;
+      width: 95%;
+    }
+
+    &-item-badge {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    &-item-badge + &-item-cont {
+      margin-left: 4px;
+    }
+  }
+
+  // .mu-list {
+  //   .mu-list-item {
+  //     & ~ .mu-list-item:not(:first-child) {
+  //       border-top: 1px solid #e8e8e8;
+  //     }
+  //   }
+  // }
+
+  .mu-list-collapse {
+    // 기존 스타일 리셋
+    .mu-list-item {
+      padding: 0;
+    }
+
+    .mu-list-box {
+      background-color: #f9f9f9;
+    }
+
+    .mu-list-header {
+      padding: 0;
+      background-color: $ui-01;
+
+      .mu-checkbox {
+        padding: 6px $spacing-2xs 6px $spacing-xs;
+
+        & + .mu-btn-link {
+          margin-left: $spacing-2xs;
+        }
+      }
+
+      .mu-btn-link {
+        margin-top: 2px;
+        padding: 0;
+      }
+    }
+
+    // 신규 스타일 정의
+    .mu-list-summary {
+      @include font-size("12");
+      position: relative;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      text-align: left;
+      line-height: 1.5;
+
+      .mu-checkbox {
+        padding: 6px $spacing-2xs 6px $spacing-xs;
+      }
+
+      .mu-btn-link {
+        padding-right: 0;
+        font-weight: 500;
+
+        .iriscon {
+          @include font-size("12");
+          padding-left: $spacing-3xs;
+        }
+      }
+    }
+
+    .mu-list-summary__contents {
+      flex: 1 0;
+      padding: 6px $spacing-xs;
+      border-left: 1px solid #e8e8e8;
+    }
+
+    .mu-list-summary__options {
+      padding-right: $spacing-xs;
+    }
+
+    .mu-list-details {
+      display: none;
+      padding: $spacing-xs 0;
+      background-color: $ui-01;
+      border-top: 1px solid #e8e8e8;
+      color: $text-01;
+    }
+
+    .mu-list-details-item {
+      display: flex;
+      align-items: center;
+      padding-left: $spacing-xl;
+
+      &:hover {
+        color: inherit;
+        background-color: $hover-ui;
+      }
+    }
+
+    .mu-list-details-item__trigger {
+      display: flex;
+      flex-direction: column;
+      width: 25%;
+      margin-right: $spacing-sm;
+      color: $text-02;
+    }
+
+    .mu-list-details-item__component {
+      @include ellipsis-end("100%");
+      flex: 1 0;
+      margin-right: $spacing-sm;
+    }
+
+    .mu-list-details-item__toolbar {
+      @include ellipsis-end("12%");
+      width: 12%;
+      text-align: right;
+    }
+
+    .mu-list-details-item__layer-name {
+      @include ellipsis-end("100%");
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .mu-list-details-item__trigger-text {
+      @include ellipsis-end("100%");
+    }
+    .mu-list-details-empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: $spacing-sm 0;
+      background-color: $ui-01;
+      border-top: 1px solid #e8e8e8;
+      color: $text-01;
+
+      .mu-icon.info {
+        color: $status-info-close;
+      }
+
+      .mui-message-text {
+        color: $text-03;
+      }
+    }
+  }
+
+  .mu-list-item.is-selected {
+    .mu-list-details {
+      display: block;
+    }
+
+    .mu-list-summary {
+      .iriscon.angle-bottom-thin:before {
+        display: inline-block;
+        transform: rotate(180deg) translateY(1px);
+      }
+    }
+  }
+}

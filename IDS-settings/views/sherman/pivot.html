@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>피벗</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+  <script src="js/html5.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="../../dist-sherman/css/sherman/style.min.css" />
+</head>
+
+<body>
+  <div class="mu-container mu-scroll-h">
+    <section>
+      <div class="pivot-cont content-re">
+        <div class="mu-tab-body filter-wrap fl">
+          <button type="button" class="mu-btn mu-btn-icon toggleClose"><i class="mu-icon angle-double-left"></i></button><!-- 필드 닫기 버튼 -->
+          <ul class="mu-tab">
+            <li><a href="">데이터모델</a></li>
+            <li class="active"><a href="">시간</a></li>
+          </ul>
+          <!-- 데이터모델 -->
+          <div class="mu-tabCont">
+            <div class="mu-input-icon">
+              <input type="text" class="mu-input" placeholder="search">
+              <i class="mu-icon search"></i>
+            </div>
+            <div class="mu-splitter-wrap vertical">
+              <div class="mu-splitter-first" style="height:278px;">
+                <table class="mu-grid mu-grid-hover tbl-model-picker">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="model-name"><i class="mu-icon-img share"></i>BATTING_ALL <span class="model-owner">(sun)</span></div>
+                        <div class="model-sampling">
+                          <button class="mu-btn mu-btn-icon" type="button">
+                            <i class="mu-icon-img sample"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="model-name">BATTING_ALL</div>
+                        <div class="model-sampling">
+                          <button class="mu-btn mu-btn-icon" type="button">
+                            <i class="mu-icon-img sample"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="model-name">WEATHER_FTS</div>
+                        <div class="model-sampling">
+                          <button class="mu-btn mu-btn-icon" type="button">
+                            <i class="mu-icon-img sample"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="selected">
+                      <td>
+                        <div class="model-name">BATTING_ALL</div>
+                        <div class="model-sampling">
+                          <button class="mu-btn mu-btn-icon" type="button">
+                            <i class="mu-icon-img sample"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="model-name">BATTING_ALL</div>
+                        <div class="model-sampling">
+                          <button class="mu-btn mu-btn-icon" type="button">
+                            <i class="mu-icon-img sample"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="model-name">WEATHER_FTS</div>
+                        <div class="model-sampling">
+                          <button class="mu-btn mu-btn-icon" type="button">
+                            <i class="mu-icon-img sample"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="model-name">STATS_TEST</div>
+                        <div class="model-sampling">
+                          <button class="mu-btn mu-btn-icon" type="button">
+                            <i class="mu-icon-img sample"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="model-name">BATTING_FABREJO01</div>
+                        <div class="model-sampling">
+                          <button class="mu-btn mu-btn-icon" type="button">
+                            <i class="mu-icon-img sample"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="model-name">BATTING_ALL</div>
+                        <div class="model-sampling">
+                          <button class="mu-btn mu-btn-icon" type="button">
+                            <i class="mu-icon-img sample"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="model-name">WEATHER_FTS</div>
+                        <div class="model-sampling">
+                          <button class="mu-btn mu-btn-icon" type="button">
+                            <i class="mu-icon-img sample"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="model-name">STATS_TEST</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="model-name">BATTING_FABREJO01</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="mu-splitter"></div>
+              <div class="mu-splitter-last" style="height:calc(100% - 281px);">
+                <!-- 필드 -->
+                <div class="mu-panel-head">
+                  <h3 class="mu-type-omega">필드</h3>
+                </div>
+                <div class="mu-panel-body">
+                  <ul class="mu-slide-menu">
+                    <li>
+                      <div class="bx-item">
+                        <i class="mu-icon-img time"></i><span>date_mday</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <i class="mu-icon-img time"></i><span>date_minute</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <i class="mu-icon-img time"></i><span>date_month</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <i class="mu-icon-img number"></i><span>dest_port</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <i class="mu-icon-img number"></i><span>index</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <i class="mu-icon-img at"></i><span>level</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <i class="mu-icon-img at"></i><span>date_hou</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <i class="mu-icon-img at"></i><span>date_wday</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <i class="mu-icon-img at"></i><span>date_wday</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <i class="mu-icon-img at"></i><span>date_wday</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // 데이터모델 -->
+          <!-- 시간 -->
+          <div class="mu-tabCont" style="display:none">
+            <div class="mu-accordion">
+              <div class="mu-accordion-item accordion-item1">
+                <div class="mu-accordion-head active"><a href=""><span>미리 설정</span></a></div>
+                <div class="mu-accordion-body">
+                  <a href="" class="all-time">전체시간</a>
+                  <ul class="time">
+                    <li><a href="">최근 15분</a></li>
+                    <li><a href="">최근 60분</a></li>
+                    <li><a href="">최근 4시간</a></li>
+                    <li><a href="">최근 24시간</a></li>
+                    <li><a href="">최근 7일</a></li>
+                  </ul>
+                  <ul class="day">
+                    <li><a href="">오늘</a></li>
+                    <li><a href="">어제</a></li>
+                    <li><a href="">이번주</a></li>
+                    <li><a href="">이전주</a></li>
+                    <li><a href="">이번달</a></li>
+                    <li><a href="">이전달</a></li>
+                    <li><a href="">이번분기</a></li>
+                    <li><a href="">이전분기</a></li>
+                    <li><a href="">이번년도</a></li>
+                    <li><a href="">이전년도</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mu-accordion-item accordion-item2">
+                <div class="mu-accordion-head active"><a href=""><span>날짜 및 시간 범위</span></a></div>
+                <div class="mu-accordion-body">
+                  <div class="bx-date active">
+                    <em class="tit">시작</em>
+                    <div class="bx-textarea">
+                      <textarea class="num">2017/03/22<br>16:23:31</textarea>
+                    </div>
+                  </div>
+                  <span class="bx-arrow"></span>
+                  <div class="bx-date">
+                    <em class="tit">종료</em>
+                    <div class="mu-checkbox">
+                      <input id="ckbtbl1" type="checkbox">
+                      <label for="ckbtbl1">현재시간</label>
+                    </div>
+                    <div class="bx-textarea">
+                      <textarea class="num">2017/03/22<br>16:23:31</textarea>
+                    </div>
+                  </div>
+                  <div class="bx-datepicker active">
+                    <div id="datepicker"></div>
+                    <div class="item-group">
+                      <i class="mu-icon-img clock"></i>
+                      <div class="mu-selectbox mu-select-sm">
+                        <button class="mu-value">16</button>
+                        <ul class="mu-list">
+                          <li value="1">list option1</li>
+                        </ul>
+                      </div>
+                      <span class="dot">:</span>
+                      <div class="mu-selectbox mu-select-sm">
+                        <button class="mu-value">23</button>
+                        <ul class="mu-list">
+                          <li value="1">list option1</li>
+                        </ul>
+                      </div>
+                      <span class="dot">:</span>
+                      <div class="mu-selectbox mu-select-sm">
+                        <button class="mu-value">31</button>
+                        <ul class="mu-list">
+                          <li value="1">list option1</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="bx-msg-err"><i class="mu-icon err"></i>끝 날짜가 시작 날짜보다 이전 날짜입니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // 시간 -->
+        </div>
+        <div class="result-wrap fl">
+          <div class="bx-result fl">
+            <div class="mu-row pivotHead on-toggle">
+              <!-- <button type="button" class="mu-btn mu-btn-icon toggleClose fl"><i class="mu-icon angle-double-right"></i></button> -->
+              <div class="mu-col">
+                <div class="txt-info fl">
+                  <p><i class="mu-icon-img datamodel2"></i>BATTING_ALL</p>
+                  <p><i class="mu-icon-img date2"></i><span class="off-txt">시간</span>
+                    <!-- <span class="">2017/03/22 16:23:31 ~ 2017/04/11 12:00:00</span> -->
+                  </p>
+                  <p><i class="mu-icon-img arrow-right"></i><span class="off-txt">·</span>
+                    <p><i class="mu-icon-img history"></i><span class="off-txt">0</span>
+                </div>
+                <div class="fr mr10">
+                  <button type="button" class="mu-btn mu-btn-ghost" disabled><i class="mu-icon-img archiv"></i></button>
+                  <button type="button" class="mu-btn mu-btn-ghost"><i class="mu-icon-img chart"></i></button>
+                  <button type="button" class="mu-btn mu-btn-ghost"><i class="mu-icon-img new-open"></i></button>
+                  <button type="button" class="mu-btn mu-btn-ghost active"><i class="mu-icon-img visual-history"></i></button>
+                </div>
+              </div>
+              <div class="mui-loading-bar"></div>
+              <!-- <div class="mu-progress" style="display:block;">
+                <div class="mu-pbar" style="width:60%"></div>
+              </div> -->
+              <!-- <button type="button" class="mu-btn mu-btn-ghost toggleClose fr"><i class="mu-icon angle-double-left"></i></button> -->
+            </div>
+            <div class="mu-row pivotBody">
+              <div class="mu-col">
+
+                <div class="mu-panel">
+                  <!-- <div class="bx-chart"></div> -->
+                  <div class="mu-panel-head">
+
+                    <div class="mu-hgroup">
+                      <label>목록 개수</label>
+                      <div class="mu-selectbox" mu-select="sb1" select-model="selModel" select-items="selOptions" select-change="changeOption($model)">
+                        <button class="mu-value">50</button>
+                        <ul class="mu-list">
+                          <li>50</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="mu-pagination fr">
+                      <button type="button" class="mu-btn"><i class="mu-icon-img arrow-first"></i></button>
+                      <button type="button" class="mu-btn"><i class="mu-icon-img arrow-prev"></i></button>
+                      <ul>
+                        <li class="active"><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">4</a></li>
+                        <li><a href="">5</a></li>
+                      </ul>
+                      <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-next"></i></button>
+                      <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-last"></i></button>
+                    </div>
+                    <div class="fr">
+                      <button type="button" class="mu-btn mu-btn-icon">
+                        <i class="mu-icon-img download"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="mu-panel-body">
+
+                    <div class="gridWrap">
+                      <table class="mu-grid mu-grid-sort mu-grid-hover">
+                        <colgroup>
+                          <col width="5%">
+                          <col width="15%">
+                          <col>
+                          <col width="10%">
+                          <col width="10%">
+                          <col width="10%">
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th class="none">#</th>
+                            <th>모델 명</th>
+                            <th>필드</th>
+                            <th>데이블 명</th>
+                            <th>테이블 유형</th>
+                            <th>파티션 범위</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td><a href="">DATASET_01</a></td>
+                            <td class="tl">Phone ip , name</td>
+                            <td>LOCAL</td>
+                            <td>admin</td>
+                            <td>1시간</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td><a href="">DATASET_02</a></td>
+                            <td class="tl">agent, source_ip ,
+                              source_port_destnation_ip,destnation_port_poket_size,Dest_port_, dir, lip , etm ,
+                              m_event_no, duration_volume, rea_ibpf, rea_ibpf_volumr, rea_lof,agent, source_ip ,
+                              source_port_destnation_ip,destnation_port_poket_size,Dest_port_, dir, lip , etm ,
+                              m_event_no,duration_volume, rea_ibpf, rea_ibpf_volumr, rea_lof,agent, source_ip ,
+                              source_port_destnation_ip,destnation_port_poket_size,Dest_port_, dir, lip , etm ,
+                              m_event_no,duration_volume, rea_ibpf, rea_ibpf_volumr, rea_lof,</td>
+                            <td>LOCAL</td>
+                            <td>admin</td>
+                            <td>1시간</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td><a href="">DATASET_03</a></td>
+                            <td class="tl">Phone ip , name</td>
+                            <td>LOCAL</td>
+                            <td>admin</td>
+                            <td>1시간</td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td><a href="">DATASET_04</a></td>
+                            <td class="tl">Phone ip , name</td>
+                            <td>LOCAL</td>
+                            <td>admin</td>
+                            <td>1시간</td>
+                          </tr>
+                          <tr>
+                            <td>5</td>
+                            <td><a href="">DATASET_05</a></td>
+                            <td class="tl">Phone ip , name</td>
+                            <td>LOCAL</td>
+                            <td>admin</td>
+                            <td>1시간</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="filter-pivot fl fieldClose">
+            <!-- 필드 열기/닫기(selectField/fieldClose class추가) -->
+            <button type="button" class="mu-btn mu-btn-icon toggleClose"><i class="mu-icon angle-double-right"></i></button><!-- 필드 닫기 버튼 -->
+            <div class="mu-tab-body">
+              <ul class="mu-tab">
+                <li class="active"><a href="">테이블</a></li>
+                <li><a href="">세로막대형</a></li>
+                <li><a href="">막대형</a></li>
+                <li><a href="">꺽은선형</a></li>
+                <li><a href="">원형</a></li>
+              </ul>
+              <div class="mu-tabCont">
+                <div class="bx-btn">
+                  <button type="button" class="mu-btn mu-btn-icon reset"><i class="mu-icon-img reset"></i>초기화</button>
+                </div>
+                <!-- 필터목록 -->
+                <div class="mu-panel">
+                  <div class="mu-panel pivotSetting">
+                    <div class="mu-panel-head">
+                      <span class="mu-title">필터</span>
+                    </div>
+                    <div class="mu-panel-body">
+                      <button type="button" class="mu-btn mu-btn-default btn-add"><i class="mu-icon-img add2"></i>추가</button>
+                    </div>
+                  </div>
+                  <div class="mu-panel pivotSetting">
+                    <div class="mu-panel-head">
+                      <span class="mu-title">행 선택</span>
+                    </div>
+                    <div class="mu-panel-body">
+                      <button type="button" class="mu-btn mu-btn-default btn-add"><i class="mu-icon-img add2"></i>추가</button>
+                    </div>
+                  </div>
+                  <div class="mu-panel pivotSetting">
+                    <div class="mu-panel-head">
+                      <span class="mu-title">열 선택</span>
+                    </div>
+                    <div class="mu-panel-body">
+                      <button type="button" class="mu-btn mu-btn-default btn-add"><i class="mu-icon-img add2"></i>추가</button>
+                    </div>
+                  </div>
+                  <div class="mu-panel pivotSetting">
+                    <div class="mu-panel-head">
+                      <span class="mu-title">열 선택</span><span class="fr"><i class="mu-icon-img alert"></i>필수</span>
+                    </div>
+                    <div class="mu-panel-body">
+                      <div class="mu-item-group">
+                        <div class="mu-btn-group">
+                          <input type="text" class="mu-input" readonly="readonly" value="price <= 300">
+                          <button type="button" class="mu-btn"><i class="mu-icon-img modify"></i></button>
+                        </div>
+                        <button type="button" class="mu-btn btn-delete"></button>
+                      </div>
+                      <button type="button" class="mu-btn mu-btn-default btn-add"><i class="mu-icon-img add2"></i>추가</button>
+                    </div>
+                  </div>
+                  <div class="mu-panel pivotSetting">
+                    <div class="mu-panel-head">
+                      <span class="mu-title">값 선택</span>
+                    </div>
+                    <div class="mu-panel-body">
+                      <div class="mu-item-group">
+                        <div class="mu-btn-group">
+                          <input type="text" class="mu-input" value="삭제 불가능한 기본값">
+                          <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only btn-txt2"><i class="mu-icon-img modify"></i></button>
+                        </div>
+                        <button type="button" class="mu-btn btn-delete btn-txt2" disabled></button>
+                      </div>
+                      <div class="mu-item-group">
+                        <div class="mu-btn-group">
+                          <input type="text" class="mu-input">
+                          <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only btn-txt2"><i class="mu-icon-img modify"></i></button>
+                        </div>
+                        <button type="button" class="mu-btn btn-delete btn-txt2"></button>
+                      </div>
+                      <button type="button" class="mu-btn mu-btn-default btn-add"><i class="mu-icon-img add2"></i>추가</button>
+                    </div>
+                  </div>
+                  <div class="mu-panel pivotSetting">
+                    <div class="mu-panel-head">
+                      <span class="mu-title">값 선택</span>
+                    </div>
+                    <div class="mu-panel-body">
+                      <div class="mu-item-group">
+                        <div class="mu-btn-group">
+                          <input type="text" class="mu-input" value="삭제 불가능한 기본값">
+                          <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only btn-txt2"><i class="mu-icon-img modify"></i></button>
+                        </div>
+                        <button type="button" class="mu-btn btn-delete btn-txt2" disabled></button>
+                      </div>
+                      <div class="mu-item-group">
+                        <div class="mu-btn-group">
+                          <input type="text" class="mu-input">
+                          <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only btn-txt2"><i class="mu-icon-img modify"></i></button>
+                        </div>
+                        <button type="button" class="mu-btn btn-delete btn-txt2"></button>
+                      </div>
+                      <button type="button" class="mu-btn mu-btn-default btn-add"><i class="mu-icon-img add2"></i>추가</button>
+                    </div>
+                  </div>
+                  <div class="mu-panel pivotSetting">
+                    <div class="mu-panel-head">
+                      <span class="mu-title">값 선택</span>
+                    </div>
+                    <div class="mu-panel-body">
+                      <div class="mu-item-group">
+                        <div class="mu-btn-group">
+                          <input type="text" class="mu-input" value="삭제 불가능한 기본값">
+                          <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only btn-txt2"><i class="mu-icon-img modify"></i></button>
+                        </div>
+                        <button type="button" class="mu-btn btn-delete btn-txt2" disabled></button>
+                      </div>
+                      <div class="mu-item-group">
+                        <div class="mu-btn-group">
+                          <input type="text" class="mu-input">
+                          <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only btn-txt2"><i class="mu-icon-img modify"></i></button>
+                        </div>
+                        <button type="button" class="mu-btn btn-delete btn-txt2"></button>
+                      </div>
+                      <button type="button" class="mu-btn mu-btn-default btn-add"><i class="mu-icon-img add2"></i>추가</button>
+                    </div>
+                  </div>
+                  <div class="mu-panel pivotSetting">
+                    <div class="mu-panel-head">
+                      <span class="mu-title">값 선택</span>
+                    </div>
+                    <div class="mu-panel-body">
+                      <div class="mu-item-group">
+                        <div class="mu-btn-group">
+                          <input type="text" class="mu-input" value="삭제 불가능한 기본값">
+                          <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only btn-txt2"><i class="mu-icon-img modify"></i></button>
+                        </div>
+                        <button type="button" class="mu-btn btn-delete btn-txt2" disabled></button>
+                      </div>
+                      <div class="mu-item-group">
+                        <div class="mu-btn-group">
+                          <input type="text" class="mu-input">
+                          <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only btn-txt2"><i class="mu-icon-img modify"></i></button>
+                        </div>
+                        <button type="button" class="mu-btn btn-delete btn-txt2"></button>
+                      </div>
+                      <button type="button" class="mu-btn mu-btn-default btn-add"><i class="mu-icon-img add2"></i>추가</button>
+                    </div>
+                  </div>
+                  <div class="mu-panel pivotSetting">
+                    <div class="mu-panel-head">
+                      <span class="mu-title">값 선택</span>
+                    </div>
+                    <div class="mu-panel-body">
+                      <div class="mu-item-group">
+                        <div class="mu-btn-group">
+                          <input type="text" class="mu-input" value="삭제 불가능한 기본값">
+                          <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only btn-txt2"><i class="mu-icon-img modify"></i></button>
+                        </div>
+                        <button type="button" class="mu-btn btn-delete btn-txt2" disabled></button>
+                      </div>
+                      <div class="mu-item-group">
+                        <div class="mu-btn-group">
+                          <input type="text" class="mu-input">
+                          <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only btn-txt2"><i class="mu-icon-img modify"></i></button>
+                        </div>
+                        <button type="button" class="mu-btn btn-delete  btn-txt2"></button>
+                      </div>
+                      <button type="button" class="mu-btn mu-btn-default btn-add"><i class="mu-icon-img add2"></i>추가</button>
+                    </div>
+                  </div>
+                  <div class="mu-panel pivotSetting">
+                    <div class="mu-panel-head">
+                      <span class="mu-title">값 선택</span>
+                    </div>
+                    <div class="mu-panel-body">
+                      <div class="mu-item-group">
+                        <div class="mu-btn-group">
+                          <input type="text" class="mu-input" value="삭제 불가능한 기본값">
+                          <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only btn-txt2"><i class="mu-icon-img modify"></i></button>
+                        </div>
+                        <button type="button" class="mu-btn btn-delete btn-txt2" disabled></button>
+                      </div>
+                      <div class="mu-item-group">
+                        <div class="mu-btn-group">
+                          <input type="text" class="mu-input">
+                          <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only btn-txt2"><i class="mu-icon-img modify"></i></button>
+                        </div>
+                        <button type="button" class="mu-btn btn-delete btn-txt2"></button>
+                      </div>
+                      <button type="button" class="mu-btn mu-btn-default btn-add"><i class="mu-icon-img add2"></i>추가</button>
+                    </div>
+                  </div>
+                  <!-- <div class="fieldBlank"></div> -->
+                </div>
+                <!-- // 필터목록 -->
+              </div>
+              <div class="bx-btn-play">
+                <button type="button" class="mu-btn btn-play"><i class="mu-icon play"></i>실행</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- tooltip : 필드 통계 정보 -->
+  <div class="mu-tooltip right" style="top:100px;left:50px;display:none;">
+    <div class="arrow"></div>
+    <div class="mu-tooltip-head">
+      <span class="title">agent</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-tooltip-inner">
+      <span class="title"> 48 값, 100.00 % 이벤트</span>
+      <table class="mu-grid">
+        <colgroup>
+          <col>
+          <col width="80px;">
+          <col width="60px;">
+          <col width="120px;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>상위 10개 값</th>
+            <th>개수</th>
+            <th>%</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Agent1</td>
+            <td>22</td>
+            <td>20%</td>
+            <td>
+              <div class="mu-progress">
+                <div class="mu-pbar" style="width:20%"></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Agent1</td>
+            <td>22</td>
+            <td>20%</td>
+            <td>
+              <div class="mu-progress">
+                <div class="mu-pbar" style="width:20%"></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Agent1</td>
+            <td>22</td>
+            <td>20%</td>
+            <td>
+              <div class="mu-progress">
+                <div class="mu-pbar" style="width:20%"></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Agent1</td>
+            <td>22</td>
+            <td>20%</td>
+            <td>
+              <div class="mu-progress">
+                <div class="mu-pbar" style="width:20%"></div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- //tooltip : 필드 통계 정보 -->
+
+  <!--  tooltip : 시간재검색 -->
+  <div class="mu-tooltip bottom timeResearch" style="top:100px;left:450px;display:none;">
+    <div class="arrow"></div>
+    <div class="mu-tooltip-head">
+      <span class="title">linked_time (검색에 추가)</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-tooltip-inner">
+      <span class="title">이전 또는 이후 이벤트</span>
+      <div class="mu-hgroup">
+        <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-prev"></i><span>이 시간
+            전</span></button>
+        <button type="button" class="mu-btn mu-btn-icon"><span>이 시간에</span></button>
+        <button type="button" class="mu-btn mu-btn-icon"><span>이 시간 이후</span><i class="mu-icon-img arrow-next"></i></button>
+      </div>
+      <span class="title">근접 이벤트</span>
+      <div class="mu-item-group">
+        <div class="mu-selectbox">
+          <button class="mu-value">+</button>
+          <ul class="mu-list">
+            <li value="1">+</li>
+            <li value="2">-</li>
+            <li value="3">+/-</li>
+          </ul>
+        </div>
+        <input type="text" class="mu-input">
+        <div class="mu-selectbox">
+          <button class="mu-value">초</button>
+          <ul class="mu-list">
+            <li value="1">초</li>
+            <li value="2" class="active">주</li>
+            <li value="3">일</li>
+            <li value="4">시간</li>
+            <li value="5">분</li>
+            <li value="6">초</li>
+            <li value="7">millisecond(s)</li>
+          </ul>
+        </div>
+        <button class="mu-btn btnApply fr" type="button">재검색</button>
+      </div>
+    </div>
+  </div>
+  <!--  //tooltip : 시간재검색 -->
+
+  <!-- tooltip : 검색메뉴 -->
+  <div class="mu-tooltip bottom" style="top:100px;left:800px;display:none;">
+    <div class="arrow"></div>
+    <ul class="mu-popup-menu">
+      <li><a href="">검색에 추가</a></li>
+      <li><a href="">검색에서 제외</a></li>
+      <li><a href="">새로운 검색</a></li>
+    </ul>
+  </div>
+  <!-- //tooltip : 검색메뉴 -->
+
+  <!-- dialog : 필드 선택 -->
+  <div class="mu-dialog" style="top:300px;left:450px;display:none;">
+    <div class="mu-dialog-head">
+      <span class="title">필드 선택</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-dialog-body">
+      <div class="mu-panel">
+        <div class="mu-panel-head">
+          <div class="mu-hgroup">
+            <div class="mu-input-icon">
+              <input class="mu-input" placeholder="search..." type="text">
+              <i class="mu-icon search"></i>
+            </div>
+          </div>
+        </div>
+        <div class="mu-panel-body">
+          <table class="mu-grid">
+            <colgroup>
+              <col width="50px">
+              <col width="220px">
+              <col>
+              <col>
+              <col>
+            </colgroup>
+            <thead>
+              <tr>
+                <th>
+                  <div class="mu-checkbox">
+                    <input id="ckbtblall" type="checkbox">
+                    <label for="ckbtblall"></label>
+                  </div>
+                </th>
+                <th>필드</th>
+                <th>값의 수</th>
+                <th>이벤트 적용 범위</th>
+                <th>유형</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="mu-checkbox">
+                    <input id="ckbtbl1" type="checkbox">
+                    <label for="ckbtbl1"></label>
+                  </div>
+                </td>
+                <td>linked_time</td>
+                <td>38</td>
+                <td>100.00%</td>
+                <td>시간</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="mu-checkbox">
+                    <input id="ckbtbl1" type="checkbox">
+                    <label for="ckbtbl1"></label>
+                  </div>
+                </td>
+                <td>linked_time</td>
+                <td>38</td>
+                <td>100.00%</td>
+                <td>시간</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="mu-checkbox">
+                    <input id="ckbtbl1" type="checkbox">
+                    <label for="ckbtbl1"></label>
+                  </div>
+                </td>
+                <td>linked_time</td>
+                <td>38</td>
+                <td>100.00%</td>
+                <td>시간</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //dialog : 필드 선택 -->
+
+  <link href="js/jquery-ui.css" rel="stylesheet">
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script>
+    $(function () {
+      $("#datepicker").datepicker();
+    });
+  </script>
+  <script src="../../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

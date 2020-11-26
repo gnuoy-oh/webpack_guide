@@ -1,0 +1,364 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("popup-menu") {
+  .mu-popup-menu {
+    display: inline-block;
+    padding: $spacing-2xs 0;
+    text-align: left;
+    border: 1px solid $interactive-01;
+    background-color: $ui-01;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    min-width: 52px;
+  }
+
+  .mu-popup-menu > li {
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .mu-popup-menu > li > a {
+    display: block;
+    padding: 10px 12px;
+    white-space: nowrap;
+  }
+
+  .mu-popup-menu > li > a > i:before {
+    color: $interactive-01;
+  }
+
+  .mu-popup-menu > li > a > i {
+    margin-right: 4px;
+  }
+
+  .mu-popup-menu > li > a > span + i {
+    margin-right: 0;
+    margin-left: 7px;
+  }
+
+  .mu-popup-menu > li:hover,
+  .mu-popup-menu > li:active {
+    background-color: $hover-ui-accent;
+    color: $brand-02;
+  }
+
+  .mu-popup-menu > li:hover > a,
+  .mu-popup-menu > li:hover > a > i:before,
+  .mu-popup-menu > li:active > a,
+  .mu-popup-menu > li:active > a > i:before {
+    color: $brand-02;
+  }
+
+  .mu-popup-menu > li.disabled:active > a,
+  .mu-popup-menu > li.disabled:active > a > i:before {
+    color: $text-03;
+  }
+
+  .mu-popup-menu > li.disabled > a {
+    cursor: no-drop;
+    opacity: 0.5;
+  }
+
+  .mu-popup-menu > li.disabled > a > i:before {
+    color: $text-03;
+  }
+
+  .mu-popup-menu > li.disabled:hover > a {
+    color: $text-01;
+  }
+
+  .mu-popup-menu > li.disabled:hover {
+    background-color: $ui-01;
+    color: $text-01;
+  }
+
+  .mu-popup-menu li.mu-icon-sub > a:after {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    bottom: 0;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin: auto;
+    content: "";
+    border-top: 4px solid transparent;
+    border-right: 0;
+    border-bottom: 4px solid transparent;
+    border-left: 5px solid $text-01;
+  }
+
+  .mu-popup-menu li.on.mu-icon-sub > a:after {
+    border-left-color: $brand-02;
+  }
+
+  .mu-popup-menu li.mu-icon-sub:hover > a:after,
+  .mu-popup-menu li.on.mu-icon-sub > a:after {
+    border-left-color: $brand-02;
+  }
+
+  // TODO: studio에 기능적 컨텍스트 메뉴와 구분하기 위해 클래스를 추가함. 추후 디자인 개편시 두가지 유형으로 구분된 디자인 필요
+
+  .mu-popup-menu.mu-popup-menu-grey {
+    border-color: $ui-04;
+  }
+
+  .mu-popup-menu.mu-popup-menu-grey > li > a {
+    padding: 10px 24px 10px 12px;
+  }
+  .mu-popup-icon-right > li {
+    text-align: right;
+  }
+
+  .mu-popup-icon-right > li > a > i {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    left: inherit;
+  }
+
+  .mu-popup-sub ul {
+    display: inline-block;
+    text-align: left;
+    border: 1px solid #d0d0d0;
+    background-color: $ui-01;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .mu-popup-sub ul li {
+    position: relative;
+    text-align: left;
+  }
+
+  .mu-popup-sub li > a {
+    display: block;
+    padding: 10px 25px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .mu-popup-sub > li ul {
+    position: absolute;
+    z-index: 10;
+    top: 0px;
+    left: 105%;
+    display: none;
+  }
+
+  .mu-popup-sub > li.on,
+  .mu-popup-sub ul li.on {
+    background-color: $hover-ui-accent;
+  }
+
+  .mu-popup-sub > li.on > a,
+  .mu-popup-sub ul li.on > a {
+    color: $brand-02;
+  }
+
+  .mu-popup-sub > li:hover > ul,
+  .mu-popup-sub > li > ul > li:hover > ul {
+    display: block;
+  }
+
+  .mu-popup-sub > li.on > ul,
+  .mu-popup-sub > li > ul > li.on > ul {
+    display: block;
+  }
+
+  .mu-popup-sub > li.on i:before,
+  .mu-popup-sub ul li.on i:before {
+    color: $brand-02;
+  }
+
+  .mu-popup-group > li + li {
+    border-top: 0;
+  }
+
+  .mu-popup-group > li.mu-divider {
+    border-top: 1px solid $ui-04;
+  }
+
+  .mu-popup-comp > li ul {
+    top: inherit;
+    left: inherit;
+  }
+
+  .mu-tooltip-head .mu-icon-img,
+  .mu-dialog-head .mu-icon-img {
+    width: 20px;
+    height: 20px;
+    background: url("../../images/common/icon_tooltip.png") no-repeat 0 0;
+    margin: 0;
+  }
+
+  .mu-tooltip-head .mu-btn:hover .mu-icon-img,
+  .mu-dialog-head .mu-btn:hover .mu-icon-img {
+    background-position: 0 -20px;
+  }
+
+  .mu-popup-menu .mu-icon-img {
+    width: 20px;
+    height: 20px;
+    padding: 4px 0;
+    background: url("#{$img-path}/common/icon_tooltip.png") no-repeat -20px 0;
+    position: static;
+    margin: 0;
+  }
+
+  .mu-popup-menu .mu-icon-img.textcopy {
+    width: 14px;
+    height: 14px;
+    background-position: -282px -3px;
+  }
+
+  .mu-popup-menu .mu-icon-img.link {
+    background-position: -40px 0;
+  }
+
+  .mu-popup-menu .mu-icon-img.option {
+    background-position: -60px -20px;
+  }
+
+  .mu-popup-menu .mu-icon-img.copy {
+    background-position: -80px -20px;
+  }
+
+  .mu-popup-menu .mu-icon-img.rerun {
+    background-position: -100px -20px;
+  }
+
+  .mu-popup-menu .mu-icon-img.trash {
+    background-position: -120px -20px;
+  }
+
+  .mu-popup-menu .mu-icon-img.divide {
+    background-position: -140px -20px;
+  }
+
+  .mu-popup-menu .mu-icon-img.search {
+    background-position: -160px -20px;
+  }
+
+  .mu-popup-menu .mu-icon-img.pivot {
+    background-position: -180px -20px;
+  }
+
+  .mu-popup-menu a:hover .mu-icon-img {
+    background-position: -20px -20px;
+  }
+
+  .mu-popup-menu a:hover .mu-icon-img.textcopy {
+    background-position: -282px -3px;
+  }
+
+  .mu-popup-menu a:hover .mu-icon-img.link {
+    background-position: -40px -20px;
+  }
+
+  .mu-popup-menu a:hover .mu-icon-img.option {
+    background-position: -60px -20px;
+  }
+
+  .mu-popup-menu a:hover .mu-icon-img.copy {
+    background-position: -80px -20px;
+  }
+
+  .mu-popup-menu a:hover .mu-icon-img.rerun {
+    background-position: -100px -20px;
+  }
+
+  .mu-popup-menu a:hover .mu-icon-img.trash {
+    background-position: -120px -20px;
+  }
+
+  .mu-popup-menu a:hover .mu-icon-img.divide {
+    background-position: -140px -20px;
+  }
+
+  .mu-popup-menu a:hover .mu-icon-img.search {
+    background-position: -160px -20px;
+  }
+
+  .mu-popup-menu a:hover .mu-icon-img.pivot {
+    background-position: -180px -20px;
+  }
+
+  /*2017-07-24 ADD LYB 피벗 그래프 팝업메뉴리스트 디자인 수정*/
+  .mu-popup-menu.mu-popup-sub > li a {
+    height: auto;
+    padding: 8px 20px 8px 11px;
+    display: block;
+    font-size: 12px;
+    color: $text-01;
+  }
+
+  // .mu-popup-menu.mu-popup-sub > li.mu-icon-sub a{padding-left: 24px;}
+  .mu-popup-menu.mu-popup-sub > li:hover > a {
+    color: $text-01;
+  }
+
+  .mu-popup-menu.mu-popup-sub > li:hover,
+  .mu-popup-menu.mu-popup-sub > li:active {
+    background-color: $ui-01;
+  }
+
+  .mu-popup-menu.mu-popup-sub > li a:hover,
+  .mu-popup-menu.mu-popup-sub > li a:active,
+  .mu-popup-menu.mu-popup-sub > li.on a {
+    background-color: $hover-ui-accent;
+    color: $brand-02;
+  }
+
+  .mu-popup-menu.mu-popup-sub > li.disabled a {
+    background: $ui-01;
+    color: $ui-04;
+  }
+
+  .mu-popup-menu.mu-popup-sub > li ul {
+    top: -1px;
+    left: 100%;
+    border: 1px solid $brand-02;
+    border-radius: 0;
+  }
+
+  .mu-popup-menu.mu-popup-sub > li.on ul li a,
+  .mu-popup-menu.mu-popup-sub > li:hover ul li a {
+    background: $ui-01;
+    border-radius: 0;
+    color: $text-01;
+  }
+
+  .mu-popup-menu.mu-popup-sub > li.on ul li a:hover,
+  .mu-popup-menu.mu-popup-sub > li:hover ul li a:hover {
+    background: $hover-ui-accent;
+    border-radius: 0;
+  }
+
+  // 2019-01-30 ADD KHY popup-menu 새창으로열기 버튼 있을 경우 생기는 이슈 해결위한 임시 코드
+  .mu-popup-menu > li > a.mu-popup-menu-new-win {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: auto;
+    padding: 5px;
+  }
+
+  .mu-popup-menu.mu-popup-sub > li > a.mu-popup-menu-new-win {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: auto;
+    padding: 5px;
+  }
+
+  .mu-popup-sub.mu-popup-sub li:hover a {
+    background-color: $hover-ui-accent;
+    color: $brand-02;
+  }
+}

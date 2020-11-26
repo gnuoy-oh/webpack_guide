@@ -1,0 +1,283 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("dialog") {
+  .mu-dialog-background {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+    background-color: #eee;
+    filter: alpha(opacity=40);
+  }
+
+  .mu-dialog {
+    position: absolute;
+    z-index: 11;
+    display: inline-block;
+    min-width: 240px;
+    text-align: left;
+    border: 1px solid $ui-04;
+    background-color: $ui-01;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .mu-dialog-head {
+    position: relative;
+    height: 31px;
+    border-bottom: 1px solid $ui-04;
+    background-color: $ui-02;
+    line-height: 31px;
+    font-weight: bold;
+    padding: 0 8px 0 12px;
+
+    &-caption {
+      font-weight: 500;
+      font-size: 13px;
+      color: $text-03;
+      margin-left: 4px;
+    }
+
+    &:after {
+      display: block;
+      visibility: hidden;
+      clear: both;
+      height: 0;
+      content: "";
+    }
+
+    &:active {
+      cursor: move;
+    }
+
+    .title {
+      @include typescale("zeta");
+      width: 100%;
+      display: inline-block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      padding-right: 20px;
+    }
+
+    .subtitle {
+      margin-left: 4px;
+      font-size: 13px;
+      color: $text-02;
+    }
+
+    .mu-btn {
+      position: absolute;
+      top: 0;
+      right: 4px;
+      margin: 0;
+      height: 100%;
+    }
+
+    .mu-selectbox {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      font-weight: 500;
+
+      .mu-list {
+        top: calc(100% - 2px);
+      }
+    }
+  }
+
+  // 2018-08-20 Sass 적용 - button 콤포넌트화, 다이얼로그에 고정된 line-height값 필요없으므로 제거
+  // .mu-dialog-head > *{line-height:34px;}
+
+  .mu-dialog-body {
+    overflow: auto;
+    padding: 15px;
+    height: calc(100% - 31px);
+
+    .mu-dialog-head {
+      padding: 0 0 6px;
+    }
+  }
+
+  .mu-dialog-foot {
+    height: 38px;
+    padding: 6px 8px;
+    text-align: right;
+    vertical-align: middle;
+    text-align: left;
+    border-top: 1px solid $ui-04;
+    background-color: $ui-01;
+
+    .mu-btn {
+      min-width: 60px;
+      text-transform: capitalize;
+    }
+
+    .mu-btn + .mu-btn {
+      margin-left: 4px;
+    }
+
+    .bx-btn-toggle + .mu-btn {
+      margin-left: 4px;
+    }
+  }
+
+  .mui-dialog-foot-messge {
+    float: right;
+    margin-right: 4px;
+  }
+
+  .mu-fix-foot {
+    min-height: 160px;
+
+    .mu-dialog-head {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+
+    .mu-dialog-body {
+      position: absolute;
+      top: 34px;
+      width: 100%;
+      height: calc(100% - 34px - 55px);
+    }
+
+    .mu-dialog-foot {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .mu-modal-open {
+    overflow: hidden;
+  }
+
+  .mui-dialog-cont {
+    border-top: 1px solid $ui-04;
+    padding: $spacing-sm;
+
+    .mui-form-head {
+      .mu-btn {
+        height: 100%;
+        padding: 0;
+        border-width: 0;
+      }
+    }
+
+    .mui-form-head-text {
+      font-size: 13px;
+    }
+
+    .mui-form-head {
+      padding: 0 0 $spacing-xs;
+    }
+
+    .mui-form-item-label {
+      padding: 8px 16px;
+    }
+
+    .mui-form-item:first-child .mui-form-item-label {
+      padding-bottom: 8px;
+    }
+
+    .mui-form-item:last-child .mui-form-item-label {
+      padding-top: 8px;
+    }
+
+    .mui-form-body-wrap {
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  .mu-dialog .management.setting {
+    padding: 0;
+  }
+
+  .mu-dialog .mu-grid {
+    border: 1px solid #e7e7e7;
+    border-left: none;
+    border-right: none;
+    table-layout: auto;
+  }
+
+  /* 2016-01-16 MOD */
+  .mu-dialog .mu-grid tbody > tr:hover {
+    border: none;
+  }
+
+  /* 2016-11-25 ADD */
+  .mu-dialog .mu-grid thead > tr > th,
+  .mu-dialog .mu-grid tbody > tr > td {
+    padding: 3px 10px;
+    height: 26px;
+    line-height: 1.75;
+    vertical-align: middle;
+    border-bottom: 1px solid #e7e7e7;
+  }
+
+  .mu-fix-foot .mu-dialog-body {
+    top: 31px;
+    height: calc(100% - 31px - 38px);
+  }
+
+  /* 2016-05-31 ADD*/
+  .mu-fix-foot .mu-dialog-body:last-child {
+    height: calc(100% - 31px - 15px);
+  }
+
+  // 테이블 row 확장 기능을 위한 말줄임 스타일링
+  .mu-dialog .mu-grid.mu-grid-ellipsis {
+    table-layout: fixed;
+  }
+
+  //   dialog size
+  //   ==========================================
+  //   xs   ||  350px
+  //   sm   ||  480px (450, 418)
+  //   md   ||  600px
+  //   lg   ||  900px
+  //   xl   ||  1180px
+  //   ==========================================
+
+  .mui-dialog-xs {
+    width: 350px;
+  }
+
+  .mui-dialog-sm {
+    width: 480px;
+  }
+
+  .mui-dialog-md {
+    width: 620px;
+  }
+
+  .mui-dialog-lg {
+    width: 900px;
+  }
+
+  .mui-dialog-xl {
+    width: 1180px;
+    height: 100%;
+    max-height: calc(100% - 200px);
+    min-height: calc(100% - 200px);
+  }
+
+  // 여백이 없는 다이얼로그
+  .mui-dialog-slim {
+    .mu-dialog-body {
+      padding: 0;
+    }
+  }
+}

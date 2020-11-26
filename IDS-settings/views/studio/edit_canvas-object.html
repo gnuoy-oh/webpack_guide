@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>보고서-새보고서 Canvas(prop)</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+	<script src="js/html5.js"></script>
+	<script src="js/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="../../assets/lib/spectrum.css">
+  <link rel="stylesheet" type="text/css" href="../../dist-sherman/css/sherman/style.min.css">
+</head>
+
+<body>
+  <!-- 보고서 -->
+  <div class="mu-container">
+    <section>
+      <div class="mu-content content-re data-add report">
+        <div class="mu-panel">
+          <div class="mu-panel-head">
+            <div class="mu-hgroup fl report-title">
+              <h3 class="mu-title report-title-text">
+                보고서
+              </h3>
+              <!-- 수정 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon-img edit-title"></i>
+              </button>
+              <!-- 수정 확인 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon check"></i>
+              </button>
+            </div>
+            <div class="mu-hgroup fr">
+              <button type="button" class="mu-btn mu-btn-default">
+                목록으로
+              </button>
+              <button type="button" class="mu-btn mu-btn-default">
+                보기
+              </button>
+              <button type="button" class="mu-btn mu-btn-primary">
+                저장
+              </button>
+              <button type="button" class="mu-btn mu-btn-secondary">
+                새로저장
+              </button>
+              <button type="button" class="mu-btn mu-btn-default" disabled="disabled">
+                접근 권한
+              </button>
+              <button type="button" class="mu-btn mu-btn-danger">
+                전체삭제
+              </button>
+            </div>
+          </div>
+          <div class="mu-panel-body">
+            <!-- 상단 메뉴바 -->
+            <div class="report-menubar">
+              <div class="mu-selectbox width150">
+                <button class="mu-value">전체</button>
+                <ul class="mu-list">
+                  <li>전체</li>
+                  <li class="active">데이터 시각화</li>
+                  <li>양식</li>
+                  <li>버튼</li>
+                  <li>기타</li>
+                </ul>
+              </div>
+              <ul class="report-menu">
+                <li><i class="mu-icon-img area"></i></li>
+                <li><i class="mu-icon-img map"></i></li>
+                <li><i class="mu-icon-img text"></i></li>
+                <li><i class="mu-icon-img rectangle"></i></li>
+                <li><i class="mu-icon-img ellipse"></i></li>
+                <li><i class="mu-icon-img date"></i></li>
+                <li><i class="mu-icon-img renew"></i></li>
+                <li><i class="mu-icon-img list"></i></li>
+                <li><i class="mu-icon-img tab"></i></li>
+                <li><i class="mu-icon-img url"></i></li>
+                <li><i class="mu-icon-img image"></i></li>
+                <li><i class="mu-icon-img html"></i></li>
+                <li><i class="mu-icon-img input"></i></li>
+                <li><i class="mu-icon-img combo-box"></i></li>
+                <li><i class="mu-icon-img check-and-radio"></i></li>
+                <li><i class="mu-icon-img datetime"></i></li>
+                <li><i class="mu-icon-img button"></i></li>
+                <li><i class="mu-icon-img hidden-input"></i></li>
+              </ul>
+              <div class="fr">
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">
+                    전체변수명보기
+                  </span>
+                </button>
+              </div>
+            </div>
+            <!-- //상단 메뉴바 -->
+            <div class="report-cont">
+              <!-- canvas 영역 -->
+              <div class="report-canvas">
+                <div class="canvas" style="width:1920px;height:1080px;">
+                </div>
+              </div>
+              <!-- //canvas 영역 -->
+              <!-- 우측 패널 -->
+              <div class="report-panel">
+                <ul class="mu-tab">
+                  <li>
+                    <a>속성</a>
+                  </li>
+                  <li class="active">
+                    <a>객체</a>
+                  </li>
+                </ul>
+                <!-- 속성 -->
+                <div class="mu-tab-body">
+                  <div class="mu-tabCont">
+                    <!-- 캔버스 크기 -->
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">
+                          캔버스 크기
+                        </span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-selectbox">
+                          <button class="mu-value">
+                            사용자설정
+                          </button>
+                          <ul class="mu-list">
+                            <li value="1366X768">
+                              1366 x 768
+                            </li>
+                            <li value="1980X1080" class="active">
+                              1980 x 1080
+                            </li>
+                            <li value="custom">
+                              사용자 설정
+                            </li>
+                          </ul>
+                        </div>
+                        <table class="mu-formbox mt10">
+                          <colgroup>
+                            <col width="90">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>가로 크기</th>
+                              <td>
+                                <div class="mu-item-group">
+                                  <input class="mu-input width70" type="number">
+                                  <div class="mu-selectbox width70">
+                                    <button class="mu-value">
+                                      PX
+                                    </button>
+                                    <ul class="mu-list">
+                                      <li>
+                                        %
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </td>
+                            <tr>
+                              <th>세로 크기</th>
+                              <td>
+                                <div class="mu-item-group">
+                                  <input class="mu-input width70" type="number">
+                                  <div class="mu-selectbox width70">
+                                    <button class="mu-value">
+                                      PX
+                                    </button>
+                                    <ul class="mu-list">
+                                      <li>
+                                        %
+                                      </li>
+                                    </ul>
+                                  </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- // 캔버스 크기 -->
+                    <!-- 보고서 제목 미출력  -->
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">
+                          보고서 제목 미출력
+                        </span>
+                        <button class="mu-btn mu mu-btn-icon">
+                          <i class="mu-icon question-circle">
+                          </i>
+                        </button>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-btn-group full-width full-width-2">
+                          <button class="mu-btn full-width-item active">
+                            제목 출력
+                          </button>
+                          <button class="mu-btn full-width-item">
+                            제목 미 출력
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- // 보고서 제목 미출력  -->
+
+                    <!-- 화면 저장 기능  -->
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">
+                          화면저장 기능
+                        </span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-btn-group full-width full-width-2">
+                          <button class="mu-btn full-width-item">
+                             출력
+                          </button>
+                          <button class="mu-btn full-width-item active">
+                             미출력
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- // 화면 저장 기능  -->
+
+                    
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="mu-tooltip top" mu-tootip="tt3" style="display: none; top:146px; right:40px;">
+    <div class="arrow">
+    </div>
+    <div class="mu-tooltip-inner">
+      <span>
+        보고서 보기 화면의 제목 출력 여부 선택
+      </span>
+    </div>
+  </div>
+
+  <link href="js/jquery-ui.css" rel="stylesheet">
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="../../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("form") {
+  .mui-form-title-wrap {
+    margin-bottom: $layout-2xs;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid $ui-04;
+    vertical-align: middle;
+  }
+
+  .mui-form-title-wrap .mui-form-title {
+    font-size: 18px;
+    font-weight: 700;
+    vertical-align: middle;
+    @include ellipsis-end(100%);
+    color: $text-01;
+  }
+
+  .mui-form + .mui-form-title-wrap {
+    margin-top: $layout-sm;
+  }
+
+  .mui-form-head {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-align: center;
+    padding-bottom: 8px;
+  }
+
+  .mui-form-head-text {
+    font-size: 14px;
+    font-weight: 700;
+    vertical-align: middle;
+    color: $text-01;
+  }
+
+  // 계정 설정 내용 입력 폼
+  .mui-form + .mui-form {
+    margin-top: $layout-xs;
+  }
+
+  .mui-form-body-wrap {
+    border: 1px solid $ui-04;
+    margin-bottom: $layout-2xs;
+  }
+
+  .mui-form-body {
+    width: 100%;
+    background-color: $ui-01;
+    // border: 1px solid $ui-04;
+    font-size: 12px;
+    // margin-bottom: $layout-2xs;
+  }
+
+  .mui-form-foot {
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  .mui-form-foot .mu-btn + .mu-btn {
+    margin-left: 8px;
+  }
+
+  .mui-form-item {
+    display: flex;
+  }
+
+  .mui-form-item:first-child .mui-form-item-label {
+    padding-top: 18px;
+  }
+
+  .mui-form-item:first-child .mui-form-item-cont {
+    padding-top: 12px;
+  }
+
+  .mui-form-item:last-child .mui-form-item-label {
+    padding-bottom: 18px;
+  }
+
+  .mui-form-item:last-child .mui-form-item-cont {
+    padding-bottom: 12px;
+  }
+
+  .mui-form-item-label {
+    vertical-align: top;
+    background-color: $ui-02;
+    border-right: 1px solid $ui-04;
+    padding: 12px 16px;
+    word-break: keep-all;
+    text-align: right;
+  }
+
+  .mui-form-item-label .question-circle {
+    color: $text-03;
+    margin-left: 4px;
+    cursor: pointer;
+  }
+
+  .mui-form-item-label label {
+    font-size: 12px;
+    font-weight: 700;
+    color: $text-02;
+  }
+
+  .mui-form-item-label-explain {
+    font-size: 11px;
+    color: $text-02;
+  }
+
+  .mui-form-item-cont {
+    align-self: center;
+    padding: 4px 12px;
+  }
+
+  .mui-form-item-cont .mu-input-wrap {
+    width: 100%;
+  }
+
+  .mui-form-item-cont .mu-hgroup + .mu-hgroup {
+    margin-top: 6px;
+  }
+
+  // dialog 내부에서 사용되는 form 스타일, 여백 재정의
+  .mu-dialog {
+    .mui-form .mui-form-item-label {
+      text-align: right;
+    }
+
+    .mui-form-item-label {
+      padding-right: 12px;
+      padding-left: 8px;
+    }
+  }
+
+  // mui-form에서 checkbox 그룹이 있을 경우
+  .mui-form-checkbox-group {
+    .mu-checkbox {
+      display: block;
+
+      & + .mu-checkbox {
+        margin-top: 6px;
+      }
+
+      label {
+        font-weight: normal;
+      }
+    }
+  }
+
+  // form 내부에 다시한번 입력 form이 나오는 경우
+  .mui-inner-form {
+    margin-top: 4px;
+    margin-bottom: 12px;
+  }
+
+  .mui-inner-form-item {
+    font-size: 0;
+    vertical-align: top;
+  }
+
+  .mui-inner-form-item + .mui-inner-form-item {
+    margin-top: 6px;
+  }
+
+  .mui-inner-form-item-label {
+    display: inline-block;
+    text-align: right;
+    font-size: 12px;
+    line-height: 26px;
+  }
+
+  .mui-inner-form-item-label > label:after {
+    content: ":";
+    position: relative;
+    top: -0.5px;
+    margin: 0 8px 0 2px;
+  }
+
+  .mui-inner-form-item-cont {
+    display: inline-block;
+    vertical-align: inherit;
+    line-height: 26px;
+  }
+}

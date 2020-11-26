@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>보고서-새보고서-맵-속성</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+  <script src="js/html5.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="../../assets/lib/spectrum.css">
+  <link rel="stylesheet" type="text/css" href="../../dist-sherman/css/sherman/style.min.css">
+</head>
+
+<body>
+  <!-- 보고서 -->
+  <div class="mu-container">
+    <section>
+      <div class="mu-content content-re data-add report">
+        <div class="mu-panel">
+          <div class="mu-panel-head">
+            <div class="mu-hgroup fl report-title">
+              <h3 class="mu-title report-title-text">보고서</h3>
+              <!-- 수정 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon-img edit-title"></i>
+              </button>
+              <!-- 수정 확인 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon check"></i>
+              </button>
+            </div>
+            <div class="mu-hgroup fr">
+              <button type="button" class="mu-btn mu-btn-default">목록으로</button>
+              <button type="button" class="mu-btn mu-btn-default">보기</button>
+              <button type="button" class="mu-btn mu-btn-primary">저장</button>
+              <button type="button" class="mu-btn mu-btn-secondary">새로저장</button>
+              <button type="button" class="mu-btn mu-btn-default" disabled="disabled">접근 권한</button>
+              <button type="button" class="mu-btn mu-btn-danger">전체삭제</button>
+            </div>
+          </div>
+          <div class="mu-panel-body">
+            <!-- 상단 메뉴바 -->
+            <div class="report-menubar">
+              <div class="mu-selectbox width150">
+                <button class="mu-value">전체</button>
+                <ul class="mu-list">
+                  <li>전체</li>
+                  <li class="active">데이터 시각화</li>
+                  <li>양식</li>
+                  <li>버튼</li>
+                  <li>기타</li>
+                </ul>
+              </div>
+              <ul class="report-menu">
+                <li><i class="mu-icon-img area"></i></li>
+                <li class="active"><i class="mu-icon-img map"></i></li>
+                <li><i class="mu-icon-img text"></i></li>
+                <li><i class="mu-icon-img rectangle"></i></li>
+                <li><i class="mu-icon-img ellipse"></i></li>
+                <li><i class="mu-icon-img date"></i></li>
+                <li><i class="mu-icon-img renew"></i></li>
+                <li><i class="mu-icon-img list"></i></li>
+                <li><i class="mu-icon-img tab"></i></li>
+                <li><i class="mu-icon-img url"></i></li>
+                <li><i class="mu-icon-img image"></i></li>
+                <li><i class="mu-icon-img html"></i></li>
+                <li><i class="mu-icon-img input"></i></li>
+                <li><i class="mu-icon-img combo-box"></i></li>
+                <li><i class="mu-icon-img check-and-radio"></i></li>
+                <li><i class="mu-icon-img datetime"></i></li>
+                <li><i class="mu-icon-img hidden-input"></i></li>
+                <li><i class="mu-icon-img button"></i></li>
+              </ul>
+              <div class="fr">
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">전체변수명보기</span>
+                </button>
+              </div>
+            </div>
+            <!-- //상단 메뉴바 -->
+            <div class="report-cont">
+              <div class="report-canvas">
+                <!-- canvas 영역 -->
+                <div class="canvas" style="width:1920px;height:1080px;">
+                  <div class="tool map" style="top:50px;left:50px;width:200px;height:150px;">
+                    <div style="width:100%;height:100%;"></div>
+                  </div>
+                  <div class="tool map active" style="top:50px;left:260px;width:200px;height:150px;">
+                    <div style="width:100%;height:100%;"></div>
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                </div>
+                <!-- //canvas 영역 -->
+              </div>
+              <div class="report-panel">
+                <ul class="mu-tab">
+                  <li><a href="">데이터</a></li>
+                  <li><a href="">시각화</a></li>
+                  <li class="active"><a href="">객체</a></li>
+                </ul>
+                <!-- 속성 -->
+                <div class="mu-tab-body">
+                  <div class="mu-tabCont">
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">크기</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="90">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>가로</th>
+                              <td>
+                                <input class="mu-input" type="number">
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>세로</th>
+                              <td>
+                                <input class="mu-input" type="number">
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">위치</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="90">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>X</th>
+                              <td>
+                                <input class="mu-input" type="number">
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>Y</th>
+                              <td>
+                                <input class="mu-input" type="number">
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">테두리</span>
+                        <button class="mu-btn mu-btn-icon"><i class="mu-icon setting"></i>꾸미기 옵션</button>
+                        <button class="mu-btn mu-btn-icon"><i class="mu-icon setting"></i></button>
+                        <!-- option 활성화시 active 추가 -->
+                        <button class="mu-btn mu-btn-icon disabled" disabled="disabled"><i
+                            class="mu-icon setting"></i></button><!-- disabled -->
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="90px">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>스타일</th>
+                              <td>
+                                  <div class="border"></div>
+                                  <!-- 테두리 두께 -->
+                                  <span>3</span>
+                                  <!-- //테두리 두께 -->
+                                </td>
+                            </tr>
+                            <tr>
+                              <th>라운드</th>
+                              <td>10</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- //우측 패널 -->
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">채우기</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="90px">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>색상</th>
+                              <td>
+                                <span class="color-preview-option" style="border: 1px solid rgb(206, 211, 217); 
+                                  background-color: rgb(83, 173, 250);"></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>투명도</th>
+                              <td>
+                                <div class="mu-item-group">
+                                  <div class="mu-btn-group">
+                                    <span>0%</span>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- //객체 -->
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">그림자</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="90px">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>그림자</th>
+                              <td>
+                                <ul>
+                                  <li class="shadow-align">
+                                    <i class="icon-shadow"></i> 그림자 없음
+                                  </li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- // 단일값 속성 -->
+
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+          <!-- //속성 -->
+          <div class="bx-btn-play">
+            <button type="button" class="mu-btn btn-play"><i class="mu-icon-img play2"></i>실행</button>
+            <!--<button type="button" class="mu-btn btn-play"><i class="mu-icon-img stop3"></i>중지</button>-->
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  </div>
+  </section>
+  </div>
+
+  <!-- 시각화 옵션 다이얼로그 - Grid 1/3 -->
+  <div class="mu-dialog mu-tab-inner type1 mui-dialog-sm" style="top:80px;left:10px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li class="active"><a href="">Grid</a></li>
+        <li><a href="">색상</a></li>
+        <li><a href="">데이터</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>격자</th>
+                <td>
+                  <div class="mu-checkbox">
+                    <input id="ckbtbl1" checked="checked" type="checkbox">
+                    <label for="ckbtbl1">격자 보이기</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>투명도</th>
+                <td>
+                  <div class="mu-item-group">
+                    <input type="range" name="map.opacity" id="map.opacity" value="0.9"
+                      ng-model="visualOpts.map.opacity" min="0" max="1" step="0.1"
+                      class="ng-pristine ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step ng-touched">
+                    <span>0.9</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>기준 색상</th>
+                <td>
+                  <input type="text" class="mu-input color-value ng-pristine ng-valid ng-not-empty ng-touched"
+                    placeholder="#RRGGBB" ng-model="visualOpts.normal.gauge_color"
+                    ng-model-options="{ updateOn: 'blur' }">
+                  <span class="color-preview"
+                    style="border: 1px solid rgb(206, 211, 217); background-color: rgb(83, 173, 250);"
+                    ng-style="{ 'background-color': visualOpts.normal.gauge_color }"></span>
+                </td>
+                <!-- <td>
+                  <div class="mu-selectbox">
+                    <button class="mu-value">왼쪽 위</button>
+                    <ul class="mu-list">
+                      <li class="active">왼쪽 위</li>
+                      <li>왼쪽 아래</li>
+                      <li>오른쪽 위</li>
+                      <li>오른쪽 아래</li>
+                    </ul>
+                  </div>
+                </td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // 시각화 옵션 다이얼로그 - Grid 1/3 -->
+
+  <!-- 시각화 옵션 다이얼로그 - Grid 2-1/3 -->
+  <div class="mu-dialog mu-tab-inner type1 mui-dialog-sm" style="top:240px;left:10px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li><a href="">Grid</a></li>
+        <li class="active"><a href="">색상</a></li>
+        <li><a href="">데이터</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>설정 방식<button class="mu-btn mu-btn-icon"><i class="mu-icon question-circle"></i></button>
+                </th>
+                <td>
+                  <div class="mu-btn-group">
+                    <button class="mu-btn active">그라디언트</button>
+                    <button class="mu-btn">임계치</button>
+                    <button class="mu-btn">객체별 자동</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>최소값 색상</th>
+                <td>
+                  <input type="text" class="mu-input color-value ng-pristine ng-valid ng-not-empty ng-touched"
+                    ng-model="visualOpts.grid.min_color">
+                  <div class="sp-replacer sp-light">
+                    <div class="sp-preview">
+                      <div class="sp-preview-inner" style="background-color: rgb(255, 255, 255);"></div>
+                    </div>
+                    <div class="sp-dd">▼</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>최대값 색상</th>
+                <td>
+                  <input type="text" class="mu-input color-value ng-pristine ng-valid ng-not-empty ng-touched"
+                    ng-model="visualOpts.grid.min_color">
+                  <div class="sp-replacer sp-light">
+                    <div class="sp-preview">
+                      <div class="sp-preview-inner" style="background-color: rgb(124, 181, 236);"></div>
+                    </div>
+                    <div class="sp-dd">▼</div>
+                  </div>
+                </td>
+                <!-- <td>
+                    <div class="mu-selectbox">
+                      <button class="mu-value">왼쪽 위</button>
+                      <ul class="mu-list">
+                        <li class="active">왼쪽 위</li>
+                        <li>왼쪽 아래</li>
+                        <li>오른쪽 위</li>
+                        <li>오른쪽 아래</li>
+                      </ul>
+                    </div>
+                  </td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // 시각화 옵션 다이얼로그 - Grid 2-1/3 -->
+
+  <!-- 시각화 옵션 다이얼로그 - Grid 2-2/3 -->
+  <div class="mu-dialog mu-tab-inner type1 inner-grid mui-dialog-sm" style="top:400px;left:10px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li><a href="">Grid</a></li>
+        <li class="active"><a href="">색상</a></li>
+        <li><a href="">데이터</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>설정 방식<button class="mu-btn mu-btn-icon"><i class="mu-icon question-circle"></i></button>
+                </th>
+                <td>
+                  <div class="mu-btn-group">
+                    <button class="mu-btn">그라디언트</button>
+                    <button class="mu-btn active">임계치</button>
+                    <button class="mu-btn">객체별 자동</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>구간 설정</th>
+                <td>
+                  <button type="button" class="mu-btn mu-btn-default mb5">
+                    <i class="mu-icon-img add2"></i>추가
+                  </button>
+                  <div class="mu-grid-scroll">
+                    <table class="mu-grid mu-grid-border">
+                      <colgroup>
+                        <col width="86px">
+                        <col width="160px">
+                        <col width="*">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th class="none">임계치</th>
+                          <th class="none">색상</th>
+                          <th class="none">삭제</th>
+                        </tr>
+                      </thead>
+                    </table>
+                    <div class="mu-scroll-v" style="max-height: 160px;">
+                      <table class="mu-grid mu-grid-border mu-grid-strip mu-grid-item mu-grid-hover">
+                        <colgroup>
+                          <col width="86px">
+                          <col width="160px">
+                          <col width="*">
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <!-- input type을 number로 한정할 경우 -->
+                              <div class="mui-input-number"><input type="number" class="mui-input-number-input"></div>
+                            </td>
+                            <td>
+                              <input type="text"
+                                class="mu-input color-value ng-pristine ng-valid ng-not-empty ng-touched"
+                                ng-model="visualOpts.grid.min_color">
+                              <div class="sp-replacer sp-light">
+                                <div class="sp-preview">
+                                  <div class="sp-preview-inner" style="background-color: rgb(255, 255, 255);"></div>
+                                </div>
+                                <div class="sp-dd">▼</div>
+                              </div>
+                            </td>
+                            <td>
+                              <button class="mu-btn-icon" type="button" title="삭제">
+                                <i class="mu-icon trash2"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <!-- input type을 number로 한정할 경우 -->
+                              <div class="mui-input-number"><input type="number" class="mui-input-number-input"></div>
+                            </td>
+                            <td>
+                              <input type="text"
+                                class="mu-input color-value ng-pristine ng-valid ng-not-empty ng-touched"
+                                ng-model="visualOpts.grid.min_color">
+                              <div class="sp-replacer sp-light">
+                                <div class="sp-preview">
+                                  <div class="sp-preview-inner" style="background-color: rgb(255, 255, 255);"></div>
+                                </div>
+                                <div class="sp-dd">▼</div>
+                              </div>
+                            </td>
+                            <td>
+                              <button class="mu-btn-icon" type="button" title="삭제">
+                                <i class="mu-icon trash2"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <!-- input type을 number로 한정할 경우 -->
+                              <div class="mui-input-number"><input type="number" class="mui-input-number-input"></div>
+                            </td>
+                            <td>
+                              <input type="text"
+                                class="mu-input color-value ng-pristine ng-valid ng-not-empty ng-touched"
+                                ng-model="visualOpts.grid.min_color">
+                              <div class="sp-replacer sp-light">
+                                <div class="sp-preview">
+                                  <div class="sp-preview-inner" style="background-color: rgb(255, 255, 255);"></div>
+                                </div>
+                                <div class="sp-dd">▼</div>
+                              </div>
+                            </td>
+                            <td>
+                              <button class="mu-btn-icon" type="button" title="삭제">
+                                <i class="mu-icon trash2"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <!-- input type을 number로 한정할 경우 -->
+                              <div class="mui-input-number"><input type="number" class="mui-input-number-input"></div>
+                            </td>
+                            <td>
+                              <input type="text"
+                                class="mu-input color-value ng-pristine ng-valid ng-not-empty ng-touched"
+                                ng-model="visualOpts.grid.min_color">
+                              <div class="sp-replacer sp-light">
+                                <div class="sp-preview">
+                                  <div class="sp-preview-inner" style="background-color: rgb(255, 255, 255);"></div>
+                                </div>
+                                <div class="sp-dd">▼</div>
+                              </div>
+                            </td>
+                            <td>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- 메시지 : 유효성 체크 error -->
+                  <div class="mui-message error">
+                    <i class="mu-icon err-circle"></i>
+                    <span class="mui-message-text">이전 임계치는 다음 임계치보다 작아야 합니다</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // 시각화 옵션 다이얼로그 - Grid 2-2/3 -->
+
+  <!-- 시각화 옵션 다이얼로그 - Grid 2-2/3 -->
+  <div class="mu-dialog mu-tab-inner type1 inner-grid mui-dialog-sm" style="top:740px;left:10px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li><a href="">Grid</a></li>
+        <li class="active"><a href="">색상</a></li>
+        <li><a href="">데이터</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>설정 방식<button class="mu-btn mu-btn-icon"><i class="mu-icon question-circle"></i></button>
+                </th>
+                <td>
+                  <div class="mu-btn-group">
+                    <button class="mu-btn">그라디언트</button>
+                    <button class="mu-btn">임계치</button>
+                    <button class="mu-btn active">객체별 자동</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // 시각화 옵션 다이얼로그 - Grid 2-3/3 -->
+
+  <!-- 시각화 옵션 다이얼로그 - Grid 2-2/3 -->
+  <div class="mu-dialog mu-tab-inner type1 inner-grid mui-dialog-sm" style="top:900px;left:10px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li><a href="">Grid</a></li>
+        <li class="active"><a href="">색상</a></li>
+        <li><a href="">데이터</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th></th>
+                <td>
+                  <!-- 메시지 : 유효성 체크 error -->
+                  <div class="mui-message error">
+                    <i class="mu-icon err-circle"></i>
+                    <span class="mui-message-text">색상을 설정할 수 없는 조건입니다</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // 시각화 옵션 다이얼로그 - Grid 2-3/3 -->
+
+  <!-- 시각화 옵션 다이얼로그 - Grid 3/3 -->
+  <div class="mu-dialog mu-tab-inner type1 mui-dialog-sm" style="top:1260px;left:10px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li><a href="">Grid</a></li>
+        <li><a href="">색상</a></li>
+        <li class="active"><a href="">데이터</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>Tilecode</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value">TILE_CODE</button>
+                    <ul class="mu-list">
+                      <li value="">LAT1</li>
+                      <li value="" class="active">TILE_CODE</li>
+                      <li value="">LONG1</li>
+                      <li value="">LAT2</li>
+                      <li value="">LONG2</li>
+                      <li value="">SUMMARY_SCORE</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>위도(좌상단)</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value">LAT1</button>
+                    <ul class="mu-list">
+                      <li value="" class="active">LAT1</li>
+                      <li value="">TILE_CODE</li>
+                      <li value="">LONG1</li>
+                      <li value="">LAT2</li>
+                      <li value="">LONG2</li>
+                      <li value="">SUMMARY_SCORE</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>경도(좌상단)</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value">LONG1</button>
+                    <ul class="mu-list">
+                      <li value="">LAT1</li>
+                      <li value="">TILE_CODE</li>
+                      <li value="" class="active">LONG1</li>
+                      <li value="">LAT2</li>
+                      <li value="">LONG2</li>
+                      <li value="">SUMMARY_SCORE</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>위도(우하단)</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value">LAT2</button>
+                    <ul class="mu-list">
+                      <li value="">LAT1</li>
+                      <li value="">TILE_CODE</li>
+                      <li value="" class="active">LONG1</li>
+                      <li value="" class="active">LAT2</li>
+                      <li value="">LONG2</li>
+                      <li value="">SUMMARY_SCORE</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>경도(우하단)</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value">LONG2</button>
+                    <ul class="mu-list">
+                      <li value="">LAT1</li>
+                      <li value="">TILE_CODE</li>
+                      <li value="">LONG1</li>
+                      <li value="">LAT2</li>
+                      <li value="" class="active">LONG2</li>
+                      <li value="">SUMMARY_SCORE</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>색상</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value">SUMMARY_SCORE</button>
+                    <ul class="mu-list">
+                      <li value="">LAT1</li>
+                      <li value="">TILE_CODE</li>
+                      <li value="">LONG1</li>
+                      <li value="">LAT2</li>
+                      <li value="">LONG2</li>
+                      <li value="" class="active">SUMMARY_SCORE</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // 시각화 옵션 다이얼로그 - Grid 3/3 -->
+
+  <!-- 시각화 옵션 다이얼로그 - Grid 3/3 -->
+  <div class="mu-dialog mu-tab-inner type1 mui-dialog-sm" style="top:1260px;left:10px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li><a href="">Grid</a></li>
+        <li><a href="">색상</a></li>
+        <li class="active"><a href="">데이터</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>Tilecode</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value">TILE_CODE</button>
+                    <ul class="mu-list">
+                      <li value="">LAT1</li>
+                      <li value="" class="active">TILE_CODE</li>
+                      <li value="">LONG1</li>
+                      <li value="">LAT2</li>
+                      <li value="">LONG2</li>
+                      <li value="">SUMMARY_SCORE</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>위도(좌상단)</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value">LAT1</button>
+                    <ul class="mu-list">
+                      <li value="" class="active">LAT1</li>
+                      <li value="">TILE_CODE</li>
+                      <li value="">LONG1</li>
+                      <li value="">LAT2</li>
+                      <li value="">LONG2</li>
+                      <li value="">SUMMARY_SCORE</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>경도(좌상단)</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value">LONG1</button>
+                    <ul class="mu-list">
+                      <li value="">LAT1</li>
+                      <li value="">TILE_CODE</li>
+                      <li value="" class="active">LONG1</li>
+                      <li value="">LAT2</li>
+                      <li value="">LONG2</li>
+                      <li value="">SUMMARY_SCORE</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>위도(우하단)</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value">LAT2</button>
+                    <ul class="mu-list">
+                      <li value="">LAT1</li>
+                      <li value="">TILE_CODE</li>
+                      <li value="" class="active">LONG1</li>
+                      <li value="" class="active">LAT2</li>
+                      <li value="">LONG2</li>
+                      <li value="">SUMMARY_SCORE</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>경도(우하단)</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value">LONG2</button>
+                    <ul class="mu-list">
+                      <li value="">LAT1</li>
+                      <li value="">TILE_CODE</li>
+                      <li value="">LONG1</li>
+                      <li value="">LAT2</li>
+                      <li value="" class="active">LONG2</li>
+                      <li value="">SUMMARY_SCORE</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>색상</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value">SUMMARY_SCORE</button>
+                    <ul class="mu-list">
+                      <li value="">LAT1</li>
+                      <li value="">TILE_CODE</li>
+                      <li value="">LONG1</li>
+                      <li value="">LAT2</li>
+                      <li value="">LONG2</li>
+                      <li value="" class="active">SUMMARY_SCORE</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // 시각화 옵션 다이얼로그 - Grid 3/3 -->
+
+  <!-- 시각화 옵션 다이얼로그 - Grid 3/3 -->
+  <div class="mu-dialog mu-tab-inner type1 mui-dialog-sm" style="top:1260px;left:500px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li><a href="">Grid</a></li>
+        <li><a href="">색상</a></li>
+        <li class="active"><a href="">데이터</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <div class="mui-form" style="height:100%;">
+            <div class="mui-form-body" style="height:100%;">
+              <div class="mui-form-item">
+                <div class="mui-form-item-label mui-col-6"><label>Tilecode</label></div>
+                <div class="mui-form-item-cont mui-col-18">
+                  <div class="mu-input-wrap">
+                    <div class="mu-selectbox">
+                      <button class="mu-value w200">TILE_CODE</button>
+                      <ul class="mu-list">
+                        <li value="">LAT1</li>
+                        <li value="" class="active">TILE_CODE</li>
+                        <li value="">LONG1</li>
+                        <li value="">LAT2</li>
+                        <li value="">LONG2</li>
+                        <li value="">SUMMARY_SCORE</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mui-form-item">
+                <div class="mui-form-item-label mui-col-6"><label>위도(좌상단)</label></div>
+                <div class="mui-form-item-cont mui-col-18">
+                  <div class="mu-selectbox">
+                    <button class="mu-value w200">1</button>
+                    <ul class="mu-list">
+                      <li>1</li>
+                      <li class="active">10</li>
+                      <li>100</li>
+                      <li>1,000</li>
+                      <li>10,000</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="mui-form-item">
+                <div class="mui-form-item-label mui-col-6"><label>위도(좌상단)</label></div>
+                <div class="mui-form-item-cont mui-col-18">
+                  <div class="mu-selectbox">
+                    <button class="mu-value w200">1</button>
+                    <ul class="mu-list">
+                      <li>1</li>
+                      <li class="active">10</li>
+                      <li>100</li>
+                      <li>1,000</li>
+                      <li>10,000</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="mui-form-item">
+                <div class="mui-form-item-label mui-col-6"><label>위도(좌상단)</label></div>
+                <div class="mui-form-item-cont mui-col-18">
+                  <div class="mu-selectbox">
+                    <button class="mu-value w200">1</button>
+                    <ul class="mu-list">
+                      <li>1</li>
+                      <li class="active">10</li>
+                      <li>100</li>
+                      <li>1,000</li>
+                      <li>10,000</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // 시각화 옵션 다이얼로그 - Grid 3/3 -->
+
+  <!-- 시각화 옵션 다이얼로그 - marker 1/3 -->
+  <div class="mu-dialog mu-tab-inner type1 mui-dialog-sm" style="top:150px;left:500px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li class="active"><a href="">마커</a></li>
+        <li><a href="">데이터</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>마커 종류</th>
+                <td>
+                  <div class="mu-item-group">
+                    <div class="mu-selectbox">
+                      <button class="mu-value">기본 마커</button>
+                      <ul class="mu-list">
+                        <li class="active">기본 마커</li>
+                        <li>깃발</li>
+                      </ul>
+                    </div>
+                    <span class="division-line">|</span>
+                    <div class="marker-preview-wrap">
+                      <div class="marker-preview">
+                        <img src="../../dist/images/mapview/marker/marker-basic.png" class="marker-preview-item">
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>최대 개수</th>
+                <td>
+                  <div class="mui-input-number"><input type="number" class="mui-input-number-input" max="10" min="1"
+                      step="1"></div>
+                </td>
+              </tr>
+              <tr>
+                <th>범례 위치</th>
+                <td>
+                  <div class="mu-selectbox">
+                    <button class="mu-value">왼쪽 위</button>
+                    <ul class="mu-list">
+                      <li class="active">왼쪽 위</li>
+                      <li>왼쪽 아래</li>
+                      <li>오른쪽 위</li>
+                      <li>오른쪽 아래</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>툴팁</th>
+                <td>
+                  <div class="mu-checkbox">
+                    <input id="ckbtbl1" checked="checked" type="checkbox">
+                    <label for="ckbtbl1">툴팁 보이기</label>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // 시각화 옵션 다이얼로그 - marker 1/3 -->
+
+  <!-- 시각화 옵션 다이얼로그 - marker 2/3 -->
+  <div class="mu-dialog mu-tab-inner type1 mui-dialog-sm" style="top:350px;left:500px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li class="active"><a href="">마커</a></li>
+        <li><a href="">데이터</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>마커 종류</th>
+                <td>
+                  <div class="mu-item-group">
+                    <div class="mu-selectbox">
+                      <button class="mu-value">깃발</button>
+                      <ul class="mu-list">
+                        <li>기본 마커</li>
+                        <li class="active">깃발</li>
+                      </ul>
+                    </div>
+                    <span class="division-line">|</span>
+                    <div class="marker-preview-wrap">
+                      <div class="marker-preview">
+                        <img src="../../dist/images/mapview/marker/flag-red-0.png" class="marker-preview-item">
+                        <img src="../../dist/images/mapview/marker/flag-red-1.png" class="marker-preview-item">
+                        <img src="../../dist/images/mapview/marker/flag-red-2.png" class="marker-preview-item">
+                        <img src="../../dist/images/mapview/marker/flag-red-3.png" class="marker-preview-item">
+                        <img src="../../dist/images/mapview/marker/flag-red-4.png" class="marker-preview-item">
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>기준 색상</th>
+                <td class="mu-item-group">
+                  <div class="mu-btn-color-item is-selected">
+                    <div class="mu-btn-color is-red" title="red(#e71d32)"></div>
+                  </div>
+                  <div class="mu-btn-color-item">
+                    <div class="mu-btn-color is-green" title="green(#40c057)"></div>
+                  </div>
+                  <div class="mu-btn-color-item">
+                    <div class="mu-btn-color is-blue" title="blue(#1e88e5)"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>최대 개수</th>
+                <td>
+                  <div class="mui-input-number"><input type="number" class="mui-input-number-input" max="10" min="1"
+                      step="1"></div>
+                </td>
+              </tr>
+              <tr>
+                <th>범례 위치</th>
+                <td>
+                  <div class="mu-selectbox">
+                    <button class="mu-value">왼쪽 위</button>
+                    <ul class="mu-list">
+                      <li class="active">왼쪽 위</li>
+                      <li>왼쪽 아래</li>
+                      <li>오른쪽 위</li>
+                      <li>오른쪽 아래</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>툴팁</th>
+                <td>
+                  <div class="mu-checkbox">
+                    <input id="ckbtbl1" checked="checked" type="checkbox">
+                    <label for="ckbtbl1">툴팁 보이기</label>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // 시각화 옵션 다이얼로그 - marker 2/3 -->
+
+  <!-- 시각화 옵션 다이얼로그 - marker 3/3 -->
+  <div class="mu-dialog mu-tab-inner type1 mui-dialog-sm" style="top:570px;left:500px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li class="active"><a href="">마커</a></li>
+        <li><a href="">데이터</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>마커 종류</th>
+                <td>
+                  <div class="mu-item-group">
+                    <div class="mu-selectbox">
+                      <button class="mu-value">포인트(점)</button>
+                      <ul class="mu-list">
+                        <li>기본 마커</li>
+                        <li>깃발</li>
+                        <li class="active">포인트(점)</li>
+                      </ul>
+                    </div>
+                    <span class="division-line">|</span>
+                    <div class="marker-preview-wrap">
+                      <div class="marker-preview type-circle">
+                        <img src="../../dist/images/mapview/marker/circle-green-0.png" class="marker-preview-item">
+                        <img src="../../dist/images/mapview/marker/circle-green-1.png" class="marker-preview-item">
+                        <img src="../../dist/images/mapview/marker/circle-green-2.png" class="marker-preview-item">
+                        <img src="../../dist/images/mapview/marker/circle-green-3.png" class="marker-preview-item">
+                        <img src="../../dist/images/mapview/marker/circle-green-4.png" class="marker-preview-item">
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>기준 색상</th>
+                <td class="mu-item-group">
+                  <div class="mu-btn-color-item">
+                    <div class="mu-btn-color is-red" title="red(#e71d32)"></div>
+                  </div>
+                  <div class="mu-btn-color-item is-selected">
+                    <div class="mu-btn-color is-green" title="green(#40c057)"></div>
+                  </div>
+                  <div class="mu-btn-color-item">
+                    <div class="mu-btn-color is-blue" title="blue(#1e88e5)"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>최대 개수</th>
+                <td>
+                  <div class="mui-input-number"><input type="number" class="mui-input-number-input" max="10" min="1"
+                      step="1"></div>
+                </td>
+              </tr>
+              <tr>
+                <th>범례 위치</th>
+                <td>
+                  <div class="mu-selectbox">
+                    <button class="mu-value">왼쪽 위</button>
+                    <ul class="mu-list">
+                      <li class="active">왼쪽 위</li>
+                      <li>왼쪽 아래</li>
+                      <li>오른쪽 위</li>
+                      <li>오른쪽 아래</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>툴팁</th>
+                <td>
+                  <div class="mu-checkbox">
+                    <input id="ckbtbl1" checked="checked" type="checkbox">
+                    <label for="ckbtbl1">툴팁 보이기</label>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // 시각화 옵션 다이얼로그 - marker 3/3 -->
+
+  <!-- popup layer -->
+  <div class="mu-tooltip bottom" mu-tooltip="tt3" style="top:460px; left:800px;">
+    <div class="arrow"></div>
+    <div class="mu-tooltip-inner">
+      <span>red (#e71d32)</span>
+    </div>
+  </div>
+  <div class="mu-tooltip bottom" mu-tooltip="tt3" style="top:460px; left:820px;">
+    <div class="arrow"></div>
+    <div class="mu-tooltip-inner">
+      <span>green (#40c057)</span>
+    </div>
+  </div>
+  <div class="mu-tooltip bottom" mu-tooltip="tt3" style="top:460px; left:840px;">
+    <div class="arrow"></div>
+    <div class="mu-tooltip-inner">
+      <span>blue (#1e88e5)</span>
+    </div>
+  </div>
+  <!-- //popup layer -->
+
+  <link href="js/jquery-ui.css" rel="stylesheet">
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="../../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

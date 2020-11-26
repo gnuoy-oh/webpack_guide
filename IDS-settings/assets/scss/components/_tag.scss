@@ -1,0 +1,142 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+
+@mixin tag-theme-solid($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+@mixin tag-theme($bg-color, $border-color, $text-color) {
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+  color: $text-color;
+}
+
+@include exports("tag") {
+  .#{$prefix}-tag {
+    @include font-family;
+    @include typescale("omega");
+    font-weight: 500;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    margin: $spacing-3xs;
+    padding: 0 $spacing-2xs;
+    border-radius: rem(3px);
+    white-space: nowrap;
+    cursor: default;
+
+    &:not(:first-child) {
+      margin-left: 0;
+    }
+  }
+
+  .#{$prefix}-tag-primary {
+    @include tag-theme-solid($interactive-01, $ui-01);
+  }
+
+  .#{$prefix}-tag-secondary {
+    @include tag-theme-solid($cool-gray-30, $white-0);
+  }
+
+  .#{$prefix}-tag-third {
+    @include tag-theme-solid($teal-10, $teal-60);
+  }
+
+  .#{$prefix}-tag-disable {
+    @include tag-theme-solid($disabled-02, $ui-01);
+    cursor: not-allowed;
+  }
+
+  .#{$prefix}-tag-default {
+    @include tag-theme($cool-gray-30, $gray-30, $gray-60);
+  }
+
+  .#{$prefix}-tag-magenta {
+    @include tag-theme($magenta-10, $magenta-30, $magenta-60);
+  }
+
+  .#{$prefix}-tag-red {
+    @include tag-theme($red-10, $red-30, $red-60);
+  }
+
+  .#{$prefix}-tag-orange {
+    @include tag-theme($orange-10, $orange-30, $orange-60);
+  }
+
+  .#{$prefix}-tag-gold {
+    @include tag-theme($gold-10, $gold-30, $gold-60);
+  }
+
+  .#{$prefix}-tag-green {
+    @include tag-theme($green-10, $green-30, $green-60);
+  }
+
+  .#{$prefix}-tag-cyan {
+    @include tag-theme($cyan-10, $cyan-30, $cyan-60);
+  }
+
+  .#{$prefix}-tag-blue {
+    @include tag-theme($blue-10, $blue-30, $blue-60);
+  }
+
+  .#{$prefix}-tag-purple {
+    @include tag-theme($purple-10, $purple-30, $purple-60);
+  }
+
+  .#{$prefix}-tag-teal {
+    @include tag-theme($teal-10, $teal-30, $teal-60);
+  }
+
+  .#{$prefix}-tag-yellow {
+    @include tag-theme($yellow-10, $yellow-40, $yellow-70);
+  }
+
+  .#{$prefix}-tag-red-status {
+    @include tag-theme($red-20, $red-40, $red-60);
+  }
+
+  .#{$prefix}-tag-magenta-solid {
+    @include tag-theme-solid($magenta-50, $magenta-10);
+  }
+
+  .#{$prefix}-tag-red-solid {
+    @include tag-theme-solid($red-50, $red-10);
+  }
+
+  .#{$prefix}-tag-orange-solid {
+    @include tag-theme-solid($orange-50, $orange-10);
+  }
+
+  .#{$prefix}-tag-gold-solid {
+    @include tag-theme-solid($gold-50, $gold-10);
+  }
+
+  .#{$prefix}-tag-yellow-solid {
+    @include tag-theme-solid($yellow-50, $yellow-10);
+    color: $yellow-80;
+  }
+
+  .#{$prefix}-tag-green-solid {
+    @include tag-theme-solid($green-50, $green-10);
+  }
+
+  .#{$prefix}-tag-cyan-solid {
+    @include tag-theme-solid($cyan-50, $cyan-10);
+  }
+
+  .#{$prefix}-tag-blue-solid {
+    @include tag-theme-solid($blue-50, $blue-10);
+  }
+
+  .#{$prefix}-tag-purple-solid {
+    @include tag-theme-solid($purple-50, $purple-10);
+  }
+
+  .#{$prefix}-tag-teal-solid {
+    @include tag-theme-solid($teal-50, $teal-10);
+  }
+}

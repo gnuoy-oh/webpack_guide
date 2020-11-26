@@ -1,0 +1,190 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("accordion") {
+  .mu-accordion {
+    height: 100%;
+    background-color: $ui-01;
+  }
+  .mu-accordion .mu-accordion-head {
+    border-bottom: 1px solid $ui-04;
+  }
+  .mu-accordion .mu-accordion-head a,
+  .mu-accordion .mu-accordion-head.active a,
+  .mu-accordion .mu-accordion .mu-accordion-head a:hover {
+    display: block;
+    min-height: 28px;
+    padding: 8px 0 6px;
+    text-indent: 12px;
+    text-decoration: none;
+    background-color: $ui-02;
+  }
+  .mu-accordion .mu-accordion-head span {
+    font-weight: 500;
+    color: #152935;
+    font-size: 12px;
+  }
+  .mu-accordion .mu-accordion-head span:before {
+    display: inline-block;
+    width: 10px;
+    margin-right: 6px;
+    content: "\f0da";
+    transform: translate(0, 0);
+    text-align: center;
+    text-indent: 0;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .mu-accordion .mu-accordion-head.active a span:before {
+    content: "\f0d7";
+  }
+  .mu-accordion .mu-accordion-body {
+    display: none;
+    border-bottom: 1px solid $ui-04;
+    background-color: $ui-01;
+  }
+  .mu-accordion .mu-accordion-head.active + .mu-accordion-body {
+    display: block;
+  }
+  .mu-accordion .mu-accordion-item + .mu-accordion-item {
+    margin: 0;
+  }
+
+  .mu-accordion .accordion-item1:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+  .mu-accordion .accordion-item1 .mu-accordion-body {
+    position: relative;
+    padding: 25px;
+  }
+  .mu-accordion .accordion-item1 .all-time {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    display: block;
+    font-weight: bold;
+    color: $brand-02;
+    text-decoration: underline;
+  }
+  .mu-accordion .accordion-item1 ul {
+    display: inline-block;
+    width: 49%;
+    height: 100%;
+    vertical-align: top;
+  }
+  .mu-accordion .accordion-item1 ul.time {
+    padding-top: 40px;
+  }
+  .mu-accordion .accordion-item1 ul.day {
+    padding-left: 25px;
+    border-left: 1px solid $ui-04;
+  }
+  .mu-accordion .accordion-item1 li:first-child {
+    margin: 0;
+  }
+  .mu-accordion .accordion-item1 li {
+    margin-top: 3px;
+  }
+  .mu-accordion .accordion-item1 li:hover a {
+    color: $brand-02;
+    text-decoration: underline;
+  } /*2017-08-30 MOD*/
+  .mu-accordion .accordion-item2 .mu-accordion-head {
+    border-top: 1px solid #d2d6dc;
+  }
+  .mu-accordion .accordion-item2 .mu-accordion-head.active {
+    border-top: none;
+  }
+  .mu-accordion .accordion-item2 .mu-accordion-body {
+    padding: 10px 9px;
+  }
+  .mu-accordion .accordion-item2 .bx-date {
+    display: inline-block;
+  }
+  .mu-accordion .accordion-item2 .active {
+    background-color: $hover-ui-accent;
+  }
+  .mu-accordion .accordion-item2 .bx-date {
+    display: inline-block;
+    width: 120px;
+    padding: 4px 7px 8px 7px;
+    border-radius: 3px 3px 0 0;
+    vertical-align: middle;
+  }
+  .mu-accordion .accordion-item2 .bx-date.active {
+    border: 1px solid #cde9ff;
+    border-bottom: none;
+  }
+  .mu-accordion .accordion-item2 .bx-date .tit {
+    font-weight: bold;
+    font-style: normal;
+  }
+  .mu-accordion .accordion-item2 .bx-date .num {
+    width: 85px;
+    height: 29px;
+    padding: 0;
+    border: none;
+    line-height: 14px;
+    overflow: hidden;
+    resize: none;
+  }
+  .mu-accordion .accordion-item2 .bx-date .bx-textarea {
+    overflow: hidden;
+    width: 99px;
+    height: 38px;
+    margin-top: 7px;
+    padding: 7px 8px 0 7px;
+    border: 1px solid $ui-04;
+    border-radius: 3px;
+    background-color: $ui-01;
+  }
+  .mu-accordion .accordion-item2 .bx-date.active .bx-textarea {
+    border-color: $interactive-01;
+  }
+  .mu-accordion .accordion-item2 .bx-arrow {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-top: 20px;
+    background: url("../../images/common/icon_tooltip.png") no-repeat -240px 0;
+    vertical-align: middle;
+  }
+  .mu-accordion .accordion-item2 .mu-selectbox .mu-value {
+    min-width: 60px;
+  }
+  .mu-accordion .accordion-item2 .mu-checkbox {
+    margin-left: 8px;
+  }
+  .mu-accordion .accordion-item2 .item-group {
+    margin-top: 6px;
+  }
+  .mu-accordion .accordion-item2 .item-group .clock {
+    width: 12px;
+    height: 12px;
+    margin: 0 7px 0 5px;
+  }
+  .mu-accordion .accordion-item2 .item-group .dot {
+    display: inline-block;
+    width: 8px;
+    height: 21px;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .mu-accordion .accordion-item2 .bx-msg-err {
+    margin-top: 8px;
+    padding: 7px 11px 5px 11px;
+    border-radius: 3px;
+  }
+  .mu-accordion .accordion-item2 .mu-icon-img.alert {
+    margin: -3px 0 0 0;
+  }
+}

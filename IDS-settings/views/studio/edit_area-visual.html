@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>보고서-새보고서</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+      <script src="js/html5.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  <link rel="stylesheet" type="text/css" href="../../assets/lib/spectrum.css" />
+  <link rel="stylesheet" type="text/css" href="../../dist-sherman/css/sherman/style.min.css" />
+</head>
+
+<body>
+  <!-- 보고서 -->
+  <div class="mu-container">
+    <section>
+      <div class="mu-content content-re data-add report">
+        <div class="mu-panel">
+          <div class="mu-panel-head">
+            <div class="mu-hgroup fl report-title">
+              <h3 class="mu-title report-title-text">보고서</h3>
+              <!-- 수정 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon-img edit-title"></i>
+              </button>
+              <!-- 수정 확인 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon check"></i>
+              </button>
+            </div>
+            <div class="mu-hgroup fr">
+              <button type="button" class="mu-btn mu-btn-default">
+                목록으로
+              </button>
+              <button type="button" class="mu-btn mu-btn-default">
+                보기
+              </button>
+              <button type="button" class="mu-btn mu-btn-primary">
+                저장
+              </button>
+              <button type="button" class="mu-btn mu-btn-secondary">
+                새로저장
+              </button>
+              <button type="button" class="mu-btn mu-btn-default" disabled="disabled">
+                접근 권한
+              </button>
+              <button type="button" class="mu-btn mu-btn-danger">
+                전체삭제
+              </button>
+            </div>
+          </div>
+          <div class="mu-panel-body">
+            <!-- 상단 메뉴바 -->
+            <div class="report-menubar">
+              <div class="mu-selectbox width150">
+                <button class="mu-value">전체</button>
+                <ul class="mu-list">
+                  <li>전체</li>
+                  <li class="active">데이터 시각화</li>
+                  <li>양식</li>
+                  <li>버튼</li>
+                  <li>기타</li>
+                </ul>
+              </div>
+              <ul class="report-menu">
+                <li class="active"><i class="mu-icon-img area"></i></li>
+                <li><i class="mu-icon-img map"></i></li>
+                <li><i class="mu-icon-img text"></i></li>
+                <li><i class="mu-icon-img rectangle"></i></li>
+                <li><i class="mu-icon-img ellipse"></i></li>
+                <li><i class="mu-icon-img date"></i></li>
+                <li><i class="mu-icon-img renew"></i></li>
+                <li><i class="mu-icon-img list"></i></li>
+                <li><i class="mu-icon-img tab"></i></li>
+                <li><i class="mu-icon-img url"></i></li>
+                <li><i class="mu-icon-img image"></i></li>
+                <li><i class="mu-icon-img html"></i></li>
+                <li><i class="mu-icon-img input"></i></li>
+                <li><i class="mu-icon-img combo-box"></i></li>
+                <li><i class="mu-icon-img check-and-radio"></i></li>
+                <li><i class="mu-icon-img datetime"></i></li>
+                <li><i class="mu-icon-img hidden-input"></i></li>
+                <li><i class="mu-icon-img button"></i></li>
+              </ul>
+              <div class="fr">
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">객체 목록</span>
+                </button>
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">히든 객체 숨기기</span>
+                </button>
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">전체변수명</span>
+                </button>
+              </div>
+            </div>
+            <!-- //상단 메뉴바 -->
+            <div class="report-cont">
+              <div class="report-canvas">
+                <!-- canvas 영역 -->
+                <div class="canvas" style="width: 1920px; height: 1080px;">
+                  <div class="tool area" style="
+                        top: 50px;
+                        left: 50px;
+                        width: 200px;
+                        height: 150px;
+                      ">
+                    <div style="width: 100%; height: 100%;"></div>
+                  </div>
+                  <!-- 박스 클릭 시 사이즈 조절 박스 활성화 -->
+                  <div class="tool area active box noti-position" style="
+                        top: 50px;
+                        left: 270px;
+                        width: 400px;
+                        height: 150px;
+                      ">
+                    <!-- <div class="mui-noti mui-noti-warning mui-noti-closable">
+                      <i class="mu-icon exclamation mui-noti-icon"></i>
+                      <p class="mui-noti-text ellipsis-end" title="notification - warning">
+                        <span class="mui-noti-title">시각화 유형의 데이터 형식과 일치하지 않으면, 차트가 표시되지 않습니다.
+                      </p>
+                      <button type="button" class="mui-noti-close-btn">
+                        <i class="iriscon cancel-thin mui-noti-close-icon"></i>
+                      </button>
+                    </div> -->
+                    <div class="mui-noti mui-noti-info">
+                      <i class="mu-icon info mui-noti-icon"></i>
+                      <p class="mui-noti-text">시각화 유형의 데이터 형식과 일치하지 않으면, 차트가 표시되지 않습니다.</p>
+                    </div>
+                    <div style="width: 100%; height: 100%;"></div>
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                  <!-- // 박스 클릭 시 사이즈 조절 박스 활성화 -->
+                  <!-- 실행중 표시 -->
+                  <div class="tool area" style="
+                        top: 50px;
+                        left: 690px;
+                        width: 200px;
+                        height: 150px;
+                      ">
+                    <div class="is-loading">
+                      <div class="is-loading-text">실행중...</div>
+                    </div>
+                  </div>
+                  <!-- // 실행중 표시 -->
+                  <!-- 실행중 표시 -->
+                  <div class="tool area" style="
+                        top: 50px;
+                        left: 910px;
+                        width: 200px;
+                        height: 150px;
+                      ">
+                    <div class="mui-loading-overlay">
+                      <div class="mui-loading mui-loading-sm">
+                        <div class="mui-loading-spinner"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 실행중 표시 -->
+                  <!-- 실행중 표시 -->
+                  <div class="tool area" style="
+                        top: 50px;
+                        left: 1130px;
+                        width: 200px;
+                        height: 150px;
+                      ">
+                    <div class="mui-loading-overlay">
+                      <div class="mui-loading mui-loading-sm">
+                        <div class="mui-loading-spinner"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 실행중 표시 -->
+                  <!-- 실행중 표시 -->
+                  <div class="tool area" style="
+                        top: 220px;
+                        left: 480px;
+                        width: 200px;
+                        height: 150px;
+                      ">
+                    <div class="mui-loading-overlay">
+                      <div class="mui-loading mui-loading-sm">
+                        <div class="mui-loading-spinner"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 실행중 표시 -->
+                  <!-- 실행중 표시 -->
+                  <div class="tool area" style="
+                        top: 220px;
+                        left: 700px;
+                        width: 200px;
+                        height: 150px;
+                      ">
+                    <div class="mui-loading-overlay">
+                      <div class="mui-loading mui-loading-sm">
+                        <div class="mui-loading-spinner"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 실행중 표시 -->
+                  <!-- 실행중 표시 -->
+                  <div class="tool area" style="
+                        top: 220px;
+                        left: 920px;
+                        width: 200px;
+                        height: 150px;
+                      ">
+                    <div class="mui-loading-overlay">
+                      <div class="mui-loading mui-loading-sm">
+                        <div class="mui-loading-spinner"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 실행중 표시 -->
+                  <!-- 실행중 표시 -->
+                  <div class="tool area" style="
+                        top: 220px;
+                        left: 50px;
+                        width: 200px;
+                        height: 150px;
+                      ">
+                    <div class="mui-loading-overlay">
+                      <div class="mui-loading mui-loading-sm">
+                        <div class="mui-loading-spinner"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 실행중 표시 -->
+                  <!-- 실행중 표시 -->
+                  <div class="tool area" style="
+                        top: 220px;
+                        left: 260px;
+                        width: 200px;
+                        height: 150px;
+                      ">
+                    <div class="mui-loading-overlay">
+                      <div class="mui-loading mui-loading-sm">
+                        <div class="mui-loading-spinner"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 실행중 표시 -->
+                </div>
+                <!-- //canvas 영역 -->
+              </div>
+              <!-- 우측 패널 -->
+              <div class="report-panel">
+                <ul class="mu-tab">
+                  <li><a href="">데이터</a></li>
+                  <li class="active"><a href="">시각화</a></li>
+                  <li><a href="">속성</a></li>
+                  <li><a href="">객체</a></li>
+                </ul>
+                <!-- 속성 -->
+                <div class="mu-tab-body">
+                  <div class="mu-tabCont">
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">시각화 유형</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-selectbox on">
+                          <button class="mu-value option">
+                            <i class="visual-id table"></i>
+                            <span class="data-type-text">테이블</span>
+                          </button>
+                          <ul class="mu-list">
+                            <li>
+                              <i class="visual-id table"></i>
+                              <span class="data-type-text">테이블</span>
+                            </li>
+                            <li>
+                              <i class="visual-id line-boundaries"></i>
+                              <span class="data-type-text">꺾은선형</span>
+                            </li>
+                            <li>
+                              <i class="visual-id dual-axes"></i>
+                              <span class="data-type-text">다중축</span>
+                            </li>
+                            <li>
+                              <i class="visual-id column"></i>
+                              <span class="data-type-text">세로막대형</span>
+                            </li>
+                            <li>
+                              <i class="visual-id hozionbar"></i>
+                              <span class="data-type-text">가로막대형</span>
+                            </li>
+                            <li>
+                              <i class="visual-id pie"></i>
+                              <span class="data-type-text">원형</span>
+                            </li>
+                            <li>
+                              <i class="visual-id scatter"></i>
+                              <span class="data-type-text">시계열 분포</span>
+                            </li>
+                            <li>
+                              <i class="visual-id sankey"></i>
+                              <span class="data-type-text">Sankey</span>
+                            </li>
+                            <li>
+                              <i class="visual-id heatmap"></i>
+                              <span class="data-type-text">히트맵</span>
+                            </li>
+                            <li>
+                              <i class="visual-id gauge"></i>
+                              <span class="data-type-text">Guage</span>
+                            </li>
+                            <li>
+                              <i class="visual-id treemap"></i>
+                              <span class="data-type-text">트리맵</span>
+                            </li>
+                            <li>
+                              <i class="visual-id wordcloud"></i>
+                              <span class="data-type-text">워드클라우드</span>
+                            </li>
+                            <li>
+                              <i class="visual-id anomaly"></i>
+                              <span class="data-type-text">Anomaly</span>
+                            </li>
+                            <li>
+                              <i class="visual-id outlier"></i>
+                              <span class="data-type-text">Outlier</span>
+                            </li>
+                            <li>
+                              <i class="visual-id forecast"></i>
+                              <span class="data-type-text">Forecast</span>
+                            </li>
+                            <li>
+                              <i class="visual-id network"></i>
+                              <span class="data-type-text">네트워크</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <!-- <div class="mu-panel-body">
+                        <ul class="visual-type">
+                          <li class="active">
+                            <button type="button" class="btn-item table">
+                              테이블
+                            </button>
+                          </li>
+                          <li class="disabled">
+                            <button type="button" class="btn-item line-boundaries">
+                              꺽은선형
+                            </button>
+                          </li>
+                          <li>
+                            공유받은 시각화 일때
+                            <button type="button" class="btn-item dual-axes label-sm">
+                              다중 축
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-item bar">
+                              가로막대형
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-item column">
+                              세로막대형
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-item pie">
+                              원형
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-item scatter">
+                              시계열분포
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-item motion">
+                              모션
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-item sankey">
+                              생키
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-item heatmap">
+                              히트 맵
+                            </button>
+                          </li>
+                            <button type="button" class="btn-item single-value">단일 값</button>
+                          
+                          <li>
+                            <button type="button" class="btn-item gauge">
+                              게이지
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-item treemap">
+                              트리 맵
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-item wordcloud">
+                              워드클라우드
+                            </button>
+                          </li>
+                        </ul>
+                      </div> -->
+                    </div>
+
+                    <!-- [개발] 시각화 유형: 히트맵, Sankey 버튼 클릭시, 해당 panel 보여줍니다.-->
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">데이터 설정 방식</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mui-message info">
+                          <span class="mui-message-text">
+                            데이터 설정방식에 대한 안내 삽입
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">이벤트 값 전달 설정</span>
+                        <button class="mu-btn mu-btn-icon">
+                          <i class="mu-icon question-circle"></i>
+                        </button>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="90" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>오브젝트 ID</th>
+                              <td>
+                                Object ID
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>변수명</th>
+                              <td><input type="text" class="mu-input" /></td>
+                            </tr>
+                            <tr>
+                              <th>값 필드</th>
+                              <td>
+                                <div class="mu-selectbox" mu-select-v2="report_edit.area.panel.database"
+                                  select-model="formData.selDataBase" select-change="changeDataBase()">
+                                  <button class="mu-value ng-binding" title="">
+                                    no
+                                  </button>
+                                  <ul class="mu-list">
+                                    <li class="active">Layer map(지도)</li>
+                                    <li>Layer 01</li>
+                                    <li>Layer 02</li>
+                                  </ul>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- 단일값 속성 -->
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">트리거 설정 확인</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <!-- 데이터 없음 -->
+                        <table class="mu-grid mu-grid-border mu-grid-strip">
+                          <colgroup>
+                            <col width="100" />
+                            <col />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th>이벤트</th>
+                              <th>적용 오브젝트 ID</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td colspan="2">
+                                <div class="mui-message info">
+                                  <i class="mu-icon info"></i><span class="mui-message-text">데이터가 없습니다</span>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // 데이터 없음 -->
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">일반</span>
+                        <button class="mu-btn mu-btn-icon">
+                          <i class="mu-icon setting"></i>시각화 옵션
+                        </button>
+                        <button class="mu-btn mu-btn-icon">
+                          <i class="mu-icon setting"></i>
+                        </button>
+                        <!-- option 활성화시 active 추가 -->
+                        <button class="mu-btn mu-btn-icon disabled" disabled="disabled">
+                          <i class="mu-icon setting"></i></button><!-- disabled -->
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100px" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>글꼴</th>
+                              <td>Noto sans</td>
+                            </tr>
+                            <tr>
+                              <th>글꼴 색상</th>
+                              <td>#000000</td>
+                            </tr>
+                            <tr>
+                              <th>글꼴 크기</th>
+                              <td>16</td>
+                            </tr>
+                            <tr>
+                              <th>글꼴 스타일</th>
+                              <td>
+                                <div class="mu-item-group">
+                                  <div class="mu-btn-group">
+                                    <span><i class="mu-icon bold"></i></span>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>가로 정렬</th>
+                              <td>
+                                <div class="mu-item-group">
+                                  <div class="mu-btn-group">
+                                    <span><i class="mu-icon align-center"></i></span>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>세로 정렬</th>
+                              <td>
+                                <div class="mu-item-group">
+                                  <div class="mu-btn-group full-width">
+                                    <span><i class="mu-icon-img align-middle"></i></span>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>텍스트 정렬</th>
+                              <td>
+                                <div class="mu-btn-group full-width">
+                                  <span><i class="mu-icon-img text-left-to-right"></i></span>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- // 단일값 속성 -->
+
+                    <!-- 이중축 속성 -->
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">Y축 (1)</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100px" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>축</th>
+                              <td>표시</td>
+                            </tr>
+                            <tr>
+                              <th>축 제목</th>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <th>간격</th>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <th>최소값</th>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <th>최대값</th>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <th>차트 유형</th>
+                              <td>꺾은선형</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- // 이중축 속성 -->
+                  </div>
+                </div>
+                <!-- //속성 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- dialog :  단일값 > 시각화 옵션 - Grid 1/2 -->
+  <div class="mu-dialog mu-tab-inner type1 mui-dialog-sm" style="top: 300px; left: 65px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non">
+        <i class="mu-icon-img"></i>
+      </button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li class="active"><a href="">글꼴</a></li>
+        <li><a href="">데이터</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>서체</th>
+                <td>
+                  <div class="mu-item-group">
+                    <div class="mu-selectbox">
+                      <button class="mu-value">Noto sans</button>
+                      <ul class="mu-list">
+                        <li class="active">Noto sans</li>
+                        <li>...</li>
+                      </ul>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>색상</th>
+                <td>
+                  <div class="mu-item-group">
+                    <!-- color-picker -->
+                    <div class="sp-replacer sp-light">
+                      <div class="sp-preview">
+                        <div class="sp-preview-inner" style="background-color: rgb(255, 255, 255);"></div>
+                      </div>
+                      <div class="sp-dd">▼</div>
+                    </div>
+                    <!-- //color-picker -->
+                    <input class="mu-input" value="#ffffff" />
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>크기</th>
+                <td>
+                  <div class="mu-selectbox">
+                    <button class="mu-value">16</button>
+                    <ul class="mu-list">
+                      <li class="active">16</li>
+                      <li>12</li>
+                      <li>24</li>
+                      <li>36</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>스타일</th>
+                <td>
+                  <div class="mu-item-group black-icon">
+                    <!-- bold -->
+                    <button type="button" class="mu-btn mu-btn-default">
+                      <i class="mu-icon bold"></i>
+                    </button>
+                    <!-- //bold -->
+                    <!-- underline -->
+                    <button type="button" class="mu-btn mu-btn-default active">
+                      <i class="mu-icon underline"></i>
+                    </button>
+                    <!-- //underline -->
+                    <!-- italic -->
+                    <button type="button" class="mu-btn mu-btn-default">
+                      <i class="mu-icon italic"></i>
+                    </button>
+                    <!-- //italic -->
+                    <!-- strickthrough -->
+                    <button type="button" class="mu-btn mu-btn-default">
+                      <i class="mu-icon strickthrough"></i>
+                    </button>
+                    <!-- //strickthrough -->
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // dialog : 단일값 > 시각화 옵션 - Grid 1/2 -->
+  <!-- dialog : 단일값 > 시각화 옵션 - Grid 2/2 -->
+  <div class="mu-dialog mu-tab-inner type1 mui-dialog-sm" style="top: 500px; left: 65px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non">
+        <i class="mu-icon-img"></i>
+      </button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li><a href="">글꼴</a></li>
+        <li class="active"><a href="">데이터</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>가로 정렬</th>
+                <td>
+                  <div class="mu-item-group">
+                    <div class="mu-btn-group">
+                      <button class="mu-btn">
+                        <i class="mu-icon align-left"></i>
+                      </button>
+                      <button class="mu-btn active">
+                        <i class="mu-icon align-center"></i>
+                      </button>
+                      <button class="mu-btn">
+                        <i class="mu-icon align-right"></i>
+                      </button>
+                      <button class="mu-btn">
+                        <i class="mu-icon align-justify"></i>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>세로 정렬</th>
+                <td>
+                  <div class="mu-item-group">
+                    <div class="mu-btn-group">
+                      <button class="mu-btn">
+                        <i class="mu-icon-img align-top"></i>
+                      </button>
+                      <button class="mu-btn active">
+                        <i class="mu-icon-img align-middle"></i>
+                      </button>
+                      <button class="mu-btn">
+                        <i class="mu-icon-img align-bottom"></i>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>텍스트 정렬</th>
+                <td>
+                  <div class="mu-item-group">
+                    <div class="mu-btn-group">
+                      <button class="mu-btn">
+                        <i class="mu-icon-img text-left-to-right"></i>
+                      </button>
+                      <button class="mu-btn active">
+                        <i class="mu-icon-img text-top-to-down"></i>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // dialog : 단일값 > 시각화 옵션 - Grid 2/2 -->
+
+  <!-- dialog : 이중축 > 시각화 옵션 - Grid 1/2 -->
+  <div class="mu-dialog mu-tab-inner type1 mui-dialog-sm" style="top: 700px; left: 65px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non">
+        <i class="mu-icon-img"></i>
+      </button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li><a href="">일반</a></li>
+        <li><a href="">X축</a></li>
+        <li class="active">
+          <a href="">Y축<br />(다중 축)</a>
+        </li>
+        <li><a href="">범례</a></li>
+        <li><a href="">데이터</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <!-- 스크롤이 가능하고, 마지막 tr에 드롭다운 형태의 버튼을 사용했을 경우, last-dropdown-up 클래스 추가 2020-11-20 -->
+        <div class="format-rule mu-scroll-v last-dropdown-up">
+          <div class="mu-tabCont mu-formbox-group" style="max-height: 319px;">
+            <table class="mu-formbox">
+              <colgroup>
+                <col width="92px" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th></th>
+                  <td>
+                    <button type="button" class="mu-btn mu-btn-default btn-add">
+                      <i class="mu-icon-img add2"></i>Y축 추가
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="mu-formbox">
+              <colgroup>
+                <col width="92px" />
+                <col />
+              </colgroup>
+              <tbody class="format-rule-group">
+                <tr>
+                  <th>축 (1)</th>
+                  <td>
+                    <div class="mu-item-group">
+                      <div class="mu-checkbox">
+                        <input id="ckb" type="checkbox" />
+                        <label for="ckb">표시</label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>축 제목</th>
+                  <td>
+                    <div class="mu-item-group">
+                      <input type="text" class="mu-input" placeholder="선택사항" />
+                      <div class="mu-checkbox">
+                        <input id="ckb" type="checkbox" />
+                        <label for="ckb">표시</label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>간격</th>
+                  <td>
+                    <input type="text" class="mu-input" placeholder="선택사항" />
+                  </td>
+                </tr>
+                <tr>
+                  <th>최대값</th>
+                  <td>
+                    <input type="text" class="mu-input" placeholder="선택사항" />
+                  </td>
+                </tr>
+                <tr>
+                  <th>최소값</th>
+                  <td>
+                    <input type="text" class="mu-input" placeholder="선택사항" />
+                  </td>
+                </tr>
+                <tr>
+                  <th>차트유형</th>
+                  <td>
+                    <div class="mu-selectbox w-200 on">
+                      <button class="mu-value w200">세로막대형</button>
+                      <ul class="mu-list">
+                        <li>꺽은선형</li>
+                        <li class="active">세로막대형</li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="mu-formbox">
+              <colgroup>
+                <col width="92px" />
+                <col />
+              </colgroup>
+              <tbody class="format-rule-group">
+                <tr>
+                  <th>축 (2)</th>
+                  <td>
+                    <div class="mu-item-group">
+                      <div class="mu-checkbox">
+                        <input id="ckb" type="checkbox" />
+                        <label for="ckb">표시</label>
+                      </div>
+                    </div>
+                    <div class="format-rule-delete">
+                      <button class="mu-btn mu-btn-icon" type="button">
+                        <i class="mu-icon cancel"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>축 제목</th>
+                  <td>
+                    <div class="mu-item-group">
+                      <input type="text" class="mu-input" placeholder="선택사항" />
+                      <div class="mu-checkbox">
+                        <input id="ckb" type="checkbox" />
+                        <label for="ckb">표시</label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>간격</th>
+                  <td>
+                    <input type="text" class="mu-input" placeholder="선택사항" />
+                  </td>
+                </tr>
+                <tr>
+                  <th>최대값</th>
+                  <td>
+                    <input type="text" class="mu-input" placeholder="선택사항" />
+                  </td>
+                </tr>
+                <tr>
+                  <th>최소값</th>
+                  <td>
+                    <input type="text" class="mu-input" placeholder="선택사항" />
+                  </td>
+                </tr>
+                <tr>
+                  <th>차트유형</th>
+                  <td>
+                    <div class="mu-selectbox w-200 on">
+                      <button class="mu-value w200">세로막대형</button>
+                      <ul class="mu-list">
+                        <li>꺽은선형</li>
+                        <li class="active">세로막대형</li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // dialog : 이중축 > 시각화 옵션 - Grid 1/2 -->
+  <!-- dialog : 이중축 > 시각화 옵션 - Grid 2/2 -->
+  <div class="mu-dialog mu-tab-inner type1 mui-dialog-sm" style="top: 700px; left: 600px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non">
+        <i class="mu-icon-img"></i>
+      </button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li><a href="">일반</a></li>
+        <li><a href="">X축</a></li>
+        <li>
+          <a href="">Y축<br />(다중 축)</a>
+        </li>
+        <li><a href="">범례</a></li>
+        <li class="active"><a href="">데이터</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px" />
+              <col />
+            </colgroup>
+            <tbody class="format-rule-group">
+              <tr>
+                <th>X 축</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value w200">ID</button>
+                    <ul class="mu-list">
+                      <li>XXX</li>
+                      <li class="active">ID</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Y 축(1)</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value w200">XXXXX</button>
+                    <ul class="mu-list">
+                      <li>XXXXX</li>
+                      <li class="active">XXXXX</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Y 축(2)</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value w200">XXXXX</button>
+                    <ul class="mu-list">
+                      <li>XXXXX</li>
+                      <li class="active">XXXXX</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Y 축(3)</th>
+                <td>
+                  <div class="mu-selectbox w-200">
+                    <button class="mu-value w200">XXXXX</button>
+                    <ul class="mu-list">
+                      <li>XXXXX</li>
+                      <li class="active">XXXXX</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // dialog : 이중축 > 시각화 옵션 - Grid 2/2 -->
+
+  <link href="js/jquery-ui.css" rel="stylesheet" />
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="../../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

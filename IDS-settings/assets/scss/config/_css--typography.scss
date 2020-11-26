@@ -1,0 +1,130 @@
+@import "colors";
+@import "vars";
+// @import 'mixins';
+@import "typography";
+@import "../utils/css--reset";
+@import "../utils/import-once";
+
+@mixin typography {
+  // really big
+  .mu-type-giga {
+    @include typescale("giga");
+    @include reset;
+    @include line-height("heading");
+    font-weight: 400;
+  }
+
+  .mu-type-mega {
+    @include typescale("mega");
+    @include reset;
+    @include line-height("heading");
+    font-weight: 300;
+  }
+
+  // really small
+  .mu-type-omega {
+    @include typescale("omega");
+    @include reset;
+    @include line-height("heading");
+    font-weight: 500;
+  }
+
+  .mu-type-caption {
+    @include typescale("caption");
+    @include reset;
+    @include line-height("body");
+    font-weight: 500;
+  }
+
+  .mu-type-legal {
+    @include typescale("legal");
+    @include reset;
+    @include line-height("body");
+    font-weight: 500;
+  }
+
+  .mu-type-caps {
+    text-transform: uppercase;
+  }
+
+  strong,
+  .mu-type-strong {
+    @include reset;
+    font-weight: 700;
+  }
+
+  p {
+    @include reset;
+    @include typescale("p");
+    @include line-height("body");
+    font-weight: 400;
+  }
+
+  em {
+    @include reset;
+    font-style: italic;
+  }
+
+  a {
+    @include reset;
+    color: $brand-03;
+  }
+
+  h1,
+  .mu-type-alpha {
+    @include reset;
+    @include typescale("alpha");
+    @include line-height("heading");
+    font-weight: 400;
+  }
+
+  h2,
+  .mu-type-beta {
+    @include reset;
+    @include typescale("beta");
+    @include line-height("heading");
+    font-weight: 400;
+  }
+
+  h3,
+  .mu-type-gamma {
+    @include reset;
+    @include typescale("gamma");
+    @include line-height("heading");
+    font-weight: 400;
+  }
+
+  h4,
+  .mu-type-delta {
+    @include reset;
+    @include typescale("delta");
+    @include line-height("heading");
+    font-weight: 400;
+  }
+
+  h5,
+  .mu-type-epsilon {
+    @include reset;
+    @include typescale("epsilon");
+    @include line-height("heading");
+    font-weight: 700;
+  }
+
+  h6,
+  .mu-type-zeta {
+    @include reset;
+    @include typescale("zeta");
+    @include line-height("heading");
+    font-weight: 700;
+  }
+}
+
+@include exports("css--typography") {
+  @if global-variable-exists("css--typography") ==
+    false or
+    $css--typography ==
+    true
+  {
+    @include typography;
+  }
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>보고서-새보고서: 이미지</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+	<script src="js/html5.js"></script>
+	<script src="js/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="../../dist-sherman/css/sherman/style.min.css">
+</head>
+
+<body>
+  <!-- 보고서 -->
+  <div class="mu-container">
+    <section>
+      <div class="mu-content content-re data-add report">
+        <div class="mu-panel">
+          <div class="mu-panel-head">
+            <div class="mu-hgroup fl report-title">
+              <h3 class="mu-title report-title-text">보고서</h3>
+              <!-- 수정 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon-img edit-title"></i>
+              </button>
+              <!-- 수정 확인 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon check"></i>
+              </button>
+            </div>
+            <div class="mu-hgroup fr">
+              <button type="button" class="mu-btn mu-btn-default">목록으로</button>
+              <button type="button" class="mu-btn mu-btn-default">보기</button>
+              <button type="buttozn" class="mu-btn mu-btn-primary">저장</button>
+              <button type="button" class="mu-btn mu-btn-secondary">새로저장</button>
+              <button type="button" class="mu-btn mu-btn-default" disabled="disabled">접근 권한</button>
+              <button type="button" class="mu-btn mu-btn-danger">전체삭제</button>
+            </div>
+          </div>
+          <div class="mu-panel-body">
+            <!-- 상단 메뉴바 -->
+            <div class="report-menubar">
+              <div class="mu-selectbox width150">
+                <button class="mu-value">전체</button>
+                <ul class="mu-list">
+                  <li>전체</li>
+                  <li class="active">데이터 시각화</li>
+                  <li>양식</li>
+                  <li>버튼</li>
+                  <li>기타</li>
+                </ul>
+              </div>
+              <ul class="report-menu">
+                <li><i class="mu-icon-img area"></i></li>
+                <li><i class="mu-icon-img map"></i></li>
+                <li><i class="mu-icon-img text"></i></li>
+                <li><i class="mu-icon-img rectangle"></i></li>
+                <li><i class="mu-icon-img ellipse"></i></li>
+                <li><i class="mu-icon-img date"></i></li>
+                <li><i class="mu-icon-img renew"></i></li>
+                <li><i class="mu-icon-img list"></i></li>
+                <li><i class="mu-icon-img tab"></i></li>
+                <li><i class="mu-icon-img url"></i></li>
+                <li class="active"><i class="mu-icon-img image"></i></li>
+                <li><i class="mu-icon-img html"></i></li>
+                <li><i class="mu-icon-img input"></i></li>
+                <li><i class="mu-icon-img combo-box"></i></li>
+                <li><i class="mu-icon-img check-and-radio"></i></li>
+                <li><i class="mu-icon-img datetime"></i></li>
+                <li><i class="mu-icon-img hidden-input"></i></li>
+                <li><i class="mu-icon-img button"></i></li>
+              </ul>
+              <div class="fr">
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">전체변수명보기</span>
+                </button>
+              </div>
+            </div>
+            <!-- //상단 메뉴바 -->
+            <div class="report-cont">
+              <div class="report-canvas">
+                <!-- canvas 영역 -->
+                <div class="canvas" style="width:1920px;height:1080px;">
+                  <!-- image 1/6: Normal-Active -->
+                  <div class="box tool image active" style="top:50px;left:50px;width:200px;height:150px;">
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                  <!-- // image 1/6: Normal-Active -->
+
+                  <!-- image 2/6: Normal -->
+                  <div class="box tool image" style="top:50px;left:270px;width:200px;height:150px;">
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                  <!-- //image 2/6: Normal -->
+
+                  <!-- image 3/6: Error-Active (is-error 클래스 추가) -->
+                  <div class="box tool image is-error active" style="top:250px;left:50px;width:200px;height:150px;">
+                    <!-- <div class="mui-noti mui-noti-error">
+                      <i class="mu-icon err-circle mui-noti-icon"></i>
+                      <p class="mui-noti-text">이미지를 표시할 수 없습니다</p>
+                    </div> -->
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                  <!-- //image 3/6: Error-Active (is-error 클래스 추가) -->
+
+                  <!-- image 4/6: Error (is-error 클래스 추가) -->
+                  <div class="box tool image is-error" style="top:250px;left:270px;width:200px;height:150px;">
+                    <!-- <div class="mui-noti mui-noti-error">
+                      <i class="mu-icon err-circle mui-noti-icon"></i>
+                      <p class="mui-noti-text">이미지를 표시할 수 없습니다</p>
+                    </div> -->
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                  <!-- //image 4/6: Error (is-error 클래스 추가) -->
+
+                  <!-- image 5/6: image inserted - original-Active (image-inserted 클래스 추가) -->
+                  <span style="position:absolute;top:430px;left:50px;">원본 크기</span>
+                  <div class="box tool image image-inserted active" style="top:450px;left:50px;width:200px;height:150px;">
+                    <!-- 이미지 원본 크기 -->
+                    <div class="image-original">
+                      <img src="../../dist/images/sherman/icon_anomaly.png" alt="" style="width:400px;">
+                    </div>
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                  <!-- //image 5/6: image inserted - original-Active (image-inserted 클래스 추가) -->
+
+                  <!-- image 6/6: image inserted - fit (image-inserted 클래스 추가) -->
+                  <span style="position:absolute;top:430px;left:270px;">영역 맞춤</span>
+                  <div class="box tool image image-inserted" style="top:450px;left:270px;width:200px;height:150px;">
+                    <!-- 이미지 영역에 맞춤 -->
+                    <div class="image-fit">
+                      <img src="../../dist/images/sherman/icon_anomaly.png" alt="">
+                    </div>
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                  <!-- //image 6/6: image inserted - fit (image-inserted 클래스 추가) -->
+                </div>
+                <!-- //canvas 영역 -->
+              </div>
+              <div class="report-panel">
+                <ul class="mu-tab">
+                  <li class="active"><a href="">속성</a></li>
+                </ul>
+                <!-- 이미지 객체 - 속성 -->
+                <div class="mu-tab-body">
+                  <div class="mu-tabCont">
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">설정</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <ul class="img-type">
+                          <li class="active">
+                            <button type="button" class="mu-btn btn-item img-upload">
+                              <i class="mu-icon upload"></i>
+                              <span class="img-type-txt">파일 업로드</span>
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="mu-btn btn-item img-upload">
+                              <i class="mu-icon link"></i>
+                              <span class="img-type-txt">URL 사용</span>
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">이미지 삽입</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <!-- 이미지 업로드 타입: file -->
+                        <div class="mu-item-group">
+                          <button type="button" class="mu-btn mu-btn-default full-width">
+                            <i class="mu-icon-img add2"></i>이미지 삽입
+                          </button>
+                        </div>
+                        <!-- // 이미지 업로드 타입: file -->
+                        <!-- 이미지 업로드 타입: url -->
+                        <div class="mu-item-group input-btn-form">
+                          <input type="text" class="mu-input" placeholder="사용할 이미지 URL을 입력하세요">
+                          <button type="button" class="mu-btn mu-btn-secondary">적용</button>
+                        </div>
+                        <!-- // 이미지 업로드 타입: url -->
+                      </div>
+                    </div>
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">이미지 정렬</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-btn-group full-width full-width-2">
+                          <button class="mu-btn full-width-item"><i class="mu-icon-img image-fit"></i>영역에 맞춤</button>
+                          <button class="mu-btn full-width-item active"><i class="mu-icon-img image-original"></i>원본 크기</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <link href="js/jquery-ui.css" rel="stylesheet">
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="../../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/css--reset";
+@import "../utils/helper-classes";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+
+@include exports("data-list") {
+  /* data-list */
+  .data-list {
+    text-align: left;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* data-list head */
+
+  .data-list-head {
+    // height: 46px;
+    width: 100%;
+    background-color: $ui-03;
+    border-bottom: 1px solid $ui-04;
+
+    .mu-btn-icon {
+      width: 18px;
+      float: right;
+    }
+  }
+
+  .data-list-head .mu-type-omega {
+    display: block;
+    padding: 10px 8px 0 8px;
+    font-weight: 700;
+  }
+
+  .data-list-head-filter-group {
+    display: flex;
+    padding: 6px 8px 10px 8px;
+    align-items: center;
+    width: 100%;
+    min-width: 104px;
+
+    .mu-input-icon {
+      width: 100%;
+
+      & + .mu-btn {
+        margin-left: 4px;
+        margin-right: 2px;
+      }
+    }
+  }
+
+  .data-list-head + .data-list-body {
+    height: calc(100% - 70px);
+  }
+
+  // 타이틀이 없거나, 검색창이 없는 경우 안보이도록 설정
+  .data-list-head.remove-title .mu-type-omega,
+  .data-list-head.remove-filter-group .data-list-head-filter-group {
+    display: none;
+  }
+
+  // 타이틀이 없는 경우
+  // .data-list-head.remove-title .data-list-head-filter-group{
+  //   padding-top: 10px;
+  // }
+
+  // .data-list-head.remove-title + .data-list-body{
+  //   height: calc(100% - 46px);
+  // }
+
+  // 검색창이 없는 경우
+  .data-list-head.remove-filter-group .mu-type-omega {
+    padding-bottom: 10px;
+  }
+
+  .data-list-head.remove-filter-group + .data-list-body {
+    height: calc(100% - 38px);
+  }
+
+  // 검색창 + 타이틀 다 있는데 타이틀이 비어있는 경우
+  .data-list-head.remove-title .mu-type-omega {
+    padding: 0;
+  }
+
+  .data-list-head.remove-title .data-list-head-filter-group {
+    padding-top: 10px;
+  }
+
+  .data-list-head.remove-title + .data-list-body {
+    height: calc(100% - 46px);
+  }
+
+  // 검색창이 없고, 타이틀이 비어있는 경우
+  .data-list-head.remove-filter-group.remove-title {
+    border-bottom: transparent;
+  }
+
+  .data-list-head.remove-filter-group.remove-title .mu-type-omega {
+    padding: 0;
+  }
+
+  .data-list-head.remove-filter-group.remove-title + .data-list-body {
+    height: 100%;
+  }
+
+  .data-list-btn-group {
+    display: flex;
+    align-items: center;
+    height: 24px;
+    padding: 0 4px;
+    background-color: darken($ui-03, 6%);
+    border-radius: 3px;
+    border: 1px solid darken($ui-03, 8%);
+    margin-left: 5px;
+
+    .mu-icon {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .division-line {
+      margin: 0 5px;
+      border-left-color: darken($ui-04, 6%);
+    }
+  }
+}
+
+/* data-list body */
+
+.data-list-body {
+  height: 100%;
+  background-color: #fafafa;
+  // border: 1px solid $ui-04;
+  overflow: auto;
+  // border-width: 1px 0 1px 0;
+  border-radius: 0 0 3px 0;
+}

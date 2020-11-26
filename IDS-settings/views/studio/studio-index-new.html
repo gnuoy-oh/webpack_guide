@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" type="text/css" href="../../dist-sherman/css/sherman/style.min.css" />
+  <title>Studio - 보고서 목록</title>
+</head>
+
+<body style="min-width: 1280px;">
+  <!-- Studio -->
+  <div class="mu-container">
+    <section>
+      <div class="content-re search-table-content">
+        <div class="status layout layout-v">
+          <!-- search-table-head - table의 타이틀, 새로운 항목 작성 버튼 등 포함 -->
+          <div class="search-table-head">
+            <div class="mu-hgroup fl">
+              <h3 class="mu-title">
+                보고서 목록
+              </h3>
+            </div>
+            <div class="mu-hgroup fr">
+              <button class="mu-btn mu-btn-primary">
+                <i class="mu-icon add"></i><span>새 보고서</span>
+              </button>
+            </div>
+          </div>
+          <!-- //search-table-head -->
+          <!-- search-table-body - table의 툴바와 table 포함 -->
+          <div class="search-table-body">
+            <!-- 조회 toolbar (pagination, search-filter, download buttons 등의 도구를 포함합니다)-->
+            <div class="search-table-toolbar">
+              <div class="mu-hgroup">
+                <div class="mu-input-icon">
+                  <input class="mu-input" placeholder="검색" type="text">
+                  <i class="mu-icon search"></i>
+                </div>
+                <span>10개 항목 중 10개 표시</span>
+              </div>
+              <div class="mu-hgroup fr">
+                <button type="button" class="mu-btn mu-btn-ghost" title="새로고침">
+                  <i class="mu-icon refresh"></i><span>새로고침</span>
+                </button>
+              </div>
+            </div>
+            <!-- 조회 목록: mu-grid -->
+            <div class="mu-grid-scroll">
+              <table class="mu-grid mu-grid-sort mu-grid-border">
+                <colgroup>
+                  <col width="50">
+                  <col width="">
+                  <col width="120">
+                  <col width="150">
+                  <col width="100">
+                  <col width="140">
+                  <col width="100">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="none">#</th>
+                    <th class="down">이름</th>
+                    <th class="up">내보내기 URL</th>
+                    <th>소유자</th>
+                    <th class="none">편집</th>
+                    <th>수정일</th>
+                    <th class="none">접근권한</th>
+                  </tr>
+                </thead>
+              </table>
+              <div class="mu-scroll-v" style="max-height:;">
+                <!-- max-height 값 삭제해야 스크롤 없어짐 -->
+                <table class="mu-grid mu-grid-border mu-grid-hover mu-grid-strip mu-grid-item">
+                  <col width="50">
+                  <col width="">
+                  <col width="120">
+                  <col width="150">
+                  <col width="100">
+                  <col width="140">
+                  <col width="100">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td class="tl"><a href="" class="disabled">보고서 1</a></td>
+                      <td><button type="button" class="mu-btn mu-btn-icon">관리<i class="mu-icon down-s"></i></button>
+                      </td>
+                      <td>root</td>
+                      <td>
+                        <button type="button" class="mu-btn mu-btn-icon">편집<i class="mu-icon down-s"></i></button>
+                      </td>
+                      <td>2017/03/30 20:23:29</td>
+                      <td><button type="button" class="mu-btn mu-btn-icon">설정</button></td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td class="tl"><a href="">보고서 1</a></td>
+                      <td><button type="button" class="mu-btn mu-btn-icon">설정</button></td>
+                      <td>root</td>
+                      <td>
+                        <button type="button" class="mu-btn mu-btn-icon">편집<i class="mu-icon down-s"></i></button>
+                      </td>
+                      <td>2017/03/30 20:23:29</td>
+                      <td><button type="button" class="mu-btn mu-btn-icon">설정</button></td>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- tooltip : 편집 버튼 툴팁 메뉴 -->
+                <div class="mu-tooltip bottom dataField" style="top:300px;left:600px;">
+                  <div class="arrow"></div>
+                  <ul class="mu-popup-menu">
+                    <li><a href="">이름변경</a></li>
+                    <li><a href="">수정</a></li>
+                    <li><a href="">복사</a></li>
+                    <li><a href="">삭제</a></li>
+                  </ul>
+                </div>
+                <!-- //tooltip : 편집 버튼 툴팁 메뉴 -->
+                </table>
+                <!-- tooltip : 내보내기 URL 관리 버튼 툴팁 메뉴 -->
+                <div class="mu-tooltip bottom dataField" style="top:300px;left:700px;">
+                  <div class="arrow"></div>
+                  <ul class="mu-popup-menu">
+                    <li><a href="">URL 복사</a></li>
+                    <li><a href="">URL 보기</a></li>
+                    <li><a href="">URL 삭제</a></li>
+                  </ul>
+                </div>
+                <!-- //tooltip : 내보내기 URL 관리 버튼 툴팁 메뉴 -->
+              </div>
+            </div>
+            <!-- //조회 목록: mu-grid -->
+          </div>
+          <!-- //search-table-body -->
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- //Studio -->
+
+  <!-- mu-dialog : 내보내기 URL -->
+  <div class="mu-dialog mui-dialog-sm mu-formbox-inner" style="top: 230px; left: 50px;">
+    <div class="mu-dialog-head">
+      <span class="title">내보내기 URL</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-dialog-body">
+      <table class="mu-formbox">
+        <tbody>
+          <tr>
+            <td><input class="mu-input" tyle="text" value="https://url.com" disabled></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- 하단 버튼 -->
+    <div class="mu-dialog-foot">
+      <button type="button" class="mu-btn mu-btn-default">취소</button>
+      <button type="button" class="mu-btn mu-btn-primary fr">복사</button>
+      <button type="button" class="mu-btn mu-btn-danger fr">삭제</button>
+    </div>
+    <!-- //하단 버튼 -->
+  </div>
+  <!-- //mu-dialog : 내보내기 URL -->
+  <script src="../../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

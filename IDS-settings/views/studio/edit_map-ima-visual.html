@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>보고서-새보고서-IMA-시각화</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+      <script src="js/html5.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  <link rel="stylesheet" type="text/css" href="../../assets/lib/spectrum.css" />
+  <link rel="stylesheet" type="text/css" href="../../dist-sherman/css/sherman/style.min.css">
+</head>
+
+<body>
+  <!-- 보고서 -->
+  <div class="mu-container">
+    <section>
+      <div class="mu-content content-re data-add report">
+        <div class="mu-panel">
+          <div class="mu-panel-head">
+            <div class="mu-hgroup fl report-title">
+              <h3 class="mu-title report-title-text">보고서</h3>
+              <!-- 수정 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon-img edit-title"></i>
+              </button>
+              <!-- 수정 확인 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon check"></i>
+              </button>
+            </div>
+            <div class="mu-hgroup fr">
+              <button type="button" class="mu-btn mu-btn-default">
+                목록으로
+              </button>
+              <button type="button" class="mu-btn mu-btn-default">
+                보기
+              </button>
+              <button type="button" class="mu-btn mu-btn-primary">
+                저장
+              </button>
+              <button type="button" class="mu-btn mu-btn-secondary">
+                새로저장
+              </button>
+              <button type="button" class="mu-btn mu-btn-default" disabled="disabled">
+                접근 권한
+              </button>
+              <button type="button" class="mu-btn mu-btn-danger">
+                전체삭제
+              </button>
+            </div>
+          </div>
+          <div class="mu-panel-body">
+            <!-- 상단 메뉴바 -->
+            <div class="report-menubar">
+              <div class="mu-selectbox width150">
+                <button class="mu-value">전체</button>
+                <ul class="mu-list">
+                  <li>전체</li>
+                  <li class="active">데이터 시각화</li>
+                  <li>양식</li>
+                  <li>버튼</li>
+                  <li>기타</li>
+                </ul>
+              </div>
+              <ul class="report-menu">
+                <li><i class="mu-icon-img area"></i></li>
+                <li><i class="mu-icon-img map"></i></li>
+                <li><i class="mu-icon-img text"></i></li>
+                <li><i class="mu-icon-img rectangle"></i></li>
+                <li><i class="mu-icon-img ellipse"></i></li>
+                <li><i class="mu-icon-img date"></i></li>
+                <li><i class="mu-icon-img renew"></i></li>
+                <li><i class="mu-icon-img list"></i></li>
+                <li><i class="mu-icon-img tab"></i></li>
+                <li><i class="mu-icon-img url"></i></li>
+                <li><i class="mu-icon-img image"></i></li>
+                <li><i class="mu-icon-img html"></i></li>
+                <li><i class="mu-icon-img input"></i></li>
+                <li><i class="mu-icon-img combo-box"></i></li>
+                <li><i class="mu-icon-img check-and-radio"></i></li>
+                <li><i class="mu-icon-img datetime"></i></li>
+                <li><i class="mu-icon-img hidden-input"></i></li>
+                <li><i class="mu-icon-img button"></i></li>
+                <li class="active"><i class="mu-icon-img ima"></i></li>
+              </ul>
+              <div class="fr">
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">전체변수명보기</span>
+                </button>
+              </div>
+            </div>
+            <!-- //상단 메뉴바 -->
+            <div class="report-cont">
+              <div class="report-canvas">
+                <!-- canvas 영역 -->
+                <div class="canvas" style="width: 1920px; height: 1080px;">
+                </div>
+                <!-- //canvas 영역 -->
+              </div>
+              <div class="report-panel">
+                <ul class="mu-tab">
+                  <li><a href="">데이터</a></li>
+                  <li class="active"><a href="">시각화</a></li>
+                  <li><a href="">속성</a></li>
+                  <li><a href="">객체</a></li>
+                </ul>
+                <!-- 속성 -->
+                <div class="mu-tab-body">
+                  <!-- 폴리곤 시각화 설정 정보 -->
+                  <div class="mu-tabCont" style="display: block;">
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">Map 템플릿 선택</span>
+                      </div>
+                      <div class="mu-panel-body datamodel">
+                        <div class="mu-selectbox on" title="Map 템플릿을 선택해주세요">
+                          <button class="mu-value">서울시 성범죄 현황</button>
+                          <ul class="mu-list">
+                            <li value="1" title="서울시 성범죄 현황">서울시 성범죄 현황</li>
+                            <li value="1" title="데이터모델명01-view">데이터모델명01-view</li>
+                            <li value="1" title="데이터모델명02">데이터모델명02</li>
+                            <li value="1" title="데이터모델명02-view">데이터모델명02-view</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">시각화 레이어 선택</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100px">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>레이어</th>
+                              <td>
+                                <div class="mu-selectbox">
+                                  <button class="mu-value" title="">SEOUL_POLYGON</button>
+                                  <ul class="mu-list">
+                                    <li class="active">SEOUL_POLYGON</li>
+                                    <li>Layer 01</li>
+                                    <li>Layer 02</li>
+                                  </ul>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>스냅샷</th>
+                              <td>
+                                <div class="mu-selectbox">
+                                  <button class="mu-value" title="">기본</button>
+                                  <ul class="mu-list">
+                                    <li class="active">기본</li>
+                                    <li>Layer 01</li>
+                                    <li>Layer 02</li>
+                                  </ul>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">상세정보 창 출력여부</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-item-group">
+                          <div class="mu-radio">
+                            <input type="radio" id="r1_1" name="radio1">
+                            <label for="r1_1">사용</label>
+                          </div>
+                          <div class="mu-radio">
+                            <input type="radio" id="r1_2" name="radio1" checked="checked">
+                            <label for="r1_2">미사용</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">기본정보</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>데이터</th>
+                              <td>
+                                IMA_TEST_KOREA
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>시각화 타입</th>
+                              <td>
+                                폴리곤
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>공간 데이터</th>
+                              <td>
+                                공간데이터1
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">채우기</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>속성 데이터</th>
+                              <td>
+                                #POPULATION
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>데이터 타입</th>
+                              <td>
+                                일반 수치 데이터
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>채우기 색</th>
+                              <td>
+                                <div class="color-palette">
+                                  <span class="color-palette__item" style="background: rgb(152, 16, 7);"></span>
+                                  <span class="color-palette__item" style="background: rgb(198, 64, 50);"></span>
+                                  <span class="color-palette__item" style="background: rgb(227, 116, 79);"></span>
+                                  <span class="color-palette__item" style="background: rgb(241, 176, 110);"></span>
+                                  <span class="color-palette__item" style="background: rgb(249, 224, 150);"></span>
+                                  <span class="color-palette__item" style="background: rgb(221, 237, 151);"></span>
+                                  <span class="color-palette__item" style="background: rgb(176, 215, 120);"></span>
+                                  <span class="color-palette__item" style="background: rgb(123, 186, 109);"></span>
+                                  <span class="color-palette__item" style="background: rgb(72, 149, 87);"></span>
+                                  <span class="color-palette__item" style="background: rgb(18, 115, 37);"></span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>임계치</th>
+                              <td>
+                                567346 - 610542
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>불투명도</th>
+                              <td>
+                                0.8
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">윤곽선</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>윤곽선색</th>
+                              <td><span class="color-preview-option" style="border: 1px solid rgb(206, 211, 217); 
+                                background-color: rgb(108, 108, 108);"></span></td>
+                            </tr>
+                            <tr>
+                              <th>불투명도</th>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <th>윤곽선 굵기</th>
+                              <td>4</td>
+                            </tr>
+                            <tr>
+                              <th>종류</th>
+                              <td>
+                                <div class="line-ima">
+                                  <span class="mu-line-img line-flat"></span>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">툴팁</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>대표컬럼</th>
+                              <td>T CTP_KORE_NM</td>
+                            </tr>
+                            <tr>
+                              <th>컬럼1</th>
+                              <td>#POPULATION</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">라벨1</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>속성 데이터</th>
+                              <td>T CTP_KORE_NM</td>
+                            </tr>
+                            <tr>
+                              <th>글꼴 색</th>
+                              <td><span class="color-preview-option" style="border: 1px solid rgb(206, 211, 217); 
+                                background-color: rgb(255, 255, 255);"></span></td>
+                            </tr>
+                            <tr>
+                              <th>글꼴 크기</th>
+                              <td>14</td>
+                            </tr>
+                            <tr>
+                              <th>세로 위치</th>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <th>가로 위치</th>
+                              <td>0</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //폴리곤 시각화 설정 정보-->
+                  <!-- 마커 시각화 설정 정보 -->
+                  <div class="mu-tabCont" style="display: none;">
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">Map 템플릿 선택</span>
+                      </div>
+                      <div class="mu-panel-body datamodel">
+                        <div class="mu-selectbox on" title="Map 템플릿을 선택해주세요">
+                          <button class="mu-value">서울시 성범죄 현황</button>
+                          <ul class="mu-list">
+                            <li value="1" title="서울시 성범죄 현황">서울시 성범죄 현황</li>
+                            <li value="1" title="데이터모델명01-view">데이터모델명01-view</li>
+                            <li value="1" title="데이터모델명02">데이터모델명02</li>
+                            <li value="1" title="데이터모델명02-view">데이터모델명02-view</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">시각화 레이어 선택</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100px">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>레이어</th>
+                              <td>
+                                <div class="mu-selectbox">
+                                  <button class="mu-value" title="레이어를 선택해주세요">SEOUL_POLYGON</button>
+                                  <ul class="mu-list">
+                                    <li class="active">SEOUL_POLYGON</li>
+                                    <li>Layer 01</li>
+                                    <li>Layer 02</li>
+                                  </ul>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>스냅샷</th>
+                              <td>
+                                <div class="mu-selectbox">
+                                  <button class="mu-value" title="스냅샷을 선택해주세요">기본</button>
+                                  <ul class="mu-list">
+                                    <li class="active">기본</li>
+                                    <li>Layer 01</li>
+                                    <li>Layer 02</li>
+                                  </ul>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">상세정보 창 출력여부</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-item-group">
+                          <div class="mu-radio">
+                            <input type="radio" id="r2_1" name="radio2">
+                            <label for="r2_1">사용</label>
+                          </div>
+                          <div class="mu-radio">
+                            <input type="radio" id="r2_2" name="radio2" checked="checked">
+                            <label for="r2_2">미사용</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">기본정보</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>데이터</th>
+                              <td>
+                                IMA_TEST_KOREA
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>시각화 타입</th>
+                              <td>
+                                마커
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>공간 데이터</th>
+                              <td>
+                                공간데이터1
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">마커</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>마커 종류</th>
+                              <td>
+                                깃발
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>마커 크기</th>
+                              <td>
+                                4
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>마커 종류</th>
+                              <td>
+                                <div class="icon-flag">
+                                  <i class="mu-icon-img flag-1"></i>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">툴팁</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>대표컬럼</th>
+                              <td>T CTP_KORE_NM</td>
+                            </tr>
+                            <tr>
+                              <th>컬럼1</th>
+                              <td>#POPULATION</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">라벨1</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>속성 데이터</th>
+                              <td>T CTP_KORE_NM</td>
+                            </tr>
+                            <tr>
+                              <th>글꼴 색</th>
+                              <td><span class="color-preview-option" style="border: 1px solid rgb(206, 211, 217); 
+                                background-color: rgb(255, 255, 255);"></span></td>
+                            </tr>
+                            <tr>
+                              <th>글꼴 크기</th>
+                              <td>14</td>
+                            </tr>
+                            <tr>
+                              <th>세로 위치</th>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <th>가로 위치</th>
+                              <td>0</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //마커 시각화 설정 정보-->
+                  <!-- 원 시각화 설정 정보 -->
+                  <div class="mu-tabCont" style="display: none;">
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">Map 템플릿 선택</span>
+                      </div>
+                      <div class="mu-panel-body datamodel">
+                        <div class="mu-selectbox on" title="Map 템플릿을 선택해주세요">
+                          <button class="mu-value">서울시 성범죄 현황</button>
+                          <ul class="mu-list">
+                            <li value="1" title="서울시 성범죄 현황">서울시 성범죄 현황</li>
+                            <li value="1" title="데이터모델명01-view">데이터모델명01-view</li>
+                            <li value="1" title="데이터모델명02">데이터모델명02</li>
+                            <li value="1" title="데이터모델명02-view">데이터모델명02-view</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">시각화 레이어 선택</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100px">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>레이어</th>
+                              <td>
+                                <div class="mu-selectbox">
+                                  <button class="mu-value" title="레이어를 선택해주세요">SEOUL_POLYGON</button>
+                                  <ul class="mu-list">
+                                    <li class="active">SEOUL_POLYGON</li>
+                                    <li>Layer 01</li>
+                                    <li>Layer 02</li>
+                                  </ul>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>스냅샷</th>
+                              <td>
+                                <div class="mu-selectbox">
+                                  <button class="mu-value" title="스냅샷을 선택해주세요">기본</button>
+                                  <ul class="mu-list">
+                                    <li class="active">기본</li>
+                                    <li>Layer 01</li>
+                                    <li>Layer 02</li>
+                                  </ul>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">상세정보 창 출력여부</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-item-group">
+                          <div class="mu-radio">
+                            <input type="radio" id="r3_1" name="radio3">
+                            <label for="r3_1">사용</label>
+                          </div>
+                          <div class="mu-radio">
+                            <input type="radio" id="r3_2" name="radio3" checked="checked">
+                            <label for="r3_2">미사용</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">기본정보</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>데이터</th>
+                              <td>
+                                IMA_TEST_KOREA
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>시각화 타입</th>
+                              <td>
+                                원
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>공간 데이터</th>
+                              <td>
+                                공간데이터1
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">원</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>속성 데이터</th>
+                              <td>
+                                #POPULATION
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>원 크기</th>
+                              <td>
+                                500m - 5000m
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">채우기</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>속성 데이터</th>
+                              <td>
+                                #POPULATION
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>데이터 타입</th>
+                              <td>
+                                일반 수치 데이터
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>채우기 색</th>
+                              <td>
+                                <div class="color-palette">
+                                  <span class="color-palette__item" style="background: rgb(152, 16, 7);"></span>
+                                  <span class="color-palette__item" style="background: rgb(198, 64, 50);"></span>
+                                  <span class="color-palette__item" style="background: rgb(227, 116, 79);"></span>
+                                  <span class="color-palette__item" style="background: rgb(241, 176, 110);"></span>
+                                  <span class="color-palette__item" style="background: rgb(249, 224, 150);"></span>
+                                  <span class="color-palette__item" style="background: rgb(221, 237, 151);"></span>
+                                  <span class="color-palette__item" style="background: rgb(176, 215, 120);"></span>
+                                  <span class="color-palette__item" style="background: rgb(123, 186, 109);"></span>
+                                  <span class="color-palette__item" style="background: rgb(72, 149, 87);"></span>
+                                  <span class="color-palette__item" style="background: rgb(18, 115, 37);"></span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>임계치</th>
+                              <td>
+                                567346 - 610542
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>불투명도</th>
+                              <td>
+                                0.8
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">윤곽선</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>윤곽선색</th>
+                              <td><span class="color-preview-option" style="border: 1px solid rgb(206, 211, 217); 
+                                background-color: rgb(108, 108, 108);"></span></td>
+                            </tr>
+                            <tr>
+                              <th>불투명도</th>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <th>윤곽선 굵기</th>
+                              <td>4</td>
+                            </tr>
+                            <tr>
+                              <th>종류</th>
+                              <td>
+                                <!-- 실선 -->
+                                <div class="line-ima">
+                                  <span class="mu-line-img line-flat"></span>
+                                </div>
+                                <!-- //실선 -->
+                                <!-- 실선, 점선 mixed -->
+                                <div class="line-ima">
+                                  <span class="mu-line-img line-dotted-dual"></span>
+                                </div>
+                                <!-- //실선, 점선 mixed -->
+                                <!-- 점선 large -->
+                                <div class="line-ima">
+                                  <span class="mu-line-img line-dotted-lg"></span>
+                                </div>
+                                <!-- //점선 large -->
+                                <!-- 점선 medium -->
+                                <div class="line-ima">
+                                  <span class="mu-line-img line-dotted-md"></span>
+                                </div>
+                                <!-- //점선 medium -->
+                                <!-- 점선 small -->
+                                <div class="line-ima">
+                                  <span class="mu-line-img line-dotted-sm"></span>
+                                </div>
+                                <!-- //점선 small -->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">툴팁</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>대표컬럼</th>
+                              <td>T CTP_KORE_NM</td>
+                            </tr>
+                            <tr>
+                              <th>컬럼1</th>
+                              <td>#POPULATION</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">라벨1</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>속성 데이터</th>
+                              <td>T CTP_KORE_NM</td>
+                            </tr>
+                            <tr>
+                              <th>글꼴 색</th>
+                              <td><span class="color-preview-option" style="border: 1px solid rgb(206, 211, 217); 
+                                background-color: rgb(255, 255, 255);"></span></td>
+                            </tr>
+                            <tr>
+                              <th>글꼴 크기</th>
+                              <td>14</td>
+                            </tr>
+                            <tr>
+                              <th>세로 위치</th>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <th>가로 위치</th>
+                              <td>0</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //원 시각화 설정 정보-->
+                  <!-- 베이스맵 시각화 설정 정보 -->
+                  <div class="mu-tabCont" style="display: none;">
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">Map 템플릿 선택</span>
+                      </div>
+                      <div class="mu-panel-body datamodel">
+                        <div class="mu-selectbox on" title="Map 템플릿을 선택해주세요">
+                          <button class="mu-value">서울시 성범죄 현황</button>
+                          <ul class="mu-list">
+                            <li value="1" title="서울시 성범죄 현황">서울시 성범죄 현황</li>
+                            <li value="1" title="데이터모델명01-view">데이터모델명01-view</li>
+                            <li value="1" title="데이터모델명02">데이터모델명02</li>
+                            <li value="1" title="데이터모델명02-view">데이터모델명02-view</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">시각화 레이어 선택</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100px">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>레이어</th>
+                              <td>
+                                <div class="mu-selectbox">
+                                  <button class="mu-value" title="레이어를 선택해주세요">베이스맵</button>
+                                  <ul class="mu-list">
+                                    <li class="active">베이스맵</li>
+                                    <li>Layer 01</li>
+                                    <li>Layer 02</li>
+                                  </ul>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">공간 필터</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="space-filter-content__thumbnail">
+                          <span class="space-filter-content__thumbnail-img"
+                            style="background-color: rgb(46, 99, 230); border: 1px solid rgb(46, 99, 230);">
+                          </span>
+                        </div>
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb1" name="ckb1" checked="checked">
+                          <label for="ckb1">데이터모델</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //베이스맵 시각화 설정 정보-->
+                </div>
+                <!-- //속성 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+
+  <link href="js/jquery-ui.css" rel="stylesheet" />
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="../../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

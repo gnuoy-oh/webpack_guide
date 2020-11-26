@@ -1,0 +1,597 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("datepicker") {
+  /*datepicker*/
+  .mu-datepicker {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    z-index: 4;
+    font-size: 0;
+  }
+
+  .ui-helper-clearfix:before,
+  .ui-helper-clearfix:after {
+    display: table;
+    content: "";
+    border-collapse: collapse;
+  }
+
+  .mu-datepicker input {
+    display: block;
+    width: 100%;
+    height: 26px;
+    line-height: 100%;
+    padding: 4px 8px;
+    border: 1px solid $ui-04;
+    border-radius: 3px;
+    background: $ui-01;
+  }
+
+  .mu-datepicker input,
+  .mu-datepicker .mu-input {
+    padding: 4px 30px 4px 8px;
+
+    &:hover,
+    &:focus {
+      border-color: $ui-04;
+    }
+
+    &[readonly],
+    &[readonly]:hover,
+    &[readonly]:focus {
+      cursor: default;
+      border-color: $ui-04;
+      background-color: $ui-01;
+      color: $text-01;
+    }
+  }
+
+  .mu-datepicker .mu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 28px;
+    border-radius: 0 3px 3px 0;
+    padding: 0;
+
+    &[disabled] {
+      background-color: $disabled-01;
+
+      i {
+        color: $disabled-02;
+      }
+    }
+  }
+
+  // 신규 디자인
+  .mui-datepicker {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    // width: 100%;
+    height: 26px;
+    padding: $spacing-2xs $spacing-xl $spacing-2xs $spacing-xs;
+    border: 1px solid $ui-04;
+    border-radius: 3px;
+    background: $ui-01;
+    // z-index: 9;
+
+    &.on {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+
+      .mui-datepicker-container {
+        display: block;
+      }
+
+      .mui-datepicker-button {
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    &.is-disabled {
+      cursor: not-allowed;
+      background-color: $disabled-01;
+      color: $disabled-02;
+
+      .mui-datepicker-button {
+        &[disabled],
+        &[disabled]:hover,
+        &[disabled]:active {
+          background-color: $disabled-01;
+        }
+      }
+    }
+
+    // 상속 우선도를 높이기 위해 내부 자식으로 작성
+    .mui-datepicker-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      padding: 0 $spacing-2xs;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-width: 0 0 0 1px;
+
+      &[disabled] {
+        background-color: $disabled-01;
+
+        i {
+          color: $disabled-02;
+        }
+      }
+    }
+
+    // 기존 datepicker 스타일 재정의
+    .ui-datepicker .ui-widget-header {
+      padding-top: $spacing-md;
+      padding-bottom: 0;
+      border: 0;
+    }
+  }
+
+  .mui-datepicker-input {
+    width: 100%;
+    height: 100%;
+    line-height: 1.5;
+    padding: 0;
+    border: 0;
+    outline: 0;
+
+    &:hover,
+    &:focus {
+      border-color: $ui-04;
+    }
+
+    &[readonly],
+    &[readonly]:hover,
+    &[readonly]:focus {
+      cursor: default;
+      background-color: $ui-01;
+      color: $text-01;
+    }
+
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:focus,
+    &.is-disabled {
+      cursor: not-allowed;
+      background-color: transparent;
+      color: $disabled-02;
+    }
+  }
+
+  .mui-datepicker-separator {
+    margin: 0 $spacing-xs;
+  }
+
+  .mui-datepicker-container {
+    @include layer("overlay");
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    border: 1px solid $ui-04;
+    border-radius: 0 0 3px 3px;
+    background-color: $ui-01;
+    z-index: 21;
+    // overflow: hidden;
+
+    // datepicker library style override
+    .ui-datepicker {
+      display: block;
+      position: static;
+      border: none;
+      box-shadow: none;
+      flex: 1;
+    }
+
+    .hasDatepicker {
+      flex: 1;
+    }
+  }
+
+  .mui-datepicker-panels {
+    display: flex;
+  }
+
+  .mui-datepicker-panel {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+      border-right: 1px solid $ui-04;
+    }
+  }
+
+  .mui-datepicker-panel-header {
+    display: flex;
+    align-items: center;
+    padding: $spacing-2xs $spacing-xs;
+    border-bottom: 1px solid $ui-04;
+
+    .bx-btn-toggle {
+      margin-left: auto;
+
+      label {
+        color: $text-02;
+      }
+    }
+  }
+
+  .mui-datepicker-panel-footer {
+    padding: 0 $spacing-xs $spacing-sm $spacing-xs;
+
+    .mui-timepicker {
+      width: 100%;
+    }
+  }
+
+  // jquery-datepicker
+  .ui-datepicker {
+    @include font-family;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    display: none;
+    min-width: 240px;
+    min-height: auto;
+    padding: 0;
+    text-align: center;
+    border: 1px solid $ui-04;
+    border-radius: 3px;
+    background: $ui-01;
+    border-radius: 0 0 3px 3px;
+    // NOTE: jquery-ui.js에서 강제로 추가되는 z-index를 해결하기 위한 important 처리
+    z-index: 21 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .ui-datepicker span:hover,
+  .ui-datepicker a:hover {
+    text-decoration: none;
+  }
+
+  .ui-datepicker .ui-datepicker-header {
+    border-color: $ui-04;
+    background: none;
+  }
+
+  .ui-datepicker .ui-datepicker-header .ui-datepicker-title {
+    font-size: 12px;
+    color: $text-01;
+  }
+
+  .ui-datepicker .ui-widget-header {
+    position: relative;
+    height: 34px;
+    padding: 6px 12px;
+    color: $hover-ui-accent;
+    border: 1px solid $ui-04;
+    border-width: 0 0 1px 0;
+    border-radius: 0;
+    background: $ui-01;
+    font-size: 12px;
+  }
+
+  .ui-state-default,
+  .ui-widget-content .ui-state-default,
+  .ui-widget-header .ui-state-default {
+    background: transparent;
+  }
+
+  .ui-datepicker .ui-widget-header .ui-datepicker-title {
+    line-height: 1.5;
+    height: 20px;
+    font-size: 12px;
+    color: $text-01;
+    font-weight: 700;
+    margin: 3px 0;
+  }
+
+  .ui-datepicker .ui-widget-header .ui-datepicker-prev,
+  .ui-datepicker .ui-widget-header .ui-datepicker-next {
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
+
+  .ui-datepicker .ui-widget-header .ui-datepicker-prev span,
+  .ui-datepicker .ui-widget-header .ui-datepicker-next span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    text-indent: -9999px;
+  }
+
+  .ui-datepicker .ui-widget-header .ui-datepicker-prev:after,
+  .ui-datepicker .ui-widget-header .ui-datepicker-next:after {
+    display: block;
+    margin: 0;
+    line-height: 20px;
+    transform: translate(0, 0);
+    font: normal normal normal 17px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .ui-datepicker .ui-widget-header .ui-datepicker-prev {
+    float: left;
+    margin-top: 2px;
+  }
+
+  .ui-datepicker .ui-widget-header .ui-datepicker-prev:after {
+    content: "\f0d9";
+  }
+
+  .ui-datepicker .ui-widget-header .ui-datepicker-next {
+    float: right;
+    margin-top: 2px;
+  }
+
+  .ui-datepicker .ui-widget-header .ui-datepicker-next:after {
+    content: "\f0da";
+  }
+
+  .ui-datepicker .ui-widget-header .ui-datepicker-prev .ui-icon,
+  .ui-datepicker .ui-widget-header .ui-datepicker-next .ui-icon {
+    background: none;
+  }
+
+  .ui-datepicker .ui-datepicker-calendar {
+    width: inherit;
+    margin: 8px auto;
+  }
+
+  .ui-datepicker .ui-datepicker-calendar thead th {
+    font-weight: 700;
+    width: 30px;
+    height: 30px;
+    line-height: 24px;
+    color: #747f90;
+    font-size: 12px;
+    padding: 2px;
+    text-align: center;
+  }
+
+  .ui-datepicker .ui-datepicker-calendar tbody td {
+    position: relative;
+    padding: 1px;
+    font-weight: 500;
+  }
+
+  .ui-datepicker .ui-datepicker-calendar thead th:first-child,
+  .ui-datepicker .ui-datepicker-calendar tbody td:first-child .ui-state-default,
+  .mu-tab-inner.type1
+    .mu-tab-body
+    .mu-formbox
+    .ui-datepicker
+    .ui-datepicker-calendar
+    thead
+    th:first-child {
+    color: #fd683b;
+  }
+
+  .ui-datepicker .ui-datepicker-calendar thead th:last-child,
+  .ui-datepicker .ui-datepicker-calendar tbody td:last-child .ui-state-default,
+  .mu-tab-inner.type1
+    .mu-tab-body
+    .mu-formbox
+    .ui-datepicker
+    .ui-datepicker-calendar
+    thead
+    th:last-child {
+    color: $brand-02;
+  }
+
+  .ui-datepicker .ui-datepicker-calendar tbody td .ui-state-active,
+  .ui-datepicker
+    .ui-datepicker-calendar
+    tbody
+    td.ui-datepicker-today
+    .ui-state-active,
+  .ui-datepicker .ui-datepicker-calendar tbody td:first-child .ui-state-active,
+  .ui-datepicker .ui-datepicker-calendar tbody td:last-child .ui-state-active,
+  .ui-datepicker
+    .ui-datepicker-calendar
+    tbody
+    td.ui-state-selected
+    .ui-state-default,
+  .ui-datepicker
+    .ui-datepicker-calendar
+    tbody
+    td.ui-datepicker-today.ui-state-selected
+    .ui-state-default,
+  .ui-datepicker
+    .ui-datepicker-calendar
+    tbody
+    td.ui-state-selected:first-child
+    .ui-state-default,
+  .ui-datepicker
+    .ui-datepicker-calendar
+    tbody
+    td.ui-state-selected:last-child
+    .ui-state-default {
+    color: $text-04;
+    background-color: $interactive-01;
+    border-color: $interactive-01;
+  }
+
+  .ui-datepicker .ui-datepicker-calendar tbody td.ui-datepicker-range::before {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    height: 30px;
+    transform: translateY(-50%);
+    background-color: $hover-ui-accent;
+    content: "";
+  }
+
+  /*2017-08-25 MOD*/
+
+  .ui-datepicker .ui-datepicker-calendar .ui-state-default,
+  .ui-datepicker .ui-datepicker-calendar .ui-widget-content .ui-state-default,
+  .ui-datepicker .ui-datepicker-calendar .ui-widget-header .ui-state-default {
+    display: block;
+    position: relative;
+    z-index: 2;
+    min-width: 27px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    color: $text-01;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 24px;
+    padding: 2px;
+  }
+
+  .ui-datepicker
+    .ui-datepicker-calendar
+    td:not(.ui-state-disabled):not(.ui-state-selected)
+    .ui-state-default:not(.ui-state-active):not(.ui-state-selected):hover,
+  .ui-datepicker
+    .ui-datepicker-calendar
+    tbody
+    td:not(.ui-state-disabled):not(.ui-state-selected):first-child
+    .ui-state-default:not(.ui-state-active):not(.ui-state-selected):hover,
+  .ui-datepicker
+    .ui-datepicker-calendar
+    tbody
+    td:not(.ui-state-disabled):not(.ui-state-selected):last-child
+    .ui-state-default:not(.ui-state-active):hover {
+    background-color: darken($hover-ui-accent, 4%);
+  }
+
+  .ui-datepicker
+    .ui-datepicker-calendar
+    .ui-datepicker-today
+    .ui-state-default {
+    background-color: transparent;
+    border: 1px solid $brand-02;
+    color: $brand-02;
+  }
+
+  .ui-datepicker .ui-datepicker-calendar .ui-state-default:hover,
+  .ui-datepicker
+    .ui-datepicker-calendar
+    tbody
+    td:first-child
+    .ui-state-default:hover,
+  .ui-datepicker
+    .ui-datepicker-calendar
+    tbody
+    td:last-child
+    .ui-state-default:hover,
+  .ui-datepicker
+    .ui-datepicker-calendar
+    .ui-datepicker-current-day
+    .ui-state-active,
+  .filter-wrap
+    .ui-datepicker
+    .ui-datepicker-calendar
+    .ui-datepicker-today
+    .ui-state-default {
+    border-radius: 3px;
+  }
+
+  .ui-state-hover,
+  .ui-widget-content .ui-state-hover,
+  .ui-widget-header .ui-state-hover,
+  .ui-state-focus,
+  .ui-widget-content .ui-state-focus,
+  .ui-widget-header .ui-state-focus {
+    background: none;
+  }
+
+  .ui-datepicker .ui-datepicker-calendar th:last-child,
+  .ui-datepicker .ui-datepicker-calendar th:first-child,
+  .ui-datepicker .ui-datepicker-calendar td {
+    border: 0;
+  }
+
+  .ui-datepicker .ui-state-disabled .ui-state-default:hover,
+  .ui-datepicker
+    .ui-datepicker-calendar
+    .ui-state-disabled
+    .ui-state-default:hover,
+  .ui-datepicker
+    .ui-datepicker-calendar
+    tbody
+    td.ui-state-disabled:first-child
+    .ui-state-default:hover,
+  .ui-datepicker
+    .ui-datepicker-calendar
+    tbody
+    td.ui-state-disabled:last-child
+    .ui-state-default:hover {
+    border: 1px solid transparent;
+    cursor: default;
+  }
+
+  .ui-state-disabled,
+  .ui-widget-content .ui-state-disabled,
+  .ui-widget-header .ui-state-disabled {
+    opacity: 0.35;
+    background-image: none;
+  }
+
+  // NOTE: 날짜 및 시간범위 설정 UI에 사용하는 datepicker를 고정하기 위한 스타일
+  .bx-datepicker .ui-datepicker {
+    position: static;
+    box-shadow: none;
+  }
+
+  // NOTE: table 형식으로 작성된 다이얼로그 내부에 들어갔을 때 레이아웃이 틀어지는 문제를 위한 스타일
+  .mu-tab-inner.type1
+    .mu-tab-body
+    .mu-formbox
+    .ui-datepicker
+    .ui-datepicker-calendar
+    thead
+    th {
+    border-right: 0;
+    background-color: transparent;
+    color: #797979;
+  }
+
+  .mu-tab-inner.type1
+    .mu-tab-body
+    .mu-formbox
+    tbody
+    > tr
+    > td
+    .ui-datepicker
+    .ui-datepicker-calendar
+    tbody
+    td {
+    padding: 1px;
+  }
+
+  // NOTE: 고정 사이즈가 필요한 경우를 위한 스타일
+  .mui-datepicker.width150 {
+    width: 150px;
+  }
+}

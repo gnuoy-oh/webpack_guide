@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>NMS+ | 관제화면</title>
+  <link rel="stylesheet" href="../../../dist-nms-plus/css/nms-plus/style.min.css">
+</head>
+
+<!-- NOTE: 스튜디오 객체의 사이즈에 따라 유동적으로 사이즈가 변하도록 min-width를 제거했습니다. -->
+
+<body>
+  <div class="mu-container">
+    <section>
+      <div class="content-re search-table-content has-filter-wrap">
+        <!-- 좌측 필터 (트리) 영역 
+        NOTE: tree 콤포넌트 추가 후 background-color는 제거해주세요 -->
+        <div class="search-table-filter-wrap" style="background-color: rgb(250, 202, 202);">
+          <div class="treeview-wrap">
+            treeview
+          </div>
+        </div>
+        <!-- //좌측 필터 (트리) 영역 -->
+        <!-- 우측 결과 영역 -->
+        <div class="search-table-result-wrap">
+          <div class="search-table-body">
+            <div class="search-table-toolbar">
+              <div class="mu-hgroup">
+                <span class="mui-tag mui-tag-secondary">
+                  <div class="mu-checkbox">
+                    <input type="checkbox" id="all">
+                    <label for="all">전체: <strong>2500</strong></label>
+                  </div>
+                </span>
+                <span class="mui-tag level9">
+                  <div class="mu-checkbox">
+                    <input type="checkbox" id="check-lv9">
+                    <label for="check-lv9">Level9: <strong>2500</strong></label>
+                  </div>
+                </span>
+                <span class="mui-tag level8">
+                  <div class="mu-checkbox">
+                    <input type="checkbox" id="check-lv8">
+                    <label for="check-lv8">Level8: <strong>2500</strong></label>
+                  </div>
+                </span>
+                <span class="mui-tag level7">
+                  <div class="mu-checkbox">
+                    <input type="checkbox" id="check-lv7">
+                    <label for="check-lv7">Level7: <strong>2500</strong></label>
+                  </div>
+                </span>
+                <span class="mui-tag level6">
+                  <div class="mu-checkbox">
+                    <input type="checkbox" id="check-lv6">
+                    <label for="check-lv6">Level6: <strong>2500</strong></label>
+                  </div>
+                </span>
+                <span class="mui-tag level5">
+                  <div class="mu-checkbox">
+                    <input type="checkbox" id="check-lv5">
+                    <label for="check-lv5">Level5: <strong>2500</strong></label>
+                  </div>
+                </span>
+                <span class="mui-tag level4">
+                  <div class="mu-checkbox">
+                    <input type="checkbox" id="check-lv4">
+                    <label for="check-lv4">Level4: <strong>2500</strong></label>
+                  </div>
+                </span>
+                <span class="mui-tag level3">
+                  <div class="mu-checkbox">
+                    <input type="checkbox" id="check-lv3">
+                    <label for="check-lv3">Level3: <strong>2500</strong></label>
+                  </div>
+                </span>
+                <span class="mui-tag level2">
+                  <div class="mu-checkbox">
+                    <input type="checkbox" id="check-lv2">
+                    <label for="check-lv2">Level2: <strong>2500</strong></label>
+                  </div>
+                </span>
+                <span class="mui-tag level1">
+                  <div class="mu-checkbox">
+                    <input type="checkbox" id="check-lv1">
+                    <label for="check-lv1">Level1: <strong>2500</strong></label>
+                  </div>
+                </span>
+                <span class="mui-tag level0">
+                  <div class="mu-checkbox">
+                    <input type="checkbox" id="check-lv0">
+                    <label for="check-lv0">Level0: <strong>2500</strong></label>
+                  </div>
+                </span>
+
+                <!-- 등급 필터 -->
+                <label>등급 필터</label>
+                <div class="mu-selectbox on">
+                  <button class="mu-value">등급 필터</button>
+                  <ul class="mu-list">
+                    <li value="Level 1" class="active">
+                      <div class="mu-checkbox">
+                        <input type="checkbox" id="ckb_1" checked />
+                        <label for="ckb_1">Level 1</label>
+                      </div>
+                    </li>
+                    <li value="Level 2" class="active">
+                      <div class="mu-checkbox">
+                        <input type="checkbox" id="ckb_2" checked />
+                        <label for="ckb_2">Level 2</label>
+                      </div>
+                    </li>
+                    <li value="Level 3">
+                      <div class="mu-checkbox">
+                        <input type="checkbox" id="ckb_3" />
+                        <label for="ckb_3">Level 3</label>
+                      </div>
+                    </li>
+                    <li value="Level 4">
+                      <div class="mu-checkbox">
+                        <input type="checkbox" id="ckb_4" />
+                        <label for="ckb_4">Level 4</label>
+                      </div>
+                    </li>
+                    <li value="Level 5">
+                      <div class="mu-checkbox">
+                        <input type="checkbox" id="ckb_5" />
+                        <label for="ckb_5">Level 5</label>
+                      </div>
+                    </li>
+                    <li value="Level 6">
+                      <div class="mu-checkbox">
+                        <input type="checkbox" id="ckb_6" />
+                        <label for="ckb_6">Level 6</label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <!-- //등급 필터 -->
+              </div>
+              <div class="bx-btn-toggle fr">
+                <label>감시중</label>
+                <!-- on status -->
+                <button type="button" class="btn-toggle on"></button>
+                <!-- off status -->
+                <!-- <button type="button" class="btn-toggle"></button> -->
+              </div>
+            </div>
+            <!-- ag-grid -->
+            <!-- NOTE: ag-grid의 테마는 ag-theme-default를 사용합니다. 인라인으로 작성된 스타일은 height만 적용해주세요 -->
+            <div class="ag-theme-default" style="height: calc(100% - 32px); overflow: auto;">
+              <!-- NOTE: 예제로 추가한 임시 mu-grid -->
+              <table class="mu-grid">
+                <colgroup>
+                  <col width="80" />
+                  <col width="150" />
+                  <col width="150" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>APP No</th>
+                    <th>APP 명</th>
+                    <th>APP 종류</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="selected">
+                    <td class="tl">00001</td>
+                    <td class="tl rag-level0">
+                      Port 상태</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr class="selected">
+                    <td class="tl">00001</td>
+                    <td class="tl rag-level1">
+                      Port 상태</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00002</td>
+                    <td class="tl rag-level2">Port 상태</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00003</td>
+                    <td class="tl rag-level3">Port 상태</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00004</td>
+                    <td class="tl rag-level4">Port 상태</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00005</td>
+                    <td class="tl rag-level5">Port 상태</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00006</td>
+                    <td class="tl rag-level6">Port 상태</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00007</td>
+                    <td class="tl rag-level7">Port 상태</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00008</td>
+                    <td class="tl rag-level8">Port 상태</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00009</td>
+                    <td class="tl rag-level9">Port 상태</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl"><span class="alarm-icon alarm-icon_level9"></span>level9</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl"><span class="alarm-icon alarm-icon_level8"></span>level8</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl"><span class="alarm-icon alarm-icon_level7"></span>level7</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl"><span class="alarm-icon alarm-icon_level6"></span>level6</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl"><span class="alarm-icon alarm-icon_level5"></span>level5</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl"><span class="alarm-icon alarm-icon_level4"></span>level4</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl"><span class="alarm-icon alarm-icon_level3"></span>level3</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl"><span class="alarm-icon alarm-icon_level2"></span>level2</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl"><span class="alarm-icon alarm-icon_level1"></span>level1</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl"><span class="alarm-icon alarm-icon_level0"></span>level0</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl level9">New level9</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl level8">New level8</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl level7">New level7</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl level6">New level6</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl level5">New level5</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl level4">New level4</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl level3">New level3</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl level2">New level2</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl level1">New level1</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl level0">New level0</td>
+                    <td class="tl"></td>
+                  </tr>
+                  <tr>
+                    <td class="tl">00010</td>
+                    <td class="tl">Port 상태</td>
+                    <td class="tl"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- <div class="ag-cell rag-level2" style="width: 80px; margin-right: 4px;">level1</div>
+              <div class="ag-cell rag-level2" style="width: 80px; margin-right: 4px;">level2</div>
+              <div class="ag-cell rag-level3" style="width: 80px; margin-right: 4px;">level3</div>
+              <div class="ag-cell rag-level4" style="width: 80px; margin-right: 4px;">level4</div>
+              <div class="ag-cell rag-level5" style="width: 80px; margin-right: 4px;">level5</div>
+              <div class="ag-cell rag-level6" style="width: 80px; margin-right: 4px;">level6</div>
+              <div class="ag-cell rag-level7" style="width: 80px; margin-right: 4px;">level7</div>
+              <div class="ag-cell rag-level8" style="width: 80px; margin-right: 4px;">level8</div>
+              <div class="ag-cell rag-level9" style="width: 80px; margin-right: 4px;">level9</div> -->
+            </div>
+            <!-- //ag-grid -->
+          </div>
+        </div>
+        <!-- //우측 결과 영역 -->
+      </div>
+    </section>
+  </div>
+  <script src="../../../dist-nms-plus/js/nms-plus.bundle.js"></script>
+</body>
+
+</html>

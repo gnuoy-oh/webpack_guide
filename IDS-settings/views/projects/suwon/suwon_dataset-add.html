@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>수원시 스마트 시민소통 정책결정시스템 공공빅데이터 플랫폼 구축</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+  <script src="js/html5.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="../../../dist-suwon/css/suwon/style.min.css">
+</head>
+
+<body>
+
+  <div class="mu-container" style="height: auto;">
+    <section>
+      <div class="mu-content content-re form-layout">
+        <div class="form-layout-cont">
+          <!-- 입력 폼 전체 타이틀 -->
+          <div class="mui-form-title-wrap">
+            <span class="mui-form-title">신규 등록 신청</span>
+          </div>
+          <!-- 입력 폼 -->
+          <div class="mui-form">
+            <!-- 입력 폼 헤드 영역 -->
+            <div class="mui-form-head">
+              <span class="mui-form-head-text">기본 정보</span>
+            </div>
+            <!-- 입력 폼 바디 영역-->
+            <div class="mui-form-body-wrap">
+              <div class="mui-form-body">
+                <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <div class="mui-form-item">
+                  <!-- 입력 폼: 레이블 -->
+                  <div class="mui-form-item-label mui-col-3"><label>분류 / 지표 선택</label></div>
+                  <!-- 입력 폼: 콘텐트 -->
+                  <div class="mui-form-item-cont mui-col-21">
+                    <button class="mu-btn mu-btn-primary" type="button">
+                      <span>분류 / 지표 선택</span>
+                    </button>
+                    <!-- NOTE: 데이터셋 > 분류 / 지표 선택 tree + mu-grid -->
+                    <div class="treeview has-mu-grid mt10" style="display: flex;">
+                      <div class="treeview-wrap" style="background:#eee; height: auto;">
+                        treeview
+                      </div>
+                      <!-- mu-grid 테이블 -->
+                      <div class="search-table-body ml10">
+                        <div class="search-table-toolbar">
+                          <div class="mu-hgroup">
+                            <div class="mu-input-icon">
+                              <input class="mu-input" placeholder="검색" type="text">
+                              <i class="mu-icon search"></i>
+                            </div>
+                          </div>
+                          <div class="mu-pagination fr">
+                            <button type="button" class="mu-btn-img mu-btn-icon" disabled=""><i class="mu-icon-img arrow-first"></i></button>
+                            <button type="button" class="mu-btn-img mu-btn-icon" disabled=""><i class="mu-icon-img arrow-prev"></i></button>
+                            <ul>
+                              <li class="active"><a>1</a></li>
+                              <li><a>2</a></li>
+                              <li><a>3</a></li>
+                              <li><a>4</a></li>
+                              <li><a>5</a></li>
+                            </ul>
+                            <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-next"></i></button>
+                            <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-last"></i></button>
+                          </div>
+                        </div>
+                        <div class="mu-grid-scroll">
+                          <table class="mu-grid mu-grid-border">
+                            <colgroup>
+                              <col width="40">
+                              <col width="40">
+                              <col width="100">
+                              <col width="60">
+                              <col width="60">
+                              <col width="60">
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th>선택</th>
+                                <th>분류</th>
+                                <th>지표명</th>
+                                <th>담당부서</th>
+                                <th>담당자</th>
+                                <th>등록일</th>
+                              </tr>
+                            </thead>
+                          </table>
+                          <div class="mu-scroll-v">
+                            <table class="mu-grid mu-grid-border mu-grid-expand mu-grid-strip mu-formbox-inner bdt-none">
+                              <colgroup>
+                                <col width="40">
+                                <col width="40">
+                                <col width="100">
+                                <col width="60">
+                                <col width="60">
+                                <col width="60">
+                              </colgroup>
+                              <tbody>
+                                <tr>
+                                  <td class="tl">
+                                    <i class="mu-icon right"></i>
+                                    <div class="mu-radio">
+                                      <input type="radio" id="r0">
+                                      <label for="r0"></label>
+                                    </div>
+                                  </td>
+                                  <td class="tc">
+                                    <span>환경</span>
+                                  </td>
+                                  <td>
+                                    <span>수원역 미세먼지</span>
+                                  </td>
+                                  <td class="tc">
+                                    환경부
+                                  </td>
+                                  <td class="tc">
+                                    홍길동
+                                  </td>
+                                  <td class="tc">
+                                    2019-06-25
+                                  </td>
+                                </tr>
+                                <!-- NOTE: tr open시 odd open 클래스 추가 -->
+                                <tr class="odd open">
+                                  <td class="tl">
+                                    <!-- NOTE: tr이 open될 경우 right class를 down으로 변경 -->
+                                    <i class="mu-icon down"></i>
+                                    <div class="mu-radio">
+                                      <input type="radio" id="r0">
+                                      <label for="r0"></label>
+                                    </div>
+                                  </td>
+                                  <td class="tc">
+                                    <span>환경</span>
+                                  </td>
+                                  <td>
+                                    <span>수원역 미세먼지</span>
+                                  </td>
+                                  <td class="tc">
+                                    환경부
+                                  </td>
+                                  <td class="tc">
+                                    홍길동
+                                  </td>
+                                  <td class="tc">
+                                    2019-06-25
+                                  </td>
+                                </tr>
+                                <!-- NOTE: tr open되어 보여지는 상세 콘텐츠 -->
+                                <tr class="even open">
+                                  <td colspan="6">
+                                    <table class="mu-formbox">
+                                      <colgroup>
+                                        <col width="120">
+                                      </colgroup>
+                                      <tbody>
+                                        <tr>
+                                          <th>분류</th>
+                                          <td>데이터 브라우저</td>
+                                          <th>키워드</th>
+                                          <td><span class="mui-tag mui-tag-cyan">미세먼지</span></td>
+                                          <th>담당자</th>
+                                          <td>홍길동(02-123-4567)</td>
+                                        </tr>
+                                        <tr>
+                                          <th>공유범위</th>
+                                          <td>대시민</td>
+                                          <th>갱신주기</th>
+                                          <td>분기</td>
+                                          <th>담당부서</th>
+                                          <td>환경과</td>
+                                        </tr>
+                                        <tr>
+                                          <th>라이선스</th>
+                                          <td>CC</td>
+                                          <th>사용여부</th>
+                                          <td>사용</td>
+                                          <th>지표종류</th>
+                                          <td>등록</td>
+                                        </tr>
+                                        <tr>
+                                          <th>설명</th>
+                                          <td colspan="5">수원역 2분기 미세먼지 농도 추이</td>
+                                        </tr>
+                                        <tr>
+                                          <th>샘플 File</th>
+                                          <td colspan="5">suwon_station_finedust.csv</td>
+                                        </tr>
+                                        <tr>
+                                          <th></th>
+                                          <td colspan="5">
+                                            <div class="search-table-body">
+                                              <div class="search-table-toolbar">
+                                                <div class="mu-pagination fr">
+                                                  <button type="button" class="mu-btn-img mu-btn-icon" disabled=""><i class="mu-icon-img arrow-first"></i></button>
+                                                  <button type="button" class="mu-btn-img mu-btn-icon" disabled=""><i class="mu-icon-img arrow-prev"></i></button>
+                                                  <ul>
+                                                    <li class="active"><a>1</a></li>
+                                                    <li><a>2</a></li>
+                                                    <li><a>3</a></li>
+                                                    <li><a>4</a></li>
+                                                    <li><a>5</a></li>
+                                                  </ul>
+                                                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-next"></i></button>
+                                                  <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-last"></i></button>
+                                                </div>
+                                              </div>
+                                              <table class="mu-grid mu-grid-border">
+                                                <colgroup>
+                                                  <col width="300">
+                                                  <col width="100">
+                                                  <col width="100">
+                                                  <col width="60">
+                                                </colgroup>
+                                                <thead>
+                                                  <tr>
+                                                    <th>데이터셋</th>
+                                                    <th>담당부서</th>
+                                                    <th>담당자</th>
+                                                    <th>등록일</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                    <td class="tl">수원역 미세먼지 2018 4분기</td>
+                                                    <td class="tc">교통과</td>
+                                                    <td class="tc">김철수</td>
+                                                    <td class="tc">2019-07-03</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="tl">수원역 미세먼지 2018 4분기</td>
+                                                    <td class="tc">교통과</td>
+                                                    <td class="tc">김철수</td>
+                                                    <td class="tc">2019-07-03</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="tl">수원역 미세먼지 2018 4분기</td>
+                                                    <td class="tc">교통과</td>
+                                                    <td class="tc">김철수</td>
+                                                    <td class="tc">2019-07-03</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="tl">수원역 미세먼지 2018 4분기</td>
+                                                    <td class="tc">교통과</td>
+                                                    <td class="tc">김철수</td>
+                                                    <td class="tc">2019-07-03</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="tl">수원역 미세먼지 2018 4분기</td>
+                                                    <td class="tc">교통과</td>
+                                                    <td class="tc">김철수</td>
+                                                    <td class="tc">2019-07-03</td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="tl">
+                                    <i class="mu-icon right"></i>
+                                    <div class="mu-radio">
+                                      <input type="radio" id="r0">
+                                      <label for="r0"></label>
+                                    </div>
+                                  </td>
+                                  <td class="tc">
+                                    <span>환경</span>
+                                  </td>
+                                  <td>
+                                    <span>수원역 미세먼지</span>
+                                  </td>
+                                  <td class="tc">
+                                    환경부
+                                  </td>
+                                  <td class="tc">
+                                    홍길동
+                                  </td>
+                                  <td class="tc">
+                                    2019-06-25
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="tl">
+                                    <i class="mu-icon right"></i>
+                                    <div class="mu-radio">
+                                      <input type="radio" id="r0">
+                                      <label for="r0"></label>
+                                    </div>
+                                  </td>
+                                  <td class="tc">
+                                    <span>환경</span>
+                                  </td>
+                                  <td>
+                                    <span>수원역 미세먼지</span>
+                                  </td>
+                                  <td class="tc">
+                                    환경부
+                                  </td>
+                                  <td class="tc">
+                                    홍길동
+                                  </td>
+                                  <td class="tc">
+                                    2019-06-25
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //mu-grid 테이블 -->
+                    </div>
+                    <!-- //NOTE: 데이터셋 > 분류 / 지표 선택 tree + mu-grid -->
+                    <!-- NOTE: 데이터셋 > 분류 / 지표 선택 tree -->
+                    <div class="treeview mt10" style="display: flex;">
+                      <div class="treeview-wrap" style="background:#eee;">
+                        treeview
+                      </div>
+                    </div>
+                    <!-- //NOTE: 데이터셋 > 분류 / 지표 선택 tree -->
+                  </div>
+                </div>
+                <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <div class="mui-form-item">
+                  <!-- 입력 폼: 레이블 -->
+                  <div class="mui-form-item-label mui-col-3"><label>지표명</label></div>
+                  <!-- 입력 폼: 콘텐트 -->
+                  <div class="mui-form-item-cont mui-col-10">
+                    <input type="text" class="mu-input has-validation" placeholder="지표명">
+                    <button class="mu-btn mu-btn-primary" type="button">
+                      <span>검색</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <div class="mui-form-item">
+                  <!-- 입력 폼: 레이블 -->
+                  <div class="mui-form-item-label mui-col-3"><label>키워드</label></div>
+                  <!-- 입력 폼: 콘텐트 -->
+                  <div class="mui-form-item-cont mui-col-10">
+                    <input type="text" class="mu-input" placeholder="">
+                  </div>
+                </div>
+                <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <div class="mui-form-item">
+                  <!-- 입력 폼: 레이블 -->
+                  <div class="mui-form-item-label mui-col-3"><label>등록자</label></div>
+                  <!-- 입력 폼: 콘텐트 -->
+                  <div class="mui-form-item-cont mui-col-10">
+                    <div class=""><input type="text" class="mu-input" placeholder="신청자 이름 (전화번호)"></div>
+                  </div>
+                </div>
+                <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <div class="mui-form-item">
+                  <!-- 입력 폼: 레이블 -->
+                  <div class="mui-form-item-label mui-col-3"><label>등록부서</label></div>
+                  <!-- 입력 폼: 콘텐트 -->
+                  <div class="mui-form-item-cont mui-col-10">
+                    <div class=""><input type="text" class="mu-input" placeholder="신청자 부서"></div>
+                  </div>
+                </div>
+                <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <div class="mui-form-item">
+                  <!-- 입력 폼: 레이블 -->
+                  <div class="mui-form-item-label mui-col-3"><label>유효기간</label></div>
+                  <!-- 입력 폼: 콘텐트 -->
+                  <div class="mui-form-item-cont mui-col-10">
+                    <div class="mu-datepicker">
+                      <input type="text" class="mu-input" value="yyyy/mm/dd">
+                      <button class="mu-btn mu-btn-default">
+                        <i class="iriscon calendar"></i>
+                      </button>
+                    </div>
+                    <span>~</span>
+                    <div class="mu-datepicker">
+                      <input type="text" class="mu-input" value="yyyy/mm/dd">
+                      <button class="mu-btn mu-btn-default">
+                        <i class="iriscon calendar"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <div class="mui-form-item">
+                  <!-- 입력 폼: 레이블 -->
+                  <div class="mui-form-item-label mui-col-3"><label>갱신 주기</label></div>
+                  <!-- 입력 폼: 콘텐트 -->
+                  <div class="mui-form-item-cont mui-col-10">
+                    <div class="mu-btn-group">
+                      <button class="mu-btn">일</button>
+                      <button class="mu-btn">주</button>
+                      <button class="mu-btn active">월</button>
+                      <button class="mu-btn">분기</button>
+                      <button class="mu-btn">수시</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <div class="mui-form-item">
+                  <!-- 입력 폼: 레이블 -->
+                  <div class="mui-form-item-label mui-col-3"><label>공유 범위</label></div>
+                  <!-- 입력 폼: 콘텐트 -->
+                  <div class="mui-form-item-cont mui-col-10">
+                    <div class="mu-item-group">
+                      <div class="mu-radio">
+                        <input type="radio" id="r1_1" name="radio1" checked="checked">
+                        <label for="r1_1">공개</label>
+                      </div>
+                      <div class="mu-radio">
+                        <input type="radio" id="r1_2" name="radio1">
+                        <label for="r1_2">비공개</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <div class="mui-form-item">
+                  <!-- 입력 폼: 레이블 -->
+                  <div class="mui-form-item-label mui-col-3"><label>라이선스</label></div>
+                  <!-- 입력 폼: 콘텐트 -->
+                  <div class="mui-form-item-cont mui-col-10">
+                    <div class="">
+                      <div class="mu-selectbox">
+                        <button class="mu-value width200">Creative Common License Creative Common License</button>
+                        <ul class="mu-list">
+                          <li value="Common Creative License">Creative Common License</li>
+                          <li value="Common Creative License" class="active">Creative Common License Creative Common License</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <div class="mui-form-item">
+                  <!-- 입력 폼: 레이블 -->
+                  <div class="mui-form-item-label mui-col-3"><label>사유</label></div>
+                  <!-- 입력 폼: 콘텐트 -->
+                  <div class="mui-form-item-cont mui-col-10">
+                    <textarea type="text" class="mu-area" placeholder="Placeholder text"></textarea>
+                  </div>
+                </div>
+                <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <div class="mui-form-item">
+                  <!-- 입력 폼: 레이블 -->
+                  <div class="mui-form-item-label mui-col-3"><label>설명</label></div>
+                  <!-- 입력 폼: 콘텐트 -->
+                  <div class="mui-form-item-cont mui-col-10">
+                    <textarea type="text" class="mu-area" placeholder="Placeholder text"></textarea>
+                  </div>
+                </div>
+                <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <div class="mui-form-item">
+                  <!-- 입력 폼: 레이블 -->
+                  <div class="mui-form-item-label mui-col-3"><label>사용 여부</label></div>
+                  <!-- 입력 폼: 콘텐트 -->
+                  <div class="mui-form-item-cont">
+                    <div class="mu-item-group">
+                      <div class="mu-radio">
+                        <input type="radio" id="r1_3" name="radio1" checked="checked">
+                        <label for="r1_3">사용</label>
+                      </div>
+                      <div class="mu-radio">
+                        <input type="radio" id="r1_4" name="radio1">
+                        <label for="r1_4">중지</label>
+                      </div>
+                      <div class="mu-radio">
+                        <input type="radio" id="r1_5" name="radio1">
+                        <label for="r1_5">미사용</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              </div>
+            </div>
+            <!-- // 입력 폼 바디 영역-->
+          </div>
+          <!-- // 입력 폼 -->
+
+          <!-- 입력 폼 -->
+          <div class="mui-form">
+            <!-- 입력 폼 헤드 영역 -->
+            <div class="mui-form-head">
+              <span class="mui-form-head-text">테이블 정보</span>
+            </div>
+            <!-- 입력 폼 바디 영역-->
+            <div class="mui-form-body-wrap">
+              <div class="mui-form-body">
+                <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+                <div class="mui-form-item">
+                  <!-- 입력 폼: 레이블 -->
+                  <div class="mui-form-item-label mui-col-3"><label>컬럼 정보</label></div>
+                  <!-- 입력 폼: 콘텐트 -->
+                  <div class="mui-form-item-cont mui-col-21">
+                    <button class="mu-btn mu-btn-default" type="button">
+                      <i class="iriscon add"></i>
+                      <span>컬럼 추가</span>
+                    </button>
+                    <button class="mu-btn mu-btn-primary ml5" type="button">
+                      <span>표준화 검증</span>
+                    </button>
+                    <div class="division-line"></div>
+                    <button class="mu-btn mu-btn-primary" type="button">
+                      <span>저장</span>
+                    </button>
+                    <table class="mu-grid mu-grid-border mu-grid-strip mu-grid-item mu-grid-th-border mt10">
+                      <colgroup>
+                        <col width="160">
+                        <col width="160">
+                        <col width="160">
+                        <col width="160">
+                        <col width="80">
+                        <col width="50">
+                      </colgroup>
+                      <thead>
+                        <th>한글명</th>
+                        <th>Column명</th>
+                        <th>영어명</th>
+                        <th>영어 축약</th>
+                        <th>순서</th>
+                        <th>삭제</th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="tl">
+                            <input type="text" class="mu-input has-validation" value="식별자">
+                            <div class="mui-message mui-message-inline success">
+                              <i class="mu-icon check-circle"></i>
+                              <span class="mui-message-text">OK</span>
+                            </div>
+                          </td>
+                          <td><input type="text" class="mu-input" value="id"></td>
+                          <td><input type="text" class="mu-input" value="ID"></td>
+                          <td><input type="text" class="mu-input" value="id"></td>
+                          <td>
+                            <input type="text" class="mu-input has-ordering-btn" value="1">
+                            <div class="mui-btn-group-vertical">
+                              <button type="button" class="mu-btn mu-btn-icon" disabled>
+                                <i class="mu-icon caret-up"></i>
+                              </button>
+                              <button type="button" class="mu-btn mu-btn-icon">
+                                <i class="mu-icon caret-down"></i>
+                              </button>
+                            </div>
+                          </td>
+                          <td>
+                            <button class="mu-btn mu-btn-icon" type="button" title="삭제">
+                              <i class="mu-icon trash2"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tl">
+                            <input type="text" class="mu-input has-validation" value="식별자">
+                            <div class="mui-message mui-message-inline error">
+                              <i class="mu-icon err-circle"></i>
+                              <span class="mui-message-text">NOK</span>
+                            </div>
+                          </td>
+                          <td><input type="text" class="mu-input" value="id"></td>
+                          <td><input type="text" class="mu-input" value="ID"></td>
+                          <td><input type="text" class="mu-input" value="id"></td>
+                          <td>
+                            <input type="text" class="mu-input has-ordering-btn" value="1">
+                            <div class="mui-btn-group-vertical">
+                              <button type="button" class="mu-btn mu-btn-icon">
+                                <i class="mu-icon caret-up"></i>
+                              </button>
+                              <button type="button" class="mu-btn mu-btn-icon">
+                                <i class="mu-icon caret-down"></i>
+                              </button>
+                            </div>
+                          </td>
+                          <td>
+                            <button class="mu-btn mu-btn-icon" type="button" title="삭제">
+                              <i class="mu-icon trash2"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tl">
+                            <input type="text" class="mu-input has-validation" value="식별자">
+                            <!-- <div class="mui-message mui-message-inline success">
+                              <i class="mu-icon check-circle"></i>
+                              <span class="mui-message-text">OK</span>
+                            </div> -->
+                          </td>
+                          <td><input type="text" class="mu-input" value="id"></td>
+                          <td><input type="text" class="mu-input" value="ID"></td>
+                          <td><input type="text" class="mu-input" value="id"></td>
+                          <td>
+                            <input type="text" class="mu-input has-ordering-btn" value="1">
+                            <div class="mui-btn-group-vertical">
+                              <button type="button" class="mu-btn mu-btn-icon">
+                                <i class="mu-icon caret-up"></i>
+                              </button>
+                              <button type="button" class="mu-btn mu-btn-icon" disabled>
+                                <i class="mu-icon caret-down"></i>
+                              </button>
+                            </div>
+                          </td>
+                          <td>
+                            <button class="mu-btn mu-btn-icon" type="button" title="삭제">
+                              <i class="mu-icon trash2"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- <div class="mu-grid-scroll mt10">
+                      <table class="mu-grid mu-grid-border">
+                        <colgroup>
+                          <col width="160">
+                          <col width="160">
+                          <col width="160">
+                          <col width="160">
+                          <col width="80">
+                          <col width="50">
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th>한글명</th>
+                            <th>Column명</th>
+                            <th>영어명</th>
+                            <th>영어 축약</th>
+                            <th>순서</th>
+                            <th>삭제</th>
+                          </tr>
+                        </thead>
+                      </table>
+                      <div class="mu-scroll-v grid-wrap">
+                        <table class="mu-grid mu-grid-border mu-grid-hover mu-grid-strip mu-grid-item">
+                          <colgroup>
+                            <col width="160">
+                            <col width="160">
+                            <col width="160">
+                            <col width="160">
+                            <col width="80">
+                            <col width="50">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <td class="tl">
+                                <input type="text" class="mu-input has-validation" value="식별자">
+                                <div class="mui-message mui-message-inline success">
+                                  <i class="mu-icon check-circle"></i>
+                                  <span class="mui-message-text">OK</span>
+                                </div>
+                              </td>
+                              <td><input type="text" class="mu-input" value="id"></td>
+                              <td><input type="text" class="mu-input" value="ID"></td>
+                              <td><input type="text" class="mu-input" value="id"></td>
+                              <td>
+                                <input type="text" class="mu-input has-ordering-btn" value="1">
+                                <div class="mui-btn-group-vertical">
+                                  <button type="button" class="mu-btn mu-btn-icon">
+                                    <i class="mu-icon caret-up"></i>
+                                  </button>
+                                  <button type="button" class="mu-btn mu-btn-icon">
+                                    <i class="mu-icon caret-down"></i>
+                                  </button>
+                                </div>
+                              </td>
+                              <td>
+                                <button class="mu-btn mu-btn-icon" type="button" title="삭제">
+                                  <i class="mu-icon trash2"></i>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="tl">
+                                <input type="text" class="mu-input has-validation" value="이름">
+                                <div class="mui-message mui-message-inline error">
+                                  <i class="mu-icon err-circle"></i>
+                                  <span class="mui-message-text">NOK</span>
+                                </div>
+                              </td>
+                              <td><input type="text" class="mu-input" value="name"></td>
+                              <td><input type="text" class="mu-input" value="NAME"></td>
+                              <td><input type="text" class="mu-input" value="name"></td>
+                              <td>
+                                <input type="text" class="mu-input has-ordering-btn" value="2">
+                                <div class="mui-btn-group-vertical">
+                                  <button type="button" class="mu-btn mu-btn-icon">
+                                    <i class="mu-icon caret-up"></i>
+                                  </button>
+                                  <button type="button" class="mu-btn mu-btn-icon">
+                                    <i class="mu-icon caret-down"></i>
+                                  </button>
+                                </div>
+                              </td>
+                              <td>
+                                <button class="mu-btn mu-btn-icon" type="button" title="삭제">
+                                  <i class="mu-icon trash2"></i>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="6">
+                                <div class="mui-message info">
+                                  <i class="mu-icon info"></i><span class="mui-message-text">데이터가 없습니다.</span>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div> -->
+                  </div>
+                </div>
+              </div>
+              <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <div class="mui-form-item">
+                <!-- 입력 폼: 레이블 -->
+                <div class="mui-form-item-label mui-col-3"><label>DB 종류</label></div>
+                <!-- 입력 폼: 콘텐트 -->
+                <div class="mui-form-item-cont mui-col-10">
+                  <div class="mu-selectbox">
+                    <button class="mu-value width200">ORACLE</button>
+                    <ul class="mu-list">
+                      <li value="ORACLE">ORACLE</li>
+                      <li value="ORACLE" class="active">ORACLE</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <div class="mui-form-item">
+                <!-- 입력 폼: 레이블 -->
+                <div class="mui-form-item-label mui-col-3"><label>TYPE</label></div>
+                <!-- 입력 폼: 콘텐트 -->
+                <div class="mui-form-item-cont mui-col-10">
+                  <div class="mu-item-group">
+                    <div class="mu-selectbox">
+                      <button class="mu-value width100">SID</button>
+                      <ul class="mu-list">
+                        <li value="SID">SID</li>
+                        <li value="SID" class="active">SID</li>
+                      </ul>
+                    </div>
+                    <input type="text" class="mu-input" placeholder="">
+                  </div>
+                </div>
+              </div>
+              <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <div class="mui-form-item">
+                <!-- 입력 폼: 레이블 -->
+                <div class="mui-form-item-label mui-col-3"><label>DRIVER</label></div>
+                <!-- 입력 폼: 콘텐트 -->
+                <div class="mui-form-item-cont mui-col-10">
+                  <div class="mu-selectbox">
+                    <button class="mu-value width200">Thin</button>
+                    <ul class="mu-list">
+                      <li value="Thin">Thin</li>
+                      <li value="Thin" class="active">Thin</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <div class="mui-form-item">
+                <!-- 입력 폼: 레이블 -->
+                <div class="mui-form-item-label mui-col-3"><label>HOST</label></div>
+                <!-- 입력 폼: 콘텐트 -->
+                <div class="mui-form-item-cont mui-col-10">
+                  <input type="text" class="mu-input" placeholder="HOST" value="192.168.1.1">
+                </div>
+              </div>
+              <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <div class="mui-form-item">
+                <!-- 입력 폼: 레이블 -->
+                <div class="mui-form-item-label mui-col-3"><label>PORT</label></div>
+                <!-- 입력 폼: 콘텐트 -->
+                <div class="mui-form-item-cont mui-col-10">
+                  <input type="text" class="mu-input" placeholder="PORT" value="5432">
+                </div>
+              </div>
+              <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <div class="mui-form-item">
+                <!-- 입력 폼: 레이블 -->
+                <div class="mui-form-item-label mui-col-3"><label>USERNAME</label></div>
+                <!-- 입력 폼: 콘텐트 -->
+                <div class="mui-form-item-cont mui-col-10">
+                  <input type="text" class="mu-input" placeholder="USERNAME" value="홍길동">
+                </div>
+              </div>
+              <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <div class="mui-form-item">
+                <!-- 입력 폼: 레이블 -->
+                <div class="mui-form-item-label mui-col-3"><label>PASSWORD</label></div>
+                <!-- 입력 폼: 콘텐트 -->
+                <div class="mui-form-item-cont mui-col-10">
+                  <input type="password" class="mu-input" placeholder="PASSWORD" value="">
+                </div>
+              </div>
+              <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <div class="mui-form-item">
+                <!-- 입력 폼: 레이블 -->
+                <div class="mui-form-item-label mui-col-3"><label>SQL</label></div>
+                <!-- 입력 폼: 콘텐트 -->
+                <div class="mui-form-item-cont mui-col-10">
+                  <div class="mu-vgroup">
+                    <textarea type="text" class="mu-area" placeholder="Placeholder text"></textarea>
+                    <button class="mu-btn mu-btn-secondary">테스트</button>
+                  </div>
+                </div>
+              </div>
+              <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <!-- 입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+              <div class="mui-form-item">
+                <!-- 입력 폼: 레이블 -->
+                <div class="mui-form-item-label mui-col-3"><label>결과</label></div>
+                <!-- 입력 폼: 콘텐트 -->
+                <div class="mui-form-item-cont mui-col-21">
+                  <div class="mu-vgroup">
+                    <div class="mu-hgroup">
+                      <span>CONNECTION:</span>
+                      <div class="mui-message mui-message-inline error">
+                        <!-- <i class="mu-icon err-circle"></i> -->
+                        <span class="mui-message-text">REFUES ERROR</span>
+                      </div>
+                    </div>
+                    <div class="mu-hgroup">
+                      <span>SQL QUERY:</span>
+                      <div class="mui-message mui-message-inline success">
+                        <!-- <i class="mu-icon err-circle"></i> -->
+                        <span class="mui-message-text">OK</span>
+                      </div>
+                    </div>
+                  </div>
+                  <table class="mu-grid mu-grid-border mu-grid-strip mu-grid-item mu-grid-th-border mt10">
+                    <colgroup>
+                      <col width="200">
+                      <col width="200">
+                      <col width="200">
+                      <col width="200">
+                      <col width="200">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>LATITUDE</th>
+                        <th>LONGITUDE</th>
+                        <th>LOCATION</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>20</td>
+                        <td class="tl">name_A</td>
+                        <td class="tc">37.15.50</td>
+                        <td class="tr">127.01.43</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>20</td>
+                        <td class="tl">name_A</td>
+                        <td class="tc">37.15.50</td>
+                        <td class="tr">127.01.43</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>20</td>
+                        <td class="tl">name_A</td>
+                        <td class="tc">37.15.50</td>
+                        <td class="tr">127.01.43</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>20</td>
+                        <td class="tl">name_A</td>
+                        <td class="tc">37.15.50</td>
+                        <td class="tr">127.01.43</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>20</td>
+                        <td class="tl">name_A</td>
+                        <td class="tc">37.15.50</td>
+                        <td class="tr">127.01.43</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>20</td>
+                        <td class="tl">name_A</td>
+                        <td class="tc">37.15.50</td>
+                        <td class="tr">127.01.43</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- //입력 폼 개별 아이템: 레이블 + 콘텐트  -->
+            </div>
+          </div>
+          <!-- // 입력 폼 바디 영역-->
+          <!-- // 입력 폼 -->
+          <!-- 입력 폼 푸터 영역 -->
+          <div class="mui-form-foot">
+            <button class="mu-btn mu-btn-md mu-btn-default" type="button">취소</button>
+            <button class="mu-btn mu-btn-md mu-btn-primary" type="button">저장</button>
+          </div>
+          <!-- //입력 폼 푸터 영역 -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- dialog: SP-UI-DM-03 -->
+  <div class="mu-dialog mui-dialog-lg" style="position: static;">
+    <div class="mu-dialog-head">
+      <span class="title">표준화 검증</span>
+      <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-dialog-body">
+      <div class="mu-hgroup">
+        <input type="text" class="mu-input width200" placeholder="검색어" value="수원 지하철 미세먼지">
+        <button class="mu-btn mu-btn-secondary" type="button">
+          <span>검색</span>
+        </button>
+      </div>
+      <table class="mu-grid mu-grid-border mu-grid-strip mu-grid-item mu-grid-th-border mt10">
+        <colgroup>
+          <col width="160">
+          <col width="30">
+          <col width="160">
+          <col width="160">
+          <col width="160">
+          <col width="60">
+        </colgroup>
+        <thead>
+          <tr>
+            <th colspan="2">용어</th>
+            <th>영문</th>
+            <th>영문(축약)</th>
+            <th>설명</th>
+            <th>검증</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 원래 있는 단어인 경우 -->
+          <tr>
+            <td class="tl" colspan="2">수원</td>
+            <td class="tl">SUWON</td>
+            <td class="tl">SW</td>
+            <td class="tl">수원</td>
+            <td>
+              <button class="mu-btn mu-btn-primary" type="button" disabled>
+                <span>신청</span>
+              </button>
+            </td>
+          </tr>
+          <!-- //원래 있는 단어인 경우 -->
+          <!-- 용어 '검색' 수행시 없는 단어인 경우 / 신청 버튼 비활성화 -->
+          <tr>
+            <td class="tl">
+              <input type="text" class="mu-input has-validation" value="미세먼지">
+              <div class="mui-message mui-message-inline error">
+                <i class="mu-icon err-circle"></i>
+                <span class="mui-message-text">NOK</span>
+              </div>
+            </td>
+            <td>
+              <button class="mu-btn mu-btn-secondary" type="button" title="검색">
+                <span>검색</span>
+              </button>
+            </td>
+            <td><input type="text" class="mu-input" placeholder="Placeholder Text" value=""></td>
+            <td><input type="text" class="mu-input" placeholder="Placeholder Text" value=""></td>
+            <td><input type="text" class="mu-input" placeholder="Placeholder Text" value=""></td>
+            <td>
+              <button class="mu-btn mu-btn-primary" type="button" disabled>
+                <span>신청</span>
+              </button>
+            </td>
+          </tr>
+          <!-- //용어 '검색' 수행시 없는 단어인 경우 / 신청 버튼 비활성화 -->
+          <!-- 용어 '검색' 수행시 있는 단어인 경우 / 신청 버튼 활성화 -->
+          <tr>
+            <td class="tl">
+              <input type="text" class="mu-input has-validation" value="지하철">
+              <div class="mui-message mui-message-inline success">
+                <i class="mu-icon check-circle"></i>
+                <span class="mui-message-text">OK</span>
+              </div>
+            </td>
+            <td>
+              <button class="mu-btn mu-btn-secondary" type="button" title="검색">
+                <span>검색</span>
+              </button>
+            </td>
+            <td><input type="text" class="mu-input" placeholder="Placeholder Text" value=""></td>
+            <td><input type="text" class="mu-input" placeholder="Placeholder Text" value=""></td>
+            <td><input type="text" class="mu-input" placeholder="Placeholder Text" value=""></td>
+            <td>
+              <button class="mu-btn mu-btn-primary" type="button">
+                <span>신청</span>
+              </button>
+            </td>
+          </tr>
+          <!-- //용어 '검색' 수행시 있는 단어인 경우 / 신청 버튼 활성화 -->
+          <tr>
+            <td class="tl">
+              <!-- message를 길게 표시해야 할 경우 mu-input의 has-validation 클래스 제거 -->
+              <input type="text" class="mu-input" value="지하철">
+              <div class="mui-message mui-message-inline success">
+                <i class="mu-icon check-circle"></i>
+                <span class="mui-message-text">메시지가 긴 경우 mu-input의 has-validation class 제거</span>
+              </div>
+            </td>
+            <td>
+              <button class="mu-btn mu-btn-secondary" type="button" title="검색">
+                <span>검색</span>
+              </button>
+            </td>
+            <td><input type="text" class="mu-input" placeholder="Placeholder Text" value=""></td>
+            <td><input type="text" class="mu-input" placeholder="Placeholder Text" value=""></td>
+            <td><input type="text" class="mu-input" placeholder="Placeholder Text" value=""></td>
+            <td>
+              <button class="mu-btn mu-btn-primary" type="button">
+                <span>신청</span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- 하단 버튼 -->
+    <div class="mu-dialog-foot">
+      <button type="button" class="mu-btn mu-btn-default">취소</button>
+      <button type="button" class="mu-btn mu-btn-primary fr">적용</button>
+      <!-- feedback -->
+      <div class="mui-message error fr">
+        <i class="mu-icon err-circle"></i>
+        <span class="mui-message-text">ERR Message</span>
+      </div>
+    </div>
+    <!-- //하단 버튼 -->
+  </div>
+  <!-- //dialog: SP-UI-DM-03 -->
+
+  <!-- dialog: SP-UHDM-11-01 -->
+  <div class="mu-dialog mui-dialog-sm" style="position: static;">
+    <div class="mu-dialog-head">
+      <span class="title">삭제 사유</span>
+      <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img"></i></button>
+    </div>
+    <div class="mu-dialog-body">
+      <textarea class="mu-area" placeholder="삭제 사유">다른 지표로 재등록 되는 지표임으로 불필요하여 삭제 신청</textarea>
+    </div>
+    <!-- 하단 버튼 -->
+    <div class="mu-dialog-foot">
+      <button type="button" class="mu-btn mu-btn-default">취소</button>
+      <button type="button" class="mu-btn mu-btn-primary fr">신청</button>
+    </div>
+    <!-- //하단 버튼 -->
+  </div>
+  <!-- //dialog: SP-UHDM-11-01 -->
+  <script src="../../../dist/js/suwon.bundle.js"></script>
+</body>
+
+</html>

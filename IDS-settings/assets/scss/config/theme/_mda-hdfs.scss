@@ -1,0 +1,48 @@
+// ------------------------------------
+// overrides
+// ------------------------------------
+// Bootstrap 업데이트로 인한 레이아웃 이슈 처리
+.modal-dialog .modal-header .close {
+  padding: 0;
+  margin: 2px 0 0 0;
+}
+
+.modal-dialog .mu-formbox .form-control {
+  width: 100%;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.form-control {
+  font-size: 12px;
+}
+
+.modal-body #file_upload {
+  display: none;
+}
+
+.modal-footer {
+  justify-content: flex-start;
+}
+
+.modal-footer {
+  .mu-btn {
+    margin: 0;
+  }
+
+  .mu-btn-primary {
+    margin-left: auto;
+  }
+}
+
+// ie에서 ag-gird overlay 메시지가 상단에 뜨는 이슈
+.hdfs-result-body {
+  .ag-overlay-wrapper {
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

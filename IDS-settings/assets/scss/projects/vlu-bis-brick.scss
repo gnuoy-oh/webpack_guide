@@ -1,0 +1,20 @@
+
+// ------------------------------------
+// theme change
+// ------------------------------------
+// Loading Spinner
+$loading-start: #4890ee;
+$loading-25: #7d6feb;
+$loading-50: #d783f1;
+$loading-75: #71c4e7;
+$loading-end: #4890ee;
+
+// ------------------------------------
+// default brick
+// ------------------------------------
+@import '../service/brick.scss';
+
+// ------------------------------------
+// overrides
+// ------------------------------------
+@import '../config/theme/vlu-bis_brick';

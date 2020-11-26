@@ -78,9 +78,9 @@ export {sum, substract, pi};
 
 ## Install
 
-1. npm init
+1. npm init -y
 
-2. npm i webpack webpac-cli --save-dev
+2. npm i webpack webpack-cli --save-dev
 
 3. package.json에서 "devDependencies" 생성된 것을 확인할 수 있다.
 

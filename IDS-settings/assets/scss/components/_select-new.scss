@@ -1,0 +1,60 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("select-new") {
+  .mui-select-second-wrap {
+    color: $text-03;
+  }
+
+  .mui-select-second-wrap:hover {
+    color: darken($text-03, 25%);
+  }
+
+  .mui-select-second {
+    position: relative;
+    display: inline-block;
+  }
+
+  .mui-select-second .mu-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+  }
+
+  .mui-select-second-input {
+    @include font-family;
+    -webkit-appearance: none;
+    border: 0;
+    background: transparent;
+    padding-right: 12px;
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+    color: inherit;
+  }
+
+  // for ie
+  .mui-select-second-input::-ms-expand {
+    display: none;
+  }
+
+  .mui-select-second-option {
+    background: $ui-01;
+    color: $text-01;
+  }
+
+  .mui-select-second-option:hover {
+    background: $hover-ui-accent;
+    color: $brand-02;
+  }
+
+  .mui-select-second-wrap > .mu-icon {
+    margin-right: 2px;
+  }
+}

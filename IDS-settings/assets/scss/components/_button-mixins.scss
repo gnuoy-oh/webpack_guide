@@ -1,0 +1,99 @@
+@mixin button-base {
+  @include reset;
+  @include font-family;
+  @include font-smoothing;
+  @include letter-spacing;
+  cursor: pointer;
+  display: inline-block;
+  // align-items: center;
+  // justify-content: center;
+  // flex-shrink: 0;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  height: rem($button-height);
+  padding: $button-padding-sm;
+  border-radius: $button-border-radius;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: $transition-base;
+  transition-timing-function: ease-in-out;
+  white-space: nowrap;
+  line-height: 1.25;
+
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .mu-btn-icon {
+    width: rem(16px);
+    height: rem(16px);
+    // transition-duration: $transition-base;
+    // transition-timing-function: ease-in;
+  }
+
+  i + span {
+    margin-left: 4px;
+  }
+}
+
+@mixin button-theme(
+  $bg-color,
+  $border-color,
+  $font-color,
+  $hover-bg-color,
+  $icon-color
+) {
+  background-color: $bg-color;
+  border-width: $button-border-width;
+  border-style: solid;
+  border-radius: $button-border-radius;
+  border-color: $border-color;
+  color: $font-color;
+
+  // &:focus,
+  &:hover {
+    background-color: $hover-bg-color;
+  }
+
+  // &:focus {
+  //   border: $button-border-width solid $hover-ui-accent;
+  // outline: $button-border-width solid $hover-bg-color;
+  // }
+
+  &:disabled:hover,
+  &:disabled:focus {
+    color: $font-color;
+    background-color: $bg-color;
+    border-color: $border-color;
+  }
+
+  &:active {
+    background-color: darken($bg-color, 12%);
+  }
+
+  .mu-btn-icon {
+    fill: $icon-color;
+  }
+}
+
+@mixin icon-button-base {
+  @include reset;
+  @include font-family;
+  @include font-smoothing;
+  @include letter-spacing;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  // height: rem($button-height);
+  padding: $spacing-3xs;
+  // border-radius: $button-border-radius;
+  text-align: center;
+  text-decoration: none;
+  // transition-duration: $transition-base;
+  // transition-timing-function: ease-in;
+  white-space: nowrap;
+  line-height: 16px;
+}

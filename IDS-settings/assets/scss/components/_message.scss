@@ -1,0 +1,59 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("message") {
+  .mui-message {
+    display: block;
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    line-height: 1.25;
+  }
+
+  .mui-message-inline {
+    display: inline-block;
+    margin: 0;
+  }
+
+  .mui-message .mu-icon {
+    vertical-align: middle;
+    font-size: 14px;
+  }
+
+  .mui-message-text {
+    vertical-align: middle;
+    margin-left: 2px;
+  }
+
+  .mui-message.info {
+    color: $text-02;
+  }
+
+  .mui-message.info .mu-icon {
+    color: $status-info-symbol;
+  }
+
+  .mui-message.success {
+    color: $status-success-symbol;
+  }
+
+  .mui-message.error {
+    color: $status-danger-symbol;
+  }
+
+  .mui-message.warning {
+    color: $status-warning-symbol;
+  }
+
+  .mui-message-single {
+    display: inline-block;
+    margin: 0 8px;
+    vertical-align: middle;
+  }
+}

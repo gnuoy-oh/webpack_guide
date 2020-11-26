@@ -1,0 +1,188 @@
+/* Layout */
+.loginWrap {
+  height: 100%;
+  margin-bottom: -30px;
+  background: url("#{$img-path}/login/bg_login.png") no-repeat 50% 0;
+  background-size: cover;
+  font-size: 0;
+  min-height: 520px;
+  overflow: hidden;
+  text-align: center;
+}
+.loginWrap .logo {
+  position: absolute;
+  left: 60px;
+  top: 48px;
+  height: auto;
+  margin: 0;
+}
+.loginWrap .solution-logo {
+  height: auto;
+  margin: auto;
+  margin-bottom: 20px;
+}
+// .loginWrap h2{width:93px;height:44px;background:url("#{$img-path}/login/logo_iris.png") no-repeat 0 0;text-indent:-999em;margin:0 auto;float:none;}
+.loginWrap h3 {
+  font-size: 16px;
+  color: #1c2634;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+.loginWrap .strong-text {
+  font-size: 18px;
+  font-weight: 700;
+  display: block;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+.loginWrap > .mu-hgroup {
+  width: 100%;
+  padding: 70px 93px 0;
+}
+.loginWrap > .mu-boxWrap {
+  zoom: 1;
+  margin-top: -123px;
+  border-spacing: 0;
+}
+.loginWrap > .mu-boxWrap .mu-boxCell {
+  border: 0;
+  vertical-align: middle;
+}
+.formWrap {
+  display: inline-block;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 598px;
+  width: 588px;
+}
+.formBox {
+  display: inline-block;
+  padding: 78px 28px 60px;
+  min-width: 333px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-color: $ui-01;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.formBox .mu-vgroup {
+  width: 240px;
+  margin: 20px auto 0;
+  text-align: left;
+}
+.formBox .mu-vgroup .mu-input-icon {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.formBox .mu-vgroup .mu-input-icon-wrap + .mu-input-icon-wrap {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.formBox .mu-vgroup .mu-input-icon label {
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  top: 10px;
+  left: -40px;
+  text-align: right;
+  width: 30px;
+}
+.formBox .mu-vgroup .mu-input-icon .mu-icon-img {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  margin-top: -8px;
+}
+.formBox .mu-input {
+  border-radius: 4px;
+  height: 32px;
+  line-height: 1.5;
+  padding: 4px 8px;
+  padding-left: 30px;
+}
+.formBox .mu-input-icon i {
+  position: absolute;
+  left: 10px;
+  color: $icon-03;
+  font-size: 16px;
+}
+.formBox .mu-checkbox label {
+  @include font-family;
+  font-size: 12px;
+  font-weight: 500;
+  color: $text-01;
+  height: 17px;
+  line-height: 17px;
+  padding-left: 24px;
+}
+.formBox .mu-checkbox label:before {
+  top: 0;
+  font-size: 23px;
+}
+.formBox .btn-lg {
+  height: 36px;
+  width: 100%;
+  min-width: auto;
+  font-size: 14px;
+  font-weight: 700;
+}
+.formBox .btn-lg.disable {
+  opacity: 0.5;
+}
+.formBox .btn-lg.disable:hover {
+  background-color: $interactive-01;
+}
+.formBox .btn-lg.isTrying {
+  background-color: $brand-03;
+  cursor: not-allowed;
+}
+.formBox .mu-btn-primary {
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+.formBox .mu-btn-link {
+  float: right;
+}
+.loginWrap footer {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.loginWrap footer .copyright {
+  color: $disabled-02;
+}
+.loginWrap .status-bar {
+  width: auto;
+  height: auto;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.loginOption .mui-select-second-wrap {
+  float: right;
+}
+
+// KDN 디자인 장식 요소
+.formReflect {
+  display: none;
+}
+
+// KDN 디자인 장식 요소
+.solution-symbol {
+  display: none;
+}
+
+// sign up
+.mu-dialog.sign-up .mu-hgroup .mu-input {
+  width: calc(100% - 72px);
+}

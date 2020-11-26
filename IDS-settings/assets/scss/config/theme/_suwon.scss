@@ -1,0 +1,32 @@
+.treeview {
+  display: flex;
+}
+
+.treeview-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.treeview.has-mu-grid .treeview-wrap {
+  width: 240px;
+  min-width: 240px;
+}
+
+.mu-input.width200 {
+  width: 200px;
+}
+
+.mu-input.has-ordering-btn {
+  display: inline-block;
+  width: calc(100% - 30px);
+}
+
+.mu-input.has-validation {
+  display: inline-block;
+  width: calc(100% - 50px);
+}
+
+.mu-input.has-validation + .mui-message {
+  margin-left: 4px;
+}

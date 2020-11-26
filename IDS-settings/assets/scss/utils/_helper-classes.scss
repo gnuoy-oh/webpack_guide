@@ -1,0 +1,457 @@
+@import "../config/vars";
+@import "import-once";
+
+@include exports("helper-classes") {
+  .text-emphasis {
+    font-weight: bold;
+    font-style: normal;
+  }
+  // mobius의 기본 ellipsis 형태
+  // TODO: 보완 형태로 변경 및 현재 클래스명을 사용하는 요소들을 ellipsis-end를 사용하도록 변경한다
+  .mu-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .#{$prefix}-text-truncate--end {
+    width: 100%;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .ellipsis-end {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .#{$prefix}-text-truncate--front {
+    width: 100%;
+    display: inline-block;
+    direction: rtl;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .ellipsis-end-two {
+    display: inline-block;
+    overflow: hidden;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    line-height: 1.25;
+    max-height: 2rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  /*************/
+  /* Box-Model */
+  /*************/
+  .show {
+    display: block;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .of {
+    overflow: hidden;
+  }
+
+  .fl {
+    float: left;
+  }
+
+  .fr {
+    float: right;
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  .clear:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+
+  .after:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: "";
+  }
+
+  .tc {
+    text-align: center;
+  }
+
+  .tr {
+    text-align: right;
+  }
+
+  .tl {
+    text-align: left;
+  }
+
+  .vt {
+    vertical-align: top;
+  }
+
+  .vm {
+    vertical-align: middle !important;
+  }
+
+  .vb {
+    vertical-align: bottom;
+  }
+
+  .dn {
+    display: none;
+  }
+
+  .db {
+    display: block;
+  }
+
+  .pr {
+    position: relative;
+  }
+
+  .pa {
+    position: absolute;
+  }
+
+  /* margin */
+  .m0 {
+    margin: 0;
+  }
+
+  .m5 {
+    margin: 5px;
+  }
+
+  .m10 {
+    margin: 10px;
+  }
+
+  .m15 {
+    margin: 15px;
+  }
+
+  .m20 {
+    margin: 20px;
+  }
+
+  .mt0 {
+    margin-top: 0;
+  }
+
+  .mt5 {
+    margin-top: 5px;
+  }
+
+  .mt10 {
+    margin-top: 10px;
+  }
+
+  .mt15 {
+    margin-top: 15px;
+  }
+
+  .mt20 {
+    margin-top: 20px;
+  }
+
+  .mr0 {
+    margin-right: 0;
+  }
+
+  .mr5 {
+    margin-right: 5px;
+  }
+
+  .mr10 {
+    margin-right: 10px;
+  }
+
+  .mr15 {
+    margin-right: 15px;
+  }
+
+  .mr20 {
+    margin-right: 20px;
+  }
+
+  .mb0 {
+    margin-bottom: 0;
+  }
+
+  .mb5 {
+    margin-bottom: 5px;
+  }
+
+  .mb10 {
+    margin-bottom: 10px;
+  }
+
+  .mb15 {
+    margin-bottom: 15px;
+  }
+
+  .mb20 {
+    margin-bottom: 20px;
+  }
+
+  .ml0 {
+    margin-left: 0;
+  }
+
+  .ml5 {
+    margin-left: 5px;
+  }
+
+  .ml10 {
+    margin-left: 10px;
+  }
+
+  .ml15 {
+    margin-left: 15px;
+  }
+
+  .ml20 {
+    margin-left: 20px;
+  }
+
+  /* padding */
+  .p0 {
+    padding: 0;
+  }
+
+  .p5 {
+    padding: 5px;
+  }
+
+  .p10 {
+    padding: 10px;
+  }
+
+  .p15 {
+    padding: 15px;
+  }
+
+  .p20 {
+    padding: 20px;
+  }
+
+  .pt0 {
+    padding-top: 0;
+  }
+
+  .pt5 {
+    padding-top: 5px;
+  }
+
+  .pt10 {
+    padding-top: 10px;
+  }
+
+  .pt15 {
+    padding-top: 15px;
+  }
+
+  .pt20 {
+    padding-top: 20px;
+  }
+
+  .pr0 {
+    padding-right: 0;
+  }
+
+  .pr5 {
+    padding-right: 5px;
+  }
+
+  .pr10 {
+    padding-right: 10px;
+  }
+
+  .pr15 {
+    padding-right: 15px;
+  }
+
+  .pr20 {
+    padding-right: 20px;
+  }
+
+  .pb0 {
+    padding-bottom: 0;
+  }
+
+  .pb5 {
+    padding-bottom: 5px;
+  }
+
+  .pb10 {
+    padding-bottom: 10px;
+  }
+
+  .pb15 {
+    padding-bottom: 15px;
+  }
+
+  .pb20 {
+    padding-bottom: 20px;
+  }
+
+  .pl0 {
+    padding-left: 0;
+  }
+
+  .pl5 {
+    padding-left: 5px;
+  }
+
+  .pl10 {
+    padding-left: 10px;
+  }
+
+  .pl15 {
+    padding-left: 15px;
+  }
+
+  .pl20 {
+    padding-left: 20px;
+  }
+
+  /* width */
+  .width30 {
+    width: 30px !important;
+  }
+
+  .width50 {
+    width: 50px;
+  }
+
+  .width100 {
+    width: 100px;
+  }
+
+  .width150 {
+    width: 150px;
+  }
+
+  .width200 {
+    width: 200px;
+  }
+
+  /* height */
+  .h100pc {
+    height: 100%;
+  }
+
+  /*font*/
+  .font0 {
+    font-size: 0;
+  }
+
+  .font10 {
+    font-size: 10px;
+  }
+
+  .font14 {
+    font-size: 14px;
+  }
+
+  .font16 {
+    font-size: 16px;
+  }
+
+  .point {
+    cursor: pointer;
+  }
+
+  // 2019-07-05 ADD width가 100%로 들어가는 클래스 추가
+  .full-width {
+    width: 99.9999888888%;
+  }
+
+  // .mu-btn이 4개 있는 경우 마진값 추가 계산
+  .full-width.full-width-4 .mu-btn.full-width-item {
+    width: calc(99.9999888888% / 4 - 5px);
+  }
+
+  // .mu-btn-group
+  .full-width.full-width-4.mu-btn-group .full-width-item {
+    width: calc(99.9999888888% / 4);
+  }
+
+  .full-width.full-width-3.mu-btn-group .full-width-item {
+    width: calc(99.9999888888% / 3);
+  }
+
+  .full-width.full-width-2.mu-btn-group .full-width-item {
+    width: calc(99.9999888888% / 2);
+  }
+
+  .asterisk {
+    color: #f03e3e;
+    font-size: 1.1em;
+    margin-right: 2px;
+  }
+
+  .division-line {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 1px;
+    height: 12px;
+    margin: 0 8px;
+    border-left: 1px solid $ui-04;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+
+  // table로 구조화한 그리드(mu-grid)에 행의 cursor 스타일을 pointer로 선언하는 코드
+  .tr-pointer tr {
+    cursor: pointer;
+  }
+
+  // NOTE: hgroup 엘리먼트 전체에 margin-left: 5px을 대응하기 위한 코드
+  .mu-hgroup .division-line {
+    margin: 0 3px 0 8px;
+  }
+
+  // 공통으로 사용할 수 있는 highlight 스타일 추가
+  .highlight {
+    background-color: $hover-ui-accent;
+    color: $brand-02;
+  }
+
+  // Flex
+  .d-flex {
+    display: flex;
+  }
+
+  .ml-auto {
+    margin-left: auto;
+  }
+
+  // Flex box model
+  .mui-hgroup {
+    display: inline-flex;
+    align-items: center;
+
+    & > * + * {
+      margin-left: $spacing-2xs;
+    }
+  }
+}

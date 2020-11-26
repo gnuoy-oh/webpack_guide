@@ -1,0 +1,151 @@
+// 우측  control-menu
+.menu-control {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+
+#control-group {
+  background: none;
+  padding-left: 18px;
+  padding-right: 4px;
+  display: inline-block;
+
+  .control-item {
+    display: inline-block;
+    vertical-align: top;
+    font-weight: 700;
+    margin: 0 2px;
+    padding: 0 4px;
+    color: $nav-02;
+  }
+
+  .control-item:hover {
+    color: $nav-03;
+  }
+
+  .control-btn {
+    vertical-align: top;
+    background-color: rgba(0, 0, 0, 0);
+    width: auto;
+    height: 36px;
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
+    margin: 0 4px;
+    padding: 0 4px;
+    color: $nav-02;
+    font-size: 12px;
+    transition-duration: $transition-base;
+    transition-timing-function: ease-in-out;
+  }
+
+  .control-btn:hover {
+    color: $nav-03;
+  }
+
+  .mu-icon.user,
+  .mu-icon.globe,
+  .mu-icon.logout,
+  .mu-icon.question-circle {
+    vertical-align: middle;
+    font-size: 18px;
+  }
+
+  // User 정보 드롭다운
+  .mu-btn-dropdown {
+    .mu-list {
+      right: 0;
+      left: initial;
+      font-weight: 500;
+      width: 80px;
+    }
+
+    .mu-list:lang(en) {
+      width: 132px;
+    }
+  }
+
+  // 알람 아이콘 컬러
+  .mu-icon-svg.alarm {
+    vertical-align: middle;
+    fill: $nav-02;
+  }
+
+  .mu-icon-svg.alarm:hover {
+    fill: $nav-03;
+  }
+}
+
+// 보조 로고
+.logo-secondary-wrap {
+  display: none;
+}
+
+.logo-secondary-wrap::before {
+  content: "";
+  display: inline-block;
+  height: 16px;
+  border-left: 1px solid $nav-02;
+  width: 1px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+.logo-secondary {
+  display: none;
+}
+
+.logo-secondary.sub {
+  display: none;
+}
+
+// sub page 진입 시 스타일 변경
+#menu-bar.has-button-group {
+  .control-btn {
+    color: $nav-05;
+  }
+
+  .control-btn:hover {
+    color: $nav-06;
+  }
+
+  .control-item {
+    color: $nav-05;
+  }
+
+  .control-item:hover {
+    color: $nav-06;
+  }
+
+  .mui-select-control {
+    color: $nav-05;
+  }
+
+  .mui-select-control:hover {
+    color: darken($nav-06, 25%);
+  }
+
+  .logo-secondary-wrap::before {
+    border-color: $nav-05;
+  }
+
+  .logo-secondary.main {
+    display: none;
+  }
+
+  .logo-secondary.sub {
+    display: inline-block;
+  }
+
+  // 알람 아이콘 컬러
+  .mu-icon-svg.alarm {
+    fill: $nav-05;
+  }
+
+  .mu-icon-svg.alarm:hover {
+    fill: $nav-06;
+  }
+}

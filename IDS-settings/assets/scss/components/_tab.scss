@@ -1,0 +1,125 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("tab") {
+  .mu-tab {
+    display: block;
+    width: 100%;
+    background-color: $ui-01;
+    padding-left: 18px;
+    margin-top: -28px;
+  }
+
+  .mu-tab:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: "";
+  }
+
+  .mu-tab > li {
+    position: relative;
+    float: left;
+    cursor: pointer;
+  }
+
+  .mu-tab > li > a {
+    display: block;
+    min-width: 70px;
+    height: 28px;
+    line-height: 26px;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #838383;
+    background-color: #f0f0f0;
+    border: 1px solid #d0d0d0;
+  }
+
+  .mu-tab > li:first-child > a {
+    border-top-left-radius: 4px;
+  }
+
+  .mu-tab > li:last-child > a {
+    border-top-right-radius: 4px;
+  }
+
+  // .mu-tab>li>a:hover {
+  //   background-color: $brand-02;
+  // }
+
+  // .mu-tab>li>a:active,
+  .mu-tab > li.active > a {
+    background: $ui-01;
+    color: $brand-02;
+    border-bottom: 1px solid transparent;
+  }
+
+  .mu-tab > li > a:hover,
+  .mu-tab > li > a:active {
+    // background: #f0f0f0;
+    color: $brand-02;
+  }
+
+  .mu-tab > li.disabled > a {
+    cursor: no-drop;
+    color: #bbb;
+    background-color: #f5f5f5;
+  }
+
+  .mu-tab > li.active > a {
+    background: $ui-01;
+    color: $brand-02;
+  }
+
+  .mu-tab > li > .mu-btn-close {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    min-width: inherit;
+    margin-top: -7px;
+    padding: 0;
+    border: 0;
+    background-color: transparent !important;
+  }
+
+  .mu-tab > li + li > a {
+    border-left: none;
+  }
+
+  .mu-tab-pill {
+    border-bottom: 1px solid #d0d0d0;
+    background-color: #e7e7e7;
+  }
+
+  .mu-tab-pill > li > a {
+    min-width: 100px;
+    padding-top: 7px;
+    padding-bottom: 6px;
+    border-radius: 0;
+  }
+
+  .mu-tab-vertical {
+    border-bottom: 0;
+  }
+
+  .mu-tab-vertical > li {
+    float: none;
+  }
+
+  .mu-tab-vertical > li + li {
+    margin: 5px 0 0 0;
+  }
+
+  .mu-tab-vertical > li > a {
+    padding-top: 7px;
+    padding-bottom: 6px;
+  }
+}

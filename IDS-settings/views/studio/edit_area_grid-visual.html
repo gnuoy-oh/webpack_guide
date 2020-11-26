@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>보고서-새보고서: 차트 시각화</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+  <script src="js/html5.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="../../dist-sherman/css/sherman/style.min.css">
+</head>
+
+<body>
+  <!-- 보고서 -->
+  <div class="mu-container">
+    <section>
+      <div class="mu-content content-re data-add report">
+        <div class="mu-panel">
+          <div class="mu-panel-head">
+            <div class="mu-hgroup fl report-title">
+              <h3 class="mu-title report-title-text">보고서</h3>
+              <!-- 수정 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon-img edit-title"></i>
+              </button>
+              <!-- 수정 확인 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon check"></i>
+              </button>
+            </div>
+            <div class="mu-hgroup fr">
+              <button type="button" class="mu-btn mu-btn-default">목록으로</button>
+              <button type="button" class="mu-btn mu-btn-default">보기</button>
+              <button type="button" class="mu-btn mu-btn-primary">저장</button>
+              <button type="button" class="mu-btn mu-btn-secondary">새로저장</button>
+              <button type="button" class="mu-btn mu-btn-default" disabled="disabled">접근 권한</button>
+              <button type="button" class="mu-btn mu-btn-danger">전체삭제</button>
+            </div>
+          </div>
+          <div class="mu-panel-body">
+            <!-- 상단 메뉴바 -->
+            <div class="report-menubar">
+              <div class="mu-selectbox width150">
+                <button class="mu-value">전체</button>
+                <ul class="mu-list">
+                  <li>전체</li>
+                  <li class="active">데이터 시각화</li>
+                  <li>양식</li>
+                  <li>버튼</li>
+                  <li>기타</li>
+                </ul>
+              </div>
+              <ul class="report-menu">
+                <li class="active"><i class="mu-icon-img area"></i></li>
+                <li><i class="mu-icon-img map"></i></li>
+                <li><i class="mu-icon-img text"></i></li>
+                <li><i class="mu-icon-img rectangle"></i></li>
+                <li><i class="mu-icon-img ellipse"></i></li>
+                <li><i class="mu-icon-img date"></i></li>
+                <li><i class="mu-icon-img renew"></i></li>
+                <li><i class="mu-icon-img list"></i></li>
+                <li><i class="mu-icon-img tab"></i></li>
+                <li><i class="mu-icon-img url"></i></li>
+                <li><i class="mu-icon-img image"></i></li>
+                <li><i class="mu-icon-img html"></i></li>
+                <li><i class="mu-icon-img input"></i></li>
+                <li><i class="mu-icon-img combo-box"></i></li>
+                <li><i class="mu-icon-img check-and-radio"></i></li>
+                <li><i class="mu-icon-img datetime"></i></li>
+                <li><i class="mu-icon-img hidden-input"></i></li>
+                <li><i class="mu-icon-img button"></i></li>
+              </ul>
+              <div class="fr">
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">객체 목록</span>
+                </button>
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">히든 객체 숨기기</span>
+                </button>
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">전체변수명</span>
+                </button>
+                <div class="side-panel-btn">
+                  <button class="mu-btn mu-btn-icon is-selected" title="컴포넌트 설정영역 펼치기">
+                    <i class="mu-icon-img panel-show"></i>
+                  </button>
+                  <button class="mu-btn mu-btn-icon" title="컴포넌트 설정영역 접기">
+                    <i class="mu-icon-img panel-hide"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- //상단 메뉴바 -->
+            <div class="report-cont">
+              <div class="report-canvas">
+                <!-- canvas 영역 -->
+                <div class="canvas" style="width:1920px;height:2600px;">
+                  <!-- 테이블 유형 제외 나머지 시각화 유형 - 데이터 개수, 실시간 데이터, 다운로드 버튼, 상세보기 버튼 각각 노출되는 경우 -->
+                  <span style="position:absolute;top: 30px; left: 50px;">테이블 유형 제외 나머지 시각화 유형 <span class="highlight">데이터 개수, 실시간 데이터, 다운로드 버튼, 상세보기 버튼 노출 시 & 하나라도 선택 시</span></span>
+
+                  <div class="box tool area" style="top:50px;left:50px;width:300px;height:150px;">
+                    <!-- 데이터 개수, 실시간 데이터, 다운로드 버튼, 상세보기 버튼 모두 선택 시 -->
+                    <div class="area-toolbar">
+                      <span class="data-total-amount">데이터 개수 : 500</span>
+                      <i class="mu-icon-img accumulate"></i>
+                      <div class="chart-option-btn-wrap">
+                        <button class="mu-btn mu-btn-default chart-option-btn" type="button">
+                          <i class="mu-icon download"></i>
+                        </button>
+                        <button class="mu-btn mu-btn-default new chart-option-btn" type="button">
+                          <i class="iriscon new-window"></i>
+                        </button>
+
+                      </div>
+
+                    </div>
+                  </div>
+                  <!-- // 데이터 개수, 실시간 데이터, 다운로드 버튼, 상세보기 버튼 모두 선택 시 -->
+
+                  <!-- 박스 클릭 시 사이즈 조절 박스 활성화 -->
+                  <div class="box tool area active" style="top:50px;left:360px;width:300px;height:150px;">
+                    <!-- 다운로드 버튼, 상세보기 버튼 선택시  -->
+                    <div class="area-toolbar">
+                      <div class="chart-option-btn-wrap">
+                        <button class="mu-btn mu-btn-default chart-option-btn" type="button">
+                          <i class="mu-icon download"></i>
+                        </button>
+                        <button class="mu-btn mu-btn-default new chart-option-btn" type="button">
+                          <i class="iriscon new-window"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <!-- // 다운로드 버튼, 상세보기 버튼 선택시  -->
+                    <div class="chart">
+
+                    </div>
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                  <!-- // 박스 클릭 시 사이즈 조절 박스 활성화 -->
+                  <!-- 실행중 표시 -->
+                  <div class="box tool area" style="top:50px;left:670px;width:300px;height:150px;">
+                    <div class="mui-loading-overlay">
+                      <div class="mui-loading mui-loading-sm">
+                        <div class="mui-loading-spinner"></div>
+                      </div>
+                    </div>
+                    <div class="is-loading">
+
+                      <div class="area-toolbar">
+                        <div class="chart-option-btn-wrap">
+                          <button class="mu-btn mu-btn-default new chart-option-btn" type="button">
+                            <i class="iriscon new-window"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 실행중 표시 -->
+                  <!-- // 테이블 유형 제외 나머지 시각화 유형 - 데이터 개수, 실시간 데이터, 다운로드 버튼, 상세보기 버튼 각각 노출되는 경우 -->
+
+                  <!-- 객체 사이즈가 최소 520px일 경우 (2단으로 출력) -->
+                  <span style="position:absolute;top: 220px; left: 50px;">객체 사이즈가 최소 640px 경우 (2단으로 출력) <span class="highlight">데이터 개수 및 실시간 데이터 아이콘 노출 시</span></span>
+                  <div class="box tool area" style="top: 240px; left: 50px; width: 650px; height: 260px;">
+                    <div class="grid-chart">
+                      <!-- 필터 그룹 (페이지네이션, 서치바 그룹) -->
+
+                      <div class="grid-chart-filter-wrap">
+                        <!-- 목록 개수 -->
+                        <div class="grid-perpage mr5">
+                          <label for="">목록 개수</label>
+                          <div class="mu-selectbox">
+                            <button class="mu-value">5</button>
+                            <ul class="mu-list">
+                              <li class="tl active">5</li>
+                              <li class="tl">10</li>
+                              <li class="tl">20</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="mr5 mb5"> 데이터 개수 : 500 </div>
+                        <i class="mu-icon-img accumulate mb5 mr5"></i>
+
+                        <!-- //목록 개수 -->
+                        <!-- 차트 데이터 다운로드 버튼 -->
+                        <button class="mu-btn mu-btn-default" type="button">
+                          <i class="mu-icon download"></i>
+                        </button>
+                        <!-- //차트 데이터 다운로드 버튼 -->
+                        <!-- 새 창으로 열기 버튼 -->
+                        <button class="mu-btn mu-btn-default new" type="button">
+                          <i class="iriscon new-window"></i>
+                        </button>
+                        <!-- //새 창으로 열기 버튼 -->
+                        <!-- 검색 -->
+                        <div class="grid-chart-input-search">
+                          <div class="mu-input-icon">
+                            <input type="text" class="mu-input">
+                            <i class="mu-icon search"></i>
+                          </div>
+                        </div>
+                        <!-- //검색 -->
+                      </div>
+                      <!-- //필터 그룹 -->
+                      <!-- grid-chart -->
+                      <div class="grid-chart-table-wrap">
+                        <table class="mu-grid mu-grid-border mu-grid-strip mu-grid-sort">
+                          <thead class="mu-grid-border">
+                            <tr>
+                              <th class="none">
+                                <div class="mu-checkbox indeterminate">
+                                  <input type="checkbox" id="chk-all">
+                                  <label for="chk-all"></label>
+                                </div>
+                              </th>
+                              <th class="none">No.</th>
+                              <th>SCH_ID</th>
+                              <th>JOB_SEQ</th>
+                              <th>JOB_ID</th>
+                              <th>JOB</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <div class="mu-checkbox">
+                                  <input type="checkbox" id="chk-1">
+                                  <label for="chk-1"></label>
+                                </div>
+                              </td>
+                              <td>1</td>
+                              <td>11</td>
+                              <td>11</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="mu-checkbox">
+                                  <input type="checkbox" id="chk-2" checked>
+                                  <label for="chk-2"></label>
+                                </div>
+                              </td>
+                              <td>2</td>
+                              <td>22</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="mu-checkbox">
+                                  <input type="checkbox" id="chk-3">
+                                  <label for="chk-3"></label>
+                                </div>
+                              </td>
+                              <td>3</td>
+                              <td>33</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="mu-checkbox">
+                                  <input type="checkbox" id="chk-2">
+                                  <label for="chk-2"></label>
+                                </div>
+                              </td>
+                              <td>4</td>
+                              <td>44</td>
+                              <td>44</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="mu-checkbox">
+                                  <input type="checkbox" id="chk-5">
+                                  <label for="chk-5"></label>
+                                </div>
+                              </td>
+                              <td>5</td>
+                              <td>55</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="mu-checkbox">
+                                  <input type="checkbox" id="chk-6">
+                                  <label for="chk-6"></label>
+                                </div>
+                              </td>
+                              <td>6</td>
+                              <td>66</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- //grid-chart -->
+                      <!-- pagination -->
+                      <div class="pagination-new">
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon double-angle-left"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon angle-left"></i>
+                        </button>
+                        <ul>
+                          <li>
+                            <span role="textbox" contenteditable="" class="mu-input">10000</span>
+                          </li>
+                          <li class="pagination-slash">/</li>
+                          <li><span>100</span></li>
+                        </ul>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon angle-right"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon double-angle-right"></i>
+                        </button>
+                      </div>
+                      <!-- //pagination -->
+                    </div>
+                  </div>
+                  <!-- // 객체 사이즈가 최소 640px 경우 (2단으로 출력) -->
+                  <!-- tooltip layer -->
+                  <div class="mu-tooltip bottom" mu-tooltip="tt3" style="top:335px; left:440px;">
+                    <div class="arrow"></div>
+                    <div class="mu-tooltip-inner">
+                      <span>해당 조건으로 데이터 브라우저가<br>새창으로 실행됩니다.</span>
+                    </div>
+                  </div>
+                  <!-- //tooltip layer -->
+
+                  <!-- 1단 출력 On 설정 (row-1 클래스 추가) -->
+                  <span style="position:absolute;top: 220px; left: 720px;">1단 출력 On 설정 <span class="highlight">(row-1 클래스 추가) / 데이터 개수 및 실시간 데이터 아이콘 노출 시</span> </span>
+                  <div class="box tool area" style="top: 240px; left: 720px; width: 520px; height: 260px;">
+                    <div class="grid-chart">
+                      <!-- 필터 그룹 (페이지네이션, 서치바 그룹) -->
+                      <div class="grid-chart-filter-wrap row-1" style="align-items: center;">
+                        <!-- 목록 개수 -->
+                        <div class="grid-perpage mr5">
+                          <label for="">목록 개수</label>
+                          <div class="mu-selectbox">
+                            <button class="mu-value">5</button>
+                            <ul class="mu-list">
+                              <li class="tl active">5</li>
+                              <li class="tl">10</li>
+                              <li class="tl">20</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="mr5 mb5" style="flex-shrink: 0;"> 데이터 개수 : 500 </div>
+                        <i class="mu-icon-img accumulate mr5 mb5"></i>
+                        <!-- //목록 개수 -->
+                        <!-- 차트 데이터 다운로드 버튼 -->
+                        <button class="mu-btn mu-btn-default" type="button">
+                          <i class="mu-icon download"></i>
+                        </button>
+                        <!-- //차트 데이터 다운로드 버튼 -->
+                        <!-- 새 창으로 열기 버튼 -->
+                        <button class="mu-btn mu-btn-default new" type="button">
+                          <i class="iriscon new-window"></i>
+                        </button>
+                        <!-- //새 창으로 열기 버튼 -->
+                        <!-- 검색 -->
+                        <div class="grid-chart-input-search">
+                          <div class="mu-input-icon">
+                            <input type="text" class="mu-input">
+                            <i class="mu-icon search"></i>
+                          </div>
+                        </div>
+                        <!-- //검색 -->
+                      </div>
+                      <!-- //필터 그룹 -->
+                      <!-- grid-chart -->
+                      <div class="grid-chart-table-wrap">
+                        <table class="mu-grid mu-grid-border mu-grid-strip mu-grid-sort">
+                          <thead class="mu-grid-border">
+                            <tr>
+                              <th class="none">No.</th>
+                              <th>SCH_ID</th>
+                              <th>JOB_SEQ</th>
+                              <th>JOB_ID</th>
+                              <th>JOB</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>11</td>
+                              <td>11</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>22</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>33</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>4</td>
+                              <td>44</td>
+                              <td>44</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>5</td>
+                              <td>55</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>6</td>
+                              <td>66</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- //grid-chart -->
+                      <!-- pagination -->
+                      <div class="pagination-new">
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon double-angle-left"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon angle-left"></i>
+                        </button>
+                        <ul>
+                          <li>
+                            <span role="textbox" contenteditable="" class="mu-input">99</span>
+                          </li>
+                          <li class="pagination-slash">/</li>
+                          <li><span>100</span></li>
+                        </ul>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon angle-right"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon double-angle-right"></i>
+                        </button>
+                      </div>
+                      <!-- //pagination -->
+                    </div>
+                  </div>
+                  <!-- // 1단 출력 On 설정 (row-1 클래스 추가) -->
+                  <!-- 1단 출력 On 설정 (row-1 클래스 추가) -->
+                  <span style="position:absolute;top: 520px; left: 50px;">1단 출력 On 설정 <span class="highlight">(row-1 클래스 추가) / 데이터 개수 노출 시</span> </span>
+                  <div class="box tool area" style="top: 540px; left: 50px; width: 1200px; height: 260px;">
+                    <div class="grid-chart">
+                      <!-- 필터 그룹 (페이지네이션, 서치바 그룹) -->
+
+                      <div class="grid-chart-filter-wrap row-1">
+                        <!-- 목록 개수 -->
+                        <div class="grid-perpage mr5">
+                          <label for="">목록 개수</label>
+                          <div class="mu-selectbox">
+                            <button class="mu-value">5</button>
+                            <ul class="mu-list">
+                              <li class="tl active">5</li>
+                              <li class="tl">10</li>
+                              <li class="tl">20</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="mr5 mb5"> 데이터 개수 : 500 </div>
+                        <!-- //목록 개수 -->
+                        <!-- 차트 데이터 다운로드 버튼 -->
+                        <button class="mu-btn mu-btn-default" type="button">
+                          <i class="mu-icon download"></i>
+                        </button>
+                        <!-- //차트 데이터 다운로드 버튼 -->
+                        <!-- 새 창으로 열기 버튼 -->
+                        <button class="mu-btn mu-btn-default new" type="button">
+                          <i class="iriscon new-window"></i>
+                        </button>
+                        <!-- //새 창으로 열기 버튼 -->
+                        <!-- 검색 -->
+                        <div class="grid-chart-input-search">
+                          <div class="mu-input-icon">
+                            <input type="text" class="mu-input">
+                            <i class="mu-icon search"></i>
+                          </div>
+                        </div>
+                        <!-- //검색 -->
+                      </div>
+
+                      <!-- //필터 그룹 -->
+                      <!-- grid-chart -->
+                      <div class="grid-chart-table-wrap">
+                        <table class="mu-grid mu-grid-border mu-grid-strip mu-grid-sort">
+                          <thead class="mu-grid-border">
+                            <tr>
+                              <th class="none">No.</th>
+                              <th>SCH_ID</th>
+                              <th>JOB_SEQ</th>
+                              <th>JOB_ID</th>
+                              <th>JOB</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>11</td>
+                              <td>11</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>22</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>33</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>4</td>
+                              <td>44</td>
+                              <td>44</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>5</td>
+                              <td>55</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>6</td>
+                              <td>66</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- //grid-chart -->
+                      <!-- pagination -->
+                      <div class="pagination-new">
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon double-angle-left"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon angle-left"></i>
+                        </button>
+                        <ul>
+                          <li>
+                            <span role="textbox" contenteditable="" class="mu-input">99</span>
+                          </li>
+                          <li class="pagination-slash">/</li>
+                          <li><span>100</span></li>
+                        </ul>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon angle-right"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon double-angle-right"></i>
+                        </button>
+                      </div>
+                      <!-- //pagination -->
+                    </div>
+                  </div>
+                  <!-- // 1단 출력 On 설정 (row-1 클래스 추가) -->
+                  <!-- 1단 출력 Off 설정 -->
+                  <span style="position:absolute;top: 820px; left: 50px;">1단 출력 Off 설정 <span class="highlight">실시간 데이터 아이콘 노출 시</span></span>
+                  <div class="box tool area" style="top: 840px; left: 50px; width: 1200px; height: 260px;">
+                    <div class="grid-chart">
+                      <!-- 필터 그룹 (페이지네이션, 서치바 그룹) -->
+
+                      <div class="grid-chart-filter-wrap">
+                        <!-- 목록 개수 -->
+                        <div class="grid-perpage mr5">
+                          <label for="">목록 개수</label>
+                          <div class="mu-selectbox">
+                            <button class="mu-value">5</button>
+                            <ul class="mu-list">
+                              <li class="tl active">5</li>
+                              <li class="tl">10</li>
+                              <li class="tl">20</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <i class="mu-icon-img accumulate mb5 mr5"></i>
+                        <!-- //목록 개수 -->
+                        <!-- 차트 데이터 다운로드 버튼 -->
+                        <button class="mu-btn mu-btn-default" type="button">
+                          <i class="mu-icon download"></i>
+                        </button>
+                        <!-- //차트 데이터 다운로드 버튼 -->
+                        <!-- 새 창으로 열기 버튼 -->
+                        <button class="mu-btn mu-btn-default new" type="button">
+                          <i class="iriscon new-window"></i>
+                        </button>
+                        <!-- //새 창으로 열기 버튼 -->
+                        <!-- 검색 -->
+                        <div class="grid-chart-input-search">
+                          <div class="mu-input-icon">
+                            <input type="text" class="mu-input">
+                            <i class="mu-icon search"></i>
+                          </div>
+                        </div>
+                        <!-- //검색 -->
+                      </div>
+
+                      <!-- //필터 그룹 -->
+                      <!-- grid-chart -->
+                      <div class="grid-chart-table-wrap">
+                        <table class="mu-grid mu-grid-border mu-grid-strip mu-grid-sort">
+                          <thead class="mu-grid-border">
+                            <tr>
+                              <th class="none">No.</th>
+                              <th>SCH_ID</th>
+                              <th>JOB_SEQ</th>
+                              <th>JOB_ID</th>
+                              <th>JOB</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>11</td>
+                              <td>11</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>22</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>33</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>4</td>
+                              <td>44</td>
+                              <td>44</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>5</td>
+                              <td>55</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>6</td>
+                              <td>66</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- //grid-chart -->
+                      <!-- pagination -->
+                      <div class="pagination-new">
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon double-angle-left"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon angle-left"></i>
+                        </button>
+                        <ul>
+                          <li>
+                            <span role="textbox" contenteditable="" class="mu-input">9</span>
+                          </li>
+                          <li class="pagination-slash">/</li>
+                          <li><span>100</span></li>
+                        </ul>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon angle-right"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon double-angle-right"></i>
+                        </button>
+                      </div>
+                      <!-- //pagination -->
+                    </div>
+                  </div>
+                  <!-- // 1단 출력 Off 설정 -->
+                  <!-- 1단 출력 Off 설정 -->
+                  <span style="position:absolute;top: 1130px; left: 50px;">1단 출력 Off 설정 <span class="highlight"> 페이지네이션 / 다운로드 / 상세보기 버튼 왼쪽 정렬 시</span></span>
+                  <div class="box tool area" style="top: 1150px; left: 50px; width: 1200px; height: 260px;">
+                    <div class="grid-chart">
+                      <!-- 필터 그룹 (페이지네이션, 서치바 그룹) -->
+
+                      <div class="grid-chart-filter-wrap">
+                        <!-- 목록 개수 -->
+                        <div class="grid-perpage mr5">
+                          <label for="">목록 개수</label>
+                          <div class="mu-selectbox">
+                            <button class="mu-value">5</button>
+                            <ul class="mu-list">
+                              <li class="tl active">5</li>
+                              <li class="tl">10</li>
+                              <li class="tl">20</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <i class="mu-icon-img accumulate mb5 mr5"></i>
+                        <!-- //목록 개수 -->
+                        <!-- 차트 데이터 다운로드 버튼 -->
+                        <button class="mu-btn mu-btn-default" type="button">
+                          <i class="mu-icon download"></i>
+                        </button>
+                        <!-- //차트 데이터 다운로드 버튼 -->
+
+                        <!-- 새 창으로 열기 버튼 -->
+                        <button class="mu-btn mu-btn-default new" type="button">
+                          <i class="iriscon new-window"></i>
+                        </button>
+                        <!-- //새 창으로 열기 버튼 -->
+
+                        <!-- 검색 -->
+                        <div class="grid-chart-input-search">
+                          <div class="mu-input-icon">
+                            <input type="text" class="mu-input">
+                            <i class="mu-icon search"></i>
+                          </div>
+                        </div>
+                        <!-- //검색 -->
+                      </div>
+
+                      <!-- //필터 그룹 -->
+                      <!-- grid-chart -->
+                      <div class="grid-chart-table-wrap">
+                        <table class="mu-grid mu-grid-border mu-grid-strip mu-grid-sort">
+                          <thead class="mu-grid-border">
+                            <tr>
+                              <th class="none">No.</th>
+                              <th>SCH_ID</th>
+                              <th>JOB_SEQ</th>
+                              <th>JOB_ID</th>
+                              <th>JOB</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>11</td>
+                              <td>11</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>22</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>33</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>4</td>
+                              <td>44</td>
+                              <td>44</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>5</td>
+                              <td>55</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>6</td>
+                              <td>66</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- //grid-chart -->
+                      <!-- pagination -->
+                      <div class="pagination-new">
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon double-angle-left"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon angle-left"></i>
+                        </button>
+                        <ul>
+                          <li>
+                            <span role="textbox" contenteditable="" class="mu-input">999</span>
+                          </li>
+                          <li class="pagination-slash">/</li>
+                          <li><span>100</span></li>
+                        </ul>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon angle-right"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon double-angle-right"></i>
+                        </button>
+                      </div>
+                      <!-- //pagination -->
+                    </div>
+                  </div>
+                  <!-- // 1단 출력 Off 설정 -->
+                  <span style="position:absolute;top: 1130px; left: 50px;">1단 출력 ON 설정 <span class="highlight"> 페이지네이션 / 다운로드 / 상세보기 버튼 왼쪽 정렬 시</span></span>
+                  <div class="box tool area" style="top: 1500px; left: 50px; width: 1200px; height: 260px;">
+                    <div class="grid-chart">
+                      <!-- 필터 그룹 (페이지네이션, 서치바 그룹) -->
+
+                      <div class="grid-chart-filter-wrap" style="display: block;">
+                        <!-- 목록 개수 -->
+                        <div class="grid-perpage mr5" style="display: inline-block;">
+                          <label for="">목록 개수</label>
+                          <div class="mu-selectbox">
+                            <button class="mu-value">5</button>
+                            <ul class="mu-list">
+                              <li class="tl active">5</li>
+                              <li class="tl">10</li>
+                              <li class="tl">20</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <i class="mu-icon-img accumulate mb5 mr5"></i>
+                        <!-- //목록 개수 -->
+
+                        <!-- 차트 데이터 다운로드 버튼 -->
+                        <button class="mu-btn mu-btn-default" type="button" style="display: inline-block; vertical-align: top;">
+                          <i class="mu-icon download"></i>
+                        </button>
+                        <!-- //차트 데이터 다운로드 버튼 -->
+
+                        <!-- 새 창으로 열기 버튼 -->
+                        <button class="mu-btn mu-btn-default new" type="button" style="display: inline-block; vertical-align: top;">
+                          <i class="iriscon new-window"></i>
+                        </button>
+                        <!-- //새 창으로 열기 버튼 -->
+
+                        <!-- 검색 -->
+                        <div class="grid-chart-input-search fr" style="display: inline-block; width: auto; vertical-align: top;">
+                          <div class="mu-input-icon">
+                            <input type="text" class="mu-input">
+                            <i class="mu-icon search"></i>
+                          </div>
+                        </div>
+                        <!-- //검색 -->
+                      </div>
+
+                      <!-- //필터 그룹 -->
+                      <!-- grid-chart -->
+                      <div class="grid-chart-table-wrap">
+                        <table class="mu-grid mu-grid-border mu-grid-strip mu-grid-sort">
+                          <thead class="mu-grid-border">
+                            <tr>
+                              <th class="none">No.</th>
+                              <th>SCH_ID</th>
+                              <th>JOB_SEQ</th>
+                              <th>JOB_ID</th>
+                              <th>JOB</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>11</td>
+                              <td>11</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>22</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>33</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>4</td>
+                              <td>44</td>
+                              <td>44</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>5</td>
+                              <td>55</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>6</td>
+                              <td>66</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- //grid-chart -->
+                      <!-- pagination -->
+                      <div class="pagination-new">
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon double-angle-left"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon angle-left"></i>
+                        </button>
+                        <ul>
+                          <li>
+                            <span role="textbox" contenteditable="" class="mu-input">10000</span>
+                          </li>
+                          <li class="pagination-slash">/</li>
+                          <li><span>100</span></li>
+                        </ul>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon angle-right"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon double-angle-right"></i>
+                        </button>
+                      </div>
+                      <!-- //pagination -->
+                    </div>
+                  </div>
+                  <div class="box tool area" style="top: 1800px; left: 50px; width: 600px; height: 260px;">
+                    <div class="grid-chart">
+                      <!-- 필터 그룹 (페이지네이션, 서치바 그룹) -->
+                      <div class="grid-chart-filter-wrap" style="display: block;">
+                        <!-- 목록 개수 -->
+                        <div class="grid-perpage mr5" style="display: inline-block;">
+                          <label for="">목록 개수</label>
+                          <div class="mu-selectbox">
+                            <button class="mu-value">5</button>
+                            <ul class="mu-list">
+                              <li class="tl active">5</li>
+                              <li class="tl">10</li>
+                              <li class="tl">20</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <i class="mu-icon-img accumulate mb5 mr5"></i>
+                        <!-- //목록 개수 -->
+
+                        <!-- 차트 데이터 다운로드 버튼 -->
+                        <button class="mu-btn mu-btn-default" type="button" style="display: inline-block; vertical-align: top;">
+                          <i class="mu-icon download"></i>
+                        </button>
+                        <!-- //차트 데이터 다운로드 버튼 -->
+
+                        <!-- 새 창으로 열기 버튼 -->
+                        <button class="mu-btn mu-btn-default new" type="button" style="display: inline-block; vertical-align: top;">
+                          <i class="iriscon new-window"></i>
+                        </button>
+                        <!-- //새 창으로 열기 버튼 -->
+
+                        <!-- 검색 -->
+                        <div class="grid-chart-input-search fr" style="display: inline-block; vertical-align: top;">
+                          <div class="mu-input-icon">
+                            <input type="text" class="mu-input">
+                            <i class="mu-icon search"></i>
+                          </div>
+                        </div>
+                        <!-- //검색 -->
+                      </div>
+
+                      <!-- //필터 그룹 -->
+                      <!-- grid-chart -->
+                      <div class="grid-chart-table-wrap">
+                        <table class="mu-grid mu-grid-border mu-grid-strip mu-grid-sort">
+                          <thead class="mu-grid-border">
+                            <tr>
+                              <th class="none">No.</th>
+                              <th>SCH_ID</th>
+                              <th>JOB_SEQ</th>
+                              <th>JOB_ID</th>
+                              <th>JOB</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>11</td>
+                              <td>11</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>22</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>33</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>4</td>
+                              <td>44</td>
+                              <td>44</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>5</td>
+                              <td>55</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>6</td>
+                              <td>66</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- //grid-chart -->
+                      <!-- pagination -->
+                      <div class="pagination-new">
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon double-angle-left"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon angle-left"></i>
+                        </button>
+                        <ul>
+                          <li>
+                            <span role="textbox" contenteditable="" class="mu-input">10000</span>
+                          </li>
+                          <li class="pagination-slash">/</li>
+                          <li><span>100</span></li>
+                        </ul>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon angle-right"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon double-angle-right"></i>
+                        </button>
+                      </div>
+                      <!-- //pagination -->
+                    </div>
+                  </div>
+                  <div class="box tool area" style="top: 1800px; left: 670px; width: 400px; height: 260px;">
+                    <div class="grid-chart">
+                      <!-- 필터 그룹 (페이지네이션, 서치바 그룹) -->
+                      <div class="grid-chart-filter-wrap" style="display: block; white-space:nowrap;">
+                        <!-- 목록 개수 -->
+                        <div class="grid-perpage mr5" style="display: inline-block;">
+                          <label for="">목록 개수</label>
+                          <div class="mu-selectbox">
+                            <button class="mu-value">5</button>
+                            <ul class="mu-list">
+                              <li class="tl active">5</li>
+                              <li class="tl">10</li>
+                              <li class="tl">20</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <i class="mu-icon-img accumulate mb5 mr5"></i>
+                        <!-- //목록 개수 -->
+
+                        <!-- 차트 데이터 다운로드 버튼 -->
+                        <button class="mu-btn mu-btn-default" type="button" style="display: inline-block; vertical-align: top;">
+                          <i class="mu-icon download"></i>
+                        </button>
+                        <!-- //차트 데이터 다운로드 버튼 -->
+
+                        <!-- 새 창으로 열기 버튼 -->
+                        <button class="mu-btn mu-btn-default new" type="button" style="display: inline-block; vertical-align: top;">
+                          <i class="iriscon new-window"></i>
+                        </button>
+                        <!-- //새 창으로 열기 버튼 -->
+                        <!-- 검색 -->
+                        <div class="grid-chart-input-search mr5" style="display: inline-block; width: auto; vertical-align: top;">
+                          <div class="mu-input-icon">
+                            <input type="text" class="mu-input">
+                            <i class="mu-icon search"></i>
+                          </div>
+                        </div>
+                        <!-- //검색 -->
+                      </div>
+
+                      <!-- //필터 그룹 -->
+                      <!-- grid-chart -->
+                      <div class="grid-chart-table-wrap">
+                        <table class="mu-grid mu-grid-border mu-grid-strip mu-grid-sort">
+                          <thead class="mu-grid-border">
+                            <tr>
+                              <th class="none">No.</th>
+                              <th>SCH_ID</th>
+                              <th>JOB_SEQ</th>
+                              <th>JOB_ID</th>
+                              <th>JOB</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>11</td>
+                              <td>11</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>22</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>33</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>4</td>
+                              <td>44</td>
+                              <td>44</td>
+                              <td>HDFS</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>5</td>
+                              <td>55</td>
+                              <td>SYSLOG_R1</td>
+                              <td>LOCAL</td>
+                              <td>root</td>
+                            </tr>
+                            <tr>
+                              <td>6</td>
+                              <td>66</td>
+                              <td>SYSLOG_R1</td>
+                              <td>GLOBAL</td>
+                              <td>root</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- //grid-chart -->
+                      <!-- pagination -->
+                      <div class="pagination-new">
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon double-angle-left"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon" disabled="disabled">
+                          <i class="iriscon angle-left"></i>
+                        </button>
+                        <ul>
+                          <li>
+                            <span role="textbox" contenteditable="" class="mu-input">10000</span>
+                          </li>
+                          <li class="pagination-slash">/</li>
+                          <li><span>100</span></li>
+                        </ul>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon angle-right"></i>
+                        </button>
+                        <button type="button" class="mu-btn mu-btn-icon">
+                          <i class="iriscon double-angle-right"></i>
+                        </button>
+                      </div>
+                      <!-- //pagination -->
+                    </div>
+                  </div>
+
+                  <!-- 모션 차트 -->
+                  <span style="position: absolute; top: 2080px; left: 50px;"><strong>모션 차트</strong>: <span class="highlight">chart-option-btn-wrap</span>내부에 <span class="highlight">motion-chart-btn-group</span>이 기본으로 추가되어있음</span>
+                  
+                  <div class="box tool area" style="top:2100px;left:50px;width:500px;height:150px;">
+                    <!-- 실제 모션 차트가 들어가는 컨테이너 -->
+                    <div class="motion-chart">
+                      <chart-motion>
+                        <div class="chart"></div>
+                      </chart-motion>
+                    </div>
+                    <!-- 상단 차트 옵션 기능 툴바 -->
+                    <div class="area-toolbar">
+                      <!-- <span class="data-total-amount">데이터 개수 : 500</span>
+                      <i class="mu-icon-img accumulate"></i> -->
+                      <div class="chart-option-btn-wrap">
+                        <!-- 모션 차트일 경우 기본으로 활성화됨 -->
+                        <div class="motion-chart-btn-group">
+                          <button class="mu-btn mu-btn-default">
+                            <i class="mu-icon chart-play"></i><span>Play</span>
+                          </button>
+                          <button class="mu-btn mu-btn-default">
+                            <i class="mu-icon chart-pause"></i><span>Pause</span>
+                          </button>
+                          <button class="mu-btn mu-btn-default">
+                            <i class="mu-icon chart-resume"></i><span>Resume</span>
+                          </button>
+                          <button class="mu-btn mu-btn-default">
+                            <i class="mu-icon chart-stop"></i><span>Stop</span>
+                          </button>
+                        </div>
+                        <!-- <button class="mu-btn mu-btn-default chart-option-btn" type="button">
+                          <i class="mu-icon download"></i>
+                        </button>
+                        <button class="mu-btn mu-btn-default new chart-option-btn" type="button">
+                          <i class="iriscon new-window"></i>
+                        </button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 모션 차트 -->
+
+                  <!-- 모션 차트 -->
+                  <span style="position: absolute; top: 2080px; left: 560px;"><strong>모션 차트</strong>: 모든 차트 옵션을 활성화 한 경우</span>
+
+                  <div class="box tool area" style="top:2100px;left:560px;width:510px;height:150px;">
+                    <!-- 실제 모션 차트가 들어가는 컨테이너 -->
+                    <div class="motion-chart">
+                      <chart-motion>
+                        <div class="chart"></div>
+                      </chart-motion>
+                    </div>
+                    <!-- 상단 차트 옵션 기능 툴바 -->
+                    <div class="area-toolbar">
+                      <span class="data-total-amount">데이터 개수 : 500</span>
+                      <i class="mu-icon-img accumulate"></i>
+                      <div class="chart-option-btn-wrap">
+                        <!-- 모션 차트일 경우 기본으로 활성화됨 -->
+                        <div class="motion-chart-btn-group">
+                          <button class="mu-btn mu-btn-default">
+                            <i class="mu-icon chart-play"></i><span>Play</span>
+                          </button>
+                          <button class="mu-btn mu-btn-default">
+                            <i class="mu-icon chart-pause"></i><span>Pause</span>
+                          </button>
+                          <button class="mu-btn mu-btn-default">
+                            <i class="mu-icon chart-resume"></i><span>Resume</span>
+                          </button>
+                          <button class="mu-btn mu-btn-default">
+                            <i class="mu-icon chart-stop"></i><span>Stop</span>
+                          </button>
+                        </div>
+                        <button class="mu-btn mu-btn-default chart-option-btn" type="button">
+                          <i class="mu-icon download"></i>
+                        </button>
+                        <button class="mu-btn mu-btn-default new chart-option-btn" type="button">
+                          <i class="iriscon new-window"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 모션 차트 -->
+
+                  <!-- 모션 차트 -->
+                  <span style="position: absolute; top: 2080px; left: 1080px;"><strong>모션 차트</strong>: 차트 사이즈가 줄어들어도 옵션 레이아웃은 깨지지 않음</span>
+
+                  <div class="box tool area" style="top:2100px;left:1080px;width:300px;height:150px;">
+                    <!-- 실제 모션 차트가 들어가는 컨테이너 -->
+                    <div class="motion-chart">
+                      <chart-motion>
+                        <div class="chart"></div>
+                      </chart-motion>
+                    </div>
+                    <!-- 상단 차트 옵션 기능 툴바 -->
+                    <div class="area-toolbar">
+                      <span class="data-total-amount">데이터 개수 : 500</span>
+                      <i class="mu-icon-img accumulate"></i>
+                      <div class="chart-option-btn-wrap">
+                        <!-- 모션 차트일 경우 기본으로 활성화됨 -->
+                        <div class="motion-chart-btn-group">
+                          <button class="mu-btn mu-btn-default">
+                            <i class="mu-icon chart-play"></i><span>Play</span>
+                          </button>
+                          <button class="mu-btn mu-btn-default">
+                            <i class="mu-icon chart-pause"></i><span>Pause</span>
+                          </button>
+                          <button class="mu-btn mu-btn-default">
+                            <i class="mu-icon chart-resume"></i><span>Resume</span>
+                          </button>
+                          <button class="mu-btn mu-btn-default">
+                            <i class="mu-icon chart-stop"></i><span>Stop</span>
+                          </button>
+                        </div>
+                        <!-- <button class="mu-btn mu-btn-default chart-option-btn" type="button">
+                          <i class="mu-icon download"></i>
+                        </button> -->
+                        <button class="mu-btn mu-btn-default new chart-option-btn" type="button">
+                          <i class="iriscon new-window"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 모션 차트 -->
+                  <!-- //canvas 영역 -->
+                </div>
+              </div>
+              <div class="report-panel">
+                <ul class="mu-tab">
+                  <li><a href="">데이터</a></li>
+                  <li class="active"><a href="">시각화</a></li>
+                  <li><a href="">속성</a></li>
+                  <li><a href="">불러오기</a></li>
+                </ul>
+                <!-- 속성 -->
+                <div class="mu-tab-body">
+                  <div class="mu-tabCont">
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">시각화 유형</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <!-- 클릭시 on class 추가 -->
+                        <div class="mu-selectbox">
+                          <button class="mu-value option">
+                            <i class="visual-id table"></i>
+                            <span class="data-type-text">테이블</span>
+                          </button>
+                          <ul class="mu-list">
+                            <li>
+                              <i class="visual-id table"></i>
+                              <span class="data-type-text">테이블</span>
+                            </li>
+                            <li>
+                              <i class="visual-id line-boundaries"></i>
+                              <span class="data-type-text">꺾은선형</span>
+                            </li>
+                            <li>
+                              <i class="visual-id dual-axes"></i>
+                              <span class="data-type-text">다중축</span>
+                            </li>
+                            <li>
+                              <i class="visual-id column"></i>
+                              <span class="data-type-text">세로막대형</span>
+                            </li>
+                            <li>
+                              <i class="visual-id hozionbar"></i>
+                              <span class="data-type-text">가로막대형</span>
+                            </li>
+                            <li>
+                              <i class="visual-id pie"></i>
+                              <span class="data-type-text">원형</span>
+                            </li>
+                            <li>
+                              <i class="visual-id scatter"></i>
+                              <span class="data-type-text">시계열 분포</span>
+                            </li>
+                            <li>
+                              <i class="visual-id motion"></i>
+                              <span class="data-type-text">모션</span>
+                            </li>
+                            <li>
+                              <i class="visual-id sankey"></i>
+                              <span class="data-type-text">Sankey</span>
+                            </li>
+                            <li>
+                              <i class="visual-id heatmap"></i>
+                              <span class="data-type-text">히트맵</span>
+                            </li>
+                            <li>
+                              <i class="visual-id single-value"></i>
+                              <span class="data-type-text">단일값</span>
+                            </li>
+                            <li>
+                              <i class="visual-id gauge"></i>
+                              <span class="data-type-text">Guage</span>
+                            </li>
+                            <li>
+                              <i class="visual-id treemap"></i>
+                              <span class="data-type-text">트리맵</span>
+                            </li>
+                            <li>
+                              <i class="visual-id wordcloud"></i>
+                              <span class="data-type-text">워드클라우드</span>
+                            </li>
+                            <li>
+                              <i class="visual-id anomaly"></i>
+                              <span class="data-type-text">Anomaly</span>
+                            </li>
+                            <li>
+                              <i class="visual-id outlier"></i>
+                              <span class="data-type-text">Outlier</span>
+                            </li>
+                            <li>
+                              <i class="visual-id forecast"></i>
+                              <span class="data-type-text">Forecast</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">이벤트 값 전달 설정</span>
+                        <button class="mu-btn mu-btn-icon">
+                          <i class="mu-icon question-circle"></i>
+                        </button>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100px">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>오브젝트 ID</th>
+                              <td>chart-1</td>
+                            </tr>
+                            <tr>
+                              <th>변수명</th>
+                              <td><input class="mu-input"></td>
+                            </tr>
+                            <!-- (히트맵)값 필드: 데이터 기준일 경우 셀렉트 박스 추가 -->
+                            <tr>
+                              <th>값 필드</th>
+                              <td>
+                                <div class="mu-vgroup">
+                                  <div class="mu-item-group">
+                                    <div class="mu-radio">
+                                      <input type="radio" id="data_base" name="base_radio1" value="data" checked>
+                                      <label for="data_base">데이터 기준</label>
+                                    </div>
+                                    <div class="mu-radio">
+                                      <input type="radio" id="table_base" name="base_radio1" value="table">
+                                      <label for="table_base">표 기준</label>
+                                    </div>
+                                  </div>
+                                  <div class="mu-selectbox">
+                                    <button class="mu-value" title="다중선택 (2)">다중선택 (2)</button>
+                                    <ul class="mu-list">
+                                      <li title="전체" for="chk-all">
+                                        <div class="mu-checkbox indeterminate">
+                                          <input type="checkbox" id="chk-all">
+                                          <label for="chk-all"></label>
+                                        </div>전체
+                                      </li>
+                                      <li title="No">
+                                        <div class="mu-checkbox">
+                                          <input type="checkbox" id="chk-no">
+                                          <label for="chk-no"></label>
+                                        </div>No
+                                      </li>
+                                      <li title="Agent_id">
+                                        <div class="mu-checkbox">
+                                          <input type="checkbox" id="agent-id" checked>
+                                          <label for="agent-id"></label>
+                                        </div>Agent_id
+                                      </li>
+                                      <li title="Host_name">
+                                        <div class="mu-checkbox">
+                                          <input type="checkbox" id="host-name">
+                                          <label for="host-name"></label>
+                                        </div>Host_name
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <!-- //(히트맵)값 필드: 데이터 기준일 경우 셀렉트 박스 추가 -->
+                            <!-- (히트맵)값 필드: 표 기준일 경우 -->
+                            <tr>
+                              <th>값 필드</th>
+                              <td>
+                                <div class="mu-vgroup">
+                                  <div class="mu-item-group">
+                                    <div class="mu-radio">
+                                      <input type="radio" id="data_base" name="base_radio2" value="data">
+                                      <label for="data_base">데이터 기준</label>
+                                    </div>
+                                    <div class="mu-radio">
+                                      <input type="radio" id="table_base" name="base_radio2" value="table" checked>
+                                      <label for="table_base">표 기준</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <!-- //(히트맵)값 필드: 표 기준일 경우 -->
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">크기</span>
+                        <button class="mu-btn mu-btn-icon mu-btn-icon-only mu-btn-bg-non"><i class="mu-icon-img option2"></i></button>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100px">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>컬럼</th>
+                              <td>Event Object의 개수</td>
+                            </tr>
+                            <tr>
+                              <th>축 제목</th>
+                              <td>없음 만약 컨텐츠가 길어서 두줄로 나오게 될 경우</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //속성 -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <link href="js/jquery-ui.css" rel="stylesheet">
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="../../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

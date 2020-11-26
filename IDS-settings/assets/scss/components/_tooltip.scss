@@ -1,0 +1,519 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("tooltip") {
+  .mu-tooltip {
+    position: absolute;
+    border: 1px solid $ui-04;
+    background-color: $ui-01;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    z-index: 11;
+  }
+  .mu-tooltip > .arrow,
+  .mu-tooltip > .arrow:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+  }
+  .mu-tooltip > .arrow {
+    border-width: 11px;
+  }
+  .mu-tooltip > .arrow:after {
+    content: "";
+    border-width: 10px;
+  }
+  .mu-tooltip > .mu-tooltip-head {
+    position: relative;
+    font-weight: 800;
+    height: 29px;
+    line-height: 26px;
+    padding: 0 8px 0 15px;
+    border-bottom: 1px solid $ui-04;
+    background-color: $ui-02;
+  }
+  .mu-tooltip > .mu-tooltip-head .title {
+    @include typescale("zeta");
+    width: 100%;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 20px;
+  }
+  .mu-tooltip > .mu-tooltip-head .mu-btn {
+    position: absolute;
+    top: 0;
+    right: 4px;
+    padding: 0;
+    height: 100%;
+  }
+  .mu-tooltip > .mu-tooltip-inner {
+    padding: 15px;
+  }
+  .mu-tooltip > .mu-tooltip-inner > .title {
+    display: block;
+    margin-bottom: 8px;
+  }
+  .mu-tooltip > .mu-tooltip-inner > * + .title {
+    margin-top: 20px;
+  }
+
+  /* 2017-05-26 */
+  .mu-tooltip .mu-formbox thead .mu-btn {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  .mu-tooltip .mu-formbox thead .mu-icon-img.arrow-prev {
+    background: url("#{$img-path}/common/icon_tooltip.png") no-repeat -220px 0;
+  }
+  .mu-tooltip .mu-formbox thead .mu-btn:hover {
+    border: none;
+  }
+  .mu-tooltip .mu-formbox thead .mu-btn:hover .mu-icon-img.arrow-prev {
+    background-position: -220px -20px;
+  }
+
+  .mu-tooltip.top {
+    margin-top: -10px;
+  }
+  .mu-tooltip.top > .arrow {
+    bottom: -11px;
+    left: 50%;
+    margin-left: -11px;
+    border-top-color: #ccc;
+    border-bottom-width: 0;
+  }
+  .mu-tooltip.top > .arrow:after {
+    bottom: 1px;
+    margin-left: -10px;
+    content: "";
+    border-top-color: $ui-01;
+    border-bottom-width: 0;
+  }
+  .mu-tooltip.bottom {
+    margin-top: 10px;
+  }
+  .mu-tooltip.bottom > .arrow {
+    top: -11px;
+    left: 50%;
+    margin-left: -11px;
+    border-top-width: 0;
+    border-bottom-color: #aaa;
+  }
+  .mu-tooltip.bottom > .arrow:after {
+    top: 1px;
+    margin-left: -10px;
+    content: "";
+    border-top-width: 0;
+    border-bottom-color: $ui-01;
+  }
+  .mu-tooltip.left {
+    margin-right: 13px;
+  }
+  .mu-tooltip.left > .arrow {
+    top: 50%;
+    right: -11px;
+    margin-top: -11px;
+    border-right-width: 0;
+    border-left-color: #ccc;
+  }
+  .mu-tooltip.left > .arrow:after {
+    right: 1px;
+    bottom: -10px;
+    content: "";
+    border-right-width: 0;
+    border-left-color: $ui-01;
+  }
+  .mu-tooltip.right {
+    margin-left: 13px;
+  }
+  .mu-tooltip.right > .arrow {
+    bottom: 50%;
+    left: -11px;
+    margin-bottom: -11px;
+    border-right-color: #d7dade;
+    border-left-width: 0;
+  }
+  .mu-tooltip.top-left {
+    margin-top: -10px;
+  }
+  .mu-tooltip.top-left > .arrow {
+    left: 16px;
+    bottom: -11px;
+    margin-left: -11px;
+    border-bottom-width: 0;
+    border-top-color: #ccc;
+  }
+  .mu-tooltip.top-left > .arrow:after {
+    content: "";
+    bottom: 1px;
+    margin-left: -10px;
+    border-bottom-width: 0;
+    border-top-color: $ui-01;
+  }
+  .mu-tooltip.top-right {
+    margin-top: -10px;
+  }
+  .mu-tooltip.top-right > .arrow {
+    right: 16px;
+    bottom: -11px;
+    margin-right: -11px;
+    border-bottom-width: 0;
+    border-top-color: #ccc;
+  }
+  .mu-tooltip.top-right > .arrow:after {
+    content: "";
+    bottom: 1px;
+    margin-left: -10px;
+    border-bottom-width: 0;
+    border-top-color: $ui-01;
+  }
+  .mu-tooltip.bottom-left {
+    margin-top: 10px;
+  }
+  .mu-tooltip.bottom-left > .arrow {
+    left: 16px;
+    top: -11px;
+    margin-left: -11px;
+    border-top-width: 0;
+    border-bottom-color: #ccc;
+  }
+  .mu-tooltip.bottom-left > .arrow:after {
+    content: "";
+    top: 1px;
+    margin-left: -10px;
+    border-top-width: 0;
+    border-bottom-color: $ui-01;
+  }
+  .mu-tooltip.bottom-right {
+    margin-top: 10px;
+  }
+  .mu-tooltip.bottom-right > .arrow {
+    right: 16px;
+    top: -11px;
+    margin-right: -11px;
+    border-top-width: 0;
+    border-bottom-color: #ccc;
+  }
+  .mu-tooltip.bottom-right > .arrow:after {
+    content: "";
+    top: 1px;
+    margin-left: -10px;
+    border-top-width: 0;
+    border-bottom-color: $ui-01;
+  }
+  .mu-tooltip.left-top {
+    margin-left: -10px;
+  }
+  .mu-tooltip.left-top > .arrow {
+    right: -11px;
+    top: 16px;
+    margin-top: -11px;
+    border-right-width: 0;
+    border-left-color: #ccc;
+  }
+  .mu-tooltip.left-top > .arrow:after {
+    content: "";
+    right: 1px;
+    bottom: -10px;
+    border-right-width: 0;
+    border-left-color: $ui-01;
+  }
+  .mu-tooltip.left-bottom {
+    margin-left: -10px;
+  }
+  .mu-tooltip.left-bottom > .arrow {
+    right: -11px;
+    bottom: 16px;
+    margin-bottom: -11px;
+    border-right-width: 0;
+    border-left-color: #ccc;
+  }
+  .mu-tooltip.left-bottom > .arrow:after {
+    content: "";
+    right: 1px;
+    bottom: -10px;
+    border-right-width: 0;
+    border-left-color: $ui-01;
+  }
+  .mu-tooltip.right-top {
+    margin-left: 13px;
+  }
+  .mu-tooltip.right-top > .arrow {
+    left: -11px;
+    top: 16px;
+    margin-top: -11px;
+    border-left-width: 0;
+    border-right-color: #ccc;
+  }
+  .mu-tooltip.right-top > .arrow:after {
+    content: "";
+    left: 1px;
+    bottom: -10px;
+    border-left-width: 0;
+    border-right-color: $ui-01;
+  }
+  .mu-tooltip.right-bottom {
+    margin-left: 13px;
+  }
+  .mu-tooltip.right-bottom > .arrow {
+    left: -11px;
+    bottom: 16px;
+    margin-bottom: -11px;
+    border-left-width: 0;
+    border-right-color: #ccc;
+  }
+  .mu-tooltip.right-bottom > .arrow:after {
+    content: "";
+    left: 1px;
+    bottom: -10px;
+    border-left-width: 0;
+    border-right-color: $ui-01;
+  }
+  .mu-tooltip.right > .arrow:after {
+    top: -10px;
+    left: 1px;
+    content: "";
+    border-right-color: $ui-01;
+    border-left-width: 0;
+  }
+  .mu-tooltip.track {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .mu-tooltip-head .mu-icon-img,
+  .mu-dialog-head .mu-icon-img {
+    width: 20px;
+    height: 20px;
+    background: url("../../images/common/icon_tooltip.png") no-repeat 0 0;
+    margin: 0;
+  }
+  .mu-tooltip-head .mu-btn:hover .mu-icon-img,
+  .mu-dialog-head .mu-btn:hover .mu-icon-img {
+    background-position: 0 -20px;
+  }
+  // 2018-08-17 TODO 아래 btn에 관한 코드는 html에 클래스명 입힌 후..제거해야함
+  // btnApply를 mu-btn-primary로 변경
+  // .mu-tooltip .mu-btn.mu-btn-primary{width:auto;padding:0 16px;} /* 2018-06-05 MOD KHY padding 적용되는 btn을 apply btn으로 한정시킴 */
+  // 위 코드를 아래와같이 개선함
+  .mu-tooltip .mu-tooltip-foot {
+    text-align: right;
+    border-top: 1px solid #e7e7e7;
+    padding: 8px 15px;
+  }
+  .mu-tooltip .mu-tooltip-foot .mu-btn {
+    min-width: 56px;
+  }
+  .mu-tooltip .mu-btn.btn-w-s {
+    width: 26px;
+    padding: 0;
+  }
+  .mu-tooltip .mu-grid {
+    border: 1px solid #e7e7e7;
+    border-left: none;
+    border-right: none;
+  }
+  .mu-tooltip .mu-grid tbody > tr:hover {
+    border: none;
+  } /* 2016-11-25 ADD */
+  .mu-tooltip .mu-grid thead > tr > th,
+  .mu-tooltip .mu-grid tbody > tr > td {
+    padding: 3px 10px;
+    height: 26px;
+    line-height: 100%;
+    vertical-align: middle;
+    border-bottom: 1px solid #e7e7e7;
+  }
+  .mu-tooltip .mu-search-item .mu-hgroup .mu-btn {
+    padding: 0 14px;
+  }
+
+  .mu-tooltip.alarm {
+    max-width: 440px;
+    min-width: 360px;
+  }
+  .mu-tooltip.alarm .mu-tooltip-foot {
+    padding: 8px;
+    text-align: left;
+    line-height: 1;
+    @include clearfix();
+  }
+
+  .mu-tooltip.alarm .alarm-msg-box {
+    margin: 12px 24px;
+  }
+  .mu-tooltip.alarm .alarm-msg {
+    text-align: center;
+  }
+  .mu-tooltip.alarm .mu-list-meta .alarm-msg {
+    padding: 10px;
+  }
+  .alarm-msg .mu-icon {
+    margin-right: 4px;
+    font-size: 16px;
+  }
+  .mu-tooltip .alarm-msg.info .alarm-msg-icon {
+    color: $status-info-symbol;
+  }
+  .mu-tooltip .alarm-msg.error .alarm-msg-icon {
+    color: $status-danger-symbol;
+  }
+  .mu-tooltip .alarm-msg.success .alarm-msg-icon {
+    color: $status-success-symbol;
+  }
+  .mu-tooltip .alarm-msg.process {
+    color: $text-02;
+  }
+
+  .mu-tooltip.alarm .mu-tooltip-inner {
+    padding: 8px;
+  }
+  .mu-tooltip-foot .mu-btn + .mu-btn {
+    margin-left: 4px;
+  }
+  .mu-tooltip-foot .mu-btn-default + .mu-btn-link {
+    margin-left: 8px;
+    height: 26px;
+  }
+
+  .mu-tooltip.alarm .alarm-msg-icon {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+  }
+  .mu-tooltip.alarm .alarm-msg-cont {
+    display: inline-block;
+    text-align: left;
+    line-height: 1.25;
+  }
+
+  .mu-tooltip .mu-progress {
+    height: 6px;
+    border-radius: 0;
+  }
+  // mu-tooltip + mu-popup-menu 조합 스타일
+  .mu-tooltip .mu-popup-menu {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 4px 0;
+  }
+  .mu-tooltip .mu-popup-menu > li:after {
+    content: "";
+    display: block;
+    clear: both;
+  } /* 2016-06-15 ADD */
+  .mu-tooltip .mu-popup-menu > li:first-child {
+    border-radius: 2px 2px 0 0;
+  }
+  .mu-tooltip .mu-popup-menu > li:last-child {
+    border-radius: 0 0 2px 2px;
+  }
+  .mu-tooltip .mu-popup-menu > li + li {
+    border-top: none;
+  }
+  .mu-tooltip .mu-popup-menu > li span.list-popup {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    padding: 7px 20px 7px 20px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .mu-tooltip .mu-popup-menu > li span {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .mu-tooltip .mu-popup-menu > li a {
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .mu-tooltip .mu-popup-menu > li a .mu-icon-img,
+  .mu-tooltip .mu-popup-menu > li span .mu-icon-img {
+    margin-right: 5px;
+  }
+  .mu-tooltip .mu-popup-menu > li:hover,
+  .mu-tooltip .mu-popup-menu > li:active {
+    color: $brand-02;
+    background-color: $hover-ui-accent;
+  }
+  .mu-tooltip .mu-popup-menu > li:hover a,
+  .mu-tooltip .mu-popup-menu > li:active a {
+    color: $brand-02;
+    background-color: $hover-ui-accent;
+  }
+  .mu-tooltip .mu-popup-menu > li a + a,
+  .mu-tooltip .mu-popup-menu > li span + span {
+    padding: 4px;
+    float: right;
+  }
+  .mu-tooltip .mu-popup-menu.mu-popup-sub {
+    border: 1px solid $brand-02;
+  }
+  // 보고서 관리
+  .mu-tooltip .mu-popup-menu.mu-popup-menu-select > li a {
+    padding: 6px 25px 7px 15px;
+  }
+  .mu-popup-menu.mu-popup-menu-select > li a:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+  }
+  .mu-popup-menu.mu-popup-menu-select > li.active a:before {
+    background: url("#{$img-path}/common/icon_search.png") no-repeat -120px -80px;
+  }
+
+  .mu-popup-menu > li.mu-divider ~ li > a > i {
+    position: static;
+  }
+
+  .mu-tooltip.dataField .mu-popup-menu > li.disabled > a {
+    background: $ui-01;
+    color: $ui-04;
+  }
+  .mu-tooltip.dataField .mu-popup-menu > li.disabled > a > i:before {
+    color: $ui-04;
+  }
+  .mu-tooltip.dataField .mu-popup-menu > li + li {
+    border-top: none;
+  }
+  .mu-tooltip.dataField .mu-popup-menu .mu-divider {
+    border-top: 1px solid $ui-04;
+  }
+
+  .mu-tooltip.code-preview {
+    max-width: 444px;
+    max-height: 600px;
+    line-height: 16px;
+  }
+  .mu-tooltip.code-preview code {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block; // Fallback for non-webkit
+    display: -webkit-box;
+    -webkit-line-clamp: 32;
+    -webkit-box-orient: vertical;
+    line-height: 16px;
+    max-height: 560px; // Fallback for non-webkit
+  }
+}

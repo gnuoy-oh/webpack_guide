@@ -1,0 +1,77 @@
+@import '../utils/import-once';
+@import 'vars';
+
+@mixin iris-font-face {
+
+  @font-face {
+    font-family: 'notokr';
+    font-style: normal;
+    font-weight: 300;
+    src: url('#{$font-path}/notokr-light.eot');
+    src: url('#{$font-path}/notokr-light.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/notokr-light.woff2') format('woff2'),
+    url('#{$font-path}/notokr-light.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'notokr';
+    font-style: normal;
+    font-weight: 400;
+    src: url('#{$font-path}/notokr-regular.eot');
+    src: url('#{$font-path}/notokr-regular.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/notokr-regular.woff2') format('woff2'),
+    url('#{$font-path}/notokr-regular.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'notokr';
+    font-style: normal;
+    font-weight: 500;
+    src: url('#{$font-path}/notokr-medium.eot');
+    src: url('#{$font-path}/notokr-medium.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/notokr-medium.woff2') format('woff2'),
+    url('#{$font-path}/notokr-medium.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'notokr';
+    font-style: normal;
+    font-weight: 700;
+    src: url('#{$font-path}/notokr-bold.eot');
+    src: url('#{$font-path}/notokr-bold.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/notokr-bold.woff2') format('woff2'),
+    url('#{$font-path}/notokr-bold.woff') format('woff');
+    
+  }
+
+  @font-face {
+    font-family: 'fontAwesome';
+    font-style: normal;
+    font-weight: normal;
+    src: url('#{$font-path}/fa-solid-900.eot');
+    src: url('#{$font-path}/fa-solid-900.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/fa-solid-900.woff2') format('woff2'),
+    url('#{$font-path}/fa-solid-900.woff') format('woff'),
+    url('#{$font-path}/fa-solid-900.ttf')  format('truetype'),
+    url('#{$font-path}/fa-solid-900.svg#fontawesome') format("svg");
+  }
+
+  @font-face {
+    font-family: 'fontAwesome';
+    font-style: normal;
+    font-weight: 400;
+    src: url('#{$font-path}/fa-brands-400.eot');
+    src: url('#{$font-path}/fa-brands-400.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/fa-brands-400.woff2') format('woff2'),
+    url('#{$font-path}/fa-brands-400.woff') format('woff'),
+    url('#{$font-path}/fa-brands-400.ttf')  format('truetype'),
+    url('#{$font-path}/fa-brands-400.svg#fontawesome') format("svg");
+  }
+
+}
+
+@include exports('css--font-face') {
+@if not global-variable-exists('css--font-face') or $css--font-face == true {
+    @include iris-font-face;
+}
+}

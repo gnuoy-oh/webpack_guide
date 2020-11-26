@@ -1,0 +1,93 @@
+@import "../colors";
+
+// Color Theme Variables
+$ui-01: $white-0;
+$ui-02: $gray-10;
+$ui-03: $gray-20;
+$ui-04: $warm-gray-30;
+$ui-05: $warm-gray-20;
+$ui-06: $warm-gray-10;
+$interactive-01: #f8462f;
+$interactive-02: $white-0;
+$brand-02: #e5412c;
+$brand-03: #c2301e;
+$text-01: $gray-100; // default
+$text-02: $warm-gray-70; // sub color (아이콘 등)
+$text-03: $warm-gray-60; // 각종 아이콘 버튼
+$text-04: $white-0;
+$text-05: $navy-gray-30;
+$link: $cyan-50;
+$icon-01: $cool-gray-70;
+$icon-02: $navy-gray-40;
+$icon-03: #f7921e;
+$field-01: $white-0;
+$overlay-01: rgba($gray-20, 0.5);
+
+// Global
+$input-label-weight: 600;
+
+// Support Color Variables
+$support-01: $green-40;
+$support-02: $cyan-50;
+$support-03: $orange-60;
+$support-04: $red-50;
+
+// Interactive Color Variables
+$hover-primary: darken($interactive-01, 5%);
+$hover-secondary: $gray-10;
+$hover-icon: $warm-gray-70;
+$hover-danger: darken($support-04, 10%);
+$hover-ui: $cool-gray-10;
+$hover-ui-accent: #ffe9ce; // hover등에 사용
+$hover-row: $cyan-10;
+$hover-field-border: $interactive-01;
+
+$active-primary: darken($interactive-01, 10%);
+$active-secondary: $cool-gray-20;
+$active-icon: $navy-gray-60;
+$active-danger: $red-70;
+$active-ui: #e5e8ef;
+$active-ui-accent: #fad19e;
+
+$selected-ui-accent: #fad19e;
+$visited-link: $purple-60;
+$disabled-01: $gray-10;
+$disabled-02: $gray-30;
+
+// -------------------------
+//  TODO: 검토 후 제거할 항목들
+// Support Colors Variables
+$status-success-symbol: $green-41;
+$status-success-close: $green-31;
+$status-success-border: $green-21;
+$status-success-bg: $green-11;
+$status-info-symbol: $blue-42;
+$status-info-close: $blue-32;
+$status-info-border: $blue-22;
+$status-info-bg: $blue-10;
+$status-warning-symbol: $orange-41;
+$status-warning-close: $orange-31;
+$status-warning-border: $orange-21;
+$status-warning-bg: $orange-11;
+$status-danger-symbol: $red-41;
+$status-danger-close: $red-31;
+$status-danger-border: $red-21;
+$status-danger-bg: $red-11;
+
+// Code Snippet
+$snippet-background-color: $ui-01;
+$snippet-border-color: $ui-04;
+
+// TODO: IRIS Web Platform의 네비게이션이 적용되면 제거
+$nav-01: $brand-02; // nav-main-bg
+$nav-02: $orange-30; // nav-main-icon-btn
+$nav-03: $orange-20; // nav-main-icon-btn-inverse
+$nav-04: $gray-10; // nav-sub-bg
+$nav-05: $warm-gray-50; // nav-sub-icon-btn
+$nav-06: $warm-gray-30; // nav-sub-icon-btn-inverse
+$nav-07: $white-0; // nav-dropdown-bg
+$nav-08: $orange-10; // nav-dropdown-active-border
+$nav-09: $orange-11; // nav-dropdown-active-bg
+$nav-10: $interactive-01; // nav-point-color(under-line, active...)
+$nav-11: $yellow-50; // menu-path-color
+// -------------------------

@@ -1,0 +1,84 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("badge") {
+  /* badge */
+  .mu-badge {
+    font-size: 14px;
+    font-variant: tabular-nums;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+  }
+
+  .mu-badge-status {
+    line-height: inherit;
+    vertical-align: baseline;
+  }
+
+  .mu-badge-status-dot {
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+
+  .mu-badge-status-text {
+    font-size: 12px;
+  }
+
+  .mu-badge-status-success {
+    background-color: $status-success-symbol;
+  }
+
+  .mu-badge-status-info {
+    background-color: $status-info-symbol;
+  }
+
+  .mu-badge-status-warning {
+    background-color: $status-warning-symbol;
+  }
+
+  .mu-badge-status-error {
+    background-color: $status-danger-symbol;
+  }
+
+  .mu-badge-status-minor {
+    background-color: #fcc419;
+  }
+
+  .mu-badge-status-on {
+    background-color: lighten($brand-02, 20%);
+    border: 1px solid $brand-02;
+  }
+
+  .mu-badge-status-on + .mu-badge-status-text {
+    font-weight: 700;
+    color: $brand-02;
+  }
+
+  .mu-badge-status-off {
+    background-color: lighten($text-03, 20%);
+    border: 1px solid $text-03;
+  }
+
+  .mu-badge-status-off + .mu-badge-status-text {
+    font-weight: 700;
+    color: $text-03;
+  }
+
+  .mu-badge-status-text {
+    color: $text-01;
+  }
+}

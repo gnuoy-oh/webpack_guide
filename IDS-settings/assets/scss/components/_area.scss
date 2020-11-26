@@ -1,0 +1,81 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("area") {
+  .mu-area {
+    display: block;
+    width: 100%;
+    min-height: 60px;
+    padding: 5px;
+    resize: none;
+    border: 1px solid $ui-04;
+    border-radius: 3px;
+    background: $ui-01;
+  }
+
+  .mu-area:hover,
+  .mu-area:active,
+  .mu-area:focus {
+    border-color: $brand-02;
+    outline: 0;
+  }
+
+  .mu-area[disabled],
+  .mu-area[disabled]:hover,
+  .mu-area[disabled]:focus {
+    cursor: not-allowed;
+    border-color: $ui-04;
+    background-color: $disabled-01;
+    color: $disabled-02;
+  }
+
+  .mu-area[readonly],
+  .mu-area[readonly]:hover,
+  .mu-area[readonly]:focus {
+    cursor: default;
+    border-color: $ui-04;
+    background-color: $disabled-01;
+    color: $text-01;
+  }
+
+  .mu-area::placeholder {
+    @include placeholder-colors;
+  }
+
+  .mu-area::-webkit-input-placeholder {
+    @include placeholder-colors;
+  }
+
+  .mu-area:-ms-input-placeholder {
+    @include placeholder-colors;
+  }
+
+  .mu-area.extend-h {
+    min-height: 200px;
+  }
+
+  .mu-area::-webkit-input-placeholder {
+    padding-left: 3px;
+  }
+
+  .mu-area::-moz-input-placeholder {
+    padding-left: 3px;
+  }
+
+  .mu-area:-moz-input-placeholder {
+    padding-left: 3px;
+  }
+
+  .mu-area:-ms-input-placeholder {
+    padding-left: 3px;
+  }
+
+  .mui-form .mu-area {
+    resize: vertical;
+  }
+}

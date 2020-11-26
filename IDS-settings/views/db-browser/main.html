@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+  <script src="js/html5.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <!-- <link href="../../assets/css/db-browser/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link href="../../assets/css/db-browser/common.css" rel="stylesheet" type="text/css" />
+  <link href="../../assets/css/db-browser/layout_top.css" rel="stylesheet" type="text/css" />
+  <link href="../../assets/css/db-browser/style.css" rel="stylesheet" type="text/css" />
+  <link href="../../assets/css/db-browser/dev.css" rel="stylesheet" type="text/css" /> -->
+  <link rel="stylesheet" type="text/css" href="../../dist-db-browser/css/db-browser/style.min.css">
+</head>
+
+<body>
+  <header class="sub">
+    <!-- main -->
+    <div class="header-wrap">
+      <div class="bx-logo">
+        <h1>
+          <span>IRIS Big Data Platform</span>
+        </h1>
+        <ul class="menu-current">
+          <li><span>대시보드</span></li>
+          <li><span>테스트테스트테스트테스트테스트테스트</span></li>
+        </ul>
+      </div>
+      <div class="bx-menu">
+        <div class="mn">
+          <strong class="mn-1dep"><a href=""><i class="mu-icon dashBoard"></i>대시보드</a></strong>
+        </div>
+        <div class="mn">
+          <strong class="mn-1dep"><i class="mu-icon status"></i>데이터브라우저</strong>
+          <ul class="mn-2dep">
+            <li><a href="">검색</a></li>
+            <li><a href="">피벗</a></li>
+            <li><a href="">보고서</a></li>
+            <li><a href="">데이터 모델</a></li>
+          </ul>
+        </div>
+        <div class="mn active">
+          <strong class="mn-1dep"><i class="mu-icon chart-bar"></i>대화형 분석</strong>
+          <ul class="mn-2dep">
+            <li><a href="">Zeppelln</a></li>
+            <li><a href="">Jupyter</a></li>
+            <li><a href="">Rstudio</a></li>
+          </ul>
+        </div>
+        <div class="mn">
+          <strong class="mn-1dep"><i class="mu-icon dbBrowser"></i>DB조회</strong>
+          <ul class="mn-2dep">
+            <li><a href="">DB브라우저</a></li>
+          </ul>
+        </div>
+        <div class="mn">
+          <strong class="mn-1dep"><i class="mu-icon cogs"></i>클러스터 관리</strong>
+          <ul class="mn-2dep">
+            <li>
+              <a href="">대시보드</a>
+            </li>
+            <li>
+              <a href="">DB</a>
+              <ul class="mn-3dep">
+                <li><a href="">세션관리</a></li>
+                <li><a href="">프로세스 관리</a></li>
+                <li><a href="">테이블 스페이스(사용률 조회)</a></li>
+                <li><a href="">테이블 스페이스(사용률 현황)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">시스템</a>
+              <ul class="mn-3dep">
+                <li><a href="">노드 정보 조회</a></li>
+                <li><a href="">장애 정보 조회</a></li>
+                <li><a href="">리소스 사용률(모니터링)</a></li>
+                <li><a href="">리소스 사용률(이력 조회)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">관리</a>
+              <ul class="mn-3dep">
+                <li><a href="">사용자</a></li>
+                <li><a href="">권한</a></li>
+                <li><a href="">테이블 권한</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="mn">
+          <strong class="mn-1dep"><i class="mu-icon dbBrowser"></i>HDFS조회</strong>
+          <ul class="mn-2dep">
+            <li><a href="">HDFS브라우저</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- // header class값이 sub 일때 생성됨 -->
+    <ul class="menu-sub">
+      <li class="active"><a href="">세션관리</a></li>
+      <li><a href="">프로세스 관리</a></li>
+      <li><a href="">테이블 스페이스(사용률 조회)</a></li>
+      <li class="sub">
+        <!-- // sub 메뉴가 있을때 over style -->
+        <a href="">테이블 스페이스(사용률 현황)<i class="mu-icon up"></i><!-- <i class="mu-icon down"></i> --></a>
+        <ul>
+          <li><a href="">메뉴1메뉴1메뉴1메뉴1</a></li>
+          <li><a href="">메뉴2</a></li>
+          <li><a href="">메뉴3</a></li>
+          <li><a href="">메뉴4</a></li>
+          <li><a href="">메뉴5</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="mu-topMenu fr">
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non" ng-click="user();" disabled><i class="mu-icon-img user"></i></button>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non" ng-click="user();"><i class="mu-icon-img logout"></i></button>
+    </div>
+  </header>
+
+  <div class="mu-container mu-scroll-h">
+    <section>
+      <div class="mu-content">
+        <!-- DB Table -->
+        <div class="dbtable layout">
+          <div class="mu-row">
+            <div class="mu-col">
+              <div class="mu-splitter-wrap">
+                <div id="left-area" class="mu-splitter-first">
+
+                  <div class="mu-splitter-wrap vertical">
+                    <div class="mu-splitter-first" style="height:500px;">
+                      <div class="mu-panel">
+                        <div class="mu-panel-head">
+                          <div class="selectBox">
+                            <div class="mu-selectbox">
+                              <button class="mu-value" title="ROOT">ROOT</button>
+                              <ul class="mu-list">
+                                <li title="모든 테이블(DEFAULT)">모든 테이블(DEFAULT)</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <button type="button" class="mu-btn mu-btn-icon toggleClose" ng-click="panel.isLeftClose=true"><i class="mu-icon-img angle-double-left"></i></button>
+                          <h3 class="mu-title">테이블 목록</h3>
+                          <div class="mu-hgroup fl"><button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon repeat"></i></button></div>
+                          <div class="searchBox clear">
+                            <div class="mu-input-icon">
+                              <input type="text" placeholder="search" ng-model="filterText" class="mu-input ng-pristine ng-untouched ng-valid ng-empty">
+                              <i class="mu-icon-img search2"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mu-panel-body">
+
+                          <ul class="mu-slide-menu">
+                            <li class="active">
+                              <a href=""><i class="mu-icon"></i>글로벌 테이블</a>
+                              <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon add"></i></button>
+                              <ul>
+                                <li class="active"><a href="">date_mday</a></li>
+                                <li><a href="">date_minute</a></li>
+                                <li><a href="">date_month</a></li>
+                                <li class="active"><a href="">dest_port</a></li>
+                                <li><a href="">index</a></li>
+                                <li><a href="">level</a></li>
+                                <li><a href="">date_hour</a></li>
+                                <li><a href="">date_wday</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href=""><i class="mu-icon"></i>로컬 테이블</a>
+                              <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon add"></i></button>
+                              <ul>
+                                <li><a href="">host</a></li>
+                                <li><a href="">linecount</a></li>
+                                <li><a href="">lip</a></li>
+                                <li><a href="">m_event_no</a></li>
+                                <li><a href="">res_duration</a></li>
+                                <li><a href="">date_year</a></li>
+                                <li><a href="">date_zone</a></li>
+                                <li><a href="">res_duration_value</a></li>
+                                <li><a href="">dir</a></li>
+                                <li><a href="">etm</a></li>
+                                <li><a href="">sourcetype</a></li>
+                                <li><a href="">res_lof_value</a></li>
+                                <li><a href="">res_lof</a></li>
+                                <li><a href="">stm</a></li>
+                                <li><a href="">linked_time</a></li>
+                              </ul>
+                            </li>
+                            <li class="active">
+                              <a href=""><i class="mu-icon"></i>시스템 테이블</a>
+                              <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon add"></i></button>
+                              <ul>
+                                <li><a href="">date_mday</a></li>
+                                <li><a href="">date_minute</a></li>
+                                <li><a href="">date_month</a></li>
+                                <li><a href="">dest_port</a></li>
+                                <li><a href="">index</a></li>
+                                <li><a href="">level</a></li>
+                                <li><a href="">date_hour</a></li>
+                                <li><a href="">date_wday</a></li>
+                              </ul>
+                            </li>
+                            <li class="active">
+                              <a href=""><i class="mu-icon"></i>로컬 테이블</a>
+                              <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon add"></i></button>
+                              <ul>
+                                <li><a href="">date_mday</a></li>
+                                <li><a href="">date_minute</a></li>
+                                <li><a href="">date_month</a></li>
+                                <li><a href="">dest_port</a></li>
+                                <li><a href="">index</a></li>
+                                <li><a href="">level</a></li>
+                                <li><a href="">date_hour</a></li>
+                                <li><a href="">date_wday</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mu-splitter"></div>
+                    <div class="mu-splitter-last" style="height:calc(100% - 503px);">
+                      <div class="mu-panel">
+                        <div class="mu-panel-body">
+
+                          <table class="mu-grid mu-grid-border mu-grid-strip mu-grid-sort">
+                            <colgroup>
+                              <col width="65%">
+                              <col>
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th>컬럼</th>
+                                <th>데이터 타입</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>CORE_QOE3_QOS4_HTTP_ATTEMPT_COUNT</td>
+                                <td>TEXT</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>2</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>2</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>2</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>2</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>2</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>2</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>2</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>2</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>2</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>2</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>2</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- <div class="mu-splitter"></div> 가운데 splitter -->
+                <div id="right-area" class="mu-splitter-last">
+
+                  <div class="mu-splitter-wrap vertical">
+                    <div class="mu-splitter-first" style="height:400px;">
+                      <div class="mu-panel">
+                        <div class="mu-panel-head on-toggle">
+                          <button type="button" class="mu-btn mu-btn-icon toggleClose fl" ng-show="panel.isLeftClose" ng-click="toggleLeftPanel()"><i class="mu-icon-img angle-double-right"></i></button>
+                          <h3 class="mu-title">SQL 입력창</h3>
+                          <div class="mu-hgroup fr">
+                            <div class="mu-item-group">
+                              <div class="mu-checkbox mu-checkbox">
+                                <input id="ckb0" checked="checked" type="checkbox">
+                                <label for="ckb0">전체 실행</label>
+                              </div>
+                            </div>
+                            <div class="mu-item-group mr20">
+                              <div class="mu-checkbox mu-checkbox">
+                                <input id="ckb1" checked="checked" type="checkbox">
+                                <label for="ckb1">개발자 모드</label>
+                              </div>
+                            </div>
+                            <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only btnPlay"><i class="mu-icon-img play"></i></button>
+                            <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only btnTrash"><i class="mu-icon-img trash"></i></button>
+                          </div>
+                        </div>
+                        <div class="mu-panel-body">Panel Body</div>
+                      </div>
+                    </div>
+                    <div class="mu-splitter"></div>
+                    <div class="mu-splitter-last" style="height:calc(100% - 403px);">
+                      <div id="results" class="mu-panel">
+                        <div class="button-group">
+                          <button type="button" class="mu-btn mu-btn-icon db-button download ng-binding" title="쿼리 결과 다운로드" ng-click="downloadExcelFile(activeResult)">
+                            <i class="mu-icon download"></i>
+                            다운로드
+                          </button>
+                          <button type="button" class="mu-btn mu-btn-icon db-button close-all ng-binding" ng-click="closeAll()" ng-show="activeTab === resultTab">
+                            <i class="fa fa-close fa-fw" aria-hidden="true"></i>
+                            전부 닫기
+                          </button>
+                        </div>
+                        <ul class="mu-panel-head mu-tab mu-tab-pill">
+                          <li class="active"><a href="">실행결과</a></li>
+                          <li><a href="">조회이력</a></li>
+                        </ul>
+                        <div class="mu-panel-body mu-tab-body">
+                          <div class="mu-tabCont">
+                            <ul class="mu-tab mu-hgroup">
+                              <li class="active"><button type="button" class="mu-btn mu-btn-icon"><span>Result 1</span></button><a href=""><i class="mu-icon cancel"></i></a></li>
+                              <li><button type="button" class="mu-btn mu-btn-icon"><span>Result 2</span></button><a href=""><i class="mu-icon cancel"></i></a></li>
+                              <li class="disabled"><button type="button" class="mu-btn mu-btn-icon"><span>Result 3</span></button><a href=""><i class="mu-icon cancel"></i></a></li>
+                            </ul>
+                            <div class="mu-tab-body">
+                              <div class="mu-tabCont">
+                                <div class="infoWrap">
+                                  <dl class="result mu-ellipsis">
+                                    <dt class="success">SUCCESS</dt><!-- <dt class="error">ERROR</dt> -->
+                                  </dl>
+                                  <dl class="query mu-ellipsis">
+                                    <dt>SQL</dt>
+                                    <dd>select * from t_temp: 7.14:10 51 iris-s01 openypn[1552]: Control Channel: TSv1, cipher TLSv1/SSLv3</dd>
+                                  </dl>
+                                  <dl class="duration mu-ellipsis">
+                                    <dt>실행시간</dt>
+                                    <dd>0:00:00.031</dd>
+                                  </dl>
+                                  <dl class="executed mu-ellipsis">
+                                    <dt>실행시각</dt>
+                                    <dd>2015-03-13 15:13:21</dd>
+                                  </dl>
+                                  <dl class="record mu-ellipsis">
+                                    <dt>레코드 수</dt>
+                                    <dd>3 of 200000</dd>
+                                  </dl>
+                                </div>
+                                <table class="mu-grid mu-grid-strip mu-grid-sort mu-grid-hover">
+                                  <thead>
+                                    <tr>
+                                      <th class="none">NO</th>
+                                      <th>ABN</th>
+                                      <th>MID</th>
+                                      <th>NAME</th>
+                                      <th>DESC</th>
+                                      <th>GROUP</th>
+                                      <th>MODE</th>
+                                      <th>PID</th>
+                                      <th>CMD</th>
+                                      <th>STA</th>
+                                      <th>TIME</th>
+
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr class="selected">
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr class="selected">
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>OK</td>
+                                      <td>17000</td>
+                                      <td>NSD</td>
+                                      <td>node selector</td>
+                                      <td>Master</td>
+                                      <td>NML</td>
+                                      <td>13143</td>
+                                      <td>ACT</td>
+                                      <td>ACT</td>
+                                      <td>2016-04-04 10:50:54</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- //DB Table -->
+
+      </div>
+    </section>
+  </div>
+
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/common.js"></script>
+
+  <ul class="mu-popup-menu" style="display: inline-block; position: absolute; z-index: 10001; left: 203px; top: 271px;">
+    <li>
+      <a>
+        <i class="mu-icon fileText"></i>
+        <span>테이블 상세</span>
+      </a>
+    </li>
+    <li>
+      <a>
+        <i class="mu-icon setting"></i>
+        <span>데이터 보관기간 수정</span>
+      </a>
+    </li>
+    <li class="disabled">
+      <a>
+        <i class="mu-icon edit"></i>
+        <span>SQL 생성: Drop</span>
+      </a>
+    </li>
+    <li>
+      <a>
+        <i class="mu-icon edit"></i>
+        <span>SQL 생성: Select</span>
+      </a>
+    </li>
+    <li>
+      <a>
+        <i class="mu-icon edit"></i>
+        <span>SQL 생성: Insert</span>
+      </a>
+    </li>
+    <li>
+      <a>
+        <i class="mu-icon edit"></i>
+        <span>SQL 생성: Update</span>
+      </a>
+    </li>
+    <li>
+      <a>
+        <i class="mu-icon edit"></i>
+        <span>SQL 생성: Delete</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="mu-dialog mu-formbox-inner" style="top:90px;left:300px;width:400px;">
+    <div class="mu-dialog-head">
+      <span class="mu-title">데이터 보관기간 수정</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non">
+        <i class="mu-icon-img"></i>
+      </button>
+    </div>
+    <div class="mu-dialog-body">
+      <table class="mu-formbox">
+        <colgroup>
+          <col width="120px">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>메모리 보관기간</th>
+            <td>
+              <div class="mu-item-group">
+                <input type="number" value="60" class="mu-input">
+                <span>분</span>
+                <label tooltip-placement="right">
+                  <i class="mu-icon-img help"></i>
+                </label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              디스크 보관기간
+            </th>
+            <td>
+              <div class="mu-item-group">
+                <input type="number" value="43200" class="mu-input">
+                <span>분</span>
+                <label tooltip-placement="right">
+                  <i class="mu-icon-img help"></i>
+                </label>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mu-dialog-foot">
+      <button type="button" class="mu-btn btnDelete">닫기</button>
+      <button type="button" class="mu-btn btnApply fr">생성</button>
+    </div>
+  </div>
+
+  <!-- 안내 툴팁 -->
+  <div class="mu-tooltip right" style="position: absolute; z-index: 1000001; max-width: 400px;top:120px;left:550px;">
+    <div class="arrow"></div>
+    <div class="mu-tooltip-inner">
+      <span>램에 보관하는 시간 [global 테이블일 경우 0], 단위 분</span>
+    </div>
+  </div>
+  <div class="mu-tooltip right" style="position: absolute; z-index: 1000001; max-width: 400px;top:160px;left:550px;">
+    <div class="arrow"></div>
+    <div class="mu-tooltip-inner">
+      <span>디스크에 보관하는 시간 [global 테이블일 경우 0], 단위 분</span>
+    </div>
+  </div>
+  <!-- // 안내 툴팁 -->
+  <script src="../../dist-db-browser/js/db-browser.bundle.js"></script>
+</body>
+
+</html>

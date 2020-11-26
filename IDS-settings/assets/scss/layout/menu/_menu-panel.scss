@@ -1,0 +1,187 @@
+// #menu-panel {
+//   position: absolute;
+//   float: left;
+//   top: 37px;
+//   left: 17px;
+// }
+
+// .fade-enter-active,
+// .fade-leave-active {
+//   transition: opacity 0.4s;
+// }
+
+// .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+//   opacity: 0;
+// }
+
+.bx-menu {
+  position: absolute;
+  top: 37px;
+  left: 11px;
+  z-index: 1000;
+  min-width: 800px;
+  line-height: 1.5;
+  margin-right: 12px;
+  padding: 6px 10px;
+  border: 1px solid $nav-01;
+  border-top: none;
+  background-color: $ui-01;
+  -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bx-menu .mn:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.bx-menu .mn {
+  padding: 4px;
+  cursor: default;
+}
+
+.bx-menu .mn + .mn {
+  border-top: 1px solid #e5e5e5;
+}
+
+.bx-menu .mn:first-child {
+  border-top: none;
+}
+
+.bx-menu .mn li {
+  vertical-align: top;
+}
+
+.bx-menu .mn a:hover {
+  color: $brand-02;
+}
+
+.bx-menu .mn.active {
+  border-radius: 4px;
+  border: 1px solid darken($hover-ui-accent, 16%);
+  background-color: $hover-ui-accent;
+}
+
+.bx-menu .mn.active + div {
+  border-top: none;
+}
+
+.bx-menu .mn.active .mn-2dep {
+  background-color: $ui-01;
+}
+
+.bx-menu .mn-1dep,
+.bx-menu .mn-2dep {
+  float: left;
+}
+
+.bx-menu .mn-1dep,
+.bx-menu .mn-1dep span,
+.bx-menu .mn-2dep > li > span,
+.bx-menu .mn-2dep > li > strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: $text-01;
+}
+
+.bx-menu .mn-1dep:lang(en),
+.bx-menu .mn-1dep a:lang(en),
+.bx-menu .mn-2dep > li > a:lang(en),
+.bx-menu .mn-2dep > li > strong:lang(en) {
+  letter-spacing: -0.04em;
+}
+
+.bx-menu .mn-2dep > li > span:hover,
+.bx-menu .mn-2dep > li.active > span,
+.bx-menu .mn-2dep > li.active > strong > span {
+  color: $brand-02;
+}
+
+.bx-menu .mn-2dep > li > strong > span {
+  cursor: default;
+}
+
+.bx-menu .mn-1dep {
+  width: 174px;
+  padding: 6px 0 6px 19px;
+  color: $brand-03;
+  cursor: inherit;
+}
+
+.bx-menu .mn-1dep:lang(en) {
+  width: 200px;
+}
+
+.bx-menu .mn-1dep span {
+  vertical-align: middle;
+  color: $brand-03;
+}
+
+.bx-menu .mn-1dep span:lang(en) {
+  letter-spacing: -0.04em;
+}
+
+.bx-menu .mn-2dep {
+  width: calc(100% - 174px);
+  padding: 6px 24px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.bx-menu .mn-2dep:lang(en) {
+  width: calc(100% - 200px);
+}
+
+.bx-menu .mn-2dep > li:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.bx-menu .mn-2dep > li {
+  display: inline-block;
+  min-width: 160px;
+}
+
+.bx-menu .mn-2dep > li:lang(en) {
+  min-width: 180px;
+}
+
+.bx-menu .mn-2dep > li + li {
+  margin-left: 8px;
+}
+
+.bx-menu .mn-3dep {
+  color: $text-01;
+  letter-spacing: -0.08em;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+.mn-3dep > li:hover span,
+.mn-3dep > li.active span {
+  color: $brand-02;
+}
+
+.bx-menu .mn-3dep li {
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.bx-menu .mn-3dep span {
+  display: inline-block;
+  height: 16px;
+  line-height: 16px;
+}
+
+.bx-menu .mn-2dep > li > span.cannot-connect,
+.bx-menu .mn-3dep > li > span.cannot-connect {
+  color: $disabled-02;
+  cursor: not-allowed;
+}
+
+.bx-menu .mui-message {
+  text-align: center;
+  margin: 12px;
+}

@@ -1,0 +1,204 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("notification") {
+  .mui-noti {
+    @include font-family;
+    @include typescale("zeta");
+    color: $text-01;
+    overflow-y: auto;
+    max-height: calc(100% - 16px);
+    width: calc(100% - 16px);
+    text-align: left;
+    margin: 8px;
+    padding: 8px;
+    font-size: 0;
+    position: relative;
+  }
+
+  .mui-noti-icon {
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+
+  .mui-noti-cont {
+    padding: 8px;
+    line-height: 1.25;
+  }
+
+  .mui-noti-text {
+    @include font-size("12");
+    display: inline-block;
+    width: calc(100% - 26px);
+    vertical-align: top;
+    font-weight: 500;
+  }
+
+  .mui-noti-closable .mui-noti-text {
+    width: calc(100% - 26px - 8px);
+  }
+
+  .mui-noti-closable .mui-noti-close-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    height: 16px;
+    width: 12px;
+    position: absolute;
+    top: 7px;
+    right: 8px;
+  }
+
+  .mui-noti-closable .mui-noti-close-icon {
+    font-size: 12px;
+  }
+
+  .mui-noti-title {
+    margin-right: 4px;
+    font-weight: 700;
+  }
+
+  .mui-noti-title-block {
+    display: block;
+  }
+
+  .mui-noti-inline {
+    margin: 0;
+    width: 100%;
+  }
+
+  .mui-noti-info {
+    background: $status-info-bg;
+    border: 1px solid darken($status-info-bg, 12%);
+  }
+
+  .mui-noti-info .mu-icon.info {
+    color: $status-info-symbol;
+  }
+
+  .mui-noti-info .mui-noti-close-icon {
+    color: $status-info-close;
+  }
+
+  .mui-noti-info .mui-noti-close-btn:hover .mui-noti-close-icon,
+  .mui-noti-info .mui-noti-close-btn:active .mui-noti-close-icon {
+    color: darken($status-info-close, 25%);
+  }
+
+  .mui-noti-error {
+    background: $status-danger-bg;
+    border: 1px solid darken($status-danger-bg, 12%);
+  }
+
+  .mui-noti-error .mu-icon.err-circle {
+    color: $status-danger-symbol;
+  }
+
+  .mui-noti-error .mui-noti-close-icon {
+    color: $status-danger-close;
+  }
+
+  .mui-noti-error .mui-noti-close-btn:hover .mui-noti-close-icon,
+  .mui-noti-error .mui-noti-close-btn:active .mui-noti-close-icon {
+    color: darken($status-danger-close, 25%);
+  }
+
+  .mui-noti-warning {
+    background: $status-warning-bg;
+    border: 1px solid darken($status-warning-bg, 12%);
+  }
+
+  .mui-noti-warning .mu-icon.exclamation {
+    color: $status-warning-symbol;
+  }
+
+  .mui-noti-warning .mui-noti-close-icon {
+    color: $status-warning-close;
+  }
+
+  .mui-noti-warning .mui-noti-close-btn:hover .mui-noti-close-icon,
+  .mui-noti-warning .mui-noti-close-btn:active .mui-noti-close-icon {
+    color: darken($status-warning-close, 25%);
+  }
+
+  .mui-noti-success {
+    background: $status-success-bg;
+    border: 1px solid darken($status-success-bg, 12%);
+  }
+
+  .mui-noti-success .mu-icon.check-circle {
+    color: $status-success-symbol;
+  }
+
+  .mui-noti-success .mui-noti-close-icon {
+    color: $status-success-close;
+  }
+
+  .mui-noti-success .mui-noti-close-btn:hover .mui-noti-close-icon,
+  .mui-noti-success .mui-noti-close-btn:active .mui-noti-close-icon {
+    color: darken($status-success-close, 25%);
+  }
+
+  .mui-noti-info .mui-noti-title {
+    color: $status-info-symbol;
+  }
+
+  .mui-noti-error .mui-noti-title {
+    color: $status-danger-symbol;
+  }
+
+  .mui-noti-warning .mui-noti-title {
+    color: $status-warning-symbol;
+  }
+
+  .mui-noti-success .mui-noti-title {
+    color: $status-success-symbol;
+  }
+
+  .mui-noti-title + .mui-noti-text-list {
+    margin-top: 6px;
+  }
+
+  .mui-noti-text-list {
+    @include font-size("12");
+    padding-left: $spacing-sm;
+  }
+
+  .mui-noti-text-list li {
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .mui-noti-text-list li::before {
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    content: "";
+    width: 3px;
+    height: 3px;
+    background-color: $text-02;
+    border-radius: 50%;
+  }
+
+  .mui-noti.mui-noti-lg {
+    padding: 12px;
+  }
+
+  .mui-noti.mui-noti-lg .mui-noti-title {
+    @include font-size("14");
+    display: inline-block;
+  }
+
+  .mui-noti.mui-noti-lg > .mu-icon {
+    @include font-size("16");
+    display: inline-block;
+    margin-top: -1px;
+  }
+}

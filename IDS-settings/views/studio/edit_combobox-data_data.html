@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>보고서-새보고서</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+	<script src="js/html5.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+  <link rel="stylesheet" type="text/css" href="../../dist-sherman/css/sherman/style.min.css">
+</head>
+
+<body>
+  <!-- 보고서 -->
+  <div class="mu-container">
+    <section>
+      <div class="mu-content content-re data-add report">
+        <div class="mu-panel">
+          <div class="mu-panel-head">
+            <div class="mu-hgroup fl report-title">
+              <h3 class="mu-title report-title-text">보고서</h3>
+              <!-- 수정 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon-img edit-title"></i>
+              </button>
+              <!-- 수정 확인 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon check"></i>
+              </button>
+            </div>
+            <div class="mu-hgroup fr">
+              <button type="button" class="mu-btn mu-btn-default">목록으로</button>
+              <button type="button" class="mu-btn mu-btn-default">보기</button>
+              <button type="button" class="mu-btn mu-btn-primary">저장</button>
+              <button type="button" class="mu-btn mu-btn-secondary">새로저장</button>
+              <button type="button" class="mu-btn mu-btn-default" disabled="disabled">접근 권한</button>
+              <button type="button" class="mu-btn mu-btn-danger">전체삭제</button>
+            </div>
+          </div>
+          <div class="mu-panel-body">
+            <!-- 상단 메뉴바 -->
+            <div class="report-menubar">
+              <div class="mu-selectbox width150">
+                <button class="mu-value">전체</button>
+                <ul class="mu-list">
+                  <li>전체</li>
+                  <li class="active">데이터 시각화</li>
+                  <li>양식</li>
+                  <li>버튼</li>
+                  <li>기타</li>
+                </ul>
+              </div>
+              <ul class="report-menu">
+                <li><i class="mu-icon-img area"></i></li>
+                <li><i class="mu-icon-img map"></i></li>
+                <li><i class="mu-icon-img text"></i></li>
+                <li><i class="mu-icon-img rectangle"></i></li>
+                <li><i class="mu-icon-img ellipse"></i></li>
+                <li><i class="mu-icon-img date"></i></li>
+                <li><i class="mu-icon-img renew"></i></li>
+                <li><i class="mu-icon-img list"></i></li>
+                <li><i class="mu-icon-img tab"></i></li>
+                <li><i class="mu-icon-img url"></i></li>
+                <li><i class="mu-icon-img image"></i></li>
+                <li><i class="mu-icon-img html"></i></li>
+                <li><i class="mu-icon-img input"></i></li>
+                <li class="active"><i class="mu-icon-img combo-box"></i></li>
+                <li><i class="mu-icon-img check-and-radio"></i></li>
+                <li><i class="mu-icon-img datetime"></i></li>
+                <li><i class="mu-icon-img hidden-input"></i></li>
+                <li><i class="mu-icon-img button"></i></li>
+              </ul>
+              <div class="fr">
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">전체변수명보기</span>
+                </button>
+              </div>
+            </div>
+            <!-- //상단 메뉴바 -->
+            <div class="report-cont">
+              <div class="report-canvas">
+                <!-- canvas 영역 -->
+                <div class="canvas" style="width:1920px;height:1080px;">
+
+                  <!-- 기본 셀렉트박스 -->
+                  <div class="box tool combo-box active" style="top:50px;left:50px;width:180px;height:26px;">
+                    <div class="mu-selectbox">
+                      <button class="mu-value">값 01</button>
+                      <ul class="mu-list">
+                        <li class="active">값 01</li>
+                        <li>값 02</li>
+                        <li>값 03</li>
+                      </ul>
+                    </div>
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                  <!-- // 기본 셀렉트박스 -->
+
+                  <!-- 수정 가능한 콤보박스 -->
+                  <div class="box tool combo-box active" style="top:50px;left:350px;width:180px;height:26px;">
+                    <div class="mu-selectbox on with-input">
+                      <button class="mu-btn-icon">
+                      </button>
+                      <input type="text" class="mu-value" value="값 01 입력한 검색어">
+                      <ul class="mu-list">
+                        <li class="active">값 01</li>
+                        <li>값 02 <span class="highlight">입력한 검색어</span></li>
+                        <li>값 03</li>
+                      </ul>
+                    </div>
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                  <!-- //수정 가능한 콤보박스 -->
+                </div>
+                <!-- //canvas 영역 -->
+              </div>
+              <div class="report-panel">
+                <ul class="mu-tab">
+                  <li class="active"><a href="">데이터</a></li>
+                  <li><a href="">속성</a></li>
+                  <li><a href="">객체</a></li>
+                </ul>
+                <!-- 리스트 설정 - 데이터 -->
+                <div class="mu-tab-body">
+                  <div class="mu-tabCont" style="display:;">
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">데이터 설정 방법</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-item-group">
+                          <div class="mu-radio">
+                            <input type="radio" id="r1_1" name="radio1" checked="checked">
+                            <label for="r1_1">데이터</label>
+                          </div>
+                          <div class="mu-radio">
+                            <input type="radio" id="r1_2" name="radio1">
+                            <label for="r1_2">사용자 정의</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- [개발] 데이터 설정방법: 데이터 일 경우 해당 mu-panel만 사용-->
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">데이터 연결</span>
+                      </div>
+                      <div class="mu-panel-body trigger-list">
+                        <div class="mu-grid-header">
+                          <button class="mu-btn mu-btn-icon" type="button">
+                            <i class="mu-icon setting"></i><span>설정</span>
+                          </button>
+                          <div class="mu-checkbox ml-auto">
+                            <input type="checkbox" id="ckb1">
+                            <label for="ckb1">데이터 누적</label>
+                          </div>
+                        </div>
+                        <table class="mu-grid mu-grid-border mu-grid-strip select-width100">
+                          <colgroup>
+                            <col>
+                            <col width="104">
+                            <col>
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th>대상 오브젝트 ID</th>
+                              <th>이벤트</th>
+                              <th>삭제</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td colspan="3">
+                                <div class="mui-message info">
+                                  <i class="mu-icon info"></i><span class="mui-message-text">데이터가 없습니다</span>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div>
+                    </div>
+                    <!-- [개발] 데이터 설정방법: 사용자 정의일 경우 아래 모두 사용-->
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">데이터 베이스 설정</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <ul class="db-type">
+                          <li class="active">
+                            <button type="button" class="mu-btn btn-item data-model">데이터 모델</button>
+                          </li>
+                          <li>
+                            <button type="button" class="mu-btn btn-item db-general">DSMS</button>
+                          </li>
+                          <li>
+                            <button type="button" class="mu-btn btn-item db-sms">SMS</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>                    
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">데이터 모델</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-selectbox">
+                          <button class="mu-value">list default</button>
+                          <ul class="mu-list">
+                            <li value="1">list option1</li>
+                            <li value="1">list option1</li>
+                          </ul>
+                        </div>
+                        <div class="mu-selectbox disabled">
+                          <!-- 공유받은 시각화 일때 -->
+                          <button class="mu-value">list default</button>
+                          <ul class="mu-list">
+                            <li value="1">list option1</li>
+                            <li value="1">list option1</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">시간 설정</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-datepicker">
+                          <input type="text" class="mu-input" value="최근 1분" readonly="readonly">
+                          <button class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img date2"></i></button>
+                        </div>
+                        <div class="mu-datepicker disabled">
+                          <!-- 공유받은 시각화 일때 -->
+                          <input type="text" class="mu-input" value="최근 1분" readonly="readonly">
+                          <button class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img date2"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">검색어</span>
+                        <div class="fr bx-btn-toggle">
+                          <label>
+                              이벤트 재 검색
+                          </label>
+                          <button type="button" class="btn-toggle" ng-class="{on: formData.selLayer.isAutoRun}" ng-click="toggleAutoRun()"></button>
+                        </div>
+                      </div>
+                      <div class="mu-panel-body">
+                        <textarea class="mu-area">DELTA_DN_LINK_DATA_SIZE=100</textarea>
+                        <textarea class="mu-area" disabled="disabled">DELTA_DN_LINK_DATA_SIZE=100</textarea>
+                        <!-- 공유받은 시각화 일때 -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //리스트 설정 - 데이터 -->
+                <div class="bx-btn-play">
+                  <button type="button" class="mu-btn btn-play"><i class="mu-icon-img play2"></i>실행</button>
+                  <!--<button type="button" class="mu-btn btn-play"><i class="mu-icon-img stop3"></i>중지</button>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <link href="js/jquery-ui.css" rel="stylesheet">
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="../../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

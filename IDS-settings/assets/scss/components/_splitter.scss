@@ -1,0 +1,121 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("splitter") {
+  .mu-splitter-wrap {
+    height: 100%;
+  }
+
+  .mu-splitter-wrap:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: "";
+  }
+
+  .mu-splitter-wrap > * {
+    height: 100%;
+  }
+
+  .mu-splitter-first {
+    float: left;
+    overflow: auto;
+    -webkit-user-select: text;
+  }
+
+  .mu-splitter {
+    float: left;
+    width: 7px;
+    cursor: w-resize;
+    border-right: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+    background-color: $ui-01;
+  }
+
+  .mu-splitter:before {
+    display: block;
+    width: 3px;
+    height: 100%;
+    margin-left: 1px;
+    content: "";
+    border-right: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+    background-color: $ui-01;
+  }
+
+  .mu-splitter-last {
+    overflow: auto;
+    padding: 0;
+  }
+
+  .mu-splitter-wrap .mu-splitter {
+    width: 4px;
+    border: 0;
+    border-right: 1px solid #d0d0d0;
+    text-align: center;
+    position: relative;
+    z-index: 8;
+    background: transparent;
+    margin-left: -3px;
+  }
+
+  .mu-splitter-wrap .mu-splitter:before {
+    width: 9px;
+    height: 62px;
+    border: 0;
+    margin: 0 0 0 -1px;
+    background: url("#{$img-path}/common/icon_splitter_h.png") no-repeat 0 0;
+    position: relative;
+    top: calc(50% - 31px);
+  }
+
+  .mu-splitter-wrap.vertical > * {
+    width: 100%;
+    height: auto;
+  }
+
+  .mu-splitter-wrap.vertical .mu-splitter-first {
+    float: none;
+  }
+
+  .mu-splitter-wrap.vertical .mu-splitter {
+    float: none;
+    width: 100%;
+    height: 5px;
+    cursor: s-resize;
+    border-bottom: 1px solid #d0d0d0;
+    text-align: center;
+    position: relative;
+    z-index: 8;
+    // ---------------------------
+    // cluster.scss에서 이동한 속성
+    background: transparent;
+    margin-left: 0;
+    // ---------------------------
+  }
+
+  .mu-splitter-wrap.vertical .mu-splitter:before {
+    width: 62px;
+    height: 9px;
+    border: 0;
+    margin: -2px auto 0;
+    background: url("#{$img-path}/common/icon_splitter.png") no-repeat 0 0;
+    // ---------------------------
+    // cluster.scss에서 이동한 속성
+    top: 0;
+    // ---------------------------
+  }
+
+  .mu-splitter-wrap .mu-splitter:hover:before,
+  .mu-splitter-wrap.vertical .mu-splitter:active:before,
+  .mu-splitter-wrap.vertical .mu-splitter:hover:before,
+  .mu-splitter-wrap.vertical .mu-splitter:active:before {
+    background-position: 0 -9px;
+  }
+}

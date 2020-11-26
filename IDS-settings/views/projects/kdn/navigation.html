@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IRIS Navigation</title>
+  <!-- <link rel="stylesheet" type="text/css" href="../../../assets/projects/kdn-m/css/brick/style.min.css"> -->
+  <!-- <link rel="stylesheet" href="../../../assets/projects/kdn-v/css/brick/style.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="../../../dist-kdn-m/css/kdn-m/style.min.css" />
+</head>
+
+<body>
+  <!-- 2019 리뉴얼 메뉴바 구조 -->
+  <!-- 메인 -->
+  <!-- 서브 화면일 경우 has-button-group 클래스 추가 -->
+  <div id="menu-bar">
+    <!-- 기본 솔루션 로고, 메뉴 패스 -->
+    <div class="button-group-wrap">
+      <div class="button-group">
+        <div id="logo">
+          <img src="../../../dist-kdn-m/images/login/logo_primary-main.png" alt="" class="logo_primary-main">
+          <img src="../../../dist-kdn-m/images/login/logo_primary-sub.png" alt="" class="logo_primary-sub">
+        </div>
+        <div id="menu-path">대시보드</div>
+      </div>
+    </div>
+    <!-- 2depth 메뉴 리스트 -->
+    <ul id="menu-button-group">
+      <li class="active">
+        <span></span>
+      </li>
+    </ul>
+    <!-- 컨트롤 버튼 -->
+    <div class="menu-control">
+      <div class="control-group menu-selected" id="control-group">
+        <button type="button" id="status" class="control-btn">Status</button>
+        <button type="button" id="menu" class="control-btn">Menu</button>
+        <!-- 컨트롤 버튼: 도움말 다운로드 -->
+        <a href="" class="control-btn"><i class="mu-icon question-circle"></i></a>
+        <!-- 컨트롤 버튼: 알람 -->
+        <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non mu-btn-alarm control-btn" id="icobtn_alarm">
+          <span class="pulse-animation"></span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="mu-icon-svg alarm" width="16" height="18" viewBox="0 0 16 18">
+            <path id="alarm"
+              d="M1064.65,16.484c-2.28-4.991-3.47-6.886-7.19-6.808-1.33.028-1.01-.977-2.02-0.6s-0.15.94-1.18,1.8c-2.9,2.423-2.63,4.665-1.29,10.007,0.57,2.25-1.37,2.361-.6,4.542,0.56,1.591,4.68,2.256,9.02.616s7.09-4.9,6.53-6.487C1067.16,17.381,1065.61,18.585,1064.65,16.484Zm-3.73,8.221c-3.88,1.465-7.07.6-7.2,0.22-0.24-.661,1.25-2.864,5.69-4.539s6.91-1.054,7.17-.316C1066.73,20.506,1064.8,23.24,1060.92,24.7Zm-1.25-3.554a14.676,14.676,0,0,0-4.35,2.431,3.033,3.033,0,0,0,3.05.286c1.53-.576,2.46-1.9,2.09-2.955,0-.013-0.01-0.024-0.01-0.037Q1060.075,21,1059.67,21.151Z"
+              transform="translate(-1052 -9)"></path>
+          </svg>
+        </button>
+        <!-- 컨트롤 버튼: 개인 정보 -->
+        <div class="control-item mu-btn-dropdown">
+          <button type="button" class="mu-btn mu-btn-icon btn-user">
+            <i class="mu-icon user"></i><span>userid</span><i class="mu-icon dropdown"></i>
+          </button>
+          <ul class="mu-list" style="display: none;">
+            <li data-v-d2a2b7f2="">개인 설정</li>
+            <li data-v-d2a2b7f2="">로그아웃</li>
+          </ul>
+        </div>
+        <!-- 컨트롤 버튼: 언어 설정 -->
+        <div class="mui-select-second-wrap control-item locale-selector">
+          <i class="mu-icon globe"></i>
+          <div class="mui-select-second">
+            <select name="" id="" class="mui-select-second-input">
+              <option value="" class="mui-select-second-option">대한민국</option>
+              <option value="" class="mui-select-second-option">English</option>
+            </select>
+            <i class="mu-icon dropdown"></i>
+          </div>
+        </div>
+        <!-- 컨트롤 버튼: 로그아웃 -->
+        <button type="button" class="control-btn logout"><i class="mu-icon logout"></i></button>
+      </div>
+      <!-- 보조 로고 -->
+      <div class="logo-secondary-wrap">
+        <div class="logo-secondary main"></div>
+        <div class="logo-secondary sub"></div>
+      </div>
+    </div>
+    <!-- 메뉴 패널 -->
+    <div id="menu-panel" class="bx-menu" style="display: none;">
+      <!-- 메뉴 -->
+      <div class="mn">
+        <strong class="mn-1dep">
+          <span class="point">대시보드</span>
+        </strong>
+      </div>
+      <!-- 메뉴 -->
+      <div class="mn">
+        <strong class="mn-1dep">
+          <span>분석 및 시각화</span>
+        </strong>
+        <ul class="mn-2dep">
+          <li>
+            <span class="point">검색</span>
+          </li>
+          <li>
+            <span class="point">피벗 분석</span>
+          </li>
+        </ul>
+      </div>
+      <!-- 메뉴 -->
+      <div class="mn active">
+        <strong class="mn-1dep">
+          <span>관리</span>
+        </strong>
+        <ul class="mn-2dep">
+          <li>
+            <span>데이터 모델</span>
+          </li>
+          <li class="active">
+            <span class="point">분석 템플릿</span>
+          </li>
+          <li>
+            <span class="point">작업 조회</span>
+          </li>
+        </ul>
+      </div>
+      <!-- 메뉴 -->
+      <div class="mn">
+        <!-- 1 Depth -->
+        <strong class="mn-1dep">
+          <span>클러스터 관리</span>
+        </strong>
+        <!-- 2 Depth -->
+        <ul class="mn-2dep">
+          <li>
+            <span>대시보드</span>
+          </li>
+          <li>
+            <span>DB</span>
+            <!-- 3 Depth -->
+            <ul class="mn-3dep">
+              <li><span>세션관리</span></li>
+              <li><span>프로세스 관리</span></li>
+              <li><span>테이블 스페이스(사용률 조회)</span></li>
+              <li><span>테이블 스페이스(사용률 현황)</span></li>
+            </ul>
+          </li>
+          <li>
+            <span>시스템</span>
+            <ul class="mn-3dep">
+              <li><span>노드 정보 조회</span></li>
+              <li><span>장애 정보 조회</span></li>
+              <li><span>리소스 사용률(모니터링)</span></li>
+              <li><span>리소스 사용률(이력 조회)</span></li>
+            </ul>
+          </li>
+          <li>
+            <span>관리</span>
+            <ul class="mn-3dep">
+              <li><span>사용자</span></li>
+              <li><span>권한</span></li>
+              <li><span>테이블 권한</span></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 서브 -->
+  <!-- 서브 화면일 경우 has-button-group 클래스 추가 -->
+  <div id="menu-bar" class="has-button-group" style="position: absolute; top: 50px; width: 100%;">
+    <!-- 기본 솔루션 로고, 메뉴 패스 -->
+    <div class="button-group-wrap">
+      <div class="button-group on">
+        <div id="logo">
+          <img src="../../../dist-kdn-m/images/login/logo_primary-main.png" alt="" class="logo_primary-main">
+          <img src="../../../dist-kdn-m/images/login/logo_primary-sub.png" alt="" class="logo_primary-sub">
+        </div>
+        <div id="menu-path">관리 > 분석 템플릿</div>
+      </div>
+    </div>
+    <!-- 2depth 메뉴 리스트 -->
+    <ul id="menu-button-group">
+      <li>
+        <span>데이터 모델</span>
+      </li>
+      <li class="active">
+        <span>분석 템플릿</span>
+      </li>
+      <li>
+        <span>작업 조회</span>
+      </li>
+    </ul>
+    <!-- 컨트롤 버튼 -->
+    <div class="menu-control">
+      <div class="control-group menu-selected" id="control-group">
+        <button type="button" id="status" class="control-btn">Status</button>
+        <button type="button" id="menu" class="control-btn">Menu</button>
+        <!-- 컨트롤 버튼: 도움말 다운로드 -->
+        <a href="" class="control-btn"><i class="mu-icon question-circle"></i></a>
+        <!-- 컨트롤 버튼: 알람 -->
+        <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non mu-btn-alarm control-btn" id="icobtn_alarm">
+          <span class="pulse-animation"></span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="mu-icon-svg alarm" width="16" height="18" viewBox="0 0 16 18">
+            <path id="alarm"
+              d="M1064.65,16.484c-2.28-4.991-3.47-6.886-7.19-6.808-1.33.028-1.01-.977-2.02-0.6s-0.15.94-1.18,1.8c-2.9,2.423-2.63,4.665-1.29,10.007,0.57,2.25-1.37,2.361-.6,4.542,0.56,1.591,4.68,2.256,9.02.616s7.09-4.9,6.53-6.487C1067.16,17.381,1065.61,18.585,1064.65,16.484Zm-3.73,8.221c-3.88,1.465-7.07.6-7.2,0.22-0.24-.661,1.25-2.864,5.69-4.539s6.91-1.054,7.17-.316C1066.73,20.506,1064.8,23.24,1060.92,24.7Zm-1.25-3.554a14.676,14.676,0,0,0-4.35,2.431,3.033,3.033,0,0,0,3.05.286c1.53-.576,2.46-1.9,2.09-2.955,0-.013-0.01-0.024-0.01-0.037Q1060.075,21,1059.67,21.151Z"
+              transform="translate(-1052 -9)"></path>
+          </svg>
+        </button>
+        <!-- 컨트롤 버튼: 개인 정보 -->
+        <div class="control-item mu-btn-dropdown">
+          <button type="button" class="mu-btn mu-btn-icon btn-user">
+            <i class="mu-icon user"></i><span>userid</span><i class="mu-icon dropdown"></i>
+          </button>
+          <ul class="mu-list" style="display: none;">
+            <li data-v-d2a2b7f2="">개인 설정</li>
+            <li data-v-d2a2b7f2="">로그아웃</li>
+          </ul>
+        </div>
+        <!-- 컨트롤 버튼: 언어 설정 -->
+        <div class="mui-select-second-wrap control-item locale-selector">
+          <i class="mu-icon globe"></i>
+          <div class="mui-select-second">
+            <select name="" id="" class="mui-select-second-input">
+              <option value="" class="mui-select-second-option">대한민국</option>
+              <option value="" class="mui-select-second-option">English</option>
+            </select>
+            <i class="mu-icon dropdown"></i>
+          </div>
+        </div>
+        <!-- 컨트롤 버튼: 로그아웃 -->
+        <button type="button" class="control-btn logout"><i class="mu-icon logout"></i></button>
+      </div>
+      <!-- 보조 로고 -->
+      <div class="logo-secondary-wrap">
+        <div class="logo-secondary main"></div>
+        <div class="logo-secondary sub"></div>
+      </div>
+    </div>
+    <!-- 메뉴 패널 -->
+    <div id="menu-panel" class="bx-menu">
+      <!-- 메뉴 -->
+      <div class="mn">
+        <strong class="mn-1dep">
+          <span class="point">대시보드</span>
+        </strong>
+      </div>
+      <!-- 메뉴 -->
+      <div class="mn">
+        <strong class="mn-1dep">
+          <span>분석 및 시각화</span>
+        </strong>
+        <ul class="mn-2dep">
+          <li>
+            <span class="point">검색</span>
+          </li>
+          <li>
+            <span class="point">피벗 분석</span>
+          </li>
+        </ul>
+      </div>
+      <!-- 메뉴 -->
+      <div class="mn active">
+        <strong class="mn-1dep">
+          <span>관리</span>
+        </strong>
+        <ul class="mn-2dep">
+          <li>
+            <span>데이터 모델</span>
+          </li>
+          <li class="active">
+            <span class="point">분석 템플릿</span>
+          </li>
+          <li>
+            <span class="point">작업 조회</span>
+          </li>
+        </ul>
+      </div>
+      <!-- 메뉴 -->
+      <div class="mn">
+        <!-- 1 Depth -->
+        <strong class="mn-1dep">
+          <span>클러스터 관리</span>
+        </strong>
+        <!-- 2 Depth -->
+        <ul class="mn-2dep">
+          <li>
+            <span>대시보드</span>
+          </li>
+          <li>
+            <span>DB</span>
+            <!-- 3 Depth -->
+            <ul class="mn-3dep">
+              <li><span>세션관리</span></li>
+              <li><span>프로세스 관리</span></li>
+              <li><span>테이블 스페이스(사용률 조회)</span></li>
+              <li><span>테이블 스페이스(사용률 현황)</span></li>
+            </ul>
+          </li>
+          <li>
+            <span>시스템</span>
+            <ul class="mn-3dep">
+              <li><span>노드 정보 조회</span></li>
+              <li><span>장애 정보 조회</span></li>
+              <li><span>리소스 사용률(모니터링)</span></li>
+              <li><span>리소스 사용률(이력 조회)</span></li>
+            </ul>
+          </li>
+          <li>
+            <span>관리</span>
+            <ul class="mn-3dep">
+              <li><span>사용자</span></li>
+              <li><span>권한</span></li>
+              <li><span>테이블 권한</span></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- iframe을 감싸는 요소 -->
+  <div id="content-view"></div>
+  <script src="../../../dist-kdn-m/js/kdn-m-brick.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>보고서-새보고서 Portlet(load)</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+      <script src="js/html5.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  <link rel="stylesheet" type="text/css" href="../../dist-sherman/css/sherman/style.min.css" />
+</head>
+
+<body>
+  <!-- 보고서 -->
+  <div class="mu-container">
+    <section>
+      <div class="mu-content content-re data-add report">
+        <div class="mu-panel">
+          <div class="mu-panel-head">
+            <div class="mu-hgroup fl report-title">
+              <h3 class="mu-title report-title-text">보고서</h3>
+              <!-- 수정 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon-img edit-title"></i>
+              </button>
+              <!-- 수정 확인 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon check"></i>
+              </button>
+            </div>
+            <div class="mu-hgroup fr">
+              <button type="button" class="mu-btn mu-btn-default">
+                목록으로
+              </button>
+              <button type="button" class="mu-btn mu-btn-default">
+                보기
+              </button>
+              <button type="button" class="mu-btn mu-btn-primary">
+                저장
+              </button>
+              <button type="button" class="mu-btn mu-btn-secondary">
+                새로저장
+              </button>
+              <button type="button" class="mu-btn mu-btn-default" disabled="disabled">
+                접근 권한
+              </button>
+              <button type="button" class="mu-btn mu-btn-danger">
+                전체삭제
+              </button>
+            </div>
+          </div>
+          <div class="mu-panel-body">
+            <!-- 상단 메뉴바 -->
+            <div class="report-menubar">
+              <div class="mu-selectbox width150">
+                <button class="mu-value">전체</button>
+                <ul class="mu-list">
+                  <li>전체</li>
+                  <li class="active">데이터 시각화</li>
+                  <li>양식</li>
+                  <li>버튼</li>
+                  <li>기타</li>
+                </ul>
+              </div>
+              <ul class="report-menu">
+                <li><i class="mu-icon-img map"></i></li>
+                <li><i class="mu-icon-img text"></i></li>
+                <li><i class="mu-icon-img rectangle"></i></li>
+                <li><i class="mu-icon-img ellipse"></i></li>
+                <li><i class="mu-icon-img date"></i></li>
+                <li><i class="mu-icon-img renew"></i></li>
+                <li><i class="mu-icon-img list"></i></li>
+                <li><i class="mu-icon-img tab"></i></li>
+                <li><i class="mu-icon-img url"></i></li>
+                <li><i class="mu-icon-img image"></i></li>
+                <li><i class="mu-icon-img html"></i></li>
+                <li><i class="mu-icon-img input"></i></li>
+                <li><i class="mu-icon-img combo-box"></i></li>
+                <li><i class="mu-icon-img check-and-radio"></i></li>
+                <li><i class="mu-icon-img datetime"></i></li>
+                <li><i class="mu-icon-img hidden-input"></i></li>
+                <li><i class="mu-icon-img button"></i></li>
+                <li><i class="mu-icon-img rest-api"></i></li>
+                <li><i class="mu-icon-img popup-object"></i></li>
+                <li class="active"><i class="mu-icon-img portlet"></i></li>
+              </ul>
+              <div class="fr">
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">객체 목록</span>
+                </button>
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">히든 객체 숨기기</span>
+                </button>
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">전체변수명</span>
+                </button>
+              </div>
+            </div>
+            <!-- //상단 메뉴바 -->
+            <div class="report-cont">
+              <!-- canvas 영역 -->
+              <div class="report-canvas">
+                <div class="canvas" style="width: 1920px; height: 1080px;">
+                  <!-- 보고서 가져오기(포틀릿) -->
+                  <p style="position: absolute; top: 50px; left: 50px;">보고서 가져오기(포틀릿) 초기 상태</p>
+                  <div class="box tool portlet-object" style="top: 70px; left: 50px; width: 200px; height: 50px;">
+                    <div class="portlet-object-text">
+                      <span>Portlet</span>
+                    </div>
+                    <button class="mu-btn mu-btn-icon" type="button">
+                      <!-- <i class="iriscon new-window"></i> -->
+                      <i class="mu-icon-img new-open-new"></i>
+                    </button>
+                  </div>
+                  <!-- 박스 클릭 시 사이즈 조절 박스 활성화 -->
+                  <div class="box tool portlet-object active" style="top: 70px; left: 260px; width: 200px; height: 50px;">
+                    <div class="portlet-object-text">
+                      <span>Portlet</span>
+                    </div>
+                    <button class="mu-btn mu-btn-icon" type="button">
+                      <!-- <i class="iriscon new-window"></i> -->
+                      <i class="mu-icon-img new-open-new"></i>
+                    </button>
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+
+                  <p style="position: absolute; top: 50px; left: 470px;">불러오기로 데이터에 연결된 상태<span class="highlight">.loaded</span></p>
+                  <!-- NOTE: 데이터 연결시 loaded 클래스 추가 -->
+                  <div class="box tool portlet-object loaded" style="top: 70px; left: 470px; width: 200px; height: 50px;">
+                    <div class="portlet-object-text">
+                      <span>PortletPortletPortletPortletPortlet</span>
+                    </div>
+                    <button class="mu-btn mu-btn-icon" type="button">
+                      <!-- <i class="iriscon new-window"></i> -->
+                      <i class="mu-icon-img new-open-new"></i>
+                    </button>
+                  </div>
+
+                  <p style="position: absolute; top: 50px; left: 680px;">보고서 연결 실패 상태</p>
+                  <!-- NOTE: 데이터 연결시 loaded 클래스 추가 -->
+                  <div class="box tool portlet-object loaded" style="top: 70px; left: 680px; width: 200px; height: 50px;">
+                    <div class="mui-message error">
+                      <i class="mu-icon err-circle"></i><span class="mui-message-text">보고서가 존재하지 않습니다. 보고서가 존재하지
+                        않습니다.</span>
+                    </div>
+                  </div>
+
+                  <p style="position: absolute; top: 50px; left: 890px;">연결 상태 <span class="highlight">.connected</span></p>
+                  <div class="box tool portlet-object connected" style="top: 70px; left: 890px; width: 200px; height: 50px;">
+                    <div class="portlet-object-text">
+                      <span>Portlet</span>
+                    </div>
+                    <button class="mu-btn mu-btn-icon" type="button">
+                      <!-- <i class="iriscon new-window"></i> -->
+                      <i class="mu-icon-img new-open-new"></i>
+                    </button>
+                  </div>
+
+                  <p style="position: absolute; top: 50px; left: 1100px;">미연결 상태 <span class="highlight">.unconnected</span></p>
+                  <div class="box tool portlet-object unconnected" style="top: 70px; left: 1100px; width: 200px; height: 50px;">
+                    <div class="portlet-object-text">
+                      <span>Portlet</span>
+                    </div>
+                    <button class="mu-btn mu-btn-icon" type="button">
+                      <!-- <i class="iriscon new-window"></i> -->
+                      <i class="mu-icon-img new-open-new"></i>
+                    </button>
+                  </div>
+                  <!-- // 보고서 가져오기(포틀릿) -->
+                </div>
+              </div>
+              <!-- canvas 영역 -->
+              <!-- 우측 패널 -->
+              <div class="report-panel">
+                <ul class="mu-tab">
+                  <li class="active"><a>불러오기</a></li>
+                  <li><a>속성</a></li>
+                  <li><a>객체</a></li>
+                </ul>
+                <!-- 불러오기 -->
+                <!-- NOTE: 실행 버튼이 없는 경우 발생하는 여백 제거 위해 without-btn-play 클래스 추가 -->
+                <div class="mu-tab-body without-btn-play">
+                  <div class="mu-tabCont has-split">
+                    <!-- 보고서 설정 방법 -->
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">보고서 설정 방법</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-item-group">
+                          <div class="mu-radio">
+                            <input type="radio" id="r1_1" name="radio1" checked="checked" />
+                            <label for="r1_1">목록 선택</label>
+                          </div>
+                          <div class="mu-radio">
+                            <input type="radio" id="r1_2" name="radio1" />
+                            <label for="r1_2">변수/값 입력</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //보고서 설정 방법 -->
+                    <!-- 저장된 보고서 -->
+                    <div class="mu-panel mu-formbox-inner split-10">
+                      <!-- 저장된 시각화 검색 -->
+                      <div class="mu-panel-head">
+                        <span class="mu-title">저장된 보고서</span>
+                        <button class="mu-btn mu-btn-icon">
+                          <i class="mu-icon refresh"></i>
+                        </button>
+                        <div class="mu-input-icon">
+                          <input type="text" class="mu-input" placeholder="검색" />
+                          <i class="mu-icon search"></i>
+                        </div>
+                      </div>
+                      <!-- // 저장된 시각화 검색 -->
+                      <!-- 저장된 시각화 목록 -->
+                      <div class="mu-panel-body report-list">
+                        <table class="mu-grid mu-grid-border mu-grid-strip tr-pointer">
+                          <colgroup>
+                            <col width="100" />
+                            <col />
+                            <col width="50" />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th>유형</th>
+                              <th>이름</th>
+                              <th>보기</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="tl">토폴로지</td>
+                              <td class="tl">visual name</td>
+                              <td>
+                                <button class="mu-btn mu-btn-icon" type="button">
+                                  <i class="iriscon new-window"></i>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="tl">Topology</td>
+                              <td class="tl">loooooooooooong visual name</td>
+                              <td>
+                                <button class="mu-btn mu-btn-icon" type="button">
+                                  <i class="iriscon new-window"></i>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr class="selected">
+                              <td class="tl">보고서</td>
+                              <td class="tl">visual name</td>
+                              <td>
+                                <button class="mu-btn mu-btn-icon" type="button">
+                                  <i class="iriscon new-window"></i>
+                                </button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- // 저장된 시각화 목록 -->
+                    </div>
+                    <!-- //저장된 보고서 -->
+                    <!-- 보고서 실행 방법 설정 -->
+                    <div class="mu-panel split-6">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">데이터 실행방법 설정</span>
+                      </div>
+                      <div class="mu-panel-body trigger-list">
+                        <div class="mu-grid-header">
+                          <button class="mu-btn mu-btn-icon" type="button">
+                            <i class="mu-icon setting"></i><span>트리거 설정</span>
+                          </button>
+                          <div class="mu-checkbox ml-auto">
+                            <input type="checkbox" id="ckb1" />
+                            <label for="ckb1">자동 실행</label>
+                          </div>
+                        </div>
+                        <table class="mu-grid mu-grid-border mu-grid-strip select-width100">
+                          <colgroup>
+                            <col />
+                            <col width="104" />
+                            <col />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th>대상 오브젝트 ID</th>
+                              <th>이벤트</th>
+                              <th>삭제</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="tl">button01 button01 button01</td>
+                              <td>Data Received</td>
+                              <td>
+                                <button class="mu-btn-icon" type="button" title="삭제">
+                                  <i class="mu-icon cancel"></i>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="tl">button01</td>
+                              <td>Data Received</td>
+                              <td>
+                                <button class="mu-btn-icon" type="button" title="삭제">
+                                  <i class="mu-icon cancel"></i>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="tl">button01</td>
+                              <td>Data Received</td>
+                              <td>
+                                <button class="mu-btn-icon" type="button" title="삭제">
+                                  <i class="mu-icon cancel"></i>
+                                </button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- //보고서 실행 방법 설정 -->
+                  </div>
+                </div>
+                <!-- //불러오기 -->
+              </div>
+              <!-- //우측 패널 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 객체 목록 다이얼로그 -->
+  <div class="mu-dialog mui-dialog-sm mui-dialog-slim" style="position: absolute; top: 230px; right: 320px;">
+    <div class="mu-dialog-head">
+      <span class="title">객체 목록<span class="subtitle">전체 7개</span></span>
+      <div class="mu-selectbox mu-selectbox-right on">
+        <button class="mu-value">전체</button>
+        <ul class="mu-list w-auto">
+          <li>
+            <div class="mu-checkbox indeterminate">
+              <input type="checkbox" id="ckb_select-all" checked />
+              <label for="ckb_select-all"></label>
+            </div>
+            전체
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_select0" checked />
+              <label for="ckb_select0"></label>
+            </div>
+            <i class="object-id data-component"></i>데이터객체
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_chart" checked />
+              <label for="ckb_chart"></label>
+            </div>
+            <i class="object-id area"></i>차트
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_select1" />
+              <label for="ckb_select1"></label>
+            </div>
+            <i class="object-id map"></i>지도
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_select2" />
+              <label for="ckb_select2"></label>
+            </div>
+            <i class="object-id text"></i>라벨
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_select3" />
+              <label for="ckb_select3"></label>
+            </div>
+            <i class="object-id rectangle"></i>사각형
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_ellipse" />
+              <label for="ckb_ellipse"></label>
+            </div>
+            <i class="object-id ellipse"></i>원
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_img" />
+              <label for="ckb_img"></label>
+            </div>
+            <i class="object-id image"></i>이미지
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_input" />
+              <label for="ckb_input"></label>
+            </div>
+            <i class="object-id input"></i>텍스트 입력
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_textarea" />
+              <label for="ckb_textarea"></label>
+            </div>
+            <i class="object-id textarea"></i>텍스트 상자
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_combobox" />
+              <label for="ckb_combobox"></label>
+            </div>
+            <i class="object-id combo-box"></i>콤보박스
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_check-and-radio" />
+              <label for="ckb_check-and-radio"></label>
+            </div>
+            <i class="object-id check-and-radio"></i>체크박스/라디오버튼
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_datetime" />
+              <label for="ckb_datetime"></label>
+            </div>
+            <i class="object-id datetime"></i>날짜/시간 선택
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_date" />
+              <label for="ckb_date"></label>
+            </div>
+            <i class="object-id date"></i>기간 설정
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_editor" />
+              <label for="ckb_editor"></label>
+            </div>
+            <i class="object-id editor"></i>에디터
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_button" />
+              <label for="ckb_button"></label>
+            </div>
+            <i class="object-id button"></i>버튼
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_tab" />
+              <label for="ckb_tab"></label>
+            </div>
+            <i class="object-id tab"></i>탭
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_list" />
+              <label for="ckb_list"></label>
+            </div>
+            <i class="object-id list"></i>목록
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_tag" />
+              <label for="ckb_tag"></label>
+            </div>
+            <i class="object-id tag"></i>태그 목록
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_renew" />
+              <label for="ckb_renew"></label>
+            </div>
+            <i class="object-id renew"></i>주기설정
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_url" />
+              <label for="ckb_url"></label>
+            </div>
+            <i class="object-id url"></i>외부 URL
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_html" />
+              <label for="ckb_html"></label>
+            </div>
+            <i class="object-id html"></i>Html 뷰어
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_popup-object" />
+              <label for="ckb_popup-object"></label>
+            </div>
+            <i class="object-id popup-object"></i>보고서 가져오기(팝업)
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_portlet" />
+              <label for="ckb_portlet"></label>
+            </div>
+            <i class="object-id portlet"></i>보고서 가져오기(포틀릿)
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_hidden-input" />
+              <label for="ckb_hidden-input"></label>
+            </div>
+            <i class="object-id hidden-input"></i>텍스트 변환
+          </li>
+          <li>
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_select4" />
+              <label for="ckb_select4"></label>
+            </div>
+            <i class="object-id fileupload"></i>파일업로드
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="mu-dialog-body">
+      <!-- 축소/확장 가능한 리스트 유형 -->
+      <div class="mu-list-collapse">
+        <div class="mu-list-header-box">
+          <div class="mu-list-header">
+            <div class="mu-checkbox">
+              <input type="checkbox" id="ckb_1" />
+              <label for="ckb_1"></label>
+            </div>
+            <button class="mu-btn mu-btn-link mu-btn-xs" type="button">
+              <span class="mu-btn-link-box">선택객체삭제</span>
+            </button>
+            <button class="mu-btn mu-btn-link mu-btn-xs ml-auto" type="button">
+              <span class="mu-btn-link-box">연결정보 전체접기</span>
+            </button>
+          </div>
+        </div>
+        <div class="mu-list-box">
+          <ul class="mu-list">
+            <li class="mu-list-item">
+              <div class="mu-list-summary">
+                <div class="mu-checkbox">
+                  <input type="checkbox" id="ckb_list1" />
+                  <label for="ckb_list1"></label>
+                </div>
+                <i class="object-id mu-icon-img data-component"></i>
+                <span class="mu-list-item-text">Common data-123</span>
+                <button class="mu-btn mu-btn-link mu-btn-xs ml-auto" type="button">
+                  <span class="mu-btn-link-box">연결정보확인(1)<i class="iriscon angle-bottom-thin"></i></span>
+                </button>
+              </div>
+              <!-- 하위 세부정보 리스트 -->
+              <ul class="mu-list-details">
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &larr; 실행
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &rarr; 데이터연결
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &rarr; data connected data connected
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127Button-127Button-127Button-127Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+              <!-- // 하위 세부정보 리스트 -->
+            </li>
+            <li class="mu-list-item">
+              <div class="mu-list-summary">
+                <div class="mu-checkbox">
+                  <input type="checkbox" id="ckb_list2" />
+                  <label for="ckb_list2"></label>
+                </div>
+                <i class="object-id mu-icon-img hidden-input"></i>
+                <span class="mu-list-item-text">Hidden-124</span>
+                <button class="mu-btn mu-btn-link mu-btn-xs ml-auto" type="button">
+                  <span class="mu-btn-link-box">연결정보확인(1)<i class="iriscon angle-bottom-thin"></i></span>
+                </button>
+              </div>
+              <!-- 하위 세부정보 리스트 -->
+              <ul class="mu-list-details">
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &larr; 실행
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &rarr; 데이터연결
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &rarr; data connected data connected
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127Button-127Button-127Button-127Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+              <!-- // 하위 세부정보 리스트 -->
+            </li>
+            <li class="mu-list-item">
+              <div class="mu-list-summary">
+                <div class="mu-checkbox">
+                  <input type="checkbox" id="ckb_list3" />
+                  <label for="ckb_list3"></label>
+                </div>
+                <i class="object-id mu-icon-img datetime"></i>
+                <span class="mu-list-item-text">Date time picker-125</span>
+                <button class="mu-btn mu-btn-link mu-btn-xs ml-auto" type="button">
+                  <span class="mu-btn-link-box">연결정보확인(1)<i class="iriscon angle-bottom-thin"></i></span>
+                </button>
+              </div>
+              <!-- 하위 세부정보 리스트 -->
+              <ul class="mu-list-details">
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &larr; 실행
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &rarr; 데이터연결
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &rarr; data connected data connected
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127Button-127Button-127Button-127Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+              <!-- // 하위 세부정보 리스트 -->
+            </li>
+            <li class="mu-list-item is-selected">
+              <div class="mu-list-summary">
+                <div class="mu-checkbox">
+                  <input type="checkbox" id="ckb_list4" checked />
+                  <label for="ckb_list4"></label>
+                </div>
+                <i class="object-id mu-icon-img input"></i>
+                <span class="mu-list-item-text">Input-126</span>
+                <button class="mu-btn mu-btn-link mu-btn-xs ml-auto" type="button">
+                  <span class="mu-btn-link-box">연결정보확인(1)<i class="iriscon angle-bottom-thin"></i></span>
+                </button>
+              </div>
+              <!-- 하위 세부정보 리스트 -->
+              <ul class="mu-list-details">
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &larr; 실행
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &rarr; 데이터연결
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &rarr; data connected data connected
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127Button-127Button-127Button-127Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+              <!-- // 하위 세부정보 리스트 -->
+            </li>
+            <li class="mu-list-item">
+              <div class="mu-list-summary">
+                <div class="mu-checkbox">
+                  <input type="checkbox" id="ckb_list5" />
+                  <label for="ckb_list5"></label>
+                </div>
+                <i class="object-id mu-icon-img button"></i>
+                <span class="mu-list-item-text">Button-127</span>
+                <button class="mu-btn mu-btn-link mu-btn-xs ml-auto" type="button">
+                  <span class="mu-btn-link-box">연결정보확인(1)<i class="iriscon angle-bottom-thin"></i></span>
+                </button>
+              </div>
+              <!-- 하위 세부정보 리스트 -->
+              <ul class="mu-list-details">
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &larr; 실행
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &rarr; 데이터연결
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &rarr; data connected data connected
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127Button-127Button-127Button-127Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+              <!-- // 하위 세부정보 리스트 -->
+            </li>
+            <li class="mu-list-item">
+              <div class="mu-list-summary">
+                <div class="mu-checkbox">
+                  <input type="checkbox" id="ckb_list6" />
+                  <label for="ckb_list6"></label>
+                </div>
+                <i class="object-id mu-icon-img area"></i>
+                <span class="mu-list-item-text">Chart-128</span>
+                <button class="mu-btn mu-btn-link mu-btn-xs ml-auto" type="button">
+                  <span class="mu-btn-link-box">연결정보확인(1)<i class="iriscon angle-bottom-thin"></i></span>
+                </button>
+              </div>
+              <!-- 하위 세부정보 리스트 -->
+              <ul class="mu-list-details">
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &larr; 실행
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &rarr; 데이터연결
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &rarr; data connected data connected
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127Button-127Button-127Button-127Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+              <!-- // 하위 세부정보 리스트 -->
+            </li>
+            <li class="mu-list-item">
+              <div class="mu-list-summary">
+                <div class="mu-checkbox">
+                  <input type="checkbox" id="ckb_list7" />
+                  <label for="ckb_list7"></label>
+                </div>
+                <i class="object-id mu-icon-img popup-object"></i>
+                <span class="mu-list-item-text">Report-popup 129</span>
+                <button class="mu-btn mu-btn-link mu-btn-xs ml-auto" type="button">
+                  <span class="mu-btn-link-box">연결정보확인(1)<i class="iriscon angle-bottom-thin"></i></span>
+                </button>
+              </div>
+              <!-- 하위 세부정보 리스트 -->
+              <ul class="mu-list-details">
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &larr; 실행
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &rarr; 데이터연결
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="mu-list-details-item">
+                  <div class="mu-list-details-item__trigger">
+                    &rarr; data connected data connected
+                  </div>
+                  <div class="mu-list-details-item__component">
+                    <i class="object-id button"></i>Button-127Button-127Button-127Button-127Button-127
+                  </div>
+                  <div class="mu-list-details-item__toolbar">
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="선택 이동">
+                      <i class="mu-icon arrow-right"></i>
+                    </button>
+                    <button class="mu-btn mu-btn-icon mu-btn-xs" type="button" title="연결 해제">
+                      <i class="mu-icon unlink"></i>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+              <!-- // 하위 세부정보 리스트 -->
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- // 축소/확장 가능한 리스트 유형 -->
+    </div>
+    <div class="mu-dialog-foot">
+      <button type="button" class="mu-btn mu-btn-default fr">닫기</button>
+    </div>
+  </div>
+  <!-- // 객체 목록 다이얼로그 -->
+
+  <link href="js/jquery-ui.css" rel="stylesheet" />
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="../../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

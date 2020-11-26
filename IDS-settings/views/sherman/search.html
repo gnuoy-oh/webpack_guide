@@ -1,0 +1,968 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>검색</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+  <script src="js/html5.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="../../dist-sherman/css/sherman/style.min.css" />
+</head>
+
+<body>
+  <div class="mu-container mu-scroll-h">
+    <section>
+      <div class="log-cont content-re">
+        <div class="mu-tab-body filter-wrap fl">
+          <button type="button" class="mu-btn mu-btn-icon toggleClose"><i class="mu-icon-img angle-double-left"></i></button><!-- 필드 닫기 버튼 -->
+          <ul class="mu-tab">
+            <li><a href="">데이터모델</a></li>
+            <li><a href="">시간</a></li>
+            <li class="active"><a href="">크기</a></li>
+          </ul>
+          <!-- 크기 -->
+          <div class="mu-tabCont">
+            <div class="mu-panel">
+              <div class="mu-panel-head"> 
+                <span class="mu-title">검색 결과 개수</span>
+              </div>
+              <div class="mu-panel-body">
+                <div class="mu-hgroup">
+                  <span>최대</span>
+                  <div class="mui-input-number">
+                    <input class="mui-input-number-input" placeholder="200" type="number">
+                  </div>
+                  <span>개</span>
+                </div>
+              </div>
+            </div>
+            <div class="mu-panel">
+              <div class="mu-panel-head">
+                <span class="mu-title">통계 결과 개수</span>
+              </div>
+              <div class="mu-panel-body">
+                <div class="mu-hgroup">
+                  <span>최대</span>
+                  <div class="mui-input-number">
+                    <input class="mui-input-number-input" placeholder="200" type="number">
+                  </div>
+                  <span>개</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // 크기 -->
+          <!-- 데이터모델 -->
+          <div class="mu-tabCont">
+            <div class="mu-hgroup">
+              <div class="mu-selectbox ml10" 
+              >
+              <button class="mu-value">데이터모델뷰</button>
+              <ul class="mu-list">
+                <li value="1">데이터모델</li>
+                <li value="1">데이터모델뷰</li>
+              </ul>
+              </div>
+
+              <div class="mu-input-icon">
+                <input type="text" class="mu-input data-input" placeholder="search">
+                <i class="mu-icon search data-search-icon"></i>
+              </div>
+
+              <button class="mu-btn mu-btn-icon" type="button">
+              <!-- 선택된 정렬이 있을 시 dataalign 대신 선택된 아이콘 class명으로 변경-->
+                <i class="mu-icon-img dataalign"></i>
+              <!-- 선택된 정렬이 있을 시 dataalign 대신 선택된 아이콘 class명으로 변경-->
+              </button>
+              <!-- on 클래스 삭제시 드롭다운 닫힘 -->
+              <ul class="mu-list on">
+                    <li value="1" class="mt5">
+                      <i class="mu-icon-img dataalign-nameup mr5"></i>
+                      <span class="dataalign-text">모델명 오름차순</span>
+                    </li>
+                    <li value="1">
+                      <i class="mu-icon-img dataalign-namedown mr5"></i>
+                      <span class="dataalign-text">모델명 내림차순</span>
+                    </li>
+                    <li value="1">
+                      <i class="mu-icon-img dataalign-timeup mr5"></i>
+                      <span class="dataalign-text">생성일 오름차순</span>
+                    </li>
+                    <li value="1" class="mb5">
+                      <i class="mu-icon-img dataalign-timedown mr5"></i>
+                      <span class="dataalign-text">생성일 내림차순</span>
+                    </li>
+              </ul>
+              <!-- on 클래스 삭제시 드롭다운 닫힘 -->
+            </div>
+
+            <div class="mu-splitter-wrap vertical">
+              <div class="mu-splitter-first" style="height:278px;">
+                <table class="mu-grid mu-grid-hover tbl-model-picker">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="model-name">
+                          <i class="mu-icon-img datamodelview"></i>
+                          데이터모델뷰 <span class="model-owner">(sun)</span>
+                        </div>
+                        <div class="model-sampling">
+                          <button class="mu-btn mu-btn-icon" type="button">
+                            <i class="mu-icon-img sample"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="mu-icon-img datamodel3"></i>
+                        <div class="model-name data-model-title" title="데이터모델">데이터모델</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="mu-icon-img datamodelview-share"></i>
+                        <div class="model-name data-model-title" title="데이터모델뷰공유 데이터모델뷰공유 데이터모델뷰공유">데이터모델뷰공유 데이터모델뷰공유 데이터모델뷰공유</div>
+                      </td>
+                    </tr>
+                    <tr class="selected">
+                      <td>
+                        <i class="mu-icon-img datamodel3-share"></i>
+                        <div class="model-name data-model-title" title="데이터모델">데이터모델공유</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="mu-icon-img datamodelview"></i>
+                        <div class="model-name data-model-title" title="데이터모델뷰">데이터모델뷰</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="mu-icon-img datamodel3"></i>
+                        <div class="model-name data-model-title"title="데이터모델 데이터모델 데이터모델 데이터모델">데이터모델 데이터모델 데이터모델 데이터모델</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="mu-icon-img datamodelview-share"></i>
+                        <div class="model-name data-model-title" title="데이터모델뷰">데이터모델뷰공유</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="mu-icon-img datamodel3-share"></i>
+                        <div class="model-name data-model-title" title="데이터모델">데이터모델공유</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="mu-icon-img datamodelview"></i>
+                        <div class="model-name data-model-title" title="데이터모델뷰">데이터모델뷰</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="mu-icon-img datamodel3"></i>
+                        <div class="model-name data-model-title" title="데이터모델">데이터모델</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="mu-icon-img datamodelview"></i>
+                        <div class="model-name data-model-title" title="데이터모델뷰">데이터모델뷰</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="mu-icon-img datamodel3"></i>
+                        <div class="model-name data-model-title" title="데이터모델">데이터모델</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="mu-splitter"></div>
+              <div class="mu-splitter-last" style="height:calc(100% - 281px);">
+                <!-- 필드 -->
+                <div class="mu-panel-head">
+                  <h3 class="mu-type-omega">필드</h3>
+                  <div class="mu-input-icon">
+                    <input type="text" class="mu-input column-input" placeholder="search">
+                    <i class="mu-icon search column-search-icon"></i>
+                  </div>
+                  <div class="bx-btn-toggle">
+                    <label>데이터 개수</label>
+                    <button type="button" class="btn-toggle on"></button>
+                  </div>
+                </div>
+                <div class="mu-panel-body">
+                  <div class="bx-btn">
+                    <button type="button" class="mu-btn btn-txt">모두 선택</button>
+                    <button type="button" class="mu-btn btn-txt">선택 해제</button>
+                  </div>
+                  <ul class="mu-slide-menu">
+                    <li class="active">
+                      <div class="bx-item disabled">
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb0" disabled>
+                          <label for="ckb0"></label>
+                        </div>
+                        <i class="mu-icon-img time"></i><span>date_mdaydate_mdaydate_mdaydate_mdaydate_mdaydate_mdaydate_mdaydate_mday</span><span class="num">(99999)</span>
+                      </div>
+                    </li>
+                    <li class="active">
+                      <div class="bx-item">
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb1">
+                          <label for="ckb1"></label>
+                        </div>
+                        <i class="mu-icon-img time"></i><span>date_minute</span><span class="num">(999)</span>
+                      </div>
+                    </li>
+                    <li class="active">
+                      <div class="bx-item">
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb2">
+                          <label for="ckb2"></label>
+                        </div>
+                        <i class="mu-icon-img time"></i><span>date_month</span>
+                      </div>
+                    </li>
+                    <li class="active">
+                      <div class="bx-item">
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb3">
+                          <label for="ckb3"></label>
+                        </div>
+                        <i class="mu-icon-img number"></i><span>dest_port</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb4">
+                          <label for="ckb4"></label>
+                        </div>
+                        <i class="mu-icon-img number"></i><span>index</span>
+                      </div>
+                    </li>
+                    <li class="active">
+                      <div class="bx-item">
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb5">
+                          <label for="ckb5"></label>
+                        </div>
+                        <i class="mu-icon-img at"></i><span>level</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb6">
+                          <label for="ckb6"></label>
+                        </div>
+                        <i class="mu-icon-img at"></i><span>date_hou</span>
+                      </div>
+                    </li>
+                    <li class="active">
+                      <div class="bx-item">
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb7">
+                          <label for="ckb7"></label>
+                        </div>
+                        <i class="mu-icon-img at"></i><span>date_wday</span>
+                      </div>
+                    </li>
+                    <li class="active">
+                      <div class="bx-item">
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb7">
+                          <label for="ckb7"></label>
+                        </div>
+                        <i class="mu-icon-img at"></i><span>date_wday</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb7">
+                          <label for="ckb7"></label>
+                        </div>
+                        <i class="mu-icon-img at"></i><span>date_wday</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb7">
+                          <label for="ckb7"></label>
+                        </div>
+                        <i class="mu-icon-img at"></i><span>date_wday</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb7">
+                          <label for="ckb7"></label>
+                        </div>
+                        <i class="mu-icon-img at"></i><span>date_wday</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb7">
+                          <label for="ckb7"></label>
+                        </div>
+                        <i class="mu-icon-img at"></i><span>date_wday</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb7">
+                          <label for="ckb7"></label>
+                        </div>
+                        <i class="mu-icon-img at"></i><span>date_wday</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bx-item">
+                        <div class="mu-checkbox">
+                          <input type="checkbox" id="ckb7">
+                          <label for="ckb7"></label>
+                        </div>
+                        <i class="mu-icon-img at"></i><span>date_wday</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // 데이터모델 -->
+          <!-- 시간 -->
+          <div class="mu-tabCont" style="display:none">
+            <div class="mu-accordion">
+              <div class="mu-accordion-item accordion-item1">
+                <div class="mu-accordion-head active"><a href=""><span>미리 설정</span></a></div>
+                <div class="mu-accordion-body">
+                  <a href="" class="all-time">전체시간</a>
+                  <ul class="time">
+                    <li><a href="">최근 15분</a></li>
+                    <li><a href="">최근 60분</a></li>
+                    <li><a href="">최근 4시간</a></li>
+                    <li><a href="">최근 24시간</a></li>
+                    <li><a href="">최근 7일</a></li>
+                  </ul>
+                  <ul class="day">
+                    <li><a href="">오늘</a></li>
+                    <li><a href="">어제</a></li>
+                    <li><a href="">이번주</a></li>
+                    <li><a href="">이전주</a></li>
+                    <li><a href="">이번달</a></li>
+                    <li><a href="">이전달</a></li>
+                    <li><a href="">이번분기</a></li>
+                    <li><a href="">이전분기</a></li>
+                    <li><a href="">이번년도</a></li>
+                    <li><a href="">이전년도</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mu-accordion-item accordion-item2">
+                <div class="mu-accordion-head active"><a href=""><span>날짜 및 시간 범위</span></a></div>
+                <div class="mu-accordion-body">
+                  <div class="bx-date active">
+                    <em class="tit">시작</em>
+                    <div class="bx-textarea">
+                      <textarea class="num">2017/03/22<br>16:23:31</textarea>
+                    </div>
+                  </div>
+                  <span class="bx-arrow"></span>
+                  <div class="bx-date">
+                    <em class="tit">종료</em>
+                    <div class="mu-checkbox">
+                      <input id="ckbtbl1" type="checkbox">
+                      <label for="ckbtbl1">현재시간</label>
+                    </div>
+                    <div class="bx-textarea">
+                      <textarea class="num">2017/03/22<br>16:23:31</textarea>
+                    </div>
+                  </div>
+                  <div class="bx-datepicker active">
+                    <div id="datepicker"></div>
+                    <div class="item-group">
+                      <i class="mu-icon-img clock"></i>
+                      <div class="mu-selectbox mu-select-sm">
+                        <button class="mu-value">16</button>
+                        <ul class="mu-list">
+                          <li value="1">list option1</li>
+                        </ul>
+                      </div>
+                      <span class="dot">:</span>
+                      <div class="mu-selectbox mu-select-sm">
+                        <button class="mu-value">23</button>
+                        <ul class="mu-list">
+                          <li value="1">list option1</li>
+                        </ul>
+                      </div>
+                      <span class="dot">:</span>
+                      <div class="mu-selectbox mu-select-sm">
+                        <button class="mu-value">31</button>
+                        <ul class="mu-list">
+                          <li value="1">list option1</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="bx-msg-err"><i class="mu-icon err"></i>끝 날짜가 시작 날짜보다 이전 날짜입니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // 시간 -->
+          <!-- 검색진행중 왼쪽 선택 디세이블기능 -->
+          <div class="seaching-select-disable" style="display: none;"></div>
+          <!-- // 검색진행중 왼쪽 선택 디세이블기능 -->
+        </div>
+        <div class="result-wrap fl">
+          <!-- p-top-1/p-top-2/p-top-3 -->
+          <!-- <div class="bx-warning p-top-1">
+            <div class="in">
+              <p><i class="mu-icon err"></i>현재 설정으로 진행하면 작업이 오래 걸릴 수 있습니다. partition 개수: 53,123</p>
+              <button class="btn-close"></button>
+            </div>
+          </div> -->
+          <!-- 검색결과 화면 -->
+          <div class="mu-row on-toggle">
+            <!-- <button type="button" class="mu-btn mu-btn-icon toggleClose fl"><i class="mu-icon angle-double-right"></i></button> -->
+            <div class="mu-col">
+              <div class="searchWrap pb28">
+                <!-- 결과값이 나올때 추가 : pb28 -->
+                <div class="txt-info">
+                  <p><i class="mu-icon-img datamodel2"></i><span class="off-txt">데이터모델</span></p>
+                  <p><i class="mu-icon-img datamodel2"></i><span class="off-txt">이번년도</span></p>
+                  <p><span>검색결과 : 200개</span></p>
+                  <p><span class="off-txt">통계결과 : 200개</span></p>
+                  </p>
+                </div>
+                <div class="mu-search-group mu-more-item">
+                  <div class="mu-search-item">
+                    <div class="textareaBg">
+                      <textarea class="mu-area" placeholder="여기에 검색을 입력하십시오..."></textarea>
+                    </div>
+                    <button class="mu-btn mu-btn-icon mu-btn-bg-non btn-reset"><i class="mu-icon-img reset"></i></button>
+                    <!-- 2016-12-08 MOD -->
+                    <div class="searchAssistantWrap">
+                      <!-- 이전검색 닫을때 class="assistantClose" 추가 / 검색어 추천 사용 안할시 class="assistantNone" 추가 -->
+                      <div class="searchAssistant">
+                        <div class="searchList">
+                          <dl>
+                            <dt>이전 검색 내역</dt>
+                            <dd><a href="">* | stats max(HR), min(h) by by TEAMID</a></dd>
+                            <dd><a href="">* | stats max(HR), min(h) by by TEAMID</a></dd>
+                            <dd><a href="">* | stats max(HR), min(h) by by TEAMID* | stats max(HR), min(h) by by
+                                TEAMID</a></dd>
+                            <dd><a href="">* | stats max(HR), min(h) by by TEAMID</a></dd>
+                          </dl>
+                        </div>
+                        <div class="searchStat">
+                          <dl>
+                            <dt>Stats</dt>
+                            <dd>각종 <span class="highlight">통계 데이터</span>를 구하는 명령어 입니다.</dd>
+                          </dl>
+                          <dl>
+                            <dt>Parametes</dt>
+                            <dd>| stats( FUCTION [ASLIAS])+ [BY (FIELD_NAME)+ ]]</dd>
+                            <dd>| stats( FUCTION [ASLIAS])+ [BY (FIELD_NAME)+ ]]</dd>
+                            <dd>| stats( FUCTION [ASLIAS])+ [BY (FIELD_NAME)+ ]]</dd>
+                          </dl>
+                          <dl>
+                            <dt>예)</dt>
+                            <dd> HR 이라는 필드 이름으로 그룹핑 된 결과에서 , <span class="highlight">전체의 갯수</span>, TEAR ID 필드의 <span class="highlight">최대값</span>, <span class="highlight">최소값</span> 그리고 <span class="highlight">평균값</span>을 구합니다. | stats count(*), max(YEARID), min(YEARID), avg(mag)
+                              BY HR</dd>
+                          </dl>
+                        </div>
+
+                        <div class="bx-recommend">
+                          <div class="bx-btn-toggle">
+                              <label><i class="mu-icon-img bookmark2"></i>검색어 추천</label>
+                              <button type="button" class="btn-toggle on"></button>
+                          </div>
+                      </div>
+                        <div class="searchAssistantBtn">
+                          <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-top"></i></button>
+                          <!--<button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-bottom"></i></button>-->
+                          <!-- 이전검색 닫을때 -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mu-search-btn">
+                    <!-- <button type="button" class="mu-btn mu-btn-ghost"><i class="mu-icon-img stop"></i></button> -->
+                    <button type="button" class="mu-btn mu-btn-ghost"><i class="mu-icon player"></i></button>
+                    <button type="button" class="mu-btn mu-btn-ghost" disabled="disabled"><i class="mu-icon-img archiv"></i></button>
+                    <button type="button" class="mu-btn mu-btn-ghost"><i class="mu-icon-img chart"></i></button>
+                    <!-- 시각화 저장, 수정 -->
+                    <button type="button" class="mu-btn mu-btn-ghost"><i class="mu-icon-img visual-save"></i></button>
+                    <!-- 불러오기 (이력, 시각화) -->
+                    <button type="button" class="mu-btn mu-btn-ghost"><i class="mu-icon-img visual-history"></i></button>
+                    <!-- <button type="button" class="mu-btn mu-btn-ghost"><i class="mu-icon-img history"></i></button> -->
+                    <button type="button" class="mu-btn mu-btn-ghost"><i class="mu-icon-img new-open"></i></button>
+                    <button type="button" class="mu-btn mu-btn-ghost active"><i class="mu-icon-img code-copy"></i></button>
+                  </div>
+                </div>
+                <div class="mu-progress" style="display:block;">
+                  <div class="mu-pbar" style="width:60%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mu-row bx-grid">
+            <div class="mu-col mu-col-12">
+
+              <ul class="mu-tab">
+                <li class="active"><a href="">검색이벤트(999,999)</a></li>
+                <li><a href="">통계</a></li>
+                <li><a href="">시각화</a></li>
+              </ul>
+              <div class="mu-tab-body">
+                <div class="mu-tabCont">
+
+                  <div class="mu-splitter-wrap vertical">
+                    <div class="mu-splitter-first" style="height: 200px;">
+
+                      <div class="chartWrap">
+                        chart<br>chart<br>chart<br>chart<br>chart<br>chart<br>chart<br>chart<br>chart</div>
+
+                    </div>
+                    <div class="mu-splitter"></div>
+                    <div class="mu-splitter-last" style="height: calc(100% - 200px);">
+
+                      <div class="mu-row ">
+                        <!-- 필드 닫기(fieldClose class추가) -->
+                        <div class="mu-col mu-col-12 fieldGrid">
+
+                          <div class="mu-panel">
+                            <div class="mu-panel-head">
+                              <button type="button" class="mu-btn mu-btn-icon toggleOpen"><i class="mu-icon-img arrow-last"></i></button><!-- 필드 열기 버튼 -->
+
+                              <div class="mu-hgroup">
+                                <div class="mu-item-group">
+                                  <label>데이터</label>
+                                  <div class="mu-selectbox ml17">
+                                    <button class="mu-value">테이블</button>
+                                    <ul class="mu-list">
+                                      <li value="1">테이블</li>
+                                      <li class="active" value="1">원시</li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="mu-item-group ml17">
+                                  <label>목록개수</label>
+                                  <div class="mu-selectbox ml16">
+                                    <button class="mu-value">10</button>
+                                    <ul class="mu-list">
+                                      <li value="1">10</li>
+                                      <li class="active" value="1">20</li>
+                                      <li value="1">50</li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mu-pagination fr">
+                                <button type="button" class="mu-btn-img mu-btn-icon" disabled><i class="mu-icon-img arrow-first"></i></button>
+                                <button type="button" class="mu-btn-img mu-btn-icon" disabled><i class="mu-icon-img arrow-prev"></i></button>
+                                <ul>
+                                  <li class="active"><a href="">1</a></li>
+                                  <li><a href="">2</a></li>
+                                  <li><a href="">3</a></li>
+                                  <li><a href="">4</a></li>
+                                  <li><a href="">5</a></li>
+                                </ul>
+                                <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-next"></i></button>
+                                <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img arrow-last"></i></button>
+                              </div>
+                              <div class="mu-item-group fr">
+                                <button class="mu-btn-img mu-btn-icon"><i class="mu-icon-img download"></i></button>
+                              </div>
+                            </div>
+                            <div class="mu-panel-body">
+
+                              <table class="mu-grid mu-grid-expand">
+                                <thead>
+                                  <tr>
+                                    <th></th>
+                                    <th>#</th>
+                                    <th>시간</th>
+                                    <th>date_hour</th>
+                                    <th>date_mday</th>
+                                    <th>date_minute</th>
+                                    <th>date_month</th>
+                                    <th>date_wday</th>
+                                    <th>dest_port</th>
+                                    <th>index</th>
+                                    <th>level</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr class="odd">
+                                    <td><i class="mu-icon right"></i></td>
+                                    <td>1</td>
+                                    <td><i class="highlight">2015-12-31T00:00:00.000+09:00</i></td>
+                                    <td>31</td>
+                                    <td>0</td>
+                                    <td>december</td>
+                                    <td>1789</td>
+                                    <td>main</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>thursday</td>
+                                  </tr>
+                                  <tr class="odd open">
+                                    <td><i class="mu-icon down"></i></td>
+                                    <td>2</td>
+                                    <td>2015-12-31T00:00:00.000+09:00</td>
+                                    <td>31</td>
+                                    <td>0</td>
+                                    <td>december</td>
+                                    <td>1789</td>
+                                    <td>main</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>thursday</td>
+                                  </tr>
+                                  <tr class="even open">
+                                    <td colspan="11">
+
+                                      <div class="mu-panel">
+                                        <div class="mu-panel-head"><span class="mu-title">160099,00:00.0,59:59.0,2015062016,221.132.71.208,64.62.166.132,1188,OUT,1,NU,10.45,NU,10.18,NU,2.3,NU,2.3,NU,0.97,ND,0.84,NU,0.69,,0</span>
+                                        </div>
+                                        <div class="mu-panel-body">
+                                          <table class="mu-grid">
+                                            <colgroup>
+                                              <col style="width:50px">
+                                              <col style="width:200px">
+                                            </colgroup>
+                                            <thead>
+                                              <tr>
+                                                <th>
+                                                  <div class="mu-checkbox">
+                                                    <input id="ckbtblall" type="checkbox">
+                                                    <label for="ckbtblall"></label>
+                                                  </div>
+                                                </th>
+                                                <th>필드</th>
+                                                <th>값</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>
+                                                  <div class="mu-checkbox">
+                                                    <input id="ckbtbl1" type="checkbox">
+                                                    <label for="ckbtbl1"></label>
+                                                  </div>
+                                                </td>
+                                                <td>시간</td>
+                                                <td><i class="highlight">2015-12-31T00:00:00.000+09:00</i></td>
+                                              </tr>
+                                              <tr>
+                                                <td>
+                                                  <div class="mu-checkbox">
+                                                    <input id="ckbtbl2" type="checkbox">
+                                                    <label for="ckbtbl2"></label>
+                                                  </div>
+                                                </td>
+                                                <td><i class="highlight">host</i></td>
+                                                <td>analysis</td>
+                                              </tr>
+                                              <tr>
+                                                <td>
+                                                  <div class="mu-checkbox">
+                                                    <input id="ckbtbl3" type="checkbox">
+                                                    <label for="ckbtbl3"></label>
+                                                  </div>
+                                                </td>
+                                                <td>linecount</td>
+                                                <td>1</td>
+                                              </tr>
+                                              <tr>
+                                                <td>
+                                                  <div class="mu-checkbox">
+                                                    <input id="ckbtbl4" type="checkbox">
+                                                    <label for="ckbtbl4"></label>
+                                                  </div>
+                                                </td>
+                                                <td>FTS_RAW_DATA</td>
+                                                <td>
+                                                  <!-- 2017-02-10 MOD -->
+                                                  <span class="linebreak">20150804100348,20150804,100348,20150804100348,450050277804372<i class="highlight">,1,2,NA00004359,</i>CG,CGAU,22791,23524,23527,007*********,007011******,007011005***,007011005***,100007000</span>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </div>
+                                      </div>
+
+                                    </td>
+                                  </tr>
+                                  <tr class="odd">
+                                    <td><i class="mu-icon right"></i></td>
+                                    <td>1</td>
+                                    <td>2015-12-31T00:00:00.000+09:00</td>
+                                    <td>31</td>
+                                    <td>0</td>
+                                    <td>december</td>
+                                    <td>1789</td>
+                                    <td>main</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>thursday</td>
+                                  </tr>
+                                  <tr class="odd">
+                                    <td><i class="mu-icon right"></i></td>
+                                    <td>1</td>
+                                    <td>2015-12-31T00:00:00.000+09:00</td>
+                                    <td>31</td>
+                                    <td>0</td>
+                                    <td>december</td>
+                                    <td>1789</td>
+                                    <td>main</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>thursday</td>
+                                  </tr>
+                                  <tr class="odd">
+                                    <td><i class="mu-icon right"></i></td>
+                                    <td>1</td>
+                                    <td>2015-12-31T00:00:00.000+09:00</td>
+                                    <td>31</td>
+                                    <td>0</td>
+                                    <td>december</td>
+                                    <td>1789</td>
+                                    <td>main</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>thursday</td>
+                                  </tr>
+                                  <tr class="odd">
+                                    <td><i class="mu-icon right"></i></td>
+                                    <td>1</td>
+                                    <td>2015-12-31T00:00:00.000+09:00</td>
+                                    <td>31</td>
+                                    <td>0</td>
+                                    <td>december</td>
+                                    <td>1789</td>
+                                    <td>main</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>thursday</td>
+                                  </tr>
+                                  <tr class="odd">
+                                    <td><i class="mu-icon right"></i></td>
+                                    <td>1</td>
+                                    <td>2015-12-31T00:00:00.000+09:00</td>
+                                    <td>31</td>
+                                    <td>0</td>
+                                    <td>december</td>
+                                    <td>1789</td>
+                                    <td>main</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>thursday</td>
+                                  </tr>
+                                  <tr class="odd">
+                                    <td><i class="mu-icon right"></i></td>
+                                    <td>1</td>
+                                    <td>2015-12-31T00:00:00.000+09:00</td>
+                                    <td>31</td>
+                                    <td>0</td>
+                                    <td>december</td>
+                                    <td>1789</td>
+                                    <td>main</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>thursday</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="mu-tabCont" style="display:none">
+                  통계
+                </div>
+                <div class="mu-tabCont" class="mu-tabCont" style="display:none">
+                  시각화
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // 검색결과 화면 -->
+          <!-- <div class="noData">
+            <div class="dotWrap"><i class="mu-icon-img iris"></i><br>검색 결과가 이곳에 출력됩니다.</div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+
+  <!-- 피벗이동 popup 
+  <div class="popup pop-menu" style="position:absolute;top:122px;right:22px;z-index:10;">
+    <ul>
+      <li><a href="">피벗으로 이동</a></li>
+      <li><a href="">이상탐지로 이동</a></li>
+      <!-- <li><a href="">통계 및 검출로 이동</a></li> 
+      
+    </ul>
+  </div>
+  <!-- //피벗이동 popup -->
+
+  <!-- 검색히스토리 popup
+  <div class="popup pop-search-history" style="position:absolute;top:122px;right:10px;z-index:11;">
+    <div class="mu-panel">
+      <div class="mu-panel-head">
+        <h3>검색</h3>
+        <div class="mu-hgroup">
+          <div class="mu-input-icon">
+            <input class="mu-input" placeholder="search..." type="text">
+            <i class="mu-icon search"></i>
+          </div>
+        </div>
+        <div class="mu-pagination fr">
+            <button type="button" class="mu-first" disabled><i class="mu-icon-img arrow-first"></i></button>
+            <button type="button" class="mu-prev" disabled><i class="mu-icon-img arrow-prev"></i></button>
+            <ul>
+                <li class="active"><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+                <li><a href="">7</a></li>
+                <li><a href="">8</a></li>
+                <li><a href="">9</a></li>
+            </ul>
+            <button type="button" class="mu-next"><i class="mu-icon-img arrow-next"></i></button>
+            <button type="button" class="mu-last"><i class="mu-icon-img arrow-last"></i></button>
+        </div>
+      </div>
+      <div class="mu-panel-body">
+        <table class="mu-grid mu-grid-strip mu-grid-sort mu-grid-hover">
+          <colgroup>
+            <col width="36">
+            <col width="200">
+            <col width="200">
+            <col>
+            <col width="160">
+            <col width="10">
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="none">#</th>
+              <th class="none">시간 설정</th>
+              <th>모델 명</th>
+              <th>검색 질의</th>
+              <th>실행된 시간</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>시작: 2016/02/04 12:00:00<br>종료: 2016/02/04 12:00:00</td>
+              <td>DATASET_01</td>
+              <td class="left"><div class="ellipsis">* host=analysis date_mday!=7 | timechart count | stats dedup_splitvals=t count AS "Searches의 수" earliest(_time) AS earliest_time values(host) AS "host의 개별 값"</td>
+                <td>2016/01/10 08:00:00:00</div></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>시작: 2016/02/04 12:00:00<br>종료: 2016/02/04 12:00:00</td>
+              <td>DATASET_02</td>
+              <td class="left"><div class="ellipsis">* | timechart count(action) by host</div></td>
+              <td>2016/01/10 08:00:00:00</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>시작: 2016/02/04 12:00:00<br>종료: 2016/02/04 12:00:00</td>
+              <td>DATASET_03</td>
+              <td class="left"><div class="ellipsis">| | search (index=_audit) | rename action AS Audit.action info AS Audit.info object AS Audit.object operation AS Audit.operation path AS Audit.path user AS Audit.user exec_time AS Audit.exec_time result_count AS Audit.result_count savedsearch_name AS Audit.savedsearch_name scan_count AS Audit.scan_count total_run_time AS Audit.total_run_time is_realtime AS Audit.searches.is_realtime search_id AS Audit.searches.search_id search AS Audit.searches.search search_type AS Audit.searches.search_type | rename Audit.action AS action Audit.info AS info Audit.object AS object Audit.operation AS operation Audit.path AS path Audit.user AS user Audit.exec_time AS exec_time Audit.result_count AS result_count Audit.savedsearch_name AS savedsearch_name Audit.scan_count AS scan_count Audit.total_run_time AS total_run_time Audit.searches.is_realtime AS is_realtime Audit.searches.search_id AS search_id Audit.searches.search AS search Audit.searches.search_type AS search_type | search (action=search NOT dmauditsearch)| eval is_realtime=case(is_realtime == 0, "false", is_realtime == 1, "true", is_realtime == "N/A", "false") | eval search_id=replace(search_id,""","") | eval search=replace(search,""","") | eval search_type=case((id LIKE "DM_%" OR savedsearch_name LIKE "_ACCELERATE_DM%"), "dm_acceleration", search_id LIKE "scheduler%", "scheduled", search_id LIKE "rt%", "realtime", search_id LIKE "subsearch%", "subsearch", (search_id LIKE "SummaryDirector%" OR search_id LIKE "summarize_SummaryDirector%"), "summary_director", 1=1, "adhoc") | rename action AS Audit.action info AS Audit.info object AS Audit.object operation AS Audit.operation path AS Audit.path user AS Audit.user exec_time AS Audit.exec_time result_count AS Audit.result_count savedsearch_name AS Audit.savedsearch_name scan_count AS Audit.scan_count total_run_time AS Audit.total_run_time is_realtime AS Audit.searches.is_realtime search_id AS Audit.searches.search_id search AS Audit.searches.search search_type AS Audit.searches.search_type | fields Audit.action, Audit.info, Audit.object, Audit.operation, Audit.path, Audit.user, Audit.exec_time, Audit.result_count, Audit.savedsearch_name, Audit.scan_count, Audit.total_run_time, _time, host, source, sourcetype, Audit.searches.is_realtime, Audit.searches.search_id, Audit.searches.search, Audit.searches.search_type, searches | tscollect | stats count</div></td>
+              <td>2016/01/10 08:00:00:00</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>시작: 2016/02/04 12:00:00<br>종료: 2016/02/04 12:00:00</td>
+              <td>DATASET_09</td>
+              <td class="left"><div class="ellipsis">sourcetype=access_* | timechart per_hour(eval(method="GET")) AS Views, per_hour(eval(action="purchase")) AS Purchases</div></td>
+              <td>2016/01/10 08:00:00:00</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>시작: 2016/02/04 12:00:00<br>종료: 2016/02/04 12:00:00</td>
+              <td>DATASET_09</td>
+              <td class="left"><div class="ellipsis">sourcetype=access_* | timechart per_hour(eval(method="GET")) AS Views, per_hour(eval(action="purchase")) AS Purchases</div></td>
+              <td>2016/01/10 08:00:00:00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- // 검색히스토리 popup -->
+
+  <!-- tooltip : 코드 복사 -->
+  <div class="popup pop-menu code-copy" style="top:70px;right:12px;">
+    <ul>
+      <li>
+        <a mu-tooltip-area="tt1" tooltip-placement="left">R로 복사하기</a>
+      </li>
+      <li>
+        <a mu-tooltip-area="tt1" tooltip-placement="left">Python으로 복사하기</a>
+      </li>
+    </ul>
+  </div>
+  <!-- //tooltip : 코드 복사 -->
+  <!-- tooltip layer --
+  <div class="mu-tooltip code-preview" mu-tooltip="tt1" style="top: 70px;right:154px;">
+    <div class="arrow"></div>
+    <div class="mu-tooltip-inner">
+      <span>
+        <code>result <- dbGetQuery(conn, “/*+ LOCATION ( PARTITION>= ‘<span class="highlight">시작 시간</span>' AND PARTITION <= ‘<span class="highlight">끝 시간</span>' ) */SELECT <span class="highlight">검색어</span> FROM <span class="highlight">대상 데이터</span></code>
+      </span>
+    </div>
+  </div>
+  !-- //tooltip layer -->
+
+  <link href="js/jquery-ui.css" rel="stylesheet">
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script>
+    $(function () {
+      $("#datepicker").datepicker();
+
+      // 메뉴
+      $(".header-wrap").click(function () {
+        $(this).toggleClass("on");
+      });
+    });
+  </script>
+  <script src="../../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

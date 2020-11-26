@@ -1,0 +1,250 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("alert") {
+  .mu-background {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+    background-color: #eee;
+  }
+
+  /* alert */
+  .mu-alert {
+    position: absolute;
+    z-index: 10;
+    min-width: 250px;
+    max-width: 420px;
+    padding: 15px 0;
+    border: 1px solid $ui-04;
+    background-color: $ui-02;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  .mu-alert .mu-alert-head {
+    padding: 0 20px 12px;
+    border-bottom: 1px solid #e8e8e8;
+    line-height: 26px;
+  }
+  .mu-alert .mu-alert-head i:before {
+    font-size: 26px;
+  }
+  .mu-alert .mu-alert-head .mu-alert-status {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .mu-alert .mu-alert-head .mu-alert-caption {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: $text-03;
+    margin-top: 4px;
+  }
+  .mu-alert .mu-btn {
+    width: 100px;
+    height: 26px;
+    background: $brand-02;
+    font-size: 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+    padding: 0 12px;
+    line-height: 100%;
+    color: $ui-01;
+  }
+  .mu-alert .mu-btn:hover {
+    border: 1px solid $brand-03;
+    box-shadow: none;
+  }
+  .mu-alert .mu-btn:active {
+    border: 1px solid transparent;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5) inset;
+  }
+  .mu-alert .mu-btn.cancel {
+    color: $text-01;
+    padding: 0;
+    background: $ui-01;
+    border: 1px solid #c8c8c8;
+    box-shadow: none;
+  }
+  .mu-alert .mu-btn.cancel:hover {
+    border: 1px solid $text-01;
+  }
+  .mu-alert .mu-btn.cancel:active {
+    color: $ui-01;
+    background: $brand-02;
+    border: 1px solid #d2d2d2;
+  }
+  .mu-alert .mu-btn + .mu-btn {
+    margin-left: 5px;
+  }
+  .mu-alert-body {
+    border-top: 1px solid $ui-01;
+    padding: 8px 20px 10px;
+    line-height: 1.6;
+  }
+  .mu-alert-body .mu-icon {
+    color: #8695ad;
+    font-size: 26px;
+  }
+  .mu-alert-msg {
+    margin-top: 5px;
+    padding: 10px 20px 0;
+    color: #5d5d5d;
+    border-top: 1px solid #e8e8e8;
+  }
+  // .mu-alert-foot{padding-top:15px;}
+  // .mu-alert-foot > .mu-btn{width:100px;height:25px;line-height:25px;}
+
+  // ------------------------
+  // alert status
+  // ------------------------
+
+  .mu-alert.success .mu-alert-head .mu-icon,
+  .mu-alert.success .mu-alert-body .mu-icon,
+  .mu-alert.success .mu-alert-status {
+    color: #0297ce;
+  }
+  .mu-alert.error .mu-alert-head .mu-icon,
+  .mu-alert.error .mu-alert-body .mu-icon,
+  .mu-alert.error .mu-alert-status {
+    color: #ff9000;
+  }
+  .mu-alert.alarm-critical {
+    border-top: 4px solid #f03e3e;
+  }
+  .mu-alert.alarm-critical .mu-alert-head .mu-icon {
+    color: #f03e3e;
+  }
+  .mu-alert.alarm-major {
+    border-top: 4px solid #fd7e14;
+  }
+  .mu-alert.alarm-major .mu-alert-head .mu-icon {
+    color: #fd7e14;
+  }
+  .mu-alert.alarm-minor {
+    border-top: 4px solid #fcc419;
+  }
+  .mu-alert.alarm-minor .mu-alert-head .mu-icon {
+    color: #fcc419;
+  }
+
+  // 2018-10-01
+  // mu-btn 등 mu-icon에 적용된 스타일을 override 하기 위한 스타일
+  // 추후 alert의 mu-btn 스타일 제거/독립시킨 후 제거 필요
+  .mu-alert-body .mu-btn-link .mu-icon {
+    font-size: 16px;
+  }
+
+  /* confrim */
+  .mu-confirm {
+    position: absolute;
+    z-index: 10;
+    width: 450px;
+    margin: 0 auto;
+    border: 1px solid #c3c3c3;
+    background-color: $ui-01;
+    box-shadow: 0 0 3px 1px #eee;
+  }
+  .mu-confirm-head {
+    height: 33px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid #c3c3c3;
+    background-color: #f7f7f7;
+    line-height: 33px;
+  }
+  .mu-confirm-head .title {
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .mu-confirm-head .mu-btn {
+    float: right;
+    margin-top: 10px;
+  }
+  .mu-confirm-head .mu-btn > i:before {
+    color: #8695ad;
+  }
+  .mu-confirm-head .mu-btn:hover > i:before {
+    color: #4d88db;
+  }
+  .mu-confirm-body {
+    padding: 10px 20px;
+    word-break: break-word;
+    color: #5d5d5d;
+    line-height: 1.7;
+  }
+  .mu-confirm-foot {
+    padding: 5px 0 10px;
+  }
+  .mu-confirm-foot > .mu-btn {
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+  }
+  .mu-confirm-foot > .mu-pop-btn {
+    font-weight: bold;
+  }
+
+  /* prompt */
+  .mu-prompt {
+    position: absolute;
+    z-index: 10;
+    min-width: 330px;
+    border: 1px solid #c3c3c3;
+    background-color: $ui-01;
+    box-shadow: 0 0 3px 1px #eee;
+  }
+  .mu-prompt-head {
+    height: 33px;
+    padding: 0 15px;
+    vertical-align: middle;
+    line-height: 33px;
+  }
+  .mu-prompt-head .title {
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .mu-prompt-head .mu-btn {
+    float: right;
+    margin-top: 10px;
+  }
+  .mu-prompt-head .mu-btn > i:before {
+    color: #8695ad;
+  }
+  .mu-prompt-head .mu-btn:hover > i:before {
+    color: #4d88db;
+  }
+  .mu-prompt-body {
+    padding: 20px 15px;
+    text-align: left;
+    line-height: 1.7;
+  }
+  .mu-prompt-body .mu-input {
+    height: 25px;
+    margin: 5px 0;
+    line-height: 25px;
+  }
+  .mu-prompt-foot {
+    padding: 20px 15px 10px;
+    text-align: right;
+  }
+  .mu-prompt-foot > .mu-btn {
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+  }
+  .mu-prompt-foot > .mu-pop-btn {
+    font-weight: bold;
+  }
+}

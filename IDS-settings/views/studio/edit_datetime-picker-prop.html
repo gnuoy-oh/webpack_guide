@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>보고서-새보고서 Date/time-picker(Prop)</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+      <script src="js/html5.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  <!-- timepicker library -->
+  <link rel="stylesheet" type="text/css" href="../../assets/lib/jquery.timepicker.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../dist-sherman/css/sherman/style.min.css" />
+</head>
+
+<body>
+  <!-- 보고서 -->
+  <div class="mu-container">
+    <section>
+      <div class="mu-content content-re data-add report">
+        <div class="mu-panel">
+          <div class="mu-panel-head">
+            <div class="mu-hgroup fl report-title">
+              <h3 class="mu-title report-title-text">보고서</h3>
+              <!-- 수정 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon-img edit-title"></i>
+              </button>
+              <!-- 수정 확인 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon check"></i>
+              </button>
+            </div>
+            <div class="mu-hgroup fr">
+              <button type="button" class="mu-btn mu-btn-default">
+                목록으로
+              </button>
+              <button type="button" class="mu-btn mu-btn-default">
+                보기
+              </button>
+              <button type="button" class="mu-btn mu-btn-primary">
+                저장
+              </button>
+              <button type="button" class="mu-btn mu-btn-secondary">
+                새로저장
+              </button>
+              <button type="button" class="mu-btn mu-btn-default" disabled="disabled">
+                접근 권한
+              </button>
+              <button type="button" class="mu-btn mu-btn-danger">
+                전체삭제
+              </button>
+            </div>
+          </div>
+          <div class="mu-panel-body">
+            <!-- 상단 메뉴바 -->
+            <div class="report-menubar">
+              <div class="mu-selectbox width150">
+                <button class="mu-value">전체</button>
+                <ul class="mu-list">
+                  <li>전체</li>
+                  <li class="active">데이터 시각화</li>
+                  <li>양식</li>
+                  <li>버튼</li>
+                  <li>기타</li>
+                </ul>
+              </div>
+              <ul class="report-menu">
+                <li><i class="mu-icon-img area"></i></li>
+                <li><i class="mu-icon-img map"></i></li>
+                <li><i class="mu-icon-img text"></i></li>
+                <li><i class="mu-icon-img rectangle"></i></li>
+                <li><i class="mu-icon-img ellipse"></i></li>
+                <li><i class="mu-icon-img date"></i></li>
+                <li><i class="mu-icon-img renew"></i></li>
+                <li><i class="mu-icon-img list"></i></li>
+                <li><i class="mu-icon-img tab"></i></li>
+                <li><i class="mu-icon-img url"></i></li>
+                <li><i class="mu-icon-img image"></i></li>
+                <li><i class="mu-icon-img html"></i></li>
+                <li><i class="mu-icon-img input"></i></li>
+                <li><i class="mu-icon-img combo-box"></i></li>
+                <li><i class="mu-icon-img check-and-radio"></i></li>
+                <li class="active"><i class="mu-icon-img datetime"></i></li>
+                <li><i class="mu-icon-img date"></i></li>
+                <li><i class="mu-icon-img hidden-input"></i></li>
+                <li><i class="mu-icon-img button"></i></li>
+              </ul>
+              <div class="fr">
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">전체변수명보기</span>
+                </button>
+              </div>
+            </div>
+            <!-- //상단 메뉴바 -->
+            <div class="report-cont">
+              <div class="report-canvas">
+                <!-- canvas 영역 -->
+                <div class="canvas" style="width: 1920px; height: 1080px;">
+                  <!-- Datepicker -->
+                  <p style="position: absolute; top: 30px; left: 50px;">
+                    Date picker
+                  </p>
+                  <div class="box tool datetime-picker" style="top: 50px; left: 50px; width: 200px; height: 50px;">
+                    <div class="mui-datepicker">
+                      <input type="text" class="mui-datepicker-input" placeholder="yyyy/mm/dd" />
+                      <button class="mu-btn mu-btn-default mui-datepicker-button">
+                        <i class="iriscon calendar"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- // Datepicker -->
+
+                  <!-- Datepicker: 박스 클릭 시 사이즈 조절 박스 활성화 -->
+                  <div class="box tool datetime-picker active" style="
+                        top: 50px;
+                        left: 270px;
+                        width: 200px;
+                        height: 50px;
+                      ">
+                    <div class="mui-datepicker">
+                      <input type="text" class="mui-datepicker-input" placeholder="yyyy/mm/dd" />
+                      <button class="mu-btn mu-btn-default mui-datepicker-button">
+                        <i class="iriscon calendar"></i>
+                      </button>
+                    </div>
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                  <!-- // Datepicker: 박스 클릭 시 사이즈 조절 박스 활성화 -->
+
+                  <!-- Datepicker: 대상으로 설정 가능한 상태 -->
+                  <p style="position: absolute; top: 30px; left: 490px;">
+                    대상으로 설정 가능한 상태
+                    <span class="highlight">.deselect</span>
+                  </p>
+                  <div class="box tool datetime-picker deselect" style="
+                        top: 50px;
+                        left: 490px;
+                        width: 200px;
+                        height: 30px;
+                      ">
+                    <div class="mui-datepicker">
+                      <input type="text" class="mui-datepicker-input" placeholder="yyyy/mm/dd" />
+                      <button class="mu-btn mu-btn-default mui-datepicker-button">
+                        <i class="iriscon calendar"></i>
+                      </button>
+                    </div>
+                    <div class="mu-checkbox">
+                      <input type="checkbox" id="button01_ckb" />
+                      <label for="button01_ckb"></label>
+                    </div>
+                  </div>
+                  <!-- // Datepicker: 대상으로 설정 가능한 상태 -->
+
+                  <!-- Datepicker: 대상으로 설정된 상태 -->
+                  <p style="position: absolute; top: 30px; left: 710px;">
+                    대상으로 설정된 상태
+                    <span class="highlight">.select</span>
+                  </p>
+                  <div class="box tool datetime-picker select" style="
+                        top: 50px;
+                        left: 710px;
+                        width: 200px;
+                        height: 30px;
+                      ">
+                    <div class="mui-datepicker">
+                      <input type="text" class="mui-datepicker-input" placeholder="yyyy/mm/dd" />
+                      <button class="mu-btn mu-btn-default mui-datepicker-button">
+                        <i class="iriscon calendar"></i>
+                      </button>
+                    </div>
+                    <div class="mu-checkbox">
+                      <input type="checkbox" id="button02_ckb" checked />
+                      <label for="button02_ckb"></label>
+                    </div>
+                  </div>
+                  <!-- // Datepicker: 대상으로 설정된 상태 -->
+
+                  <!-- Datepicker -->
+                  <p style="position: absolute; top: 30px; left: 930px;">
+                    Date picker <span class="highlight">.on</span>
+                  </p>
+                  <div class="box tool datetime-picker" style="
+                        top: 50px;
+                        left: 930px;
+                        width: 200px;
+                        height: 50px;
+                      ">
+                    <div class="mui-datepicker on">
+                      <input type="text" class="mui-datepicker-input" placeholder="yyyy/mm/dd" />
+                      <button class="mu-btn mu-btn-default mui-datepicker-button">
+                        <i class="iriscon calendar"></i>
+                      </button>
+                      <div class="mui-datepicker-container">
+                        <div class="mui-datepicker-panel">
+                          <div class="mui-datepicker-panel-header">
+                            <button class="mu-btn mu-btn-link" type="button">
+                              <span class="mu-btn-link-box">오늘</span>
+                            </button>
+                          </div>
+                          <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
+                            <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+                              <a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="이전달"><span class="ui-icon ui-icon-circle-triangle-w">이전달</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="다음달"><span class="ui-icon ui-icon-circle-triangle-e">다음달</span></a>
+                              <div class="ui-datepicker-title">
+                                <span class="ui-datepicker-year">2019</span>년&nbsp;<span class="ui-datepicker-month">8월</span>
+                              </div>
+                            </div>
+                            <table class="ui-datepicker-calendar">
+                              <thead>
+                                <tr>
+                                  <th class="ui-datepicker-week-end">
+                                    <span title="일요일">일</span>
+                                  </th>
+                                  <th><span title="월요일">월</span></th>
+                                  <th><span title="화요일">화</span></th>
+                                  <th><span title="수요일">수</span></th>
+                                  <th><span title="목요일">목</span></th>
+                                  <th><span title="금요일">금</span></th>
+                                  <th class="ui-datepicker-week-end">
+                                    <span title="토요일">토</span>
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;
+                                  </td>
+                                  <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;
+                                  </td>
+                                  <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;
+                                  </td>
+                                  <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">1</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">2</span>
+                                  </td>
+                                  <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">3</span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">4</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">5</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">6</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">7</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">8</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">9</span>
+                                  </td>
+                                  <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">10</span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">11</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">12</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">13</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">14</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">15</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">16</span>
+                                  </td>
+                                  <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">17</span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">18</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">19</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">20</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">21</span>
+                                  </td>
+                                  <td class="ui-datepicker-days-cell-over ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">22</a>
+                                  </td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">23</a>
+                                  </td>
+                                  <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">24</a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">25</a>
+                                  </td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">26</a>
+                                  </td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">27</a>
+                                  </td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">28</a>
+                                  </td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">29</a>
+                                  </td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">30</a>
+                                  </td>
+                                  <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">31</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // Datepicker -->
+
+                  <!-- Timepicker: Open -->
+                  <p style="position: absolute; top: 120px; left: 50px;">Timepicker <span class="highlight">.on</span></ㅔ>
+                  <div class="box tool datetime-picker active" style="
+                        top: 140px;
+                        left: 50px;
+                        width: 120px;
+                        height: 30px;
+                      ">
+                    <div class="mui-timepicker on">
+                      <input type="text" class="mui-timepicker-input" placeholder="hh:mm:ss" value="02:00:00" />
+                      <button class="mu-btn mu-btn-default mui-timepicker-button">
+                        <i class="iriscon clock"></i>
+                      </button>
+                      <div class="mui-timepicker-container">
+                        <ul class="mui-timepicker-list">
+                          <li class="mui-timepicker-list-item">00</li>
+                          <li class="mui-timepicker-list-item">01</li>
+                          <li class="mui-timepicker-list-item">02</li>
+                          <li class="mui-timepicker-list-item">03</li>
+                          <li class="mui-timepicker-list-item is-selected">
+                            04
+                          </li>
+                          <li class="mui-timepicker-list-item">05</li>
+                          <li class="mui-timepicker-list-item">06</li>
+                          <li class="mui-timepicker-list-item">07</li>
+                          <li class="mui-timepicker-list-item">08</li>
+                          <li class="mui-timepicker-list-item">09</li>
+                          <li class="mui-timepicker-list-item">10</li>
+                          <li class="mui-timepicker-list-item">11</li>
+                          <li class="mui-timepicker-list-item">12</li>
+                          <li class="mui-timepicker-list-item">13</li>
+                          <li class="mui-timepicker-list-item">14</li>
+                          <li class="mui-timepicker-list-item">15</li>
+                          <li class="mui-timepicker-list-item">16</li>
+                          <li class="mui-timepicker-list-item">17</li>
+                          <li class="mui-timepicker-list-item">18</li>
+                          <li class="mui-timepicker-list-item">19</li>
+                          <li class="mui-timepicker-list-item">20</li>
+                          <li class="mui-timepicker-list-item">21</li>
+                          <li class="mui-timepicker-list-item">22</li>
+                          <li class="mui-timepicker-list-item">23</li>
+                        </ul>
+                        <ul class="mui-timepicker-list">
+                          <li class="mui-timepicker-list-item">00</li>
+                          <li class="mui-timepicker-list-item">01</li>
+                          <li class="mui-timepicker-list-item">02</li>
+                          <li class="mui-timepicker-list-item">03</li>
+                          <li class="mui-timepicker-list-item">04</li>
+                          <li class="mui-timepicker-list-item is-selected">
+                            05
+                          </li>
+                          <li class="mui-timepicker-list-item">06</li>
+                          <li class="mui-timepicker-list-item">07</li>
+                          <li class="mui-timepicker-list-item">08</li>
+                          <li class="mui-timepicker-list-item">09</li>
+                          <li class="mui-timepicker-list-item">10</li>
+                          <li class="mui-timepicker-list-item">11</li>
+                          <li class="mui-timepicker-list-item">12</li>
+                          <li class="mui-timepicker-list-item">13</li>
+                          <li class="mui-timepicker-list-item">14</li>
+                          <li class="mui-timepicker-list-item">15</li>
+                          <li class="mui-timepicker-list-item">16</li>
+                          <li class="mui-timepicker-list-item">17</li>
+                          <li class="mui-timepicker-list-item">18</li>
+                          <li class="mui-timepicker-list-item">19</li>
+                          <li class="mui-timepicker-list-item">20</li>
+                          <li class="mui-timepicker-list-item">21</li>
+                          <li class="mui-timepicker-list-item">22</li>
+                          <li class="mui-timepicker-list-item">23</li>
+                        </ul>
+                        <ul class="mui-timepicker-list">
+                          <li class="mui-timepicker-list-item">00</li>
+                          <li class="mui-timepicker-list-item is-selected">
+                            01
+                          </li>
+                          <li class="mui-timepicker-list-item">02</li>
+                          <li class="mui-timepicker-list-item">03</li>
+                          <li class="mui-timepicker-list-item">04</li>
+                          <li class="mui-timepicker-list-item">05</li>
+                          <li class="mui-timepicker-list-item">06</li>
+                          <li class="mui-timepicker-list-item">07</li>
+                          <li class="mui-timepicker-list-item">08</li>
+                          <li class="mui-timepicker-list-item">09</li>
+                          <li class="mui-timepicker-list-item">10</li>
+                          <li class="mui-timepicker-list-item">11</li>
+                          <li class="mui-timepicker-list-item">12</li>
+                          <li class="mui-timepicker-list-item">13</li>
+                          <li class="mui-timepicker-list-item">14</li>
+                          <li class="mui-timepicker-list-item">15</li>
+                          <li class="mui-timepicker-list-item">16</li>
+                          <li class="mui-timepicker-list-item">17</li>
+                          <li class="mui-timepicker-list-item">18</li>
+                          <li class="mui-timepicker-list-item">19</li>
+                          <li class="mui-timepicker-list-item">20</li>
+                          <li class="mui-timepicker-list-item">21</li>
+                          <li class="mui-timepicker-list-item">22</li>
+                          <li class="mui-timepicker-list-item">23</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                  <!-- // Timepicker: Open -->
+
+                  <!-- Date time picker: Open -->
+                  <p style="position: absolute; top: 120px; left: 190px;">Date time picker <span class="highlight">.on</span></p>
+                  <div class="box tool datetime-picker active" style="top: 140px; left: 190px; width: 120px; height: 30px;">
+                    <div class="mui-datepicker on" style="width: 100%;">
+                      <input class="mui-datepicker-input" value="yyyy/mm/dd hh:mm:ss">
+                      <button class="mu-btn mu-btn-default mui-datepicker-button">
+                        <i class="iriscon datetime"></i>
+                      </button>
+                      <div class="mui-datepicker-container">
+                        <div class="mui-datepicker-panel">
+                          <div class="mui-datepicker-panel-header">
+                            <button class="mu-btn mu-btn-link" type="button">
+                              <span class="mu-btn-link-box">오늘</span>
+                            </button>
+                          </div>
+                          <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
+                            <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="이전달"><span class="ui-icon ui-icon-circle-triangle-w">이전달</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="다음달"><span class="ui-icon ui-icon-circle-triangle-e">다음달</span></a>
+                              <div class="ui-datepicker-title"><span class="ui-datepicker-year">2019</span>년&nbsp;<span class="ui-datepicker-month">8월</span></div>
+                            </div>
+                            <table class="ui-datepicker-calendar">
+                              <thead>
+                                <tr>
+                                  <th class="ui-datepicker-week-end"><span title="일요일">일</span></th>
+                                  <th><span title="월요일">월</span></th>
+                                  <th><span title="화요일">화</span></th>
+                                  <th><span title="수요일">수</span></th>
+                                  <th><span title="목요일">목</span></th>
+                                  <th><span title="금요일">금</span></th>
+                                  <th class="ui-datepicker-week-end"><span title="토요일">토</span></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;</td>
+                                  <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;</td>
+                                  <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;</td>
+                                  <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;</td>
+                                  <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">1</span></td>
+                                  <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">2</span></td>
+                                  <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">3</span></td>
+                                </tr>
+                                <tr>
+                                  <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">4</span></td>
+                                  <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">5</span></td>
+                                  <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">6</span></td>
+                                  <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">7</span></td>
+                                  <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">8</span></td>
+                                  <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">9</span></td>
+                                  <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">10</span></td>
+                                </tr>
+                                <tr>
+                                  <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">11</span></td>
+                                  <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">12</span></td>
+                                  <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">13</span></td>
+                                  <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">14</span></td>
+                                  <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">15</span></td>
+                                  <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">16</span></td>
+                                  <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">17</span></td>
+                                </tr>
+                                <tr>
+                                  <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">18</span></td>
+                                  <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">19</span></td>
+                                  <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">20</span></td>
+                                  <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">21</span></td>
+                                  <td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="7" data-year="2019"><a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">22</a></td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">23</a></td>
+                                  <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="7" data-year="2019"><a class="ui-state-default" href="#">24</a></td>
+                                </tr>
+                                <tr>
+                                  <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="7" data-year="2019"><a class="ui-state-default" href="#">25</a></td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">26</a></td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">27</a></td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">28</a></td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">29</a></td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">30</a></td>
+                                  <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="7" data-year="2019"><a class="ui-state-default" href="#">31</a></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="mui-datepicker-panel-footer">
+                            <div class="mui-timepicker">
+                              <input type="text" class="mui-timepicker-input" placeholder="hh:mm:ss" value="02:00:00">
+                              <button class="mu-btn mu-btn-default mui-timepicker-button">
+                                <i class="iriscon clock"></i>
+                              </button>
+                              <div class="mui-timepicker-container">
+                                <ul class="mui-timepicker-list">
+                                  <li class="mui-timepicker-list-item">00</li>
+                                  <li class="mui-timepicker-list-item">01</li>
+                                  <li class="mui-timepicker-list-item">02</li>
+                                  <li class="mui-timepicker-list-item">03</li>
+                                  <li class="mui-timepicker-list-item is-selected">04</li>
+                                  <li class="mui-timepicker-list-item">05</li>
+                                  <li class="mui-timepicker-list-item">06</li>
+                                  <li class="mui-timepicker-list-item">07</li>
+                                  <li class="mui-timepicker-list-item">08</li>
+                                  <li class="mui-timepicker-list-item">09</li>
+                                  <li class="mui-timepicker-list-item">10</li>
+                                  <li class="mui-timepicker-list-item">11</li>
+                                  <li class="mui-timepicker-list-item">12</li>
+                                  <li class="mui-timepicker-list-item">13</li>
+                                  <li class="mui-timepicker-list-item">14</li>
+                                  <li class="mui-timepicker-list-item">15</li>
+                                  <li class="mui-timepicker-list-item">16</li>
+                                  <li class="mui-timepicker-list-item">17</li>
+                                  <li class="mui-timepicker-list-item">18</li>
+                                  <li class="mui-timepicker-list-item">19</li>
+                                  <li class="mui-timepicker-list-item">20</li>
+                                  <li class="mui-timepicker-list-item">21</li>
+                                  <li class="mui-timepicker-list-item">22</li>
+                                  <li class="mui-timepicker-list-item">23</li>
+                                </ul>
+                                <ul class="mui-timepicker-list">
+                                  <li class="mui-timepicker-list-item">00</li>
+                                  <li class="mui-timepicker-list-item">01</li>
+                                  <li class="mui-timepicker-list-item">02</li>
+                                  <li class="mui-timepicker-list-item">03</li>
+                                  <li class="mui-timepicker-list-item">04</li>
+                                  <li class="mui-timepicker-list-item is-selected">05</li>
+                                  <li class="mui-timepicker-list-item">06</li>
+                                  <li class="mui-timepicker-list-item">07</li>
+                                  <li class="mui-timepicker-list-item">08</li>
+                                  <li class="mui-timepicker-list-item">09</li>
+                                  <li class="mui-timepicker-list-item">10</li>
+                                  <li class="mui-timepicker-list-item">11</li>
+                                  <li class="mui-timepicker-list-item">12</li>
+                                  <li class="mui-timepicker-list-item">13</li>
+                                  <li class="mui-timepicker-list-item">14</li>
+                                  <li class="mui-timepicker-list-item">15</li>
+                                  <li class="mui-timepicker-list-item">16</li>
+                                  <li class="mui-timepicker-list-item">17</li>
+                                  <li class="mui-timepicker-list-item">18</li>
+                                  <li class="mui-timepicker-list-item">19</li>
+                                  <li class="mui-timepicker-list-item">20</li>
+                                  <li class="mui-timepicker-list-item">21</li>
+                                  <li class="mui-timepicker-list-item">22</li>
+                                  <li class="mui-timepicker-list-item">23</li>
+                                </ul>
+                                <ul class="mui-timepicker-list">
+                                  <li class="mui-timepicker-list-item">00</li>
+                                  <li class="mui-timepicker-list-item is-selected">01</li>
+                                  <li class="mui-timepicker-list-item">02</li>
+                                  <li class="mui-timepicker-list-item">03</li>
+                                  <li class="mui-timepicker-list-item">04</li>
+                                  <li class="mui-timepicker-list-item">05</li>
+                                  <li class="mui-timepicker-list-item">06</li>
+                                  <li class="mui-timepicker-list-item">07</li>
+                                  <li class="mui-timepicker-list-item">08</li>
+                                  <li class="mui-timepicker-list-item">09</li>
+                                  <li class="mui-timepicker-list-item">10</li>
+                                  <li class="mui-timepicker-list-item">11</li>
+                                  <li class="mui-timepicker-list-item">12</li>
+                                  <li class="mui-timepicker-list-item">13</li>
+                                  <li class="mui-timepicker-list-item">14</li>
+                                  <li class="mui-timepicker-list-item">15</li>
+                                  <li class="mui-timepicker-list-item">16</li>
+                                  <li class="mui-timepicker-list-item">17</li>
+                                  <li class="mui-timepicker-list-item">18</li>
+                                  <li class="mui-timepicker-list-item">19</li>
+                                  <li class="mui-timepicker-list-item">20</li>
+                                  <li class="mui-timepicker-list-item">21</li>
+                                  <li class="mui-timepicker-list-item">22</li>
+                                  <li class="mui-timepicker-list-item">23</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                  <!-- // Date time picker: Open -->
+                </div>
+                <!-- //canvas 영역 -->
+              </div>
+              <!-- 우측 패널 -->
+              <div class="report-panel">
+                <ul class="mu-tab">
+                  <li class="active"><a>속성</a></li>
+                  <li><a>항목</a></li>
+                  <li><a>객체</a></li>
+                </ul>
+                <!-- 속성 -->
+                <div class="mu-tab-body">
+                  <div class="mu-tabCont">
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">데이터 유형 설정</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="90" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>오브젝트 ID</th>
+                              <td>
+                                Object ID
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>변수명</th>
+                              <td>
+                                <input class="mu-input" type="text" placeholder="변수명을 입력하세요" />
+                                <div class="mui-message error">
+                                  <i class="mu-icon err-circle"></i><span class="mui-message-text">Error message</span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>
+                                변수 값<br />
+                                포맷 설정
+                                <button class="mu-btn mu-btn-icon">
+                                  <i class="mu-icon question-circle"></i>
+                                </button>
+                              </th>
+                              <td>
+                                <input class="mu-input" type="text" placeholder="YYYY/MM/DD" />
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">날짜/시간 유형 선택</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-item-group">
+                          <div class="mu-radio">
+                            <input type="radio" name="radio-group1" id="radio1" value="date" checked />
+                            <label for="radio1">날짜</label>
+                          </div>
+                          <div class="mu-radio">
+                            <input type="radio" name="radio-group1" id="radio2" value="time" />
+                            <label for="radio2">시간</label>
+                          </div>
+                          <div class="mu-radio">
+                            <input type="radio" name="radio-group1" id="radio3" value="date-time" />
+                            <label for="radio3">날짜 + 시간</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">달력 표시 날짜 설정</span>
+                        <button class="mu-btn mu-btn-icon">
+                          <i class="mu-icon setting"></i>시각화 옵션
+                        </button>
+                        <!-- disabled 상태일 경우 -->
+                        <!-- <button class="mu-btn mu-btn-icon" disabled>
+                          <i class="mu-icon setting"></i>시각화 옵션
+                        </button> -->
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100px" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>사용여부</th>
+                              <td>사용</td>
+                            </tr>
+                            <tr>
+                              <th>시작 날짜</th>
+                              <td>2020/08/13</td>
+                            </tr>
+                            <tr>
+                              <th>종료 날짜</th>
+                              <td>2020/09/13</td>
+                            </tr>
+                            <tr>
+                              <th>현재 날짜</th>
+                              <td>미사용</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">초기 날짜 설정</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="100px" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>날짜</th>
+                              <td>2020/08/13</td>
+                            </tr>
+                            <tr>
+                              <th>현재 날짜 선택</th>
+                              <td>사용</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">
+                          트리거 설정 확인
+                        </span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-grid mu-grid-border mu-grid-strip">
+                          <colgroup>
+                            <col width="100" />
+                            <col />
+                          </colgroup>
+                          <!-- 헤더 -->
+                          <thead>
+                            <tr>
+                              <!-- 이벤트 -->
+                              <th>이벤트</th>
+                              <!-- 적용 오브젝트 ID -->
+                              <th>적용 오브젝트 ID</th>
+                            </tr>
+                          </thead>
+                          <!-- 목록 -->
+                          <tbody>
+                            <!-- 목록 없음 -->
+                            <tr>
+                              <td colspan="2">
+                                <div class="mui-message info">
+                                  <i class="mu-icon info"></i>
+                                  <span class="mui-message-text">데이터가 없습니다.</span>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //속성 -->
+              </div>
+              <!-- //우측 패널 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 시각화 옵션 다이얼로그: 날짜 설정 - 달력 범위 제한 -->
+  <p style="position: absolute; top: 470px; left: 28px;">
+    시각화 옵션 다이얼로그: 날짜 설정 - 달력 범위 제한
+  </p>
+  <div class="mu-dialog mu-tab-inner type1 inner-grid mui-dialog-md" style="top: 490px; left: 28px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non">
+        <i class="mu-icon-img"></i>
+      </button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li class="active"><a href="">달력 범위 제한</a></li>
+        <li><a href="">초기 날짜 (디폴트값)</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>사용 여부</th>
+                <td>
+                  <div class="mu-checkbox">
+                    <input id="ckbtbl1" checked="checked" type="checkbox" />
+                    <label for="ckbtbl1">사용</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>날짜 설정</th>
+                <td>
+                  <div class="mui-hgroup">
+                    <div class="mu-selectbox">
+                      <button class="mu-value">사용자 지정</button>
+                      <ul class="mu-list">
+                        <li class="active">사용자 지정</li>
+                        <li>최근 6개월</li>
+                        <li>최근 1년</li>
+                        <li>최근 3년</li>
+                        <li>최근 5년</li>
+                        <li>최근 10년</li>
+                      </ul>
+                    </div>
+                    <!-- Date picker -->
+                    <div class="mui-datepicker on">
+                      <input class="mui-datepicker-input" value="yyyy/mm/dd" />
+                      <div class="mui-datepicker-separator">
+                        <span>&sim;</span>
+                      </div>
+                      <input class="mui-datepicker-input" value="yyyy/mm/dd" />
+                      <button class="mu-btn mu-btn-default mui-datepicker-button">
+                        <i class="iriscon calendar"></i>
+                      </button>
+                      <div class="mui-datepicker-container">
+                        <div class="mui-datepicker-panels">
+                          <div class="mui-datepicker-panel">
+                            <div class="mui-datepicker-panel-header">
+                              <button class="mu-btn mu-btn-link" type="button">
+                                <span class="mu-btn-link-box">오늘</span>
+                              </button>
+                            </div>
+                            <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
+                              <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+                                <a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="이전달"><span class="ui-icon ui-icon-circle-triangle-w">이전달</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="다음달"><span class="ui-icon ui-icon-circle-triangle-e">다음달</span></a>
+                                <div class="ui-datepicker-title">
+                                  <span class="ui-datepicker-year">2019</span>년&nbsp;<span class="ui-datepicker-month">8월</span>
+                                </div>
+                              </div>
+                              <table class="ui-datepicker-calendar">
+                                <thead>
+                                  <tr>
+                                    <th class="ui-datepicker-week-end">
+                                      <span title="일요일">일</span>
+                                    </th>
+                                    <th><span title="월요일">월</span></th>
+                                    <th><span title="화요일">화</span></th>
+                                    <th><span title="수요일">수</span></th>
+                                    <th><span title="목요일">목</span></th>
+                                    <th><span title="금요일">금</span></th>
+                                    <th class="ui-datepicker-week-end">
+                                      <span title="토요일">토</span>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                      &nbsp;
+                                    </td>
+                                    <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                      &nbsp;
+                                    </td>
+                                    <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                      &nbsp;
+                                    </td>
+                                    <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                      &nbsp;
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">1</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">2</span>
+                                    </td>
+                                    <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">3</span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">4</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">5</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">6</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">7</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">8</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">9</span>
+                                    </td>
+                                    <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">10</span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">11</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">12</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">13</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">14</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">15</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">16</span>
+                                    </td>
+                                    <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">17</span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">18</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">19</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">20</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">21</span>
+                                    </td>
+                                    <td class="ui-datepicker-days-cell-over ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">22</a>
+                                    </td>
+                                    <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">23</a>
+                                    </td>
+                                    <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">24</a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">25</a>
+                                    </td>
+                                    <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">26</a>
+                                    </td>
+                                    <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">27</a>
+                                    </td>
+                                    <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">28</a>
+                                    </td>
+                                    <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">29</a>
+                                    </td>
+                                    <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">30</a>
+                                    </td>
+                                    <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">31</a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="mui-datepicker-panel">
+                            <div class="mui-datepicker-panel-header">
+                              <button class="mu-btn mu-btn-link" type="button">
+                                <span class="mu-btn-link-box">오늘</span>
+                              </button>
+                              <div class="bx-btn-toggle">
+                                <label>현재</label>
+                                <button type="button" class="btn-toggle on"></button>
+                              </div>
+                            </div>
+                            <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
+                              <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+                                <a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="이전달"><span class="ui-icon ui-icon-circle-triangle-w">이전달</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="다음달"><span class="ui-icon ui-icon-circle-triangle-e">다음달</span></a>
+                                <div class="ui-datepicker-title">
+                                  <span class="ui-datepicker-year">2019</span>년&nbsp;<span class="ui-datepicker-month">8월</span>
+                                </div>
+                              </div>
+                              <table class="ui-datepicker-calendar">
+                                <thead>
+                                  <tr>
+                                    <th class="ui-datepicker-week-end">
+                                      <span title="일요일">일</span>
+                                    </th>
+                                    <th><span title="월요일">월</span></th>
+                                    <th><span title="화요일">화</span></th>
+                                    <th><span title="수요일">수</span></th>
+                                    <th><span title="목요일">목</span></th>
+                                    <th><span title="금요일">금</span></th>
+                                    <th class="ui-datepicker-week-end">
+                                      <span title="토요일">토</span>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                      &nbsp;
+                                    </td>
+                                    <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                      &nbsp;
+                                    </td>
+                                    <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                      &nbsp;
+                                    </td>
+                                    <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                      &nbsp;
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">1</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">2</span>
+                                    </td>
+                                    <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">3</span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">4</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">5</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">6</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">7</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">8</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">9</span>
+                                    </td>
+                                    <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">10</span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">11</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">12</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">13</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">14</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">15</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">16</span>
+                                    </td>
+                                    <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">17</span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">18</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">19</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">20</span>
+                                    </td>
+                                    <td class="ui-datepicker-unselectable ui-state-disabled">
+                                      <span class="ui-state-default">21</span>
+                                    </td>
+                                    <td class="ui-datepicker-days-cell-over ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">22</a>
+                                    </td>
+                                    <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">23</a>
+                                    </td>
+                                    <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">24</a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">25</a>
+                                    </td>
+                                    <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">26</a>
+                                    </td>
+                                    <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">27</a>
+                                    </td>
+                                    <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">28</a>
+                                    </td>
+                                    <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">29</a>
+                                    </td>
+                                    <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">30</a>
+                                    </td>
+                                    <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                      <a class="ui-state-default" href="#">31</a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- // Date picker -->
+                    <span class="mui-tag mui-tag-green">현재</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //시각화 옵션 다이얼로그: 날짜 설정 - 달력 범위 제한 -->
+
+  <!-- 시각화 옵션 다이얼로그: 날짜 설정 - 초기 날짜(디폴트값) -->
+  <p style="position: absolute; top: 470px; left: 640px;">
+    시각화 옵션 다이얼로그: 날짜 설정 - 초기 날짜(디폴트값)
+  </p>
+  <div class="mu-dialog mu-tab-inner type1 inner-grid mui-dialog-md" style="top: 490px; left: 640px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non">
+        <i class="mu-icon-img"></i>
+      </button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li><a href="">달력 범위 제한</a></li>
+        <li class="active"><a href="">초기 날짜 (디폴트값)</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>날짜 설정방법</th>
+                <td>
+                  <div class="mu-item-group">
+                    <div class="mu-radio">
+                      <input type="radio" name="radio-group2" id="radio4" value="date" checked="" />
+                      <label for="radio4">현재 날짜</label>
+                    </div>
+                    <div class="mu-radio">
+                      <input type="radio" name="radio-group2" id="radio5" value="time" />
+                      <label for="radio5">기준 설정</label>
+                    </div>
+                    <div class="mu-radio">
+                      <input type="radio" name="radio-group2" id="radio6" value="date-time" />
+                      <label for="radio6">날짜 지정</label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!-- radio: 현재, 날짜 지정일 경우 -->
+              <tr>
+                <th>날짜</th>
+                <td>
+                  <div class="mui-datepicker width150">
+                    <input type="text" class="mui-datepicker-input" value="2019/08/22" />
+                    <button class="mu-btn mu-btn-default mui-datepicker-button">
+                      <i class="iriscon calendar"></i>
+                    </button>
+                    <div class="mui-datepicker-container">
+                      <div class="mui-datepicker-panel">
+                        <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
+                          <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+                            <a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="이전달"><span class="ui-icon ui-icon-circle-triangle-w">이전달</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="다음달"><span class="ui-icon ui-icon-circle-triangle-e">다음달</span></a>
+                            <div class="ui-datepicker-title">
+                              <span class="ui-datepicker-year">2019</span>년&nbsp;<span class="ui-datepicker-month">8월</span>
+                            </div>
+                          </div>
+                          <table class="ui-datepicker-calendar">
+                            <thead>
+                              <tr>
+                                <th class="ui-datepicker-week-end">
+                                  <span title="일요일">일</span>
+                                </th>
+                                <th><span title="월요일">월</span></th>
+                                <th><span title="화요일">화</span></th>
+                                <th><span title="수요일">수</span></th>
+                                <th><span title="목요일">목</span></th>
+                                <th><span title="금요일">금</span></th>
+                                <th class="ui-datepicker-week-end">
+                                  <span title="토요일">토</span>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                  &nbsp;
+                                </td>
+                                <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                  &nbsp;
+                                </td>
+                                <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                  &nbsp;
+                                </td>
+                                <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                  &nbsp;
+                                </td>
+                                <td class="ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">1</span>
+                                </td>
+                                <td class="ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">2</span>
+                                </td>
+                                <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">3</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">4</span>
+                                </td>
+                                <td class="ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">5</span>
+                                </td>
+                                <td class="ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">6</span>
+                                </td>
+                                <td class="ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">7</span>
+                                </td>
+                                <td class="ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">8</span>
+                                </td>
+                                <td class="ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">9</span>
+                                </td>
+                                <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">10</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">11</span>
+                                </td>
+                                <td class="ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">12</span>
+                                </td>
+                                <td class="ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">13</span>
+                                </td>
+                                <td class="ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">14</span>
+                                </td>
+                                <td class="ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">15</span>
+                                </td>
+                                <td class="ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">16</span>
+                                </td>
+                                <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">17</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">18</span>
+                                </td>
+                                <td class="ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">19</span>
+                                </td>
+                                <td class="ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">20</span>
+                                </td>
+                                <td class="ui-datepicker-unselectable ui-state-disabled">
+                                  <span class="ui-state-default">21</span>
+                                </td>
+                                <td class="ui-datepicker-days-cell-over ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                  <a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">22</a>
+                                </td>
+                                <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                  <a class="ui-state-default" href="#">23</a>
+                                </td>
+                                <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                  <a class="ui-state-default" href="#">24</a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                  <a class="ui-state-default" href="#">25</a>
+                                </td>
+                                <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                  <a class="ui-state-default" href="#">26</a>
+                                </td>
+                                <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                  <a class="ui-state-default" href="#">27</a>
+                                </td>
+                                <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                  <a class="ui-state-default" href="#">28</a>
+                                </td>
+                                <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                  <a class="ui-state-default" href="#">29</a>
+                                </td>
+                                <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                  <a class="ui-state-default" href="#">30</a>
+                                </td>
+                                <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                  <a class="ui-state-default" href="#">31</a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!-- //radio: 현재, 날짜 지정일 경우 -->
+              <!-- radio: 기준 설정일 경우 -->
+              <tr>
+                <th>날짜 설정</th>
+                <td>
+                  <div class="mui-hgroup">
+                    <span>현재부터</span>
+                    <!-- on 클래스 추가시 드롭다운 -->
+                    <div class="mu-selectbox">
+                      <button class="mu-value">최근 1년</button>
+                      <ul class="mu-list">
+                        <li>사용자 지정</li>
+                        <li>최근 6개월</li>
+                        <li class="active">최근 1년</li>
+                        <li>최근 3년</li>
+                        <li>최근 5년</li>
+                        <li>최근 10년</li>
+                      </ul>
+                    </div>
+                    <!-- date-picker
+                        on 클래스 추가시 드롭다운 -->
+                    <div class="mui-datepicker width150">
+                      <input type="text" class="mui-datepicker-input" value="2019/08/22" />
+                      <button class="mu-btn mu-btn-default mui-datepicker-button">
+                        <i class="iriscon calendar"></i>
+                      </button>
+                      <div class="mui-datepicker-container">
+                        <div class="mui-datepicker-panel">
+                          <div class="mui-datepicker-panel-header">
+                            <button class="mu-btn mu-btn-link" type="button">
+                              <span class="mu-btn-link-box">오늘</span>
+                            </button>
+                          </div>
+                          <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
+                            <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+                              <a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="이전달"><span class="ui-icon ui-icon-circle-triangle-w">이전달</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="다음달"><span class="ui-icon ui-icon-circle-triangle-e">다음달</span></a>
+                              <div class="ui-datepicker-title">
+                                <span class="ui-datepicker-year">2019</span>년&nbsp;<span class="ui-datepicker-month">8월</span>
+                              </div>
+                            </div>
+                            <table class="ui-datepicker-calendar">
+                              <thead>
+                                <tr>
+                                  <th class="ui-datepicker-week-end">
+                                    <span title="일요일">일</span>
+                                  </th>
+                                  <th><span title="월요일">월</span></th>
+                                  <th><span title="화요일">화</span></th>
+                                  <th><span title="수요일">수</span></th>
+                                  <th><span title="목요일">목</span></th>
+                                  <th><span title="금요일">금</span></th>
+                                  <th class="ui-datepicker-week-end">
+                                    <span title="토요일">토</span>
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;
+                                  </td>
+                                  <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;
+                                  </td>
+                                  <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;
+                                  </td>
+                                  <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">1</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">2</span>
+                                  </td>
+                                  <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">3</span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">4</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">5</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">6</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">7</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">8</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">9</span>
+                                  </td>
+                                  <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">10</span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">11</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">12</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">13</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">14</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">15</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">16</span>
+                                  </td>
+                                  <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">17</span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">18</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">19</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">20</span>
+                                  </td>
+                                  <td class="ui-datepicker-unselectable ui-state-disabled">
+                                    <span class="ui-state-default">21</span>
+                                  </td>
+                                  <td class="ui-datepicker-days-cell-over ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">22</a>
+                                  </td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">23</a>
+                                  </td>
+                                  <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">24</a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">25</a>
+                                  </td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">26</a>
+                                  </td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">27</a>
+                                  </td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">28</a>
+                                  </td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">29</a>
+                                  </td>
+                                  <td class=" " data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">30</a>
+                                  </td>
+                                  <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="7" data-year="2019">
+                                    <a class="ui-state-default" href="#">31</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- // date-picker -->
+                  </div>
+                </td>
+              </tr>
+              <!-- //radio: 기준 설정일 경우 -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //시각화 옵션 다이얼로그: 날짜 설정 - 초기 날짜(디폴트값) -->
+
+  <!-- 시각화 옵션 다이얼로그: 시간 설정 - 시간선택 간격 -->
+  <p style="position: absolute; top: 650px; left: 28px;">
+    시각화 옵션 다이얼로그: 시간 설정 - 시간선택 간격
+  </p>
+  <div class="mu-dialog mu-tab-inner type1 inner-grid mui-dialog-md" style="top: 670px; left: 28px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non">
+        <i class="mu-icon-img"></i>
+      </button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li class="active"><a href="">시간선택 간격</a></li>
+        <li><a href="">초기 시간 (디폴트값)</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>간격</th>
+                <td>
+                  <div class="mu-vgroup">
+                    <div class="mu-hgroup">
+                      <div class="mui-input-number">
+                        <input type="number" class="mui-input-number-input" min="00" max="23" step="1" value="01" />
+                      </div>
+                      <strong>시간</strong>
+                      <span>간격으로 출력</span>
+                    </div>
+                    <div class="mu-hgroup">
+                      <div class="mui-input-number">
+                        <input type="number" class="mui-input-number-input" min="00" max="59" step="1" value="05" />
+                      </div>
+                      <strong>분</strong>
+                      <span>간격으로 출력</span>
+                    </div>
+                    <div class="mu-hgroup">
+                      <div class="mui-input-number">
+                        <input type="number" class="mui-input-number-input" min="00" max="59" step="1" value="10" />
+                      </div>
+                      <strong>초</strong>
+                      <span>간격으로 출력</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //시각화 옵션 다이얼로그: 시간 설정 - 시간선택 간격 -->
+
+  <!-- 시각화 옵션 다이얼로그: 시간 설정 - 초기 시간(디폴트값) -->
+  <p style="position: absolute; top: 650px; left: 640px;">
+    시각화 옵션 다이얼로그: 시간 설정 - 초기 시간(디폴트값)
+  </p>
+  <div class="mu-dialog mu-tab-inner type1 inner-grid mui-dialog-md" style="top: 670px; left: 640px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non">
+        <i class="mu-icon-img"></i>
+      </button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li><a href="">시간선택 간격</a></li>
+        <li class="active"><a href="">초기 시간 (디폴트값)</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>설정방법</th>
+                <td>
+                  <div class="mu-item-group">
+                    <div class="mu-radio">
+                      <input type="radio" name="radio-group3" id="radio4" value="date" checked="" />
+                      <label for="radio4">현재</label>
+                    </div>
+                    <div class="mu-radio">
+                      <input type="radio" name="radio-group3" id="radio5" value="time" />
+                      <label for="radio5">기준 설정</label>
+                    </div>
+                    <div class="mu-radio">
+                      <input type="radio" name="radio-group3" id="radio6" value="date-time" />
+                      <label for="radio6">시간 지정</label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!-- radio: 현재, 시간 지정일 경우 -->
+              <tr>
+                <th>시간</th>
+                <td>
+                  <!-- on 클래스 추가시 드롭다운 -->
+                  <div class="mui-timepicker width150">
+                    <input type="text" class="mui-timepicker-input" placeholder="hh:mm:ss" value="02:00:00">
+                    <button class="mu-btn mu-btn-default mui-timepicker-button">
+                      <i class="iriscon clock"></i>
+                    </button>
+                    <div class="mui-timepicker-container">
+                      <ul class="mui-timepicker-list">
+                        <li class="mui-timepicker-list-item">00</li>
+                        <li class="mui-timepicker-list-item">01</li>
+                        <li class="mui-timepicker-list-item">02</li>
+                        <li class="mui-timepicker-list-item">03</li>
+                        <li class="mui-timepicker-list-item is-selected">04</li>
+                        <li class="mui-timepicker-list-item">05</li>
+                        <li class="mui-timepicker-list-item">06</li>
+                        <li class="mui-timepicker-list-item">07</li>
+                        <li class="mui-timepicker-list-item">08</li>
+                        <li class="mui-timepicker-list-item">09</li>
+                        <li class="mui-timepicker-list-item">10</li>
+                        <li class="mui-timepicker-list-item">11</li>
+                        <li class="mui-timepicker-list-item">12</li>
+                        <li class="mui-timepicker-list-item">13</li>
+                        <li class="mui-timepicker-list-item">14</li>
+                        <li class="mui-timepicker-list-item">15</li>
+                        <li class="mui-timepicker-list-item">16</li>
+                        <li class="mui-timepicker-list-item">17</li>
+                        <li class="mui-timepicker-list-item">18</li>
+                        <li class="mui-timepicker-list-item">19</li>
+                        <li class="mui-timepicker-list-item">20</li>
+                        <li class="mui-timepicker-list-item">21</li>
+                        <li class="mui-timepicker-list-item">22</li>
+                        <li class="mui-timepicker-list-item">23</li>
+                      </ul>
+                      <ul class="mui-timepicker-list">
+                        <li class="mui-timepicker-list-item">00</li>
+                        <li class="mui-timepicker-list-item">01</li>
+                        <li class="mui-timepicker-list-item">02</li>
+                        <li class="mui-timepicker-list-item">03</li>
+                        <li class="mui-timepicker-list-item">04</li>
+                        <li class="mui-timepicker-list-item is-selected">05</li>
+                        <li class="mui-timepicker-list-item">06</li>
+                        <li class="mui-timepicker-list-item">07</li>
+                        <li class="mui-timepicker-list-item">08</li>
+                        <li class="mui-timepicker-list-item">09</li>
+                        <li class="mui-timepicker-list-item">10</li>
+                        <li class="mui-timepicker-list-item">11</li>
+                        <li class="mui-timepicker-list-item">12</li>
+                        <li class="mui-timepicker-list-item">13</li>
+                        <li class="mui-timepicker-list-item">14</li>
+                        <li class="mui-timepicker-list-item">15</li>
+                        <li class="mui-timepicker-list-item">16</li>
+                        <li class="mui-timepicker-list-item">17</li>
+                        <li class="mui-timepicker-list-item">18</li>
+                        <li class="mui-timepicker-list-item">19</li>
+                        <li class="mui-timepicker-list-item">20</li>
+                        <li class="mui-timepicker-list-item">21</li>
+                        <li class="mui-timepicker-list-item">22</li>
+                        <li class="mui-timepicker-list-item">23</li>
+                      </ul>
+                      <ul class="mui-timepicker-list">
+                        <li class="mui-timepicker-list-item">00</li>
+                        <li class="mui-timepicker-list-item is-selected">01</li>
+                        <li class="mui-timepicker-list-item">02</li>
+                        <li class="mui-timepicker-list-item">03</li>
+                        <li class="mui-timepicker-list-item">04</li>
+                        <li class="mui-timepicker-list-item">05</li>
+                        <li class="mui-timepicker-list-item">06</li>
+                        <li class="mui-timepicker-list-item">07</li>
+                        <li class="mui-timepicker-list-item">08</li>
+                        <li class="mui-timepicker-list-item">09</li>
+                        <li class="mui-timepicker-list-item">10</li>
+                        <li class="mui-timepicker-list-item">11</li>
+                        <li class="mui-timepicker-list-item">12</li>
+                        <li class="mui-timepicker-list-item">13</li>
+                        <li class="mui-timepicker-list-item">14</li>
+                        <li class="mui-timepicker-list-item">15</li>
+                        <li class="mui-timepicker-list-item">16</li>
+                        <li class="mui-timepicker-list-item">17</li>
+                        <li class="mui-timepicker-list-item">18</li>
+                        <li class="mui-timepicker-list-item">19</li>
+                        <li class="mui-timepicker-list-item">20</li>
+                        <li class="mui-timepicker-list-item">21</li>
+                        <li class="mui-timepicker-list-item">22</li>
+                        <li class="mui-timepicker-list-item">23</li>
+                      </ul>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!-- //radio: 현재, 시간 지정일 경우 -->
+              <!-- radio: 기준 설정일 경우 -->
+              <tr>
+                <th>시간 설정</th>
+                <td>
+                  <div class="mui-hgroup">
+                    <span>현재부터</span>
+                    <!-- on 클래스 추가시 드롭다운 -->
+                    <div class="mu-selectbox">
+                      <button class="mu-value">최근 1년</button>
+                      <ul class="mu-list">
+                        <li>사용자 지정</li>
+                        <li>최근 6개월</li>
+                        <li class="active">최근 1년</li>
+                        <li>최근 3년</li>
+                        <li>최근 5년</li>
+                        <li>최근 10년</li>
+                      </ul>
+                    </div>
+                    <!-- on 클래스 추가시 드롭다운, 비활성일 경우 disabled 클래스 추가 필요 -->
+                    <div class="mui-timepicker width150 is-disabled">
+                      <input type="text" class="mui-timepicker-input" placeholder="hh:mm:ss" value="04:05:01" disabled>
+                      <button class="mu-btn mu-btn-default mui-timepicker-button" disabled>
+                        <i class="iriscon clock"></i>
+                      </button>
+                      <div class="mui-timepicker-container">
+                        <ul class="mui-timepicker-list">
+                          <li class="mui-timepicker-list-item">00</li>
+                          <li class="mui-timepicker-list-item">01</li>
+                          <li class="mui-timepicker-list-item">02</li>
+                          <li class="mui-timepicker-list-item">03</li>
+                          <li class="mui-timepicker-list-item is-selected">04</li>
+                          <li class="mui-timepicker-list-item">05</li>
+                          <li class="mui-timepicker-list-item">06</li>
+                          <li class="mui-timepicker-list-item">07</li>
+                          <li class="mui-timepicker-list-item">08</li>
+                          <li class="mui-timepicker-list-item">09</li>
+                          <li class="mui-timepicker-list-item">10</li>
+                          <li class="mui-timepicker-list-item">11</li>
+                          <li class="mui-timepicker-list-item">12</li>
+                          <li class="mui-timepicker-list-item">13</li>
+                          <li class="mui-timepicker-list-item">14</li>
+                          <li class="mui-timepicker-list-item">15</li>
+                          <li class="mui-timepicker-list-item">16</li>
+                          <li class="mui-timepicker-list-item">17</li>
+                          <li class="mui-timepicker-list-item">18</li>
+                          <li class="mui-timepicker-list-item">19</li>
+                          <li class="mui-timepicker-list-item">20</li>
+                          <li class="mui-timepicker-list-item">21</li>
+                          <li class="mui-timepicker-list-item">22</li>
+                          <li class="mui-timepicker-list-item">23</li>
+                        </ul>
+                        <ul class="mui-timepicker-list">
+                          <li class="mui-timepicker-list-item">00</li>
+                          <li class="mui-timepicker-list-item">01</li>
+                          <li class="mui-timepicker-list-item">02</li>
+                          <li class="mui-timepicker-list-item">03</li>
+                          <li class="mui-timepicker-list-item">04</li>
+                          <li class="mui-timepicker-list-item is-selected">05</li>
+                          <li class="mui-timepicker-list-item">06</li>
+                          <li class="mui-timepicker-list-item">07</li>
+                          <li class="mui-timepicker-list-item">08</li>
+                          <li class="mui-timepicker-list-item">09</li>
+                          <li class="mui-timepicker-list-item">10</li>
+                          <li class="mui-timepicker-list-item">11</li>
+                          <li class="mui-timepicker-list-item">12</li>
+                          <li class="mui-timepicker-list-item">13</li>
+                          <li class="mui-timepicker-list-item">14</li>
+                          <li class="mui-timepicker-list-item">15</li>
+                          <li class="mui-timepicker-list-item">16</li>
+                          <li class="mui-timepicker-list-item">17</li>
+                          <li class="mui-timepicker-list-item">18</li>
+                          <li class="mui-timepicker-list-item">19</li>
+                          <li class="mui-timepicker-list-item">20</li>
+                          <li class="mui-timepicker-list-item">21</li>
+                          <li class="mui-timepicker-list-item">22</li>
+                          <li class="mui-timepicker-list-item">23</li>
+                        </ul>
+                        <ul class="mui-timepicker-list">
+                          <li class="mui-timepicker-list-item">00</li>
+                          <li class="mui-timepicker-list-item is-selected">01</li>
+                          <li class="mui-timepicker-list-item">02</li>
+                          <li class="mui-timepicker-list-item">03</li>
+                          <li class="mui-timepicker-list-item">04</li>
+                          <li class="mui-timepicker-list-item">05</li>
+                          <li class="mui-timepicker-list-item">06</li>
+                          <li class="mui-timepicker-list-item">07</li>
+                          <li class="mui-timepicker-list-item">08</li>
+                          <li class="mui-timepicker-list-item">09</li>
+                          <li class="mui-timepicker-list-item">10</li>
+                          <li class="mui-timepicker-list-item">11</li>
+                          <li class="mui-timepicker-list-item">12</li>
+                          <li class="mui-timepicker-list-item">13</li>
+                          <li class="mui-timepicker-list-item">14</li>
+                          <li class="mui-timepicker-list-item">15</li>
+                          <li class="mui-timepicker-list-item">16</li>
+                          <li class="mui-timepicker-list-item">17</li>
+                          <li class="mui-timepicker-list-item">18</li>
+                          <li class="mui-timepicker-list-item">19</li>
+                          <li class="mui-timepicker-list-item">20</li>
+                          <li class="mui-timepicker-list-item">21</li>
+                          <li class="mui-timepicker-list-item">22</li>
+                          <li class="mui-timepicker-list-item">23</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!-- //radio: 기준 설정일 경우 -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //시각화 옵션 다이얼로그: 시간 설정 - 초기 시간(디폴트값) -->
+
+  <!-- 시각화 옵션 다이얼로그: 날짜 + 시간 설정 - 달력 범위 제한 -->
+  <p style="position: absolute; top: 830px; left: 28px;">
+    시각화 옵션 다이얼로그: 날짜 + 시간 설정 - 달력 범위 제한
+  </p>
+  <div class="mu-dialog mu-tab-inner type1 inner-grid mui-dialog-md" style="top: 850px; left: 28px;">
+    <div class="mu-dialog-head">
+      <span class="title">시각화 옵션</span>
+      <button type="button" class="mu-btn mu-btn-icon mu-btn-bg-non">
+        <i class="mu-icon-img"></i>
+      </button>
+    </div>
+    <div class="mu-dialog-body">
+      <ul class="mu-tab mu-tab-vertical">
+        <li class="active"><a href="">달력 범위 제한</a></li>
+        <li><a href="">시간 간격</a></li>
+        <li><a href="">초기 날짜 (디폴트값)</a></li>
+      </ul>
+      <div class="mu-tab-body">
+        <div class="mu-tabCont">
+          <table class="mu-formbox">
+            <colgroup>
+              <col width="92px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>사용 여부</th>
+                <td>
+                  <div class="mu-checkbox">
+                    <input id="ckbtbl1" type="checkbox">
+                    <label for="ckbtbl1">사용</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>날짜 설정</th>
+                <td>
+                  <div class="mui-hgroup">
+                    <div class="mu-selectbox">
+                      <button class="mu-value">최근 6개월</button>
+                      <ul class="mu-list">
+                        <li>사용자 지정</li>
+                        <li class="active">최근 6개월</li>
+                        <li>최근 1년</li>
+                        <li>최근 3년</li>
+                        <li>최근 5년</li>
+                        <li>최근 10년</li>
+                      </ul>
+                    </div>
+                    <!-- Date picker -->
+                    <div class="mui-datepicker is-disabled">
+                      <input class="mui-datepicker-input" value="yyyy/mm/dd HH:MM:SS" disabled>
+                      <div class="mui-datepicker-separator">
+                        <span>∼</span>
+                      </div>
+                      <input class="mui-datepicker-input" value="yyyy/mm/dd HH:MM:SS" disabled>
+                      <button class="mu-btn mu-btn-default mui-datepicker-button" disabled>
+                        <i class="iriscon datetime"></i>
+                      </button>
+                    </div>
+                    <!-- // Date picker -->
+                    <span class="mui-tag mui-tag-green">현재</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //시각화 옵션 다이얼로그: 날짜 + 시간 설정 - 달력 범위 제한 -->
+
+  <link href="js/jquery-ui.css" rel="stylesheet" />
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="../../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

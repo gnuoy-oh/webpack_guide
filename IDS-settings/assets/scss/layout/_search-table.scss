@@ -1,0 +1,278 @@
+// 조회형 화면 레이아웃
+
+/* layout */
+.layout {
+  height: 100%;
+  min-height: calc(515px - 50px);
+  min-height: auto;
+} /*2017-08-17 MOD height값 수정*/ /* 2016-06-20 MOD*/
+.layout > .mu-row {
+  height: 100%;
+}
+.layout > .mu-row > .mu-col + .mu-col {
+  border-left: 1px solid #d2d2d2;
+}
+/* layout-h */
+.layout-h .mu-col + .mu-col .mu-panel-body {
+  padding: 16px;
+} /*2017-08-18 MOD*/
+.layout-h .mu-col + .mu-col .mu-panel-body .mu-grid {
+  margin-bottom: 10px;
+}
+/* layout-v */
+.layout-v > .mu-row {
+  height: auto;
+}
+.user.layout-v > .mu-row {
+  height: 100%;
+} /*2017-08-22 ADD*/
+.layout-v > .mu-row .mu-panel {
+  height: 60px;
+}
+/*.layout-v > .mu-row + .mu-row{height:calc(100% - 16px - 40px);}*/
+.layout-v > .mu-row + .mu-row {
+  height: calc(100% - 38px);
+} /*2017-08-17 MOD height값 수정*/
+.layout-v > .mu-row + .mu-row .mu-panel {
+  height: 100%;
+}
+.layout-v > .mu-row .mu-panel-body {
+  padding: 16px;
+} /* 2016-06-17 MOD */
+/* .layout-v > .mu-row + .mu-row .mu-panel-body .mu-grid{margin-bottom:10px;} 2017-08-18 DEL*/
+/*.layout-v.status > .mu-row:first-child > .mu-col{padding:10px;}*/
+/* layout-h-v */
+.layout-h-v .mu-col > .mu-row {
+  height: 200px;
+  margin: 0;
+}
+.layout-h-v .mu-col > .mu-row + .mu-row {
+  height: calc(100% - 200px); /*padding-top:16px;*/
+}
+.layout-h-v .mu-col > .mu-row + .mu-row .mu-panel-body {
+  padding: 10px;
+}
+.layout-h-v .mu-col > .mu-row + .mu-row .mu-panel-body .mu-grid {
+  margin-bottom: 10px;
+}
+.layout-h-v .mu-col > .mu-row .mu-col {
+  padding: 0;
+}
+.layout-h-v .mu-col > .mu-row .mu-col .mu-panel-body {
+  padding: 10px;
+}
+/* dashboard */
+.dashboard > .mu-row {
+  height: 33.3%; /*min-height:220px;*/
+}
+/* dbtable */
+.dbtable .mu-tab-body {
+  height: calc(100% - 28px);
+}
+.dbtable .mu-tab-body .mu-tabCont {
+  height: auto;
+}
+.dbtable .mu-tab-body .mu-tabCont .mu-tab-body {
+  padding: 0 10px 10px;
+}
+/* manage */
+.layout-v.manage > .mu-row {
+  height: 195px;
+} /*2017-08-21 MOD*/
+.layout-v.manage > .mu-row .mu-panel {
+  height: 100%;
+}
+.layout-v.manage > .mu-row + .mu-row {
+  height: calc(100% - 195px);
+} /*2017-08-21 MOD*/
+/* user 2016-06-17 ADD*/
+.layout-v.user > .mu-row .mu-panel {
+  height: 100%;
+}
+.layout-v.user > .mu-row .mu-panel .mu-grid td {
+  vertical-align: middle;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+/* 클러스터 관리 */
+.status.layout-v .mu-row .mu-panel .mu-panel-head .mu-hgroup:last-of-type {
+  padding: 15px 0 0;
+}
+.layout-h .mu-splitter-last > .mu-panel > .mu-panel-head,
+.layout-v > .mu-row > .mu-col .mu-panel.user-list > .mu-panel-head,
+.layout-v > .mu-row > .mu-col .mu-panel > .mu-panel-head {
+  background-color: transparent;
+  border-bottom: none;
+  height: 74px;
+  padding: 0 16px;
+}
+.layout-h .mu-splitter-last > .mu-panel > .mu-panel-body,
+.layout-v > .mu-row > .mu-col .mu-panel.user-list > .mu-panel-body,
+.layout-v > .mu-row > .mu-col .mu-panel > .mu-panel-body {
+  height: calc(100% - 74px);
+  padding: 0 16px 16px;
+}
+.layout-h .mu-splitter-last > .mu-panel > .mu-panel-head .mu-hgroup,
+.user.layout-v
+  > .mu-row
+  > .mu-col
+  .mu-panel.user-list
+  > .mu-panel-head
+  .mu-hgroup,
+.layout-v > .mu-row > .mu-col .mu-panel > .mu-panel-head .mu-hgroup {
+  padding-top: 38px;
+}
+/* .manage.layout-v > .mu-row > .mu-col .mu-panel > .mu-panel-head .mu-hgroup{padding-top:19px;} 2017-08-30 DEL 테이블 타이틀 없는타입*/
+.status.layout-v
+  > .mu-row
+  > .mu-col
+  .mu-panel
+  > .mu-panel-head
+  .mu-hgroup:last-child {
+  padding-top: 33px;
+}
+.manage.layout-v .mu-row:first-child .mu-panel > .mu-panel-body.clusterInfo {
+  height: calc(100% - 55px);
+  padding: 0 11px;
+  margin-top: -5px;
+}
+/* .manage.layout-v > .mu-row > .mu-col .mu-panel > .mu-panel-head{height:55px;}2017-08-29 MOD  테이블 타이틀 없는타입
+.manage.layout-v > .mu-row > .mu-col .mu-panel > .mu-panel-body{height:calc(100% - 55px);padding:0 16px 16px;}2017-08-29 MOD  테이블 타이틀 없는타입 */
+.manage.layout-v .mu-row:first-child .mu-panel > .mu-panel-head {
+  height: 44px;
+}
+
+/* NEW: search-table */
+.search-table-content {
+  height: 100%;
+}
+.search-table-filter {
+  width: 100%;
+}
+.search-table-head {
+  padding: 16px 16px 0 16px;
+}
+.search-table-head::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.search-table-head .mu-title {
+  font-size: 14px;
+}
+.search-table-toolbar {
+  height: 26px;
+  margin: 0 0 6px;
+  text-align: left;
+}
+.search-table-content .search-table-body {
+  padding: 8px 16px 16px;
+}
+.search-table-body {
+  width: 100%;
+}
+.search-table-body .mu-panel > .mu-panel-head {
+  padding: 0;
+  margin: 8px 0;
+}
+.search-table-body
+  .mu-scroll-v
+  .mu-formbox-inner
+  > tbody
+  > tr
+  > td
+  > .mu-btn:hover,
+.search-table-body
+  .mu-scroll-v
+  .mu-formbox-inner
+  > tbody
+  > tr
+  > td
+  > .mu-btn:active {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+// mu-scroll-v의 상황별 max-height
+// 1. head + body(toolbar + mu-grid-scroll):
+// Brick의 36px,
+// search-table-header 42px,
+// search-table-toolbar 32px,
+// search-table-body의 상하 padding 24px,
+// th 30px
+.search-table-body .mu-scroll-v {
+  max-height: calc(100vh - 162px);
+}
+
+// 2. head + body(hidden toolbar + mu-grid-scroll)
+// Brick의 36px,
+// search-table-header 42px,
+// search-table-body의 상하 padding 24px,
+// th 30px
+.search-table-body .search-table-toolbar.hidden ~ .mu-grid-scroll .mu-scroll-v {
+  max-height: calc(100vh - 132px);
+}
+
+// 3. filter + head + body(mu-grid-scroll)
+// Brick의 36px;
+// search-table-header 42px,
+// search-table-toolbar 0px,
+// search-table-body의 상하 padding 24px,
+// search-table-filter 40px,
+// th 30px
+.search-table-filter
+  ~ .search-table-body
+  .search-table-toolbar.hidden
+  .mu-scroll-v {
+  max-height: calc(100vh - 36px - 30px - 24px - 42px);
+}
+
+// mu-grid에 x, y 스크롤 가능하도록 클래스 추가
+.mu-grid-scroll.mu-grid-scroll-h-v {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+// .mu-grid-scroll-h-v의 grid 스타일 통일을 위한 override
+.mu-grid-scroll.mu-grid-scroll-h-v .mu-grid thead {
+  border-bottom: 2px solid $ui-04;
+}
+.content-re .mu-grid-scroll-h-v .mu-grid-border tbody > tr > td:first-child {
+  border-left: 1px solid transparent;
+}
+.content-re .search-table-body .mu-grid-scroll.mu-grid-scroll-h-v {
+  border-left: 1px solid $ui-04;
+}
+.content-re .mu-grid-scroll-h-v .mu-grid-border thead > tr > th:first-child,
+.content-re .mu-grid-scroll-h-v .mu-grid-border thead > tr > td:first-child {
+  border-left: 1px solid transparent;
+}
+
+// mu-scroll-h-v의 상황별 max-height
+// 1. head + body(toolbar + mu-grid-scroll):
+// Brick의 36px,
+// search-table-header 42px,
+// search-table-toolbar 32px,
+// search-table-body의 상하 padding값 24px,
+// th 30px
+.search-table-body .mu-grid-scroll.mu-grid-scroll-h-v {
+  max-height: calc(100vh - 36px - 42px - 32px - 24px);
+}
+
+.search-table-content.has-filter-wrap {
+  display: flex;
+  height: 100%;
+
+  .search-table-filter-wrap .treeview-wrap {
+    width: 280px;
+  }
+
+  .search-table-result-wrap {
+    width: 100%;
+  }
+
+  .search-table-filter-wrap {
+    border-right: 1px solid $ui-04;
+  }
+}

@@ -1,0 +1,914 @@
+// dev.css 시작
+/*list*/
+.hdfs.mu-list {
+  position: relative;
+  background-color: #fff;
+  user-select: none;
+}
+
+.hdfs.mu-list li {
+  position: relative;
+  padding: 5px 12px;
+  cursor: pointer;
+  line-height: 1.65;
+}
+
+.hdfs.mu-list li:hover {
+  background-color: #e2f4ff;
+  color: #2196f3;
+}
+
+.hdfs.mu-list .li-owner {
+  padding-left: 4px;
+  font-size: 9px;
+  color: #8091a5;
+}
+
+.hdfs.mu-list-box {
+  overflow-y: auto;
+}
+
+.hdfs.mu-list-item + .mu-list-item {
+  border-top: 1px solid #e8e8e8;
+}
+
+.hdfs.mu-list-item:last-child {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.hdfs.mu-list-item.is-selected {
+  color: #2196f3;
+  background-color: #e2f4ff;
+}
+
+.hdfs.mu-list-text {
+  line-height: 1.25;
+}
+
+.hdfs.mu-list-caption {
+  padding-left: 6px;
+  font-size: 0.6875rem;
+  color: #8091a5;
+}
+
+.hdfs.mu-list-header {
+  padding: 5px 8px;
+  background: #f6f6f6;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.hdfs.mu-list-header-box {
+  border-bottom: 1px solid $ui-04;
+}
+
+.hdfs.mu-list .is-select span {
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.hdfs.mu-list .is-select::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 6px;
+  left: 4px;
+  background: url("#{$img-path}/common/icon_search.png") no-repeat -120px -80px;
+}
+
+.hdfs.mu-list .is-select:hover::before {
+  background: url("#{$img-path}/common/icon_search.png") no-repeat -120px -120px;
+}
+
+.hdfs.mu-list-meta {
+  position: relative;
+  background-color: #fff;
+}
+
+.hdfs.mu-list-meta-item {
+  position: relative;
+  padding: 6px 8px;
+  line-height: 1.25;
+}
+
+.hdfs.mu-list-meta-item:last-child {
+  padding-bottom: 2px;
+}
+
+.hdfs.mu-list-meta-item + .mu-list-meta-item {
+  border-top: 1px solid #e8e8e8;
+}
+
+.hdfs.mu-list-meta-text {
+  line-height: 1.25;
+}
+
+.hdfs.mu-list-meta .mu-list-caption {
+  padding-left: 0;
+  font-size: 0.6875rem;
+  color: #8091a5;
+  margin-top: 2px;
+}
+
+.hdfs.mu-list-meta-item-cont {
+  display: inline-block;
+  width: 95%;
+}
+
+.hdfs.mu-list-meta-item-badge {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.hdfs.mu-list-meta-item-badge + .mu-list-meta-item-cont {
+  margin-left: 4px;
+}
+
+.hdfs.mu-list > li {
+  height: 34px;
+  text-align: left;
+}
+
+.hdfs-mu-tab > li.active > a {
+  border-bottom: none;
+  background-color: #f6f6f6;
+  color: #505050;
+}
+
+.hdfs-mu-panel {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  width: 100%;
+}
+
+.hdfs-mu-panel > .mu-panel-head {
+  padding-bottom: 0px;
+  height: 34px;
+  border: 0;
+  text-align: left;
+  text-indent: 0;
+  padding-top: 6px;
+  padding-left: 10px;
+  background-color: #eee;
+  border-bottom: 1px solid $ui-04;
+}
+
+.hdfs-mu-tab {
+  @include clearfix;
+}
+
+.hdfs-mu-tab > li {
+  float: left;
+  position: relative;
+}
+
+.hdfs-mu-tab > li:first-child > a {
+  border-top-left-radius: 4px;
+}
+
+.hdfs-mu-tab > li:last-child > a {
+  border-top-right-radius: 4px;
+}
+
+.hdfs-mu-tab li + li > .hdfs-mu-btn {
+  border-left: 0;
+}
+
+.hdfs-mu-tab > li > a {
+  background: #f0f0f0;
+  min-width: 70px;
+  height: 28px;
+  padding: 0 20px;
+  font-weight: 700;
+  color: #838383;
+  border: 1px solid #d0d0d0;
+  border-radius: 0;
+  line-height: 1.5;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: block;
+  text-align: center;
+}
+
+.hdfs-mu-tab > li + li > a {
+  border-radius: 0;
+  background: #eee;
+  color: #9aa6b5;
+}
+
+.hdfs-mu-btn {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.hdfs-mu-tab > li:hover > a {
+  text-decoration: none;
+  color: #505050;
+}
+/* 파일 전달 끝 */
+
+// dev.css 끝
+
+.modal-body .mu-input-icon-wrap {
+  padding: 10px;
+  background-color: #f6f6f6;
+  border-bottom: 1px solid $ui-04;
+}
+
+.mu-btn.mu-btn-bg-non:active,
+.mu-btn.mu-btn-bg-non.active {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+/* ag-grid 2016-12-20 ADD */
+// 2019-04-29 MOD sherman의 ag-grid(2016-12-20 + data-model override와 병합
+.ag-fresh {
+  color: $text-01;
+}
+.ag-fresh div.ag-root {
+  border: none;
+  font-size: 12px;
+}
+.ag-fresh div.ag-header {
+  background: $ui-02;
+  border: 1px solid $ui-04;
+  border-width: 1px 1px 2px 1px;
+  color: $text-01;
+}
+.ag-fresh div.ag-header-viewport {
+  background: none;
+}
+.ag-fresh div.ag-root .ag-header .ag-header-cell-label {
+  vertical-align: middle;
+  white-space: nowrap;
+  font-weight: 700;
+}
+.ag-fresh div.ag-row:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.ag-fresh div.ag-cell {
+  vertical-align: middle;
+  height: 100%;
+  line-height: 26px;
+  text-align: center;
+  border-right: 1px solid $ui-04;
+}
+.ag-fresh div.ag-cell .mu-hgroup {
+  vertical-align: middle;
+}
+.ag-fresh div.ag-cell-focus,
+.ag-fresh div.ag-cell-no-focus {
+  border-right: 1px solid $ui-04;
+}
+.ag-fresh div.ag-header-cell {
+  border-right: 1px solid $ui-04;
+  border-top: 1px solid transparent;
+  border-bottom: 2px solid $ui-04;
+  background-color: $ui-02;
+  text-align: center;
+}
+.ag-fresh div.ag-body {
+  background: $ui-01;
+}
+.ag-fresh div.ag-body-viewport {
+  text-align: left;
+}
+.ag-fresh .ag-row {
+  border-top: 1px solid #e7e7e7;
+  border-right: 1px solid $ui-04;
+  border-bottom: none;
+  border-left: 1px solid $ui-04;
+}
+.ag-fresh .ag-row:first-child {
+  border-top: none;
+}
+.ag-fresh .ag-row:last-child {
+  border-bottom: 1px solid $ui-04;
+}
+.ag-fresh .ag-row-odd {
+  background-color: #fafafa;
+}
+.ag-fresh .ag-row-selected {
+  background-color: $hover-ui-accent;
+}
+.ag-fresh .ag-pinned-left-header .ag-header-cell:first-child {
+  border-left: 1px solid $ui-04;
+}
+.ag-fresh .ag-pinned-left-cols-container .ag-row-hover {
+  border-top: 1px solid #e5e5e5;
+  border-left: 1px solid $ui-04;
+  background-color: $hover-ui-accent;
+}
+.ag-fresh .ag-pinned-left-cols-container .ag-row-hover + .ag-row {
+  border-top: 1px solid #e7e7e7;
+}
+.ag-fresh .ag-pinned-left-cols-container .ag-row-hover:last-child {
+  border-bottom: 1px solid #8b8b8b;
+}
+.ag-fresh .ag-pinned-left-cols-container .ag-row.open {
+  border-top: 1px solid $brand-02;
+  border-left: 1px solid $brand-02;
+  background: $hover-ui-accent;
+}
+.ag-fresh .ag-body-container .ag-row {
+  border-left: 1px solid $ui-04;
+}
+.ag-fresh .ag-body-container .ag-row-hover {
+  border-right: 1px solid $ui-04;
+  background-color: $hover-ui-accent;
+}
+// .ag-fresh .ag-body-container .ag-row-hover + .ag-row{border-top:0;}
+.ag-fresh .ag-body-container .ag-row-hover:first-child {
+  border-top: none;
+}
+.ag-fresh .ag-body-container .ag-row-hover:last-child {
+  border-bottom: 1px solid $ui-04;
+}
+.ag-fresh .ag-body-container .ag-row.open {
+  border-top: 1px solid $brand-02;
+  border-right: 1px solid $brand-02;
+  background: $hover-ui-accent;
+}
+.ag-fresh .ag-full-width-container .ag-row {
+  padding: 15px;
+  border: 1px solid $brand-02;
+  background: $ui-01;
+}
+.ag-fresh .ag-full-width-container .ag-row .mu-title {
+  display: block;
+  word-break: break-all;
+  white-space: normal;
+}
+.ag-fresh .ag-full-width-container .ag-row .mu-grid {
+  width: auto;
+  border: none;
+  border-bottom: 1px solid #dbdbdb;
+}
+.ag-fresh .ag-full-width-container .ag-row .mu-grid tbody > tr:hover {
+  border: none;
+}
+.ag-fresh .ag-full-width-container .ag-row .mu-grid tbody > tr:hover > td {
+  border: none;
+  border-top: 1px solid #dbdbdb;
+}
+.ag-group-contracted,
+.ag-group-expanded {
+  font-family: FontAwesome;
+  font-size: 10px;
+  cursor: pointer;
+}
+.ag-group-contracted:before {
+  content: "\f054";
+}
+.ag-group-expanded:before {
+  content: "\f078";
+}
+.ag-group-contracted img,
+.ag-group-expanded img {
+  display: none;
+}
+// .mu-icon.agSortAsc:before{content:"\f0d8";}
+// .mu-icon.agSortDesc:before{content:"\f0d7";}
+// .mu-icon.agNoSort:before{content:"\f0dc";}
+.bx-grid .ag-fresh .ag-pinned-right-header {
+  border-left: 1px solid $ui-04;
+}
+.bx-grid .ag-fresh .ag-cell-not-inline-editing {
+  padding: 3px 5px 2px 5px;
+}
+.bx-grid .ag-fresh .ag-body-container .ag-row-selected.ag-row-hover {
+  border: 1px solid $brand-02;
+}
+.bx-grid .ag-fresh .ag-body-container .ag-row-selected {
+  background-color: $hover-ui-accent;
+  border: 1px solid $brand-02;
+}
+
+/* panel */
+.mu-panel {
+  background: transparent;
+  border: 0;
+}
+.mu-panel > .mu-panel-head {
+  border: 0;
+  text-align: left;
+  text-indent: 0;
+  padding: 8px 25px 6px;
+}
+.mu-panel > .mu-panel-head > .fr {
+  margin-left: 20px;
+} /* 2016-06-15 ADD */
+.mu-panel > .mu-panel-body {
+  padding: 0;
+}
+/*.mu-panel .mu-btn{position:relative;background:transparent;height:23px;overflow:visible;}*/
+/*.mu-panel .mu-btn:hover{background:$ui-01;border:1px solid #e3e3e3;}*/
+.mu-panel .mu-btn span {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 520px;
+  height: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-weight: 700;
+  color: $text-01;
+}
+/*.mu-panel .mu-btn.active, .mu-panel .mu-btn:active{background:$brand-02;border:1px solid transparent;box-shadow:0 0 4px rgba(0, 0, 0, 0.5) inset;}*/
+/*.mu-panel .mu-btn.active span, .mu-panel .mu-btn:active span{color:$ui-01;}*/
+
+.mu-dialog .mu-formbox tbody > tr > th + th,
+.mu-dialog .mu-formbox tbody > tr > th + td,
+.mu-dialog .mu-formbox tbody > tr > td + td,
+.mu-dialog .mu-formbox tbody > tr > td + th {
+  border-left: none;
+}
+.mu-dialog .mu-formbox tbody > tr:first-child > th,
+.mu-dialog .mu-formbox tbody > tr:first-child > td {
+  border-top: none;
+}
+.mu-dialog .mu-formbox tbody > tr:last-child > th,
+.mu-dialog .mu-formbox tbody > tr:last-child > td {
+  border-bottom: none;
+}
+.mu-dialog .mu-formbox thead > tr > th:first-child,
+.mu-dialog .mu-formbox tbody > tr > th:first-child,
+.mu-dialog .mu-formbox thead > tr > td:first-child,
+.mu-dialog .mu-formbox tbody > tr > td:first-child {
+  border-left: none;
+}
+.mu-dialog .mu-formbox thead > tr > th:last-child,
+.mu-dialog .mu-formbox tbody > tr > th:last-child,
+.mu-dialog .mu-formbox thead > tr > td:last-child,
+.mu-dialog .mu-formbox tbody > tr > td:last-child {
+  border-right: none;
+}
+.mu-dialog .mu-formbox .mu-grid-wrap {
+  min-height: 180px;
+}
+
+/* renewal */
+/*.content-re .mu-input, .content-re textarea, .content-re .mu-btn{border-radius:2px;}*/
+/*.content-re .mu-input, .content-re textarea{border-color:$ui-04;}*/
+/*.mu-input[disabled], .content-re .mu-btn[disabled]{border:1px solid #e8e8e8;background-color:$ui-02;}
+.mu-input:hover, .content-re textarea:hover{border-color:$interactive-01;background-color:$ui-01;}*/
+.content-re .pb28 {
+  padding-bottom: 28px;
+}
+.content-re .ml17 {
+  margin-left: 17px;
+}
+.content-re .ml16 {
+  margin-left: 16px;
+}
+
+/*.content-re .btn-icon{width:26px;height:26px;padding:0;border:none;border-radius:3px;background:none;box-shadow:none;}*/
+
+.content-re {
+  height: 100%;
+}
+.content-re:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+/* 2017-06-24 ADD LYB HDFS Browser style */
+.hdfs-tree-wrap {
+  width: 279px;
+  height: 100%;
+}
+.hdfs-result-wrap {
+  width: calc(100% - 279px);
+  height: 100%;
+  border-left: 1px solid $ui-04;
+}
+.hdfs-tree-head {
+  width: 100%;
+  height: 39px;
+  padding: 6px 10px;
+  background: $ui-03;
+  border-bottom: 1px solid $ui-04;
+}
+.hdfs-tree-body {
+  padding: 0 0 0 10px;
+  height: calc(100% - 78px);
+} /* 2017-04-02 MDF 브라우징 유형 선택 UI 추가에 따른 height 값 변경, 불필요한 padding 제거*/
+.hdfs-content .hdfs-tree-head .mu-input-icon {
+  width: 100%;
+}
+.hdfs-result-head {
+  position: relative;
+  height: 39px;
+  line-height: 37px;
+  padding: 0 12px;
+  background: $ui-03;
+  border-bottom: 1px solid $ui-04;
+}
+.hdfs-result-body {
+  height: calc(100% - 39px);
+  padding: 10px;
+}
+.hdfs-result-wrap .bx-filter {
+  margin: 5px 0 10px 0;
+}
+.hdfs-result-wrap .bx-grid {
+  height: calc(100% - 41px);
+}
+.hdfs-result-wrap .bx-filter .division-line {
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  margin-left: 4px;
+  margin-right: 4px;
+  border-left: 1px solid $ui-04;
+  text-indent: -9999px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.hdfs-result-wrap .path {
+  overflow: hidden;
+  width: 100%;
+  height: 39px;
+}
+.hdfs-result-wrap .path .mu-btn.mu-btn-ghost {
+  padding: 0 2px;
+}
+.hdfs-result-wrap .mu-icon-img {
+  background: url("#{$img-path}/common/icon_search.png") no-repeat;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.hdfs-result-wrap .bx-filter .mu-btn-ghost {
+  padding: 0 5px;
+}
+.hdfs-result-wrap .bx-filter .mu-btn-ghost + .mu-btn-ghost {
+  margin-left: 4px;
+}
+.hdfs-result-wrap .mu-icon-img.home {
+  background-position: -760px -40px;
+}
+.hdfs-result-wrap .mu-icon-img.back {
+  background-position: -820px -40px;
+}
+.hdfs-result-wrap .mu-icon-img.refresh {
+  background-position: -740px 0;
+}
+.hdfs-result-wrap .mu-icon-img.new-folder {
+  background-position: -780px 0;
+}
+.hdfs-result-wrap .mu-icon-img.delete {
+  background-position: -380px 0;
+}
+.hdfs-result-wrap .mu-icon-img.link {
+  background-position: -840px -40px;
+}
+.hdfs-result-wrap .mu-icon-img.upload {
+  background-position: -860px 0;
+}
+.hdfs-result-wrap .mu-icon-img.download {
+  background-position: -840px 0;
+}
+.hdfs-result-wrap .mu-icon-img.move-file {
+  background-position: -780px -80px;
+}
+.mu-icon-img.modify {
+  background-position: -260px 0;
+}
+.mu-btn[disabled] .mu-icon-img.modify {
+  background-position: -260px -40px;
+}
+.hdfs-result-wrap .mu-btn[disabled] .mu-icon-img.home {
+  background-position: -760px -60px;
+}
+.hdfs-result-wrap .mu-btn[disabled] .mu-icon-img.back {
+  background-position: -820px -60px;
+}
+.hdfs-result-wrap .mu-btn[disabled] .mu-icon-img.refresh {
+  background-position: -740px -40px;
+}
+.hdfs-result-wrap .mu-btn[disabled] .mu-icon-img.new-folder {
+  background-position: -780px -20px;
+}
+.hdfs-result-wrap .mu-btn[disabled] .mu-icon-img.delete {
+  background-position: -380px -40px;
+}
+.hdfs-result-wrap .mu-btn[disabled] .mu-icon-img.link {
+  background-position: -840px -60px;
+}
+.hdfs-result-wrap .mu-btn[disabled] .mu-icon-img.upload {
+  background-position: -860px -20px;
+}
+.hdfs-result-wrap .mu-btn[disabled] .mu-icon-img.download {
+  background-position: -840px -20px;
+}
+.hdfs-result-wrap .mu-btn[disabled] .mu-icon-img.move-file {
+  background-position: -780px -100px;
+}
+.path .mu-path {
+  display: inline-block;
+  width: calc(100% - 60px);
+  height: 39px;
+  vertical-align: middle;
+}
+.path .mu-path > li {
+  height: 26px;
+  vertical-align: middle;
+  color: $text-01;
+}
+.path .mu-path > li:after {
+  content: "/";
+  color: $text-01;
+}
+/*2017-06-27 ADD angularJS Tree & ag-grid css overwrite*/
+.hdfs-tree-body .tree .toggle-children {
+  width: 20px;
+  height: 20px;
+  background: url("#{$img-path}/hdfs-browser/icon_hdfs.png") no-repeat 0 4px;
+}
+.hdfs-tree-body .tree .toggle-children-wrapper {
+  padding: 2px 0 5px 1px;
+}
+.hdfs-tree-body .tree .toggle-children-wrapper-expanded .toggle-children {
+  transform: rotate(0);
+}
+.toggle-children-wrapper.toggle-children-wrapper-collapsed .toggle-children {
+  background-position: -20px 4px;
+}
+.hdfs-tree-body .tree .node-content-wrapper {
+  width: auto;
+  padding: 4px 5px 4px;
+  margin-top: -3px;
+}
+.hdfs-tree-body
+  .tree
+  .tree-node.tree-node-collapsed.tree-node-active.tree-node-focused
+  .node-content-wrapper {
+  box-shadow: none;
+  background-color: $hover-ui-accent;
+}
+.hdfs-tree-body .tree .tree-node {
+  white-space: nowrap;
+} /*2017-07-12 ADD LYB 트리 텍스트 길어지면 폴더아이콘 아래로 줄바꿈되는 현상 줄바꿈 안되도록 수정*/
+.hdfs-tree-body .tree .node-content-wrapper:hover {
+  box-shadow: none;
+  background-color: $hover-ui-accent;
+  border: 1px solid $brand-02;
+  padding: 3px 4px 3px;
+}
+.hdfs-tree-body .tree .tree-node-active > .node-wrapper > .node-content-wrapper,
+.hdfs-tree-body .tree .tree-node-focused > .node-content-wrapper {
+  box-shadow: none;
+  border: 1px solid $brand-02;
+  background-color: $hover-ui-accent;
+  padding: 3px 4px 3px;
+}
+/* .hdfs-tree-body .tree .tree-node-active > .node-wrapper > .node-content-wrapper:hover,
+.hdfs-tree-body .tree .tree-node-focused > .node-content-wrapper:hover{border:1px solid $brand-02;padding:3px 4px 3px;} */
+.hdfs-result-body .mu-panel.bx-filter .mu-input-icon.bx-w {
+  width: 166px;
+}
+.hdfs-result-body .ag-cell span i {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("#{$img-path}/hdfs-browser/icon_hdfs.png") no-repeat -20px 0;
+  vertical-align: middle;
+}
+.hdfs-result-body .ag-cell span .icon-folder {
+  background-position: -20px -1px;
+}
+.hdfs-result-body .ag-cell span .icon-file {
+  background-position: -40px -1px;
+}
+.hdfs-result-body .active .mu-icon-img.refresh,
+.hdfs-result-body .mu-btn:active .mu-icon-img.refresh {
+  background-position: -740px 0;
+}
+.hdfs-result-body .active .mu-icon-img.download,
+.hdfs-result-body .mu-btn:active .mu-icon-img.download {
+  background-position: -840px 0;
+}
+
+.ui-hdfs .hdfs-tree-wrap {
+  width: 230px;
+} /*팝업창에 뜰때 왼쪽 영역 가로값*/
+.ui-hdfs .hdfs-result-wrap {
+  width: calc(100% - 230px);
+} /*팝업창에 뜰때 오른쪽 영역 가로값*/
+.mu-dialog.ui-hdfs-grid {
+  height: 100%;
+  width: 100%;
+  min-width: 850px;
+}
+.ui-hdfs-grid .mu-dialog-body {
+  padding: 0;
+  height: calc(100% - 37px);
+}
+.ui-hdfs-grid .mu-dialog-body .hdfs-result-wrap {
+  width: 100%;
+  height: 100%;
+  border-left: none;
+} /*팝업창에 뜰때(tree제외한 오른쪽 영역만 띄울때) 오른쪽 영역 가로값*/
+.ui-hdfs-grid .mu-dialog-foot > div {
+  width: 200px;
+  float: right;
+}
+
+/*2017-06-29 ADD LYB hdfs 외부 라이브러리 모달창 css*/
+.modal-dialog .btn {
+  padding: 3px 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.modal-dialog .modal-header {
+  padding: 5px 8px 0 15px;
+  border-bottom: 1px solid #e7e7e7;
+  background: $ui-02;
+  border-radius: 5px 5px 0 0;
+  font-size: 12px;
+  font-weight: bold;
+  height: 29px;
+  line-height: 28px;
+}
+.modal-dialog .modal-body {
+  padding: 0;
+}
+.modal-dialog .modal-body .bx-msg {
+  padding: 15px;
+  text-align: center;
+}
+.modal-dialog .modal-body th,
+.modal-body td {
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.modal-dialog .modal-body th {
+  border-right: 1px solid #e3e3e3;
+  background-color: $ui-02;
+  text-align: right;
+  color: #75767a;
+}
+.modal-dialog .modal-body .form-control {
+  height: 25px;
+}
+.modal-dialog .modal-body .form-group {
+  margin: 0;
+  padding: 14px 14px;
+}
+.modal-dialog .mu-formbox .form-control {
+  width: 460px;
+}
+// .modal-dialog .bx-error{margin-top:5px;}
+.modal-dialog .mu-icon-img.alert {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 2px 3px 0;
+  background: url("#{$img-path}/common/icon_search.png") no-repeat -340px 0;
+  font-weight: normal;
+  vertical-align: middle;
+}
+.modal-dialog .modal-footer {
+  padding: 6px 12px;
+  border-top: 1px solid $ui-04;
+}
+
+.modal-dialog .modal-content {
+  border: 1px solid $ui-04;
+}
+.modal-dialog .modal-header {
+  font-weight: bold;
+  height: 31px;
+  line-height: 31px;
+  padding: 0 8px 0 15px;
+  background-color: $ui-02;
+  border-bottom: 1px solid $ui-04;
+}
+.modal-dialog .modal-header .modal-title {
+  color: $text-01;
+  line-height: 100%;
+  float: none;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 9px;
+}
+.modal-dialog .modal-header .close {
+  margin-top: 4px;
+  opacity: 1;
+  color: $text-03;
+}
+.modal-dialog .modal-header .close:hover {
+  color: darken($text-03, 25);
+}
+.modal-dialog .modal-header .close span {
+  color: $text-03;
+  font-size: 18px;
+}
+.modal-dialog .modal-header .close:hover span,
+.modal-dialog .modal-header .close:focus span {
+  color: $ui-04;
+}
+.modal-dialog .modal-body {
+  padding: 0;
+}
+.modal-dialog .modal-body .mu-formbox {
+  border: none;
+  font-size: 12px;
+}
+.modal-dialog .modal-body .mu-formbox .form-control {
+  font-size: 12px;
+}
+.modal-dialog .modal-body .mu-formbox tbody > tr > th:first-child {
+  border-left: none;
+}
+.modal-dialog .modal-body .mu-formbox tbody > tr:last-child > th,
+.modal-dialog .modal-body .mu-formbox tbody > tr:last-child > td {
+  border-bottom: none;
+}
+.modal-dialog .modal-body .mu-formbox tbody > tr:first-child > th,
+.modal-dialog .modal-body .mu-formbox tbody > tr:first-child > td {
+  border-top: none;
+}
+.modal-dialog .modal-body .mu-formbox tbody > tr > th,
+.modal-dialog .modal-body .mu-formbox thead > tr > th:last-child,
+.modal-dialog .modal-body .mu-formbox tbody > tr > th:last-child,
+.modal-dialog .modal-body .mu-formbox thead > tr > td:last-child,
+.modal-dialog .modal-body .mu-formbox tbody > tr > td:last-child {
+  border-right: none;
+}
+.modal-dialog .modal-body .mu-formbox tbody > tr > td {
+  border: none;
+  border-left: 1px solid $ui-04;
+  padding: 10px 8px;
+}
+.modal-dialog .mu-formbox tbody td .ng-invalid:not(.ng-untouched):not(form),
+.modal-dialog .mu-formbox tbody td .ng-valid[required] {
+  border-left: 1px solid $ui-04;
+}
+
+/* 2018-04-02 ADD : 브라우징 타입 선택 UI 추가 */
+.hdfs-tree-head {
+  width: 100%;
+  height: 78px;
+  padding: 6px 10px;
+  background: $ui-03;
+  border-bottom: 1px solid $ui-04;
+}
+.hdfs-tree-head > .searchBox {
+  margin-left: 0;
+  padding-top: 39px;
+}
+.hdfs-tree-head > .selectbox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 280px;
+  height: 39px;
+  padding: 0 30px 0 10px;
+  line-height: 38px;
+  border-bottom: 1px solid $ui-04;
+}
+.hdfs-tree-head .mu-selectbox {
+  line-height: 1.5;
+}
+.hdfs-tree-head .mu-selectbox .mu-value {
+  width: 260px;
+}
+.searchBox .mu-input {
+  width: 260px;
+}
+
+.ui-hdfs-popup {
+  .hdfs-result-wrap {
+    width: 100%;
+  }
+
+  .hdfs-result-body {
+    height: calc(100% - 39px - 40px);
+  }
+
+  .hdfs-result-foot {
+    height: 40px;
+    padding: 6px 8px;
+    border-top: 1px solid $ui-04;
+  }
+}
+
+.ag-overlay-wrapper span {
+  font-size: 12px;
+}

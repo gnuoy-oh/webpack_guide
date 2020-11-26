@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>보고서-새보고서 Popup(prop)</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if lt IE 9]>
+	<script src="js/html5.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+  <link rel="stylesheet" type="text/css" href="../../dist-sherman/css/sherman/style.min.css">
+</head>
+
+<body>
+  <!-- 보고서 -->
+  <div class="mu-container">
+    <section>
+      <div class="mu-content content-re data-add report">
+        <div class="mu-panel">
+          <div class="mu-panel-head">
+            <div class="mu-hgroup fl report-title">
+              <h3 class="mu-title report-title-text">보고서</h3>
+              <!-- 수정 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon-img edit-title"></i>
+              </button>
+              <!-- 수정 확인 버튼 -->
+              <button class="mu-btn mu-btn-icon">
+                <i class="mu-icon check"></i>
+              </button>
+            </div>
+            <div class="mu-hgroup fr">
+              <button type="button" class="mu-btn mu-btn-default">목록으로</button>
+              <button type="button" class="mu-btn mu-btn-default">보기</button>
+              <button type="button" class="mu-btn mu-btn-primary">저장</button>
+              <button type="button" class="mu-btn mu-btn-secondary">새로저장</button>
+              <button type="button" class="mu-btn mu-btn-default" disabled="disabled">접근 권한</button>
+              <button type="button" class="mu-btn mu-btn-danger">전체삭제</button>
+            </div>
+          </div>
+          <div class="mu-panel-body">
+            <!-- 상단 메뉴바 -->
+            <div class="report-menubar">
+              <div class="mu-selectbox width150">
+                <button class="mu-value">전체</button>
+                <ul class="mu-list">
+                  <li>전체</li>
+                  <li class="active">데이터 시각화</li>
+                  <li>양식</li>
+                  <li>버튼</li>
+                  <li>기타</li>
+                </ul>
+              </div>
+              <ul class="report-menu">
+                <li><i class="mu-icon-img area"></i></li>
+                <li><i class="mu-icon-img map"></i></li>
+                <li><i class="mu-icon-img text"></i></li>
+                <li><i class="mu-icon-img rectangle"></i></li>
+                <li><i class="mu-icon-img ellipse"></i></li>
+                <li><i class="mu-icon-img date"></i></li>
+                <li><i class="mu-icon-img renew"></i></li>
+                <li><i class="mu-icon-img list"></i></li>
+                <li><i class="mu-icon-img tab"></i></li>
+                <li><i class="mu-icon-img url"></i></li>
+                <li><i class="mu-icon-img image"></i></li>
+                <li><i class="mu-icon-img html"></i></li>
+                <li><i class="mu-icon-img input"></i></li>
+                <li><i class="mu-icon-img combo-box"></i></li>
+                <li><i class="mu-icon-img check-and-radio"></i></li>
+                <li><i class="mu-icon-img datetime"></i></li>
+                <li><i class="mu-icon-img button"></i></li>
+                <li class="active"><i class="mu-icon-img hidden-input"></i></li>
+              </ul>
+              <div class="fr">
+                <button class="mu-btn mu-btn-link" type="button">
+                  <span class="mu-btn-link-box">전체변수명보기</span>
+                </button>
+              </div>
+            </div>
+            <!-- //상단 메뉴바 -->
+            <div class="report-cont">
+              <!-- canvas 영역 -->
+              <div class="report-canvas">
+                <div class="canvas" style="width:1920px;height:1080px;">
+                  <span style="position:absolute;top:30px;left:50px;">hidden-object 초기 enabled 상태</span>
+                  <div class="box tool hidden-object" style="top:50px;left:50px;width:200px;height:50px;">
+                    <div class="hidden-object-text">
+                      <span>Popup</span>
+                    </div>
+                    <button class="mu-btn mu-btn-icon" type="button">
+                      <i class="iriscon new-window"></i>
+                    </button>
+                  </div>
+                  <!-- 박스 클릭 시 사이즈 조절 박스 활성화 -->
+                  <div class="box tool hidden-object active" style="top:50px;left:300px;width:200px;height:50px;">
+                    <div class="hidden-object-text">
+                      <span>PopupPopupPopupPopupPopupPopup</span>
+                    </div>
+                    <button class="mu-btn mu-btn-icon" type="button">
+                      <i class="iriscon new-window"></i>
+                    </button>
+                    <!-- 크기 조절 상자 -->
+                    <span class="tl"></span>
+                    <span class="tc"></span>
+                    <span class="tr"></span>
+                    <span class="cl"></span>
+                    <span class="cr"></span>
+                    <span class="bl"></span>
+                    <span class="bc"></span>
+                    <span class="br"></span>
+                    <!-- //크기 조절 상자 -->
+                  </div>
+                  <!-- 불러오기로 데이터에 연결된 상태 -->
+                  <span style="position:absolute;top:130px;left:50px;">불러오기로 데이터에 연결된 상태</span>
+                  <!-- NOTE: 데이터 연결시 loaded 클래스 추가 -->
+                  <div class="box tool hidden-object loaded" style="top:150px;left:50px;width:200px;height:30px;">
+                    <div class="hidden-object-text">
+                      <span>PopupPopupPopupPopupPopupPopup</span>
+                    </div>
+                    <button class="mu-btn mu-btn-icon" type="button">
+                      <i class="iriscon new-window"></i>
+                    </button>
+                  </div>
+                  <!-- //불러오기로 데이터에 연결된 상태 -->
+                </div>
+              </div>
+              <!-- canvas 영역 -->
+              <!-- 우측 패널 -->
+              <div class="report-panel">
+                <ul class="mu-tab">
+                  <li><a>불러오기</a></li>
+                  <li class="active"><a>속성</a></li>
+                  <li><a>객체</a></li>
+                </ul>
+                <!-- 속성 -->
+                <div class="mu-tab-body">
+                  <div class="mu-tabCont">
+                    <!-- 이벤트 값 전달 설정 -->
+                    <div class="mu-panel mu-formbox-inner">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">이벤트 값 전달 설정</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-formbox">
+                          <colgroup>
+                            <col width="90">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>오브젝트 ID</th>
+                              <td>
+                                Object ID
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- //이벤트 값 전달 설정 -->
+                    <!-- 전달할 값 설정 -->
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">전달할 값 설정</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <table class="mu-grid mu-grid-border mu-grid-strip">
+                          <colgroup>
+                            <col width="90">
+                            <col width="90">
+                            <col>
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th>키</th>
+                              <th>값</th>
+                              <th>추가/삭제</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><input type="text" class="mu-input" placeholder="키"></td>
+                              <td><input type="text" class="mu-input" placeholder="값"></td>
+                              <td>
+                                <div class="add-del-group">
+                                  <!-- 첫 아이템의 삭제 버튼은 disabled 처리 -->
+                                  <button type="button" class="mu-btn mu-btn-danger" disabled=""><i class="iriscon delete"></i></button>
+                                  <button type="button" class="mu-btn mu-btn-default btn-add"><i class="iriscon add"></i></button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><input type="text" class="mu-input" placeholder="키"></td>
+                              <td><input type="text" class="mu-input" placeholder="값"></td>
+                              <td>
+                                <div class="add-del-group">
+                                  <button type="button" class="mu-btn mu-btn-danger"><i class="iriscon delete"></i></button>
+                                  <button type="button" class="mu-btn mu-btn-default btn-add"><i class="iriscon add"></i></button>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- 미리보기 버튼 -->
+                        <button class="mu-btn mu-btn-link fr">
+                          <div class="mu-btn-link-box">미리보기</div>
+                        </button>
+                        <!-- // 미리보기 버튼 -->
+                      </div>
+                    </div>
+                    <!-- //전달할 값 설정 -->
+                    <!-- 팝업 제목 입력 -->
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">팝업 제목 입력</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <input type="text" class="mu-input" placeholder="팝업 제목을 입력하세요">
+                      </div>
+                    </div>
+                    <!-- //팝업 제목 입력 -->
+                    <!-- 팝업 크기 변경 기능 -->
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">팝업 크기 변경 기능</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-item-group">
+                          <div class="mu-radio">
+                            <input type="radio" id="r1_1" name="radio1" checked>
+                            <label for="r1_1">사용</label>
+                          </div>
+                          <div class="mu-radio">
+                            <input type="radio" id="r1_2" name="radio1">
+                            <label for="r1_2">미사용</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- // 팝업 크기 변경 기능 -->
+                    <!-- Modal / Modaless 설정 -->
+                    <div class="mu-panel">
+                      <div class="mu-panel-head">
+                        <span class="mu-title">Modal / Modaless 설정</span>
+                      </div>
+                      <div class="mu-panel-body">
+                        <div class="mu-item-group">
+                          <div class="mu-radio">
+                            <input type="radio" id="r1_3" name="radio2">
+                            <label for="r1_3">사용</label>
+                          </div>
+                          <div class="mu-radio">
+                            <input type="radio" id="r1_4" name="radio2" checked>
+                            <label for="r1_4">미사용</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- // Modal / Modaless 설정 -->
+                  </div>
+                </div>
+                <!-- //속성 -->
+              </div>
+              <!-- //우측 패널 -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <link href="js/jquery-ui.css" rel="stylesheet">
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="../../dist-sherman/js/sherman.bundle.js"></script>
+</body>
+
+</html>

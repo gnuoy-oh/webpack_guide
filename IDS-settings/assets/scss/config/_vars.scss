@@ -1,0 +1,122 @@
+//-------------------------------------------
+// Variables
+// ------------------------------------------
+
+@import "spacing";
+@import "colors";
+
+// Color Theme Variables
+$ui-01: $white-0 !default;
+$ui-02: $gray-10 !default;
+$ui-03: #eeeeee !default;
+$ui-04: $cool-gray-30 !default;
+$ui-05: $navy-gray-10 !default; //TODO: 변수 값 수정한 후 제거
+$ui-06: #f4f7fb !default; //TODO: 변수 값 수정한 후 제거
+$interactive-01: $blue-41 !default;
+$interactive-02: $white-0 !default;
+$brand-02: $blue-42 !default; //TODO: 변수 값 수정한 후 제거
+$brand-03: $blue-51 !default; //TODO: 변수 값 수정한 후 제거
+$text-01: $gray-100 !default;
+$text-02: $cool-gray-60 !default;
+$text-03: $navy-gray-40 !default;
+$text-04: $white-0 !default;
+$text-05: $navy-gray-30 !default;
+$link: $cyan-50 !default;
+$icon-01: $cool-gray-70 !default;
+$icon-02: $navy-gray-40 !default;
+$icon-03: $cyan-30 !default;
+$field-01: $white-0 !default;
+$overlay-01: rgba($gray-20, 0.5) !default;
+
+// Global
+$input-label-weight: 600 !default;
+
+// Support Color Variables
+$support-01: $green-40 !default;
+$support-02: $cyan-50 !default;
+$support-03: $orange-60 !default;
+$support-04: $red-50 !default;
+
+// Interactive Color Variables
+$hover-primary: $cyan-60 !default;
+$hover-secondary: $cool-gray-10 !default;
+$hover-icon: $navy-gray-60 !default;
+$hover-danger: $red-60 !default;
+$hover-ui: $cool-gray-10 !default;
+$hover-ui-accent: $cyan-10 !default;
+$hover-row: $cyan-10 !default;
+$hover-field-border: $cyan-50 !default;
+
+$active-primary: $cyan-70 !default;
+$active-secondary: $cool-gray-20 !default;
+$active-icon: $navy-gray-60 !default;
+$active-danger: $red-70 !default;
+$active-ui: #e5e8ef !default;
+$active-ui-accent: $cyan-20 !default;
+
+$selected-ui-accent: #e5e8ef !default;
+$visited-link: $purple-60 !default;
+$disabled-01: $gray-10 !default;
+$disabled-02: $gray-30 !default;
+
+// -------------------------
+//  TODO: 검토 후 제거할 항목들
+// Support Colors Variables
+$status-success-symbol: $green-41 !default;
+$status-success-close: $green-31 !default;
+$status-success-border: $green-21 !default;
+$status-success-bg: $green-11 !default;
+$status-info-symbol: $blue-42 !default;
+$status-info-close: $blue-32 !default;
+$status-info-border: $blue-22 !default;
+$status-info-bg: $blue-12 !default;
+$status-warning-symbol: $orange-41 !default;
+$status-warning-close: $orange-31 !default;
+$status-warning-border: $orange-21 !default;
+$status-warning-bg: $orange-11 !default;
+$status-danger-symbol: $red-41 !default;
+$status-danger-close: $red-31 !default;
+$status-danger-border: $red-21 !default;
+$status-danger-bg: $red-11 !default;
+
+// Code Snippet
+$snippet-background-color: $ui-01 !default;
+$snippet-border-color: $ui-04 !default;
+
+// TODO: IRIS Web Platform의 네비게이션이 적용되면 제거
+$nav-01: $brand-02 !default; // nav-main-bg
+$nav-02: $blue-21 !default; // nav-main-icon-btn
+$nav-03: $blue-11 !default; // nav-main-icon-btn-inverse
+$nav-04: $gray-10 !default; // nav-sub-bg
+$nav-05: $navy-gray-50 !default; // nav-sub-icon-btn
+$nav-06: $navy-gray-30 !default; // nav-sub-icon-btn-inverse
+$nav-07: $white-0 !default; // nav-dropdown-bg
+$nav-08: $blue-10 !default; // nav-dropdown-active-border
+$nav-09: $blue-11 !default; // nav-dropdown-active-bg
+$nav-10: $brand-02 !default; // nav-point-color(under-line, active...)
+$nav-11: $nav-03 !default; // menu-path-color
+// -------------------------
+
+$prefix: "mui" !default;
+$img-path: "../../images" !default;
+$font-path: "../../fonts" !default;
+
+// Button Theme Variables
+$button-font-weight: 500 !default;
+$button-font-size: 0.75rem !default;
+$button-border-radius: 3px !default;
+$button-height: 26px !default;
+$button-padding: 0 $spacing-md !default;
+$button-padding-sm: 0 $spacing-xs !default;
+$button-border-width: 1px !default;
+
+// Loading Spinner
+$loading-start: $interactive-01 !default;
+$loading-25: $hover-ui-accent !default;
+$loading-50: $interactive-01 !default;
+$loading-75: $hover-ui-accent !default;
+$loading-end: $interactive-01 !default;
+
+// Motion
+$transition-base: 160ms;
+$loading-color: $interactive-01;

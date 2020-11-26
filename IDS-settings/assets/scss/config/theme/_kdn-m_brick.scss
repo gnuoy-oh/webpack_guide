@@ -1,0 +1,80 @@
+@import "../colors";
+@import "../vars";
+
+#menu-bar {
+  background-color: #3a4d5e;
+
+  .button-group-wrap {
+    background-color: #3a4d5e;
+  }
+
+  .button-group {
+    background-color: #3a4d5e;
+  }
+}
+
+// 보조 로고
+.logo-secondary-wrap {
+  position: relative;
+  display: inline-block;
+  padding: 0 12px;
+  height: 100%;
+  vertical-align: top;
+}
+
+.logo-secondary {
+  display: inline-block;
+  background: url("#{$img-path}/login/logo_secondary.png") no-repeat;
+  width: 36px;
+  height: 36px;
+}
+
+.logo-secondary.sub {
+  background-position: 0 -36px;
+}
+
+.loginWrap .logo {
+  width: 200px;
+}
+
+.loginWrap .solution-logo {
+  width: 300px;
+  margin-bottom: 12px;
+}
+
+.formBox {
+  padding: 88px 22px 60px;
+  height: 500px;
+  width: 500px;
+  border: 14px solid #000;
+  border-radius: 50%;
+}
+
+.loginWrap footer {
+  display: none;
+}
+
+// KDN 디자인 장식 요소
+.formReflect {
+  display: inline-block;
+  height: 480px;
+  width: 480px;
+  border: 14px solid #000;
+  background: url("#{$img-path}/login/form-reflect.png") no-repeat center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+// KDN 디자인 장식 요소
+.solution-symbol {
+  display: inline-block;
+  width: 152px;
+  height: 208px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("#{$img-path}/login/solution-symbol.png") no-repeat center;
+  background-size: contain;
+}

@@ -1,0 +1,162 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+$drawer-width: 460px;
+
+@include exports("drawer") {
+  .drawer-wrap {
+    position: fixed;
+    top: 4px;
+    width: 280px;
+    height: calc(100% - 8px);
+    background: $ui-01;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    border-width: 0 1px 1px 0;
+    border-radius: 0 0 3px 0;
+    z-index: 11;
+  }
+
+  .drawer {
+    height: 100%;
+
+    .mu-list-item {
+      padding-left: 24px;
+    }
+  }
+
+  .drawer-toggle {
+    position: absolute;
+    top: 4px;
+    width: 12px;
+    padding-left: 2px;
+    background-color: $ui-01;
+    border-radius: 0 3px 3px 0;
+    border: 1px solid $ui-04;
+    border-left: none;
+    -webkit-box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.2);
+    z-index: 11;
+
+    &:hover {
+      background-color: $ui-01;
+      width: 28px;
+
+      .fa-cog {
+        display: inline-block;
+        margin-right: 2px;
+      }
+    }
+
+    .fa-cog {
+      display: none;
+    }
+  }
+
+  .drawer-close {
+    top: 0;
+    right: -11px;
+    background-color: #eee;
+    padding-right: 4px;
+
+    &:hover {
+      background-color: #eee;
+      right: -27px;
+    }
+  }
+
+  /* drawer head */
+
+  .drawer-head {
+    height: auto;
+    padding: 10px 8px;
+    border: 1px solid $ui-04;
+    background-color: #eee;
+
+    h3 {
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+  }
+
+  /* drawer body */
+
+  .drawer-body {
+    height: calc(100% - 69px);
+    background-color: #fafafa;
+    border: 1px solid $ui-04;
+    overflow: auto;
+    border-width: 0 1px 1px 0;
+    border-radius: 0 0 3px 0;
+  }
+
+  // mui drawer
+  .#{$prefix}-drawer {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: $drawer-width;
+    height: 100%;
+    background: $ui-01;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
+  }
+
+  .#{$prefix}-drawer-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: #eee;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .#{$prefix}-drawer-open .#{$prefix}-drawer-background {
+    opacity: 0.5;
+  }
+
+  .#{$prefix}-drawer.#{$prefix}-drawer-open {
+    opacity: 1;
+  }
+
+  .#{$prefix}-drawer.#{$prefix}-drawer-right {
+    right: -$drawer-width;
+  }
+
+  .#{$prefix}-drawer-right.#{$prefix}-drawer-open {
+    right: 0;
+  }
+
+  .#{$prefix}-drawer-head {
+    position: relative;
+    padding: 14px 12px;
+    border-bottom: 1px solid $ui-04;
+  }
+
+  .#{$prefix}-drawer-head-title {
+    @include typescale("zeta");
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 700;
+  }
+
+  .#{$prefix}-drawer-head .mu-btn-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8px;
+  }
+
+  .#{$prefix}-drawer-body {
+    padding: 8px 12px;
+  }
+}

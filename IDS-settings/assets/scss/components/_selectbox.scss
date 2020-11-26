@@ -1,0 +1,214 @@
+@import "../config/vars";
+@import "../config/colors";
+@import "../config/typography";
+@import "../config/spacing";
+@import "../utils/helper-mixins";
+@import "../utils/import-once";
+@import "../utils/css--reset";
+
+@include exports("selectbox") {
+  .mu-selectbox {
+    position: relative;
+    display: inline-block;
+  }
+  .mu-selectbox .mu-value {
+    min-width: 80px;
+    height: 26px;
+    padding: 0 30px 0 8px;
+    text-align: left;
+    color: $text-01;
+    border: 1px solid $ui-04;
+    border-radius: 3px;
+    background: $ui-01;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .mu-selectbox .mu-value:hover,
+  .mu-selectbox .mu-value:active,
+  .mu-selectbox .mu-value:focus {
+    border-color: $ui-04;
+    outline: 0;
+  }
+
+  .mu-selectbox .mu-value::after {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    content: "";
+    -webkit-transform: translate3d(0, -50%, 0);
+    -ms-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+    border: 5px solid $text-03;
+    border-right-color: transparent;
+    border-bottom: 0;
+    border-left-color: transparent;
+  }
+
+  .mu-selectbox .mu-value:hover::after {
+    border-top-color: darken($text-03, 25%);
+  }
+
+  .mu-selectbox.on .mu-list {
+    display: block;
+    border-radius: 0 0 3px 3px;
+  }
+  .mu-selectbox.on .mu-value {
+    background-color: $ui-01;
+    border-color: $ui-04;
+    border-radius: 3px 3px 0 0;
+    border-bottom: 1px solid transparent;
+  }
+
+  .mu-selectbox.on .mu-value:after {
+    border-top: 0;
+    border-bottom: 5px solid $text-03;
+  }
+
+  .mu-selectbox.on .mu-value:hover:after,
+  .mu-selectbox.on .mu-value:active:after {
+    border-bottom-color: darken($text-03, 25%);
+  }
+
+  .mu-selectbox.mu-selectup.on .mu-value {
+    border-radius: 0 0 3px 3px;
+    border-top-color: transparent;
+    border-bottom-color: $ui-04;
+  }
+
+  .mu-selectbox.mu-selectup.on .mu-list {
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 -3px 8px -1px rgba(0, 0, 0, 0.2);
+  }
+
+  .mu-selectbox.disabled .mu-value,
+  .mu-selectbox.disabled .mu-value:hover:after,
+  .mu-selectbox.disabled .mu-value:active:after {
+    cursor: no-drop;
+    background-color: $disabled-01;
+    color: $disabled-02;
+  }
+  .mu-selectbox.disabled .mu-value:after {
+    border-top-color: $disabled-02;
+  }
+  .mu-selectbox.disabled.on .mu-list {
+    display: none;
+  }
+
+  .mu-select-xs .mu-value {
+    height: 22px;
+  }
+  .mu-select-sm .mu-value {
+    height: 26px;
+  }
+  .mu-select-lg .mu-value {
+    height: 36px;
+  }
+
+  .mu-selectbox.mu-selectup .mu-value:after {
+    border-top: 0;
+    border-bottom: 5px solid $text-03;
+  }
+  .mu-selectbox.mu-selectup.on .mu-value:after {
+    border-top: 0;
+    border-bottom: 5px solid $text-03;
+  }
+  .mu-selectbox.mu-selectup > .mu-list {
+    top: inherit;
+    bottom: 100%;
+  }
+
+  .mu-selectbox .mu-list {
+    @include layer("overlay");
+    position: absolute;
+    z-index: 11;
+    top: 100%;
+    display: none;
+    overflow: auto;
+    width: 100%;
+    max-height: 220px;
+    font-size: 12px;
+    color: $text-01;
+    border: 1px solid $ui-04;
+    border-radius: 3px;
+  }
+  .mu-selectbox .mu-list > li {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .mu-selectbox .mu-list > .sub-item {
+    overflow: visible;
+  }
+  .mu-selectbox.with-input .mu-list > li {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+  }
+  .mu-selectbox .mu-list li:hover {
+    background: $hover-ui-accent;
+    color: $brand-02;
+  }
+  .mu-selectbox .mu-list li.active {
+    color: $brand-02;
+  }
+  .mu-selectbox .mu-list li.disabled,
+  .mu-selectbox .mu-list li[disabled] {
+    cursor: not-allowed;
+    // opacity: 0.4;
+    color: $disabled-02;
+
+    &:hover {
+      background-color: $ui-01;
+      color: $disabled-02;
+    }
+  }
+
+  .mu-selectbox .mu-list.w-auto {
+    width: auto;
+  }
+  // 에디트 가능한 콤보박스
+  .mu-selectbox.with-input .mu-btn-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 26px;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .mu-selectbox.with-input .mu-btn-icon::after {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    content: "";
+    -webkit-transform: translate3d(0, -50%, 0);
+    -ms-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+    border: 5px solid $text-03;
+    border-right-color: transparent;
+    border-bottom: 0;
+    border-left-color: transparent;
+  }
+
+  .mu-selectbox.with-input.on .mu-btn-icon::after {
+    border-top: 0;
+    border-bottom: 5px solid $text-03;
+  }
+
+  .mu-selectbox.with-input.on:hover .mu-btn-icon::after {
+    border-bottom-color: darken($text-03, 25%);
+  }
+
+  .mu-selectbox.w-100,
+  .mu-selectbox.w-100 .mu-value {
+    width: 100%;
+  }
+
+  .mu-selectbox-right {
+    .mu-list {
+      right: 0;
+    }
+  }
+}
